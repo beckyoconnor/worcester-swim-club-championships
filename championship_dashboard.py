@@ -438,7 +438,7 @@ def load_all_events(folder: str) -> pd.DataFrame:
     return pd.concat(dfs, ignore_index=True)
 
 
-@st.cache
+@cache_decorator
 def calculate_all_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[str, str], 
                                       min_categories: int = 0) -> pd.DataFrame:
     """
