@@ -995,11 +995,10 @@ def main():
                 df_show = df_display.copy()
                 df_show['Rank'] = df_show.index
             
-                # Select columns to display (removed Eligible)
+                # Select columns to display (removed Eligible and Categories)
                 display_columns = [
                     'Rank', 'Name', 'Age', 
                     'Total_Points', 'Average_Points', 'Events_Count', 
-                    'Categories_Competed',
                     'Sprint_Events', 'Free_Events', 'Form_100_Events', 
                     'Form_200_Events', 'IM_Events', 'Distance_Events'
                 ]
@@ -1012,7 +1011,6 @@ def main():
                     'Total_Points': 'Total Points',
                     'Average_Points': 'Avg Points',
                     'Events_Count': 'Events',
-                    'Categories_Competed': 'Categories',
                     'Sprint_Events': 'Sprint',
                     'Free_Events': 'Free',
                     'Form_100_Events': '100 Form',
