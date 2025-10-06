@@ -8,7 +8,6 @@ import streamlit as st
 import pandas as pd
 import os
 from typing import Dict
-from openpyxl import load_workbook
 
 
 # Page configuration
@@ -364,41 +363,55 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-@st.cache_data
-def get_event_gender_map(excel_file: str) -> Dict[str, str]:
-    """Map event numbers to gender by reading event names from Excel."""
-    wb = load_workbook(excel_file, data_only=True)
-    numbered_sheets = [sheet for sheet in wb.sheetnames if sheet.isdigit()]
+@st.cache
+def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
+    """Map event numbers to gender by reading event names from CSV files."""
+    import glob
+    
+    # Look for event files in cleaned_files subfolder
+    cleaned_folder = os.path.join(folder, 'cleaned_files')
+    if os.path.exists(cleaned_folder):
+        search_folder = cleaned_folder
+    else:
+        search_folder = folder
+    
+    # Find all event CSV files
+    csv_files = glob.glob(os.path.join(search_folder, 'event_*.csv'))
     
     event_gender_map = {}
     
-    for sheet_name in numbered_sheets:
-        ws = wb[sheet_name]
-        event_name = ws.cell(1, 1).value
-        
-        # Check first 10 rows for event name
-        for row_idx in range(1, 11):
-            cell_value = ws.cell(row_idx, 1).value
-            if cell_value and 'EVENT' in str(cell_value).upper():
-                event_name = str(cell_value).strip()
-                break
-        
-        combined_text = str(event_name).lower() if event_name else ''
-        
-        if 'female' in combined_text or 'girl' in combined_text:
-            event_gender_map[sheet_name] = 'Female'
-        elif 'male' in combined_text or 'open/male' in combined_text or 'boy' in combined_text:
-            event_gender_map[sheet_name] = 'Male'
-        elif 'open' in combined_text:
-            event_gender_map[sheet_name] = 'Male'
-        else:
-            event_gender_map[sheet_name] = 'Unknown'
+    for csv_file in csv_files:
+        try:
+            # Extract event number from filename
+            filename = os.path.basename(csv_file)
+            event_number = filename.replace('event_', '').replace('.csv', '')
+            
+            # Read first row to get event name
+            df = pd.read_csv(csv_file, nrows=1)
+            if 'Event Name' in df.columns and len(df) > 0:
+                event_name = str(df['Event Name'].iloc[0]).lower()
+                
+                # Determine gender based on event name
+                if 'female' in event_name or 'girl' in event_name:
+                    event_gender_map[event_number] = 'Female'
+                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name:
+                    event_gender_map[event_number] = 'Male'
+                elif 'open' in event_name:
+                    event_gender_map[event_number] = 'Male'
+                else:
+                    # Default to Male for open events if not specified
+                    event_gender_map[event_number] = 'Male'
+            else:
+                event_gender_map[event_number] = 'Unknown'
+                
+        except Exception as e:
+            print(f"Error reading {csv_file}: {e}")
+            continue
     
-    wb.close()
     return event_gender_map
 
 
-@st.cache_data
+@st.cache
 def load_all_events(folder: str) -> pd.DataFrame:
     """Load all event CSV files into a single dataframe."""
     # Look for event files in cleaned_files subfolder
@@ -419,7 +432,7 @@ def load_all_events(folder: str) -> pd.DataFrame:
     return pd.concat(dfs, ignore_index=True)
 
 
-@st.cache_data
+@st.cache
 def calculate_all_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[str, str], 
                                       min_categories: int = 0) -> pd.DataFrame:
     """
@@ -595,21 +608,16 @@ def main():
         st.markdown(header_html_no_logo, unsafe_allow_html=True)
     
     # Configuration
-    excel_file = 'WSC Club Champs 2024.xlsx'
-    events_folder = 'WSC_Club_Champs_2024/cleaned_files'
+    events_folder = 'WSC_Club_Champs_2024'
     
-    # Check if files exist
-    if not os.path.exists(excel_file):
-        st.error(f"❌ Excel file not found: {excel_file}")
-        return
-    
+    # Check if events folder exists
     if not os.path.exists(events_folder):
         st.error(f"❌ Events folder not found: {events_folder}")
         return
     
     # Load data
     with st.spinner("Loading championship data..."):
-        event_gender_map = get_event_gender_map(excel_file)
+        event_gender_map = get_event_gender_map_from_csvs(events_folder)
         df_all = load_all_events(events_folder)
         
         # Add Gender column to df_all for event filtering
