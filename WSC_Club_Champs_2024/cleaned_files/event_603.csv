@@ -8,7 +8,7 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 603,Female 50m Freestyle,Sprint,Female,Angela O'Connor,10,Worcester,37.28,232
 603,Female 50m Freestyle,Sprint,Female,Lucy Hill,10,Worcester,40.36,183
 603,Female 50m Freestyle,Sprint,Female,Pippa Jenkins,10,Worcester,41.48,168
-603,Female 50m Freestyle,Sprint,Female,Daisy Elliston,10,Worcester,47.0,116
+603,Female 50m Freestyle,Sprint,Female,Daisy Elliston,10,Worcester,47,116
 603,Female 50m Freestyle,Sprint,Female,Amy Lynn,10,Worcester,48.57,105
 603,Female 50m Freestyle,Sprint,Female,Zara-Blue Martin,10,Worcester,50.38,94
 603,Female 50m Freestyle,Sprint,Female,Lucy Piper,11,Worcester,31.9,371
@@ -17,12 +17,15 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 603,Female 50m Freestyle,Sprint,Female,Emily Bufi,11,Worcester,35.72,264
 603,Female 50m Freestyle,Sprint,Female,Amelia Booth,11,Worcester,36.41,249
 603,Female 50m Freestyle,Sprint,Female,Rosalie MacDonald Smit,11,Worcester,38.84,205
+603,Female 50m Freestyle,Sprint,Female,Nellie Jones,11,Worcester,43.98,141
 603,Female 50m Freestyle,Sprint,Female,Isabella Wilcock,11,Worcester,45.9,124
+603,Female 50m Freestyle,Sprint,Female,Isla Smith,11,Worcester,46.35,121
 603,Female 50m Freestyle,Sprint,Female,Aisha Adam,11,Worcester,51.73,87
 603,Female 50m Freestyle,Sprint,Female,Wren Goodison,12,Worcester,31.75,376
 603,Female 50m Freestyle,Sprint,Female,Thea PIckstock,12,Worcester,33.38,324
 603,Female 50m Freestyle,Sprint,Female,Ava Aspinall,12,Worcester,34.34,297
 603,Female 50m Freestyle,Sprint,Female,Zoe Walsh,12,Worcester,34.53,292
+603,Female 50m Freestyle,Sprint,Female,Jessica Owen,12,Worcester,34.7,288
 603,Female 50m Freestyle,Sprint,Female,Lily Wood,12,Worcester,38.2,216
 603,Female 50m Freestyle,Sprint,Female,Evie Rea,12,Worcester,38.21,216
 603,Female 50m Freestyle,Sprint,Female,Hazel Strauss,12,Worcester,38.36,213
@@ -44,10 +47,13 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 603,Female 50m Freestyle,Sprint,Female,Bella Law,14,Worcester,32.42,353
 603,Female 50m Freestyle,Sprint,Female,Isabella Wood,14,Worcester,33.42,322
 603,Female 50m Freestyle,Sprint,Female,Imogen Ciancio,14,Worcester,33.62,317
+603,Female 50m Freestyle,Sprint,Female,Annabel Cunningham,14,Worcester,33.78,312
 603,Female 50m Freestyle,Sprint,Female,Poppy Morgan,14,Worcester,36.88,240
+603,Female 50m Freestyle,Sprint,Female,Tess Alfrink,14,Worcester,38.16,216
 603,Female 50m Freestyle,Sprint,Female,Hana Duncan,15,Worcester,29.5,469
 603,Female 50m Freestyle,Sprint,Female,Amelia Hickman,15,Worcester,29.86,452
 603,Female 50m Freestyle,Sprint,Female,Martha Colville,15,Worcester,30.35,431
+603,Female 50m Freestyle,Sprint,Female,Elodie Vincent,15,Worcester,30.65,418
 603,Female 50m Freestyle,Sprint,Female,Evie Goodall,15,Worcester,31.66,379
 603,Female 50m Freestyle,Sprint,Female,Ellie Graham,15,Worcester,31.97,368
 603,Female 50m Freestyle,Sprint,Female,Sophie Earp,15,Worcester,32.16,362
@@ -56,7 +62,9 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 603,Female 50m Freestyle,Sprint,Female,Isabella Hoare,17,Worcester,27.95,552
 603,Female 50m Freestyle,Sprint,Female,Asha Mahanta,16,Worcester,28.19,538
 603,Female 50m Freestyle,Sprint,Female,Grace Earp,17,Worcester,28.24,535
+603,Female 50m Freestyle,Sprint,Female,Grace Ryder,16,Worcester,28.68,511
 603,Female 50m Freestyle,Sprint,Female,Brecon Westwood,16,Worcester,28.75,507
 603,Female 50m Freestyle,Sprint,Female,Charlotte Richardson,17,Worcester,31.15,398
+603,Female 50m Freestyle,Sprint,Female,Abigail Haldane,16,Worcester,32.14,363
 603,Female 50m Freestyle,Sprint,Female,Charlotte Ciancio,16,Worcester,32.15,362
 603,Female 50m Freestyle,Sprint,Female,Abigail Walter,16,Worcester,32.7,344
