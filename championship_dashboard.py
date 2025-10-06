@@ -1510,9 +1510,16 @@ def main():
             if len(data) == 0:
                 return None
             
-            # Group by age and event category, calculate average WA Points
-            chart_df = data.groupby(['Age', 'Event Category'])['WA Points'].mean().reset_index()
-            chart_df = chart_df.rename(columns={'WA Points': 'Average FINA Points'})
+            # Create a copy and cap ages at 18+ for swimmers over 18
+            chart_data = data.copy()
+            chart_data['Age_Group'] = chart_data['Age'].apply(lambda x: min(x, 18))
+            
+            # Group by age group and event category, calculate average WA Points
+            chart_df = chart_data.groupby(['Age_Group', 'Event Category'])['WA Points'].mean().reset_index()
+            chart_df = chart_df.rename(columns={'WA Points': 'Average FINA Points', 'Age_Group': 'Age'})
+            
+            # Convert age 18 to "18+" for display
+            chart_df['Age'] = chart_df['Age'].apply(lambda x: '18+' if x == 18 else str(int(x)))
             
             return chart_df
         
@@ -1538,13 +1545,13 @@ def main():
             st.markdown("### 🏊‍♂️ Male/Open Swimmers")
             
             male_chart = alt.Chart(male_chart_data).mark_line(point=True, strokeWidth=3).encode(
-                x=alt.X('Age:O', title='Age', axis=alt.Axis(labelAngle=0)),
+                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
                 y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
                 color=alt.Color('Event Category:N', 
                               scale=alt.Scale(domain=list(category_colors.keys()), 
                                             range=list(category_colors.values())),
                               title='Event Category'),
-                tooltip=['Age:O', 'Event Category:N', 'Average FINA Points:Q']
+                tooltip=['Age:N', 'Event Category:N', 'Average FINA Points:Q']
             ).properties(
                 width=600,
                 height=400,
@@ -1558,13 +1565,13 @@ def main():
             st.markdown("### 🏊‍♀️ Female Swimmers")
             
             female_chart = alt.Chart(female_chart_data).mark_line(point=True, strokeWidth=3).encode(
-                x=alt.X('Age:O', title='Age', axis=alt.Axis(labelAngle=0)),
+                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
                 y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
                 color=alt.Color('Event Category:N', 
                               scale=alt.Scale(domain=list(category_colors.keys()), 
                                             range=list(category_colors.values())),
                               title='Event Category'),
-                tooltip=['Age:O', 'Event Category:N', 'Average FINA Points:Q']
+                tooltip=['Age:N', 'Event Category:N', 'Average FINA Points:Q']
             ).properties(
                 width=600,
                 height=400,
