@@ -1518,7 +1518,7 @@ def main():
     <div class="fina-explanation-container">
     """, unsafe_allow_html=True)
     
-    st.markdown("### 🏊‍♂️ What are FINA Points?")
+    st.markdown("### What are FINA Points?")
     st.markdown("""
     **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, distances, and genders. 
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
@@ -1526,7 +1526,7 @@ def main():
     The system uses a mathematical formula: **P = 1000 × (B/T)³** where B is the base time (typically world record) and T is the swimmer's time.
     """)
     
-    st.markdown("#### 📊 How FINA Points Work:")
+    st.markdown("#### How FINA Points Work:")
     st.markdown("""
     - **1000 Points** = Performance matching the base time (typically world record level)
     - **900+ Points** = Elite international level
@@ -1540,7 +1540,7 @@ def main():
     
     st.markdown("*Note: Point ranges are approximate and vary by event. Base times are updated annually.*")
     
-    st.markdown("#### 🎯 Why Age Matters:")
+    st.markdown("#### Why Age Matters:")
     st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
     st.markdown("""
     - **Physical Development:** Increased strength, power, and endurance
@@ -1549,14 +1549,14 @@ def main():
     - **Competition Experience:** Better race strategy and mental preparation
     """)
     
-    st.markdown("#### 📈 What the Charts Show:")
+    st.markdown("#### What the Charts Show:")
     st.markdown("""
     The charts below show how average FINA points progress with age across different event categories. 
     Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
     and how Worcester Swimming Club swimmers compare across different age groups.
     """)
     
-    st.markdown("#### 📚 Sources & Further Reading:")
+    st.markdown("#### Sources & Further Reading:")
     st.markdown("""
     - [World Aquatics Official Website](https://www.worldaquatics.com) - Governing body for swimming
     - [FINA Points Calculator](https://sites.google.com/view/fina-points/home) - Calculate your own points
