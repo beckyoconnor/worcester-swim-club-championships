@@ -594,7 +594,7 @@ def main():
     # Load and encode the logo
     import base64
     try:
-        with open("cropped-WSC_blue.jpg", "rb") as img_file:
+        with open("cropped-WSC_Blue.jpg", "rb") as img_file:
             img_base64 = base64.b64encode(img_file.read()).decode()
         st.markdown(header_html.format(img_base64), unsafe_allow_html=True)
     except:
