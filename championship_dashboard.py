@@ -373,6 +373,32 @@ st.markdown("""
 
 
 @cache_decorator
+def get_swimmer_gender_map(df_all: pd.DataFrame) -> Dict[str, str]:
+    """Map swimmer names to gender based on common name patterns."""
+    swimmer_gender_map = {}
+    
+    # Common female name patterns
+    female_patterns = [
+        'ella', 'emma', 'lucy', 'sophie', 'charlotte', 'olivia', 'amelia', 'isabella', 
+        'mia', 'ava', 'grace', 'lily', 'zoe', 'ruby', 'freya', 'chloe', 'millie', 
+        'sophia', 'isla', 'poppy', 'rosie', 'maya', 'eva', 'harper', 'layla', 'luna', 
+        'piper', 'penelope', 'nora', 'hazel', 'violet', 'aurora', 'savannah', 'audrey', 
+        'brooklyn', 'bella', 'claire', 'skylar', 'ellie', 'madison', 'aria', 'anna', 
+        'caroline', 'natalie', 'hailey', 'samantha', 'leah', 'riley', 'mila', 'aubrey', 
+        'hannah', 'addison', 'eleanor', 'stella', 'paisley', 'allison'
+    ]
+    
+    for name in df_all['Name'].unique():
+        name_lower = name.lower()
+        if any(pattern in name_lower for pattern in female_patterns):
+            swimmer_gender_map[name] = 'Female'
+        else:
+            swimmer_gender_map[name] = 'Male'
+    
+    return swimmer_gender_map
+
+
+@cache_decorator
 def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
     """Map event numbers to gender by reading event names from CSV files."""
     import glob
@@ -684,16 +710,17 @@ def main():
     
     # Load data with memory optimization
     with st.spinner("Loading championship data..."):
-        # Load event mapping first (lightweight)
-        event_gender_map = get_event_gender_map_from_csvs(events_folder)
-        
-        # Load all data with optimized types
+        # Load all data with optimized types first
         df_all = load_all_events(events_folder)
         
-        # Add Gender column to df_all for event filtering
-        df_all['Event Number'] = df_all['Event Number'].astype(str)
-        df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
-        df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
+        # Create swimmer gender mapping based on names
+        swimmer_gender_map = get_swimmer_gender_map(df_all)
+        
+        # Add Gender column to df_all based on swimmer names
+        df_all['Gender'] = df_all['Name'].map(swimmer_gender_map)
+        
+        # Keep event gender map for backward compatibility (though not used for filtering)
+        event_gender_map = get_event_gender_map_from_csvs(events_folder)
         
         # Calculate scores for all swimmers (no minimum)
         df_all_swimmers = calculate_all_championship_scores(df_all, event_gender_map, min_categories=0)
