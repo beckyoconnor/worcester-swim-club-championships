@@ -1546,9 +1546,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
     
-    st.markdown("""
-    <div class="fina-explanation">
-    """, unsafe_allow_html=True)
+
     
     st.markdown("### 🏊‍♂️ What are FINA Points?")
     st.markdown("""
