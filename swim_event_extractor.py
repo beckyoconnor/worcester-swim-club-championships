@@ -270,22 +270,22 @@ class SwimEventExtractor:
     def _extract_clean_event_name(event_name: str, sheet_name: str) -> str:
         """
         Extract clean event name from the full event title.
-        Removes "EVENT XXX" prefix and gender markers like "Open/Male", "Female".
+        Removes "EVENT XXX" prefix but preserves gender information.
         
         Args:
             event_name: Full event name from sheet
             sheet_name: Sheet name (event number)
             
         Returns:
-            Clean event name (e.g., "400m Freestyle", "100m IM")
+            Clean event name with gender (e.g., "Male 400m Freestyle", "Female 100m IM")
         """
         import re
         
         # Remove "EVENT XXX" prefix (e.g., "EVENT 103 Open/Male 400m Freestyle" -> "Open/Male 400m Freestyle")
         clean_name = re.sub(r'^EVENT\s+\d+\s+', '', event_name, flags=re.IGNORECASE)
         
-        # Remove gender markers at the beginning
-        clean_name = re.sub(r'^(Open/Male|Open/Female|Male|Female|Open)\s+', '', clean_name, flags=re.IGNORECASE)
+        # Keep gender markers - don't remove them!
+        # The gender information is important for the dashboard
         
         # If nothing left or looks wrong, return the original
         if not clean_name or len(clean_name.strip()) < 3:

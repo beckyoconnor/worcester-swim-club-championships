@@ -710,17 +710,16 @@ def main():
     
     # Load data with memory optimization
     with st.spinner("Loading championship data..."):
-        # Load all data with optimized types first
+        # Load event mapping first (lightweight)
+        event_gender_map = get_event_gender_map_from_csvs(events_folder)
+        
+        # Load all data with optimized types
         df_all = load_all_events(events_folder)
         
-        # Create swimmer gender mapping based on names
-        swimmer_gender_map = get_swimmer_gender_map(df_all)
-        
-        # Add Gender column to df_all based on swimmer names
-        df_all['Gender'] = df_all['Name'].map(swimmer_gender_map)
-        
-        # Keep event gender map for backward compatibility (though not used for filtering)
-        event_gender_map = get_event_gender_map_from_csvs(events_folder)
+        # Add Gender column to df_all based on event names
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+        df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
         
         # Calculate scores for all swimmers (no minimum)
         df_all_swimmers = calculate_all_championship_scores(df_all, event_gender_map, min_categories=0)
