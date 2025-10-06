@@ -840,16 +840,107 @@ def main():
             st.metric("Total Swimmers", len(df_display))
         
         with col2:
+            # Add CSS for tooltips
+            st.markdown("""
+            <style>
+            .main-tooltip {
+                position: relative;
+                display: inline-block;
+                cursor: help;
+            }
+            
+            .main-tooltip .main-tooltiptext {
+                visibility: hidden;
+                width: 300px;
+                background-color: #2b1f5c;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 12px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -150px;
+                opacity: 0;
+                transition: opacity 0.3s;
+                font-size: 0.875rem;
+                font-weight: 500;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            
+            .main-tooltip .main-tooltiptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #2b1f5c transparent transparent transparent;
+            }
+            
+            .main-tooltip:hover .main-tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .main-metric-label {
+                font-size: 0.875rem;
+                color: #64748b;
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+                border-bottom: 1px dotted #2b1f5c;
+            }
+            
+            .main-metric-value {
+                font-size: 2rem;
+                color: #2b1f5c;
+                font-weight: bold;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+            
             if len(df_display) > 0:
-                st.metric("Average Total Points", f"{df_display['Total_Points'].mean():.0f}")
+                avg_points = df_display['Total_Points'].mean()
+                avg_tooltip_text = "Average total points across all swimmers in the selected group. Based on top 8 races per swimmer with category limits."
+                
+                st.markdown(f"""
+                <div class="main-tooltip">
+                    <div class="main-metric-label">Average Total Points</div>
+                    <div class="main-metric-value">{avg_points:.0f}</div>
+                    <span class="main-tooltiptext">{avg_tooltip_text}</span>
+                </div>
+                """, unsafe_allow_html=True)
             else:
-                st.metric("Average Total Points", 0)
+                st.markdown("""
+                <div class="main-tooltip">
+                    <div class="main-metric-label">Average Total Points</div>
+                    <div class="main-metric-value">0</div>
+                    <span class="main-tooltiptext">Average total points across all swimmers in the selected group. Based on top 8 races per swimmer with category limits.</span>
+                </div>
+                """, unsafe_allow_html=True)
         
         with col3:
             if len(df_display) > 0:
-                st.metric("Highest Score", f"{df_display['Total_Points'].max():.0f}")
+                highest_score = df_display['Total_Points'].max()
+                highest_tooltip_text = "Highest total points achieved by any swimmer in the selected group. Based on their top 8 races with category limits."
+                
+                st.markdown(f"""
+                <div class="main-tooltip">
+                    <div class="main-metric-label">Highest Score</div>
+                    <div class="main-metric-value">{highest_score:.0f}</div>
+                    <span class="main-tooltiptext">{highest_tooltip_text}</span>
+                </div>
+                """, unsafe_allow_html=True)
             else:
-                st.metric("Highest Score", 0)
+                st.markdown("""
+                <div class="main-tooltip">
+                    <div class="main-metric-label">Highest Score</div>
+                    <div class="main-metric-value">0</div>
+                    <span class="main-tooltiptext">Highest total points achieved by any swimmer in the selected group. Based on their top 8 races with category limits.</span>
+                </div>
+                """, unsafe_allow_html=True)
         
         # Display championship title
         st.markdown("---")
