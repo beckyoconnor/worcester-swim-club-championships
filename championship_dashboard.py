@@ -1006,30 +1006,36 @@ def main():
         # Memory usage monitoring (for Streamlit Community Cloud)
         with st.expander("🔧 System Information", expanded=False):
             try:
-                # Get memory usage
-                memory = psutil.virtual_memory()
-                memory_used_gb = memory.used / (1024**3)
-                memory_total_gb = memory.total / (1024**3)
-                memory_percent = memory.percent
+                # Get process memory usage (more accurate for containers)
+                process = psutil.Process()
+                process_memory_mb = process.memory_info().rss / (1024**2)
                 
                 # Get CPU usage
                 cpu_percent = psutil.cpu_percent(interval=1)
                 
+                # Streamlit Community Cloud has ~2GB RAM limit
+                cloud_limit_gb = 2.0
+                cloud_limit_mb = cloud_limit_gb * 1024
+                
                 col1, col2, col3 = st.columns(3)
                 with col1:
-                    st.metric("RAM Used", f"{memory_used_gb:.1f} GB", f"{memory_percent:.1f}%")
+                    st.metric("App Memory Used", f"{process_memory_mb:.0f} MB", f"{(process_memory_mb/cloud_limit_mb)*100:.1f}%")
                 with col2:
-                    st.metric("RAM Total", f"{memory_total_gb:.1f} GB")
+                    st.metric("Cloud Limit", f"{cloud_limit_gb:.0f} GB")
                 with col3:
                     st.metric("CPU Usage", f"{cpu_percent:.1f}%")
                 
-                # Memory warning
+                # Memory warning based on actual cloud limits
+                memory_percent = (process_memory_mb / cloud_limit_mb) * 100
                 if memory_percent > 80:
-                    st.warning("⚠️ High memory usage detected!")
+                    st.warning("⚠️ High memory usage detected! Consider restarting the app.")
                 elif memory_percent > 60:
                     st.info("ℹ️ Moderate memory usage")
                 else:
                     st.success("✅ Memory usage is normal")
+                
+                # Additional info
+                st.caption("💡 Streamlit Community Cloud provides ~2GB RAM. Restart the app if memory usage gets too high.")
                     
             except Exception as e:
                 st.error(f"Could not retrieve system info: {e}")
