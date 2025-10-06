@@ -903,7 +903,15 @@ def main():
             
             if len(df_display) > 0:
                 avg_points = df_display['Total_Points'].mean()
-                avg_tooltip_text = "Average total points across all swimmers in the selected group. Based on top 8 races per swimmer with category limits."
+                
+                # Dynamic tooltip based on age selection
+                if selected_age == 'All':
+                    avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                else:
+                    age_int = int(selected_age)
+                    category_limit = 3 if age_int < 12 else 2
+                    age_text = "under 12" if age_int < 12 else "12 and over"
+                    avg_tooltip_text = f"Average total points for age {selected_age} swimmers. Based on top 8 races per swimmer with max {category_limit} races per category ({age_text})."
                 
                 st.markdown(f"""
                 <div class="main-tooltip">
@@ -913,18 +921,35 @@ def main():
                 </div>
                 """, unsafe_allow_html=True)
             else:
-                st.markdown("""
+                # Dynamic tooltip for empty data
+                if selected_age == 'All':
+                    empty_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                else:
+                    age_int = int(selected_age)
+                    category_limit = 3 if age_int < 12 else 2
+                    age_text = "under 12" if age_int < 12 else "12 and over"
+                    empty_tooltip_text = f"Average total points for age {selected_age} swimmers. Based on top 8 races per swimmer with max {category_limit} races per category ({age_text})."
+                
+                st.markdown(f"""
                 <div class="main-tooltip">
                     <div class="main-metric-label">Average Total Points</div>
                     <div class="main-metric-value">0</div>
-                    <span class="main-tooltiptext">Average total points across all swimmers in the selected group. Based on top 8 races per swimmer with category limits.</span>
+                    <span class="main-tooltiptext">{empty_tooltip_text}</span>
                 </div>
                 """, unsafe_allow_html=True)
         
         with col3:
             if len(df_display) > 0:
                 highest_score = df_display['Total_Points'].max()
-                highest_tooltip_text = "Highest total points achieved by any swimmer in the selected group. Based on their top 8 races with category limits."
+                
+                # Dynamic tooltip based on age selection
+                if selected_age == 'All':
+                    highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                else:
+                    age_int = int(selected_age)
+                    category_limit = 3 if age_int < 12 else 2
+                    age_text = "under 12" if age_int < 12 else "12 and over"
+                    highest_tooltip_text = f"Highest total points for age {selected_age} swimmers. Based on their top 8 races with max {category_limit} races per category ({age_text})."
                 
                 st.markdown(f"""
                 <div class="main-tooltip">
@@ -934,11 +959,20 @@ def main():
                 </div>
                 """, unsafe_allow_html=True)
             else:
-                st.markdown("""
+                # Dynamic tooltip for empty data
+                if selected_age == 'All':
+                    empty_highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                else:
+                    age_int = int(selected_age)
+                    category_limit = 3 if age_int < 12 else 2
+                    age_text = "under 12" if age_int < 12 else "12 and over"
+                    empty_highest_tooltip_text = f"Highest total points for age {selected_age} swimmers. Based on their top 8 races with max {category_limit} races per category ({age_text})."
+                
+                st.markdown(f"""
                 <div class="main-tooltip">
                     <div class="main-metric-label">Highest Score</div>
                     <div class="main-metric-value">0</div>
-                    <span class="main-tooltiptext">Highest total points achieved by any swimmer in the selected group. Based on their top 8 races with category limits.</span>
+                    <span class="main-tooltiptext">{empty_highest_tooltip_text}</span>
                 </div>
                 """, unsafe_allow_html=True)
         
