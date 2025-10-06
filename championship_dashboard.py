@@ -536,9 +536,13 @@ def calculate_all_championship_scores(df_all: pd.DataFrame, event_gender_map: Di
         event_gender_map: Mapping of event numbers to gender
         min_categories: Minimum categories required (0 = show all)
     """
-    # Add gender column
-    df_all['Event Number'] = df_all['Event Number'].astype(str)
-    df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+    # Add gender column if it doesn't exist, otherwise use existing one
+    if 'Gender' not in df_all.columns:
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+    else:
+        # Gender column already exists, just ensure Event Number is string
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
     
     # Remove Unknown gender entries
     df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
