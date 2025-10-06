@@ -830,37 +830,36 @@ def main():
             
                 # Rename columns for display
                 column_names = {
-                'Rank': 'Rank',
-                'Name': 'Name',
-                'Age': 'Age',
-                'Total_Points': 'Total Points',
-                'Average_Points': 'Avg Points',
-                'Events_Count': 'Events',
-                'Categories_Competed': 'Categories',
-                'Sprint_Events': 'Sprint',
-                'Free_Events': 'Free',
-                'Form_100_Events': '100 Form',
-                'Form_200_Events': '200 Form',
-                'IM_Events': 'IM',
-                'Distance_Events': 'Distance'
-            }
+                    'Rank': 'Rank',
+                    'Name': 'Name',
+                    'Age': 'Age',
+                    'Total_Points': 'Total Points',
+                    'Average_Points': 'Avg Points',
+                    'Events_Count': 'Events',
+                    'Categories_Competed': 'Categories',
+                    'Sprint_Events': 'Sprint',
+                    'Free_Events': 'Free',
+                    'Form_100_Events': '100 Form',
+                    'Form_200_Events': '200 Form',
+                    'IM_Events': 'IM',
+                    'Distance_Events': 'Distance'
+                }
         
-            df_show_renamed = df_show[display_columns].rename(columns=column_names)
+                df_show_renamed = df_show[display_columns].rename(columns=column_names)
         
-            # Keep numeric version for chart
-            df_for_chart = df_show_renamed.copy()
-            df_for_chart['Total Points'] = df_display['Total_Points'].values
+                # Keep numeric version for chart
+                df_for_chart = df_show_renamed.copy()
+                df_for_chart['Total Points'] = df_display['Total_Points'].values
+                
+                # Format numbers for table display
+                df_show_renamed['Total Points'] = df_show_renamed['Total Points'].apply(lambda x: f"{x:.0f}")
+                df_show_renamed['Avg Points'] = df_show_renamed['Avg Points'].apply(lambda x: f"{x:.1f}")
             
-            # Format numbers for table display
-            df_show_renamed['Total Points'] = df_show_renamed['Total Points'].apply(lambda x: f"{x:.0f}")
-            df_show_renamed['Avg Points'] = df_show_renamed['Avg Points'].apply(lambda x: f"{x:.1f}")
-        
-            # Create tabs for chart and table (chart first)
-            tab1, tab2 = st.tabs(["📈 Points Chart", "📊 Data Table"])
-            
-            with tab1:
-                # Create horizontal bar chart with Altair
-                if len(df_display) > 0:
+                # Create tabs for chart and table (chart first)
+                tab1, tab2 = st.tabs(["📈 Points Chart", "📊 Data Table"])
+                
+                with tab1:
+                    # Create horizontal bar chart with Altair
                     import altair as alt
                     
                     # Sort by Total Points for better visualization
@@ -902,13 +901,11 @@ def main():
                         st.altair_chart(final_chart, use_container_width=True)
                     else:
                         st.info("No data available for chart")
-                else:
-                    st.info("No swimmers found matching the selected filters.")
             
-            with tab2:
-                # Display table using standard Streamlit dataframe (more reliable)
-                st.dataframe(df_show_renamed, height=600, use_container_width=True)
-        
+                with tab2:
+                    # Display table using standard Streamlit dataframe (more reliable)
+                    st.dataframe(df_show_renamed, height=600, use_container_width=True)
+                
                 # Download button
                 csv = df_show_renamed.to_csv(index=False).encode('utf-8')
                 filename = f"rankings_{selected_gender}_age{selected_age}.csv"
@@ -918,6 +915,8 @@ def main():
                     file_name=filename,
                     mime="text/csv"
                 )
+            else:
+                st.info("No swimmers found matching the selected filters.")
         
         with st.expander("🔍 Individual Swimmer Details", expanded=False):
             # Individual Swimmer Detail Section
