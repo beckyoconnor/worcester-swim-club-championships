@@ -1498,7 +1498,6 @@ def main():
     
     # FINA Points Analysis Charts
     st.markdown("---")
-    st.markdown('<h3 style="color: #1a1d5a;">📈 Average FINA Points by Age and Event Category</h3>', unsafe_allow_html=True)
     
     # FINA Points Explanation
     st.markdown("""
@@ -1516,7 +1515,7 @@ def main():
     
 
     
-    st.markdown("### What are FINA Points?")
+    st.markdown("#### What are FINA Points?")
     st.markdown("""
     **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, distances, and genders. 
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
@@ -1564,6 +1563,7 @@ def main():
     st.markdown("""
     </div>
     """, unsafe_allow_html=True)
+    st.markdown('#### Average FINA Points by Age and Event Category', unsafe_allow_html=True)
     
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
