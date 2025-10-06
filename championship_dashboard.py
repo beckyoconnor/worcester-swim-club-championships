@@ -1103,26 +1103,51 @@ def main():
                     # Transpose so categories are columns
                     category_stats_T = category_stats.T
                     
+                    # Fill any missing values with 0 to ensure consistency
+                    category_stats_T = category_stats_T.fillna(0)
+                    
                     # Create separate dataframes for each measure with better formatting
                     measures = {
-                        'Events Count': 'Number of Events per Category',
-                        'Avg Points': 'Average FINA Points per Category',
-                        'Best Points': 'Best FINA Points per Category',
-                        'Total Points': 'Total FINA Points per Category'
+                        'Events Count': '📈 Number of Events per Category',
+                        'Avg Points': '📊 Average FINA Points per Category',
+                        'Best Points': '🏆 Best FINA Points per Category',
+                        'Total Points': '🎯 Total FINA Points per Category'
                     }
                     
-                    for measure, title in measures.items():
-                        st.markdown(f"**{title}**")
-                        measure_df = pd.DataFrame([category_stats_T.loc[measure]])
-                        measure_df.index = ['Total Events' if 'Count' in measure else 'Points']
-                        
-                        # Format the values
-                        if 'Count' in measure:
-                            formatted_df = measure_df.astype(int)
-                        else:
-                            formatted_df = measure_df.round(1)
-                        
-                        st.dataframe(formatted_df, use_container_width=True)
+                    # Create columns for better layout
+                    col1, col2 = st.columns(2)
+                    
+                    for i, (measure, title) in enumerate(measures.items()):
+                        # Alternate between columns
+                        with col1 if i % 2 == 0 else col2:
+                            st.markdown(f"**{title}**")
+                            
+                            # Create dataframe with proper formatting
+                            measure_df = pd.DataFrame([category_stats_T.loc[measure]])
+                            
+                            # Set better index name
+                            if 'Count' in measure:
+                                measure_df.index = ['Events']
+                                # Format as integers and ensure no None values
+                                formatted_df = measure_df.astype(int)
+                            else:
+                                measure_df.index = ['Points']
+                                # Format as floats with 1 decimal place and ensure no None values
+                                formatted_df = measure_df.round(1)
+                            
+                            # Ensure all values are properly formatted (replace any remaining None with 0)
+                            formatted_df = formatted_df.fillna(0)
+                            
+                            # Add some styling with custom CSS
+                            st.markdown("""
+                            <style>
+                            .category-breakdown-table {
+                                margin-bottom: 1rem;
+                            }
+                            </style>
+                            """, unsafe_allow_html=True)
+                            
+                            st.dataframe(formatted_df, use_container_width=True, key=f"category_{measure}")
                 else:
                     st.warning(f"No events found for {selected_swimmer}")
             else:
