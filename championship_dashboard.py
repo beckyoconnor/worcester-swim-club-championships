@@ -650,17 +650,13 @@ def main():
         
         #### Scoring Rules
         Age group trophies will be awarded to the swimmer who gains the highest collated number of **FINA/WA points**, 
-        from their **top 8 events** across **at least 5 of the 6 categories**.
+        from their **top 8 events** across the 6 categories.
         
         **Category Limits:**
         - **Under 12s**: Maximum of **3 races** counted per category
         - **12 and over**: Maximum of **2 races** counted per category
         
-        #### Eligibility
-        To be eligible for age group trophies, swimmers must:
-        - Compete in **at least 5 different categories**
-        - Have their **best 8 events** count toward their total score
-        - Stay within the category race limits based on their age
+        Your **best 8 events** (by WA Points) will count toward your total score, respecting the category limits based on your age.
         """)
     
     # Filters in main page using form
@@ -702,24 +698,18 @@ def main():
         df_display.index = df_display.index + 1  # Start ranking from 1
         
         # Display summary stats
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
         
         with col1:
             st.metric("Total Swimmers", len(df_display))
         
         with col2:
             if len(df_display) > 0:
-                st.metric("Attained at least 5 categories", len(df_display[df_display['Eligible'] == True]))
-            else:
-                st.metric("Attained at least 5 categories", 0)
-        
-        with col3:
-            if len(df_display) > 0:
                 st.metric("Average Total Points", f"{df_display['Total_Points'].mean():.0f}")
             else:
                 st.metric("Average Total Points", 0)
         
-        with col4:
+        with col3:
             if len(df_display) > 0:
                 st.metric("Highest Score", f"{df_display['Total_Points'].max():.0f}")
             else:
@@ -870,7 +860,7 @@ def main():
                 with col_b:
                     st.metric("Total Points", f"{swimmer_info['Total_Points']:.0f}")
                 with col_c:
-                    st.metric("Attained at least 5 categories", "Yes ✅" if swimmer_info['Eligible'] else "No ⭕")
+                    st.metric("Categories Competed", swimmer_info['Categories_Competed'])
             
                 # Get all events for this swimmer
                 swimmer_events = df_all[df_all['Name'] == selected_swimmer].copy()
@@ -952,49 +942,16 @@ def main():
                 
                     # Display swimmer events using standard dataframe (more reliable)
                     st.dataframe(event_display_clean, height=400, use_container_width=True)
-                
-                    # Championship Eligibility Status
-                    st.markdown("#### 🏆 Championship Eligibility Status")
                     
-                    # Count categories competed in
-                    categories_competed = swimmer_events['Event Category'].nunique()
-                    categories_needed = 5
-                    categories_remaining = max(0, categories_needed - categories_competed)
-                    
-                    # Get swimmer's age to determine if they're eligible
-                    swimmer_age = swimmer_events['Age'].iloc[0]
-                    
-                    # All possible categories
-                    all_categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
-                    competed_categories = set(swimmer_events['Event Category'].unique())
-                    missing_categories = [cat for cat in all_categories if cat not in competed_categories]
-                    
-                    # Display eligibility status
-                    col1, col2 = st.columns(2)
-                    
-                    with col1:
-                        st.metric(
-                            label="Categories Competed",
-                            value=f"{categories_competed}/6",
-                            delta=f"Need 5 for championship"
-                        )
-                    
-                    with col2:
-                        total_events = len(swimmer_events)
-                        st.metric(
-                            label="Total Events",
-                            value=total_events,
-                            delta=None
-                        )
-                    
-                    # Show which categories are missing
-                    if missing_categories:
-                        num_missing = len(missing_categories)
-                        missing_str = ", ".join(missing_categories)
-                        st.markdown("**Missing Categories:**")
-                        st.info(f"🎯 Compete in {categories_remaining} more from any of the {num_missing} remaining categories: {missing_str}")
-                    else:
-                        st.success("🎉 Competed in all 6 categories!")
+                    # Download button for swimmer's events
+                    csv_swimmer = event_display_clean.to_csv(index=False).encode('utf-8')
+                    swimmer_filename = f"{selected_swimmer.replace(' ', '_')}_events.csv"
+                    st.download_button(
+                        label=f"📥 Download {selected_swimmer}'s Events",
+                        data=csv_swimmer,
+                        file_name=swimmer_filename,
+                        mime="text/csv"
+                    )
                     
                     # Show category breakdown
                     st.markdown("#### 📊 Category Breakdown")
@@ -1022,7 +979,7 @@ def main():
                     for measure, title in measures.items():
                         st.markdown(f"**{title}**")
                         measure_df = pd.DataFrame([category_stats_T.loc[measure]])
-                        measure_df.index = ['Points' if 'Points' in measure else 'Count']
+                        measure_df.index = ['Total Events' if 'Count' in measure else 'Points']
                         
                         # Format the values
                         if 'Count' in measure:
