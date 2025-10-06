@@ -842,6 +842,69 @@ def main():
             'All Swimmers'  # Always show all swimmers
         )
         
+        # Add CSS for tooltips (global)
+        st.markdown("""
+        <style>
+        .main-tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .main-tooltip .main-tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: #2b1f5c;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.875rem;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .main-tooltip .main-tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2b1f5c transparent transparent transparent;
+        }
+        
+        .main-tooltip:hover .main-tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .main-metric-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            border-bottom: 1px dotted #2b1f5c;
+            line-height: 1.2;
+        }
+        
+        .main-metric-value {
+            font-size: 2rem;
+            color: #2b1f5c;
+            font-weight: bold;
+            line-height: 1;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
         # Display summary stats
         col1, col2, col3 = st.columns(3)
         
@@ -855,66 +918,6 @@ def main():
             """, unsafe_allow_html=True)
         
         with col2:
-            # Add CSS for tooltips
-            st.markdown("""
-            <style>
-            .main-tooltip {
-                position: relative;
-                display: inline-block;
-                cursor: help;
-            }
-            
-            .main-tooltip .main-tooltiptext {
-                visibility: hidden;
-                width: 300px;
-                background-color: #2b1f5c;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 8px 12px;
-                position: absolute;
-                z-index: 1;
-                bottom: 125%;
-                left: 50%;
-                margin-left: -150px;
-                opacity: 0;
-                transition: opacity 0.3s;
-                font-size: 0.875rem;
-                font-weight: 500;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
-            
-            .main-tooltip .main-tooltiptext::after {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                margin-left: -5px;
-                border-width: 5px;
-                border-style: solid;
-                border-color: #2b1f5c transparent transparent transparent;
-            }
-            
-            .main-tooltip:hover .main-tooltiptext {
-                visibility: visible;
-                opacity: 1;
-            }
-            
-            .main-metric-label {
-                font-size: 0.875rem;
-                color: #64748b;
-                font-weight: 600;
-                margin-bottom: 0.25rem;
-                border-bottom: 1px dotted #2b1f5c;
-            }
-            
-            .main-metric-value {
-                font-size: 2rem;
-                color: #2b1f5c;
-                font-weight: bold;
-            }
-            </style>
-            """, unsafe_allow_html=True)
             
             if len(df_display) > 0:
                 avg_points = df_display['Total_Points'].mean()
