@@ -14,13 +14,10 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 501,Male 100m IM,IM,Male,Henry Howard,11,Worcester,1:36.23,134
 501,Male 100m IM,IM,Male,Oscar Wheeler,11,Worcester,1:37.48,129
 501,Male 100m IM,IM,Male,Joseph Reay,11,Worcester,1:43.52,107
-501,Male 100m IM,IM,Male,Leo Mitchell,11,Worcester,1:52.79,83
 501,Male 100m IM,IM,Male,James Hill,12,Worcester,1:20.34,230
-501,Male 100m IM,IM,Male,Olivier Konczuk,12,Worcester,1:25.57,191
 501,Male 100m IM,IM,Male,Daniel Keetley-Smith,12,Worcester,1:33.61,145
 501,Male 100m IM,IM,Male,Charlie Coleman,13,Worcester,1:11.36,329
 501,Male 100m IM,IM,Male,Travis Duncan,13,Worcester,1:22.79,210
-501,Male 100m IM,IM,Male,Cody Taylor,13,Worcester,1:27.58,178
 501,Male 100m IM,IM,Male,James Clarke,13,Worcester,1:28.29,173
 501,Male 100m IM,IM,Male,Woody Jones,13,Worcester,1:32.98,148
 501,Male 100m IM,IM,Male,Joseph Agoston,14,Worcester,1:03.53,466
@@ -33,7 +30,6 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 501,Male 100m IM,IM,Male,Samuel Jennings,14,Worcester,1:16.16,270
 501,Male 100m IM,IM,Male,Ethan Chong Khai Yang,14,Worcester,1:18.06,251
 501,Male 100m IM,IM,Male,Kirill Voronins,14,Worcester,1:21.37,222
-501,Male 100m IM,IM,Male,Benjamin Clacher,14,Worcester,1:24.37,199
 501,Male 100m IM,IM,Male,Dylan Lewis,15,Worcester,1:06.08,414
 501,Male 100m IM,IM,Male,Lucas Pedley,15,Worcester,1:07.82,383
 501,Male 100m IM,IM,Male,Jack O'Connor,15,Worcester,1:15.21,281
@@ -42,4 +38,3 @@ Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
 501,Male 100m IM,IM,Male,Harry Chandler,16,Worcester,1:00.97,528
 501,Male 100m IM,IM,Male,Jacob Cutler,16,Worcester,1:06.26,411
 501,Male 100m IM,IM,Male,James Bury,17,Worcester,1:08.93,365
-501,Male 100m IM,IM,Male,Michael Adair,28,Worcester,1:09.77,352
