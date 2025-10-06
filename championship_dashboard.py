@@ -1000,18 +1000,70 @@ def main():
                     # Create tooltip content
                     tooltip_text = f"Total points from top 8 races across all categories. Maximum {category_limit} races per category ({age_text})."
                     
-                    # Use st.metric with custom HTML for tooltip
+                    # Use CSS-based tooltip that works reliably in Streamlit
                     st.markdown(f"""
-                    <div style="position: relative; display: inline-block;">
-                        <div style="cursor: help; border-bottom: 1px dotted #2b1f5c;" 
-                             title="{tooltip_text}">
-                            <div style="font-size: 0.875rem; color: #64748b; font-weight: 600; margin-bottom: 0.25rem;">
-                                Total Points
-                            </div>
-                            <div style="font-size: 2rem; color: #2b1f5c; font-weight: bold;">
-                                {swimmer_info['Total_Points']:.0f}
-                            </div>
-                        </div>
+                    <style>
+                    .tooltip {{
+                        position: relative;
+                        display: inline-block;
+                        cursor: help;
+                    }}
+                    
+                    .tooltip .tooltiptext {{
+                        visibility: hidden;
+                        width: 300px;
+                        background-color: #2b1f5c;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 6px;
+                        padding: 8px 12px;
+                        position: absolute;
+                        z-index: 1;
+                        bottom: 125%;
+                        left: 50%;
+                        margin-left: -150px;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                    }}
+                    
+                    .tooltip .tooltiptext::after {{
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: #2b1f5c transparent transparent transparent;
+                    }}
+                    
+                    .tooltip:hover .tooltiptext {{
+                        visibility: visible;
+                        opacity: 1;
+                    }}
+                    
+                    .metric-label {{
+                        font-size: 0.875rem;
+                        color: #64748b;
+                        font-weight: 600;
+                        margin-bottom: 0.25rem;
+                        border-bottom: 1px dotted #2b1f5c;
+                    }}
+                    
+                    .metric-value {{
+                        font-size: 2rem;
+                        color: #2b1f5c;
+                        font-weight: bold;
+                    }}
+                    </style>
+                    
+                    <div class="tooltip">
+                        <div class="metric-label">Total Points</div>
+                        <div class="metric-value">{swimmer_info['Total_Points']:.0f}</div>
+                        <span class="tooltiptext">{tooltip_text}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 with col_c:
