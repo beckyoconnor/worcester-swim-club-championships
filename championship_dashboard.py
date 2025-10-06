@@ -1501,45 +1501,48 @@ def main():
     st.markdown('<h3 style="color: #1a1d5a;">📈 Average FINA Points by Age and Event Category</h3>', unsafe_allow_html=True)
     
     # FINA Points Explanation
-    st.markdown("""
-    <div style='background-color: #f0f4ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid #2b1f5c;'>
-        <h4 style='color: #1a1d5a; margin-top: 0; margin-bottom: 1rem;'>🏊‍♂️ What are FINA Points?</h4>
-        <p style='color: #374151; margin-bottom: 1rem; line-height: 1.6;'>
-            <strong>FINA Points</strong> (now called <strong>World Aquatics Points</strong>) are a standardized scoring system used worldwide to compare swimming performances across different events, ages, and genders. 
-            They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
-        </p>
+    with st.container():
+        st.markdown("""
+        <div style='background-color: #f0f4ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid #2b1f5c;'>
+        """, unsafe_allow_html=True)
         
-        <h5 style='color: #1a1d5a; margin-bottom: 0.5rem;'>📊 How FINA Points Work:</h5>
-        <ul style='color: #374151; margin-bottom: 1rem; padding-left: 1.5rem; line-height: 1.6;'>
-            <li><strong>1000 Points</strong> = World Record performance</li>
-            <li><strong>900+ Points</strong> = Elite international level</li>
-            <li><strong>800+ Points</strong> = National championship level</li>
-            <li><strong>700+ Points</strong> = Regional championship level</li>
-            <li><strong>600+ Points</strong> = Strong club level performance</li>
-            <li><strong>500+ Points</strong> = Good club level performance</li>
-            <li><strong>400+ Points</strong> = Solid club level performance</li>
-            <li><strong>300+ Points</strong> = Developing swimmer level</li>
-        </ul>
+        st.markdown("### 🏊‍♂️ What are FINA Points?")
+        st.markdown("""
+        **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, ages, and genders. 
+        They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
+        """)
         
-        <h5 style='color: #1a1d5a; margin-bottom: 0.5rem;'>🎯 Why Age Matters:</h5>
-        <p style='color: #374151; margin-bottom: 1rem; line-height: 1.6;'>
-            As swimmers get older, they typically achieve higher FINA points due to:
-        </p>
-        <ul style='color: #374151; margin-bottom: 1rem; padding-left: 1.5rem; line-height: 1.6;'>
-            <li><strong>Physical Development:</strong> Increased strength, power, and endurance</li>
-            <li><strong>Technical Improvement:</strong> Better stroke technique and efficiency</li>
-            <li><strong>Training Experience:</strong> More years of structured training</li>
-            <li><strong>Competition Experience:</strong> Better race strategy and mental preparation</li>
-        </ul>
+        st.markdown("#### 📊 How FINA Points Work:")
+        st.markdown("""
+        - **1000 Points** = World Record performance
+        - **900+ Points** = Elite international level
+        - **800+ Points** = National championship level
+        - **700+ Points** = Regional championship level
+        - **600+ Points** = Strong club level performance
+        - **500+ Points** = Good club level performance
+        - **400+ Points** = Solid club level performance
+        - **300+ Points** = Developing swimmer level
+        """)
         
-        <h5 style='color: #1a1d5a; margin-bottom: 0.5rem;'>📈 What the Charts Show:</h5>
-        <p style='color: #374151; margin-bottom: 0; line-height: 1.6;'>
-            The charts below show how average FINA points progress with age across different event categories. 
-            Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
-            and how Worcester Swimming Club swimmers compare across different age groups.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown("#### 🎯 Why Age Matters:")
+        st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
+        st.markdown("""
+        - **Physical Development:** Increased strength, power, and endurance
+        - **Technical Improvement:** Better stroke technique and efficiency
+        - **Training Experience:** More years of structured training
+        - **Competition Experience:** Better race strategy and mental preparation
+        """)
+        
+        st.markdown("#### 📈 What the Charts Show:")
+        st.markdown("""
+        The charts below show how average FINA points progress with age across different event categories. 
+        Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
+        and how Worcester Swimming Club swimmers compare across different age groups.
+        """)
+        
+        st.markdown("""
+        </div>
+        """, unsafe_allow_html=True)
     
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
