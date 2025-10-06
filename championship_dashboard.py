@@ -1514,9 +1514,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
     
-    st.markdown("""
-    <div class="fina-explanation-container">
-    """, unsafe_allow_html=True)
+
     
     st.markdown("### What are FINA Points?")
     st.markdown("""
