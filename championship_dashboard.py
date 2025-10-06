@@ -710,18 +710,15 @@ def main():
     
     # Load data with memory optimization
     with st.spinner("Loading championship data..."):
-        # Load event mapping first (lightweight)
-        event_gender_map = get_event_gender_map_from_csvs(events_folder)
-        
         # Load all data with optimized types
         df_all = load_all_events(events_folder)
         
-        # Add Gender column to df_all based on event names
-        df_all['Event Number'] = df_all['Event Number'].astype(str)
-        df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
-        df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
+        # Gender column is now included in the CSV files directly
+        # No need to derive it from event names anymore
         
         # Calculate scores for all swimmers (no minimum)
+        # Create event gender map for backward compatibility with scoring function
+        event_gender_map = df_all.groupby('Event Number')['Gender'].first().to_dict()
         df_all_swimmers = calculate_all_championship_scores(df_all, event_gender_map, min_categories=0)
         
         # Also get eligible swimmers (5+ categories) - create view instead of copy

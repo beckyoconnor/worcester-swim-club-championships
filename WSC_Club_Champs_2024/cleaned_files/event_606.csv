@@ -1,22 +1,22 @@
-Event Number,Event Name,Event Category,Name,Age,Club,Time,WA Points
-606,Male 100m Butterfly,100 Form,Lucas Chong Rui Yang,10,Worcester,2:01.63,60
-606,Male 100m Butterfly,100 Form,Thomas Jenkinson,10,Worcester,2:04.69,56
-606,Male 100m Butterfly,100 Form,James Walter,11,Worcester,1:31.27,143
-606,Male 100m Butterfly,100 Form,Logan Nicholls,11,Worcester,1:44.08,96
-606,Male 100m Butterfly,100 Form,James Hill,12,Worcester,1:29.86,150
-606,Male 100m Butterfly,100 Form,Travis Duncan,13,Worcester,1:28.76,155
-606,Male 100m Butterfly,100 Form,Tarek Bluck,14,Worcester,1:03.47,426
-606,Male 100m Butterfly,100 Form,Joseph Agoston,14,Worcester,1:06.47,371
-606,Male 100m Butterfly,100 Form,Lincoln Lewitzkyi,14,Worcester,1:08.61,337
-606,Male 100m Butterfly,100 Form,Toby Pugh,14,Worcester,1:14.15,267
-606,Male 100m Butterfly,100 Form,Robert Gearey,14,Worcester,1:15.89,249
-606,Male 100m Butterfly,100 Form,Edward Richardson,14,Worcester,1:25.66,173
-606,Male 100m Butterfly,100 Form,Ethan Chong Khai Yang,14,Worcester,1:27.04,165
-606,Male 100m Butterfly,100 Form,Harry Pickup,15,Worcester,1:25.12,176
-606,Male 100m Butterfly,100 Form,Harry Chandler,16,Worcester,56.32,610
-606,Male 100m Butterfly,100 Form,Ben Gooch,17,Worcester,57.11,585
-606,Male 100m Butterfly,100 Form,Theodore Rogers,16,Worcester,1:00.51,492
-606,Male 100m Butterfly,100 Form,James Bury,17,Worcester,1:04.08,414
-606,Male 100m Butterfly,100 Form,Matt James,17,Worcester,1:05.54,387
-606,Male 100m Butterfly,100 Form,Jacob Cutler,16,Worcester,1:07.09,361
-606,Male 100m Butterfly,100 Form,Michael Adair,28,Worcester,1:08.81,334
+Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
+606,Male 100m Butterfly,100 Form,Male,Lucas Chong Rui Yang,10,Worcester,2:01.63,60
+606,Male 100m Butterfly,100 Form,Male,Thomas Jenkinson,10,Worcester,2:04.69,56
+606,Male 100m Butterfly,100 Form,Male,James Walter,11,Worcester,1:31.27,143
+606,Male 100m Butterfly,100 Form,Male,Logan Nicholls,11,Worcester,1:44.08,96
+606,Male 100m Butterfly,100 Form,Male,James Hill,12,Worcester,1:29.86,150
+606,Male 100m Butterfly,100 Form,Male,Travis Duncan,13,Worcester,1:28.76,155
+606,Male 100m Butterfly,100 Form,Male,Tarek Bluck,14,Worcester,1:03.47,426
+606,Male 100m Butterfly,100 Form,Male,Joseph Agoston,14,Worcester,1:06.47,371
+606,Male 100m Butterfly,100 Form,Male,Lincoln Lewitzkyi,14,Worcester,1:08.61,337
+606,Male 100m Butterfly,100 Form,Male,Toby Pugh,14,Worcester,1:14.15,267
+606,Male 100m Butterfly,100 Form,Male,Robert Gearey,14,Worcester,1:15.89,249
+606,Male 100m Butterfly,100 Form,Male,Edward Richardson,14,Worcester,1:25.66,173
+606,Male 100m Butterfly,100 Form,Male,Ethan Chong Khai Yang,14,Worcester,1:27.04,165
+606,Male 100m Butterfly,100 Form,Male,Harry Pickup,15,Worcester,1:25.12,176
+606,Male 100m Butterfly,100 Form,Male,Harry Chandler,16,Worcester,56.32,610
+606,Male 100m Butterfly,100 Form,Male,Ben Gooch,17,Worcester,57.11,585
+606,Male 100m Butterfly,100 Form,Male,Theodore Rogers,16,Worcester,1:00.51,492
+606,Male 100m Butterfly,100 Form,Male,James Bury,17,Worcester,1:04.08,414
+606,Male 100m Butterfly,100 Form,Male,Matt James,17,Worcester,1:05.54,387
+606,Male 100m Butterfly,100 Form,Male,Jacob Cutler,16,Worcester,1:07.09,361
+606,Male 100m Butterfly,100 Form,Male,Michael Adair,28,Worcester,1:08.81,334

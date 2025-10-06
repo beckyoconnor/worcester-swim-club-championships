@@ -1,7 +1,7 @@
-Event Number,Event Name,Event Category,Name,Age,Club,Time,WA Points
-401,Female 200m Butterfly,200 Form,Xanthe Carrington-Abra,13,Worcester,2:54.03,324
-401,Female 200m Butterfly,200 Form,Prudence Goodison,14,Worcester,2:31.31,493
-401,Female 200m Butterfly,200 Form,Mia Gooch,14,Worcester,3:01.77,284
-401,Female 200m Butterfly,200 Form,Holly Sadler,15,Worcester,3:13.63,235
-401,Female 200m Butterfly,200 Form,Asha Mahanta,16,Worcester,2:23.75,576
-401,Female 200m Butterfly,200 Form,Isabella Hoare,17,Worcester,2:31.16,495
+Event Number,Event Name,Event Category,Gender,Name,Age,Club,Time,WA Points
+401,Female 200m Butterfly,200 Form,Female,Xanthe Carrington-Abra,13,Worcester,2:54.03,324
+401,Female 200m Butterfly,200 Form,Female,Prudence Goodison,14,Worcester,2:31.31,493
+401,Female 200m Butterfly,200 Form,Female,Mia Gooch,14,Worcester,3:01.77,284
+401,Female 200m Butterfly,200 Form,Female,Holly Sadler,15,Worcester,3:13.63,235
+401,Female 200m Butterfly,200 Form,Female,Asha Mahanta,16,Worcester,2:23.75,576
+401,Female 200m Butterfly,200 Form,Female,Isabella Hoare,17,Worcester,2:31.16,495

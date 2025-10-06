@@ -300,6 +300,26 @@ class SwimEventExtractor:
         return clean_name.strip()
     
     @staticmethod
+    def _determine_gender_from_event_name(event_name: str) -> str:
+        """
+        Determine gender from event name.
+        
+        Args:
+            event_name: Clean event name (e.g., "Male 100m IM", "Female 50m Backstroke")
+            
+        Returns:
+            Gender string ("Male", "Female", or "Unknown")
+        """
+        event_lower = event_name.lower()
+        
+        if 'female' in event_lower:
+            return 'Female'
+        elif 'male' in event_lower:
+            return 'Male'
+        else:
+            return 'Unknown'
+    
+    @staticmethod
     def _categorize_event(event_name: str) -> str:
         """
         Categorize event based on championship rules.
@@ -567,10 +587,14 @@ class SwimEventExtractor:
             seen_swimmers.add(unique_key)
             
             # All validations passed and no duplicates - add to data
+            # Determine gender from event name
+            gender = self._determine_gender_from_event_name(event_name_clean)
+            
             data.append({
                 'Event Number': sheet_name,
                 'Event Name': event_name_clean,
                 'Event Category': event_category,
+                'Gender': gender,
                 'Name': name_clean,
                 'Age': age_validated,
                 'Club': club_validated,
@@ -598,7 +622,7 @@ class SwimEventExtractor:
         filename = os.path.join(cleaned_files_dir, f"event_{event_number}.csv")
         
         with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['Event Number', 'Event Name', 'Event Category', 'Name', 'Age', 'Club', 'Time', 'WA Points']
+            fieldnames = ['Event Number', 'Event Name', 'Event Category', 'Gender', 'Name', 'Age', 'Club', 'Time', 'WA Points']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(data)
