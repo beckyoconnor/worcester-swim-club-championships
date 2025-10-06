@@ -1628,7 +1628,7 @@ def main():
         
         # Create female chart
         if female_chart_data is not None and len(female_chart_data) > 0:
-            st.markdown("### 🏊‍♀️ Female Swimmers")
+            st.markdown("###   Female Swimmers")
             
             female_chart = alt.Chart(female_chart_data).mark_line(point=True, strokeWidth=3).encode(
                 x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
