@@ -1521,6 +1521,8 @@ def main():
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
     
     The system uses a mathematical formula: **P = 1000 × (B/T)³** where B is the base time (typically world record) and T is the swimmer's time.
+    
+    **Important**: FINA points are calculated against **open (adult) world records**, not age-specific records. This means younger swimmers are compared against adult standards, which is why age progression in FINA points is so significant.
     """)
     
     st.markdown("#### How FINA Points Work:")
@@ -1533,6 +1535,8 @@ def main():
     - **500+ Points** = Strong club level performance (Level 1/2 meet qualifying times)
     - **400+ Points** = Good club level performance (Level 3 meet maximum time limit)
     - **300+ Points** = Developing swimmer level (Level 4 meet maximum time limit)
+    
+    **Note**: These levels are based on adult standards. Age group qualifying times will be different (typically much slower) and vary by age category.
     """)
     
     st.markdown("*Note: Point ranges are approximate and vary by event. Base times are updated annually.*")
