@@ -7,6 +7,7 @@ Interactive dashboard to view championship rankings by age group and gender.
 import streamlit as st
 import pandas as pd
 import os
+import psutil
 from typing import Dict
 
 # Compatibility for different Streamlit versions
@@ -1001,6 +1002,37 @@ def main():
                     <span class="main-tooltiptext">{empty_highest_tooltip_text}</span>
                 </div>
                 """, unsafe_allow_html=True)
+        
+        # Memory usage monitoring (for Streamlit Community Cloud)
+        with st.expander("🔧 System Information", expanded=False):
+            try:
+                # Get memory usage
+                memory = psutil.virtual_memory()
+                memory_used_gb = memory.used / (1024**3)
+                memory_total_gb = memory.total / (1024**3)
+                memory_percent = memory.percent
+                
+                # Get CPU usage
+                cpu_percent = psutil.cpu_percent(interval=1)
+                
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("RAM Used", f"{memory_used_gb:.1f} GB", f"{memory_percent:.1f}%")
+                with col2:
+                    st.metric("RAM Total", f"{memory_total_gb:.1f} GB")
+                with col3:
+                    st.metric("CPU Usage", f"{cpu_percent:.1f}%")
+                
+                # Memory warning
+                if memory_percent > 80:
+                    st.warning("⚠️ High memory usage detected!")
+                elif memory_percent > 60:
+                    st.info("ℹ️ Moderate memory usage")
+                else:
+                    st.success("✅ Memory usage is normal")
+                    
+            except Exception as e:
+                st.error(f"Could not retrieve system info: {e}")
         
         # Display championship title
         st.markdown("---")
