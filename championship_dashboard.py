@@ -1003,60 +1003,6 @@ def main():
                 </div>
                 """, unsafe_allow_html=True)
         
-        # Memory usage monitoring (for Streamlit Community Cloud)
-        with st.expander("🔧 System Information", expanded=False):
-            try:
-                # Get process memory usage (more accurate for containers)
-                process = psutil.Process()
-                process_memory_mb = process.memory_info().rss / (1024**2)
-                
-                # Get CPU usage
-                cpu_percent = psutil.cpu_percent(interval=1)
-                
-                # Count active processes (rough estimate of concurrent users)
-                streamlit_processes = 0
-                for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
-                    try:
-                        if proc.info['name'] and 'streamlit' in proc.info['name'].lower():
-                            streamlit_processes += 1
-                    except (psutil.NoSuchProcess, psutil.AccessDenied):
-                        continue
-                
-                # Streamlit Community Cloud has ~2GB RAM limit
-                cloud_limit_gb = 2.0
-                cloud_limit_mb = cloud_limit_gb * 1024
-                
-                col1, col2, col3, col4 = st.columns(4)
-                with col1:
-                    st.metric("App Memory Used", f"{process_memory_mb:.0f} MB", f"{(process_memory_mb/cloud_limit_mb)*100:.1f}%")
-                with col2:
-                    st.metric("Cloud Limit", f"{cloud_limit_gb:.0f} GB")
-                with col3:
-                    st.metric("CPU Usage", f"{cpu_percent:.1f}%")
-                with col4:
-                    st.metric("Active Sessions", f"{streamlit_processes}")
-                
-                # Memory warning based on actual cloud limits
-                memory_percent = (process_memory_mb / cloud_limit_mb) * 100
-                if memory_percent > 80:
-                    st.warning("⚠️ High memory usage detected! Consider restarting the app.")
-                elif memory_percent > 60:
-                    st.info("ℹ️ Moderate memory usage")
-                else:
-                    st.success("✅ Memory usage is normal")
-                
-                # Concurrency warning
-                if streamlit_processes > 5:
-                    st.warning(f"⚠️ {streamlit_processes} active sessions detected. High concurrency may impact performance.")
-                elif streamlit_processes > 2:
-                    st.info(f"ℹ️ {streamlit_processes} active sessions. Monitor memory usage.")
-                
-                # Additional info
-                st.caption("💡 Streamlit Community Cloud provides ~2GB RAM. Each concurrent user increases memory usage. Restart the app if memory usage gets too high.")
-                    
-            except Exception as e:
-                st.error(f"Could not retrieve system info: {e}")
-        
         # Display championship title
         st.markdown("---")
         age_text = f"Age {selected_age}" if selected_age != 'All' else 'All Ages'
@@ -1737,6 +1683,60 @@ def main():
         </p>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Memory usage monitoring (for Streamlit Community Cloud) - moved to bottom
+    with st.expander("🔧 System Information", expanded=False):
+        try:
+            # Get process memory usage (more accurate for containers)
+            process = psutil.Process()
+            process_memory_mb = process.memory_info().rss / (1024**2)
+            
+            # Get CPU usage
+            cpu_percent = psutil.cpu_percent(interval=1)
+            
+            # Count active processes (rough estimate of concurrent users)
+            streamlit_processes = 0
+            for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
+                try:
+                    if proc.info['name'] and 'streamlit' in proc.info['name'].lower():
+                        streamlit_processes += 1
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
+            
+            # Streamlit Community Cloud has ~2GB RAM limit
+            cloud_limit_gb = 2.0
+            cloud_limit_mb = cloud_limit_gb * 1024
+            
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.metric("App Memory Used", f"{process_memory_mb:.0f} MB", f"{(process_memory_mb/cloud_limit_mb)*100:.1f}%")
+            with col2:
+                st.metric("Cloud Limit", f"{cloud_limit_gb:.0f} GB")
+            with col3:
+                st.metric("CPU Usage", f"{cpu_percent:.1f}%")
+            with col4:
+                st.metric("Active Sessions", f"{streamlit_processes}")
+            
+            # Memory warning based on actual cloud limits
+            memory_percent = (process_memory_mb / cloud_limit_mb) * 100
+            if memory_percent > 80:
+                st.warning("⚠️ High memory usage detected! Consider restarting the app.")
+            elif memory_percent > 60:
+                st.info("ℹ️ Moderate memory usage")
+            else:
+                st.success("✅ Memory usage is normal")
+            
+            # Concurrency warning
+            if streamlit_processes > 5:
+                st.warning(f"⚠️ {streamlit_processes} active sessions detected. High concurrency may impact performance.")
+            elif streamlit_processes > 2:
+                st.info(f"ℹ️ {streamlit_processes} active sessions. Monitor memory usage.")
+            
+            # Additional info
+            st.caption("💡 Streamlit Community Cloud provides ~2GB RAM. Each concurrent user increases memory usage. Restart the app if memory usage gets too high.")
+                
+        except Exception as e:
+            st.error(f"Could not retrieve system info: {e}")
 
 if __name__ == '__main__':
     main()
