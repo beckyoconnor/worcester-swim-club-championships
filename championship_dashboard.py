@@ -1502,7 +1502,20 @@ def main():
     
     # FINA Points Explanation
     st.markdown("""
-    <div style="background-color: #f0f4ff; padding: 2rem; border-radius: 15px; margin: 2rem 0; border-left: 5px solid #2b1f5c; box-shadow: 0 2px 8px rgba(43, 31, 92, 0.1);">
+    <style>
+    .fina-explanation-container {
+        background-color: #f0f4ff;
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        border-left: 5px solid #2b1f5c;
+        box-shadow: 0 2px 8px rgba(43, 31, 92, 0.1);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="fina-explanation-container">
     """, unsafe_allow_html=True)
     
     st.markdown("### 🏊‍♂️ What are FINA Points?")
