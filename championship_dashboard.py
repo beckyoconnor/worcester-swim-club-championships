@@ -1,0 +1,1160 @@
+#!/usr/bin/env python3
+"""
+Club Championships Dashboard - Streamlit App
+Interactive dashboard to view championship rankings by age group and gender.
+"""
+
+import streamlit as st
+import pandas as pd
+import os
+from typing import Dict
+from openpyxl import load_workbook
+
+
+# Page configuration
+st.set_page_config(
+    page_title="Worcester SC - Club Championships",
+    page_icon="🏊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Worcester SC Branding - Custom CSS (matching website colors)
+st.markdown("""
+<style>
+    /* Worcester SC Color Scheme - From Official Website */
+    :root {
+        --wsc-purple: #2b1f5c;
+        --wsc-navy: #1a1444;
+        --wsc-green: #7ef542;
+        --wsc-dark-green: #5cb82f;
+    }
+    
+    /* Header Styling */
+    .main .block-container {
+        padding-top: 2rem;
+    }
+    
+    /* Title Styling - White text */
+    h1, h2, h3 {
+        color: white !important;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    
+    /* Hide Sidebar - no longer needed */
+    [data-testid="stSidebar"] {
+        display: none !important;
+    }
+    
+    /* Expand main content to full width */
+    .main .block-container {
+        max-width: 100% !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+    
+    /* Metric Cards */
+    [data-testid="stMetricValue"] {
+        color: #2b1f5c;
+        font-weight: bold;
+    }
+    
+    /* Buttons */
+    .stButton>button {
+        background-color: #2b1f5c;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        font-weight: 600;
+    }
+    
+    .stButton>button:hover {
+        background-color: #7ef542;
+    }
+    
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 768px) {
+        /* Reduce padding on mobile */
+        .main .block-container {
+            padding-top: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        /* Make headers smaller on mobile */
+        h1 {
+            font-size: 1.5rem !important;
+        }
+        
+        h2 {
+            font-size: 1.3rem !important;
+        }
+        
+        h3 {
+            font-size: 1.1rem !important;
+        }
+        
+        h4 {
+            font-size: 1rem !important;
+        }
+        
+        /* Make metrics stack better on mobile */
+        [data-testid="stMetricValue"] {
+            font-size: 1.2rem !important;
+        }
+        
+        [data-testid="stMetricLabel"] {
+            font-size: 0.8rem !important;
+        }
+        
+        /* Improve dataframe display on mobile */
+        .dataframe {
+            font-size: 0.75rem !important;
+        }
+        
+        /* Make download buttons full width on mobile */
+        .stDownloadButton>button {
+            width: 100% !important;
+        }
+        
+        /* Reduce expander padding */
+        .streamlit-expanderHeader {
+            font-size: 0.9rem !important;
+        }
+        
+        /* Stack columns on mobile for better readability */
+        [data-testid="column"] {
+            min-width: 100% !important;
+        }
+    }
+    
+    /* iPhone specific optimizations */
+    @media screen and (max-width: 430px) {
+        /* iPhone 14 Pro Max and smaller */
+        .main .block-container {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        
+        /* Smaller text for tables */
+        .dataframe {
+            font-size: 0.7rem !important;
+        }
+        
+        /* Adjust metric spacing */
+        [data-testid="metric-container"] {
+            padding: 0.5rem !important;
+        }
+    }
+        color: #2b1f5c;
+    }
+    
+    /* Download Button - Worcester Green */
+    .stDownloadButton>button {
+        background-color: #7ef542;
+        color: #2b1f5c;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+    
+    .stDownloadButton>button:hover {
+        background-color: #5cb82f;
+        color: white;
+    }
+    
+    /* Radio Buttons - Main page (not sidebar) */
+    .stRadio > label {
+        color: #1a1d5a !important;
+        font-weight: 600;
+    }
+    
+    .stRadio label {
+        color: #1a1d5a !important;
+    }
+    
+    /* Radio button text */
+    .stRadio div[role="radiogroup"] label {
+        color: #1a1d5a !important;
+    }
+    
+    /* Selectbox - Main page */
+    .stSelectbox > label {
+        color: #1a1d5a !important;
+        font-weight: 600;
+    }
+    
+    .stSelectbox label {
+        color: #1a1d5a !important;
+    }
+    
+    /* Dataframe styling - Worcester Blue/Green headers */
+    .dataframe thead tr th,
+    .dataframe thead th,
+    table thead tr th,
+    table thead th,
+    [data-testid="stDataFrame"] thead tr th,
+    [data-testid="stDataFrame"] thead th {
+        background-color: #1a1d5a !important;
+        color: #7ef542 !important;
+        border-bottom: 2px solid #7ef542 !important;
+        font-weight: 700 !important;
+        padding: 12px !important;
+        text-transform: uppercase !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    .dataframe tbody tr:nth-child(odd) {
+        background-color: #f8f9ff !important;
+    }
+    
+    /* Additional table header targeting */
+    div[data-testid="stDataFrame"] table thead tr,
+    div[data-testid="stDataFrame"] table thead th {
+        background-color: #1a1d5a !important;
+        color: #7ef542 !important;
+    }
+    
+    .dataframe tbody tr:nth-child(even) {
+        background-color: #ffffff !important;
+    }
+    
+    .dataframe tbody tr:hover {
+        background-color: #e0e7ff !important;
+    }
+    
+    .dataframe {
+        border: 2px solid #2b1f5c !important;
+    }
+    
+    /* Info box */
+    .stAlert {
+        background-color: #f0f4ff;
+        border-left: 4px solid #2b1f5c;
+    }
+    
+    /* Replace Streamlit red theme with Worcester green */
+    /* Checkbox styling */
+    .stCheckbox > label > div[data-testid="stMarkdownContainer"] > p {
+        color: white !important;
+    }
+    
+    /* Radio button active state - Worcester green */
+    .stRadio > div[role="radiogroup"] > label[data-baseweb="radio"] > div:first-child {
+        background-color: transparent !important;
+    }
+    
+    .stRadio > div[role="radiogroup"] > label[data-baseweb="radio"] > div:first-child > div {
+        border-color: #1a1d5a !important;
+    }
+    
+    .stRadio > div[role="radiogroup"] > label[data-baseweb="radio"][data-checked="true"] > div:first-child > div {
+        background-color: #7ef542 !important;
+        border-color: #7ef542 !important;
+    }
+    
+    /* Radio button inner circle when selected */
+    .stRadio > div[role="radiogroup"] > label[data-baseweb="radio"][aria-checked="true"] > div:first-child {
+        background-color: #7ef542 !important;
+    }
+    
+    .stRadio > div[role="radiogroup"] > label[data-baseweb="radio"][aria-checked="true"] > div:first-child > div {
+        background-color: #7ef542 !important;
+        border-color: #7ef542 !important;
+    }
+    
+    /* Selectbox dropdown - Worcester colors */
+    .stSelectbox [data-baseweb="select"] {
+        background-color: white;
+    }
+    
+    .stSelectbox [data-baseweb="select"]:hover {
+        border-color: #7ef542 !important;
+    }
+    
+    .stSelectbox [data-baseweb="select"]:focus-within {
+        border-color: #7ef542 !important;
+        box-shadow: 0 0 0 1px #7ef542 !important;
+    }
+    
+    /* Multi-select tags - Worcester green */
+    .stMultiSelect [data-baseweb="tag"] {
+        background-color: #7ef542 !important;
+        color: #2b1f5c !important;
+    }
+    
+    /* Slider - Worcester green */
+    .stSlider [data-baseweb="slider"] [role="slider"] {
+        background-color: #7ef542 !important;
+    }
+    
+    .stSlider [data-baseweb="slider"] [data-testid="stTickBar"] > div > div {
+        background-color: #7ef542 !important;
+    }
+    
+    /* Number input focus - Worcester green */
+    .stNumberInput input:focus {
+        border-color: #7ef542 !important;
+        box-shadow: 0 0 0 1px #7ef542 !important;
+    }
+    
+    /* Text input focus - Worcester green */
+    .stTextInput input:focus {
+        border-color: #7ef542 !important;
+        box-shadow: 0 0 0 1px #7ef542 !important;
+    }
+    
+    /* Text area focus - Worcester green */
+    .stTextArea textarea:focus {
+        border-color: #7ef542 !important;
+        box-shadow: 0 0 0 1px #7ef542 !important;
+    }
+    
+    /* Link color - Worcester green */
+    a {
+        color: #7ef542 !important;
+    }
+    
+    a:hover {
+        color: #5cb82f !important;
+    }
+    
+    /* Progress bar - Worcester green */
+    .stProgress > div > div > div > div {
+        background-color: #7ef542 !important;
+    }
+    
+    /* Spinner - Worcester green */
+    .stSpinner > div {
+        border-top-color: #7ef542 !important;
+    }
+    
+    /* Tab selected state - Worcester green */
+    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+        border-bottom-color: #7ef542 !important;
+        color: #7ef542 !important;
+    }
+    
+    /* File uploader - Worcester colors */
+    .stFileUploader [data-testid="stFileUploaderDropzone"] {
+        border-color: #2b1f5c !important;
+    }
+    
+    .stFileUploader [data-testid="stFileUploaderDropzone"]:hover {
+        border-color: #7ef542 !important;
+        background-color: rgba(126, 245, 66, 0.1) !important;
+    }
+    
+    /* Header container background */
+    .header-container {
+        background-color: #1e3a8a !important;
+        padding: 2rem !important;
+        border-radius: 10px !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Make sure columns in header have blue background */
+    .header-container .element-container,
+    .header-container [data-testid="column"],
+    .header-container > div,
+    .header-container .stImage {
+        background-color: transparent !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+@st.cache_data
+def get_event_gender_map(excel_file: str) -> Dict[str, str]:
+    """Map event numbers to gender by reading event names from Excel."""
+    wb = load_workbook(excel_file, data_only=True)
+    numbered_sheets = [sheet for sheet in wb.sheetnames if sheet.isdigit()]
+    
+    event_gender_map = {}
+    
+    for sheet_name in numbered_sheets:
+        ws = wb[sheet_name]
+        event_name = ws.cell(1, 1).value
+        
+        # Check first 10 rows for event name
+        for row_idx in range(1, 11):
+            cell_value = ws.cell(row_idx, 1).value
+            if cell_value and 'EVENT' in str(cell_value).upper():
+                event_name = str(cell_value).strip()
+                break
+        
+        combined_text = str(event_name).lower() if event_name else ''
+        
+        if 'female' in combined_text or 'girl' in combined_text:
+            event_gender_map[sheet_name] = 'Female'
+        elif 'male' in combined_text or 'open/male' in combined_text or 'boy' in combined_text:
+            event_gender_map[sheet_name] = 'Male'
+        elif 'open' in combined_text:
+            event_gender_map[sheet_name] = 'Male'
+        else:
+            event_gender_map[sheet_name] = 'Unknown'
+    
+    wb.close()
+    return event_gender_map
+
+
+@st.cache_data
+def load_all_events(folder: str) -> pd.DataFrame:
+    """Load all event CSV files into a single dataframe."""
+    # Look for event files in cleaned_files subfolder
+    cleaned_folder = os.path.join(folder, 'cleaned_files')
+    if os.path.exists(cleaned_folder):
+        search_folder = cleaned_folder
+    else:
+        search_folder = folder
+    
+    csv_files = [f for f in os.listdir(search_folder) if f.startswith('event_') and f.endswith('.csv')]
+    
+    dfs = []
+    for csv_file in csv_files:
+        file_path = os.path.join(search_folder, csv_file)
+        df = pd.read_csv(file_path)
+        dfs.append(df)
+    
+    return pd.concat(dfs, ignore_index=True)
+
+
+@st.cache_data
+def calculate_all_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[str, str], 
+                                      min_categories: int = 0) -> pd.DataFrame:
+    """
+    Calculate championship scores for ALL swimmers (no minimum category requirement).
+    
+    Args:
+        df_all: Dataframe with all events
+        event_gender_map: Mapping of event numbers to gender
+        min_categories: Minimum categories required (0 = show all)
+    """
+    # Add gender column
+    df_all['Event Number'] = df_all['Event Number'].astype(str)
+    df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+    
+    # Remove Unknown gender entries
+    df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
+    
+    championship_results = []
+    
+    # Group by swimmer name
+    for name, swimmer_events in df_all.groupby('Name'):
+        # Get swimmer info
+        age = swimmer_events['Age'].iloc[0]
+        club = swimmer_events['Club'].iloc[0]
+        gender = swimmer_events['Gender'].mode()[0] if len(swimmer_events['Gender'].mode()) > 0 else swimmer_events['Gender'].iloc[0]
+        
+        # Determine max races per category based on age
+        max_per_category = 3 if age < 12 else 2
+        
+        # Sort by WA Points descending
+        swimmer_events_sorted = swimmer_events.sort_values('WA Points', ascending=False)
+        
+        # For each category, take top N races
+        category_events = {}
+        for category in ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']:
+            cat_events = swimmer_events_sorted[swimmer_events_sorted['Event Category'] == category]
+            # Remove duplicates - keep only best score per unique event
+            cat_events = cat_events.drop_duplicates(subset=['Event Number'], keep='first')
+            # Take top N for this category
+            top_n = cat_events.head(max_per_category)
+            if len(top_n) > 0:
+                category_events[category] = top_n
+        
+        # Count categories
+        num_categories = len(category_events)
+        
+        # Apply minimum category filter
+        if num_categories < min_categories:
+            continue
+        
+        # Combine all category events and take top 8
+        if category_events:
+            all_category_events = pd.concat(category_events.values(), ignore_index=True)
+            top_8_events = all_category_events.nlargest(8, 'WA Points')
+        else:
+            continue
+        
+        # Calculate totals
+        total_points = top_8_events['WA Points'].sum()
+        avg_points = top_8_events['WA Points'].mean()
+        best_event_points = top_8_events['WA Points'].max()
+        num_events = len(top_8_events)
+        
+        # Count events per category
+        category_counts = top_8_events['Event Category'].value_counts().to_dict()
+        
+        championship_results.append({
+            'Name': name,
+            'Age': age,
+            'Gender': gender,
+            'Club': club,
+            'Total_Points': total_points,
+            'Average_Points': avg_points,
+            'Best_Event_Points': best_event_points,
+            'Events_Count': num_events,
+            'Categories_Competed': num_categories,
+            'Sprint_Events': category_counts.get('Sprint', 0),
+            'Free_Events': category_counts.get('Free', 0),
+            'Form_100_Events': category_counts.get('100 Form', 0),
+            'Form_200_Events': category_counts.get('200 Form', 0),
+            'IM_Events': category_counts.get('IM', 0),
+            'Distance_Events': category_counts.get('Distance', 0),
+            'Eligible': num_categories >= 5  # Mark if eligible for championship
+        })
+    
+    df = pd.DataFrame(championship_results)
+    
+    # Create age groups (18+ is Open)
+    bins = [0, 10, 12, 14, 16, 17, 100]
+    labels = ['9-10', '11-12', '13-14', '15-16', '17', 'Open (18+)']
+    df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
+    
+    return df
+
+
+def main():
+    """Main Streamlit app."""
+    
+    # Worcester SC Header with Logo - Blue Background
+    st.markdown("""
+    <style>
+    .wsc-header {
+        background-color: #1a1d5a;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    .wsc-header-logo {
+        flex-shrink: 0;
+    }
+    .wsc-header-text {
+        flex-grow: 1;
+    }
+    .wsc-header h1 {
+        color: white;
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    .wsc-header h2 {
+        color: white;
+        margin: 0.5rem 0 0 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .wsc-header p {
+        color: #7ef542;
+        margin: 0.5rem 0 0 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # Create header using pure HTML
+    header_html = """
+    <div class="wsc-header">
+        <div class="wsc-header-logo">
+            <img src="data:image/jpeg;base64,{}" width="150" style="display: block; border-radius: 5px;">
+        </div>
+        <div class="wsc-header-text">
+            <h1>Worcester Swimming Club</h1>
+            <h2>Club Championships Dashboard 2024</h2>
+            <p>Interactive Rankings & Competition Analysis</p>
+        </div>
+    </div>
+    """
+    
+    # Load and encode the logo
+    import base64
+    try:
+        with open("cropped-WSC_blue.jpg", "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        st.markdown(header_html.format(img_base64), unsafe_allow_html=True)
+    except:
+        # Fallback without logo
+        header_html_no_logo = """
+        <div class="wsc-header">
+            <div class="wsc-header-logo">
+                <div style='font-size: 4rem;'>🏊</div>
+            </div>
+            <div class="wsc-header-text">
+                <h1>Worcester Swimming Club</h1>
+                <h2>Club Championships Dashboard 2024</h2>
+                <p>Interactive Rankings & Competition Analysis</p>
+            </div>
+        </div>
+        """
+        st.markdown(header_html_no_logo, unsafe_allow_html=True)
+    
+    # Configuration
+    excel_file = 'WSC Club Champs 2024.xlsx'
+    events_folder = 'WSC_Club_Champs_2024/cleaned_files'
+    
+    # Check if files exist
+    if not os.path.exists(excel_file):
+        st.error(f"❌ Excel file not found: {excel_file}")
+        return
+    
+    if not os.path.exists(events_folder):
+        st.error(f"❌ Events folder not found: {events_folder}")
+        return
+    
+    # Load data
+    with st.spinner("Loading championship data..."):
+        event_gender_map = get_event_gender_map(excel_file)
+        df_all = load_all_events(events_folder)
+        
+        # Add Gender column to df_all for event filtering
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+        df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
+        
+        # Calculate scores for all swimmers (no minimum)
+        df_all_swimmers = calculate_all_championship_scores(df_all, event_gender_map, min_categories=0)
+        
+        # Also get eligible swimmers (5+ categories)
+        df_eligible = df_all_swimmers[df_all_swimmers['Eligible'] == True].copy()
+    
+    # Championship Rules Expander
+    with st.expander("📋 Championship Rules & Scoring", expanded=False):
+        st.markdown("""
+        ### Worcester Swimming Club Championships
+        
+        Our Club Championships are held every year and they usually take place over a number of sessions. 
+        All swimmers are encouraged to enter, although younger swimmers may only do so at the discretion of their coaches. 
+        All strokes and distances are swum, but you can only enter certain events dependent upon your age.
+        
+        #### Age Group Cups
+        Age Group Cups are awarded to the best swimmer in an age group.
+        
+        #### Championship Format
+        This year the format has changed in order to try and encourage swimmers to participate in a larger pool of events. 
+        Competition is spread across **6 categories**:
+        
+        | Category | Events |
+        |----------|--------|
+        | **Sprint** | 50m Free, Back, Breast, and Fly |
+        | **Free** | 100m, 200m, and 400m Freestyle |
+        | **100 Form** | 100m Back, Breast, and Fly |
+        | **200 Form** | 200m Back, Breast, and Fly |
+        | **IM** | 100m, 200m, and 400m Individual Medley |
+        | **Distance** | 800m and 1500m |
+        
+        #### Scoring Rules
+        Age group trophies will be awarded to the swimmer who gains the highest collated number of **FINA/WA points**, 
+        from their **top 8 events** across **at least 5 of the 6 categories**.
+        
+        **Category Limits:**
+        - **Under 12s**: Maximum of **3 races** counted per category
+        - **12 and over**: Maximum of **2 races** counted per category
+        
+        #### Eligibility
+        To be eligible for age group trophies, swimmers must:
+        - Compete in **at least 5 different categories**
+        - Have their **best 8 events** count toward their total score
+        - Stay within the category race limits based on their age
+        """)
+    
+    # Filters in main page using form
+    st.markdown('<h3 style="color: #1a1d5a;">🔍 Select Filters</h3>', unsafe_allow_html=True)
+    
+    with st.container():
+        col1, col2, col3 = st.columns([2, 2, 1])
+        
+        with col1:
+            # Gender filter
+            gender_options = ['Male', 'Female']
+            selected_gender = st.selectbox("Gender", gender_options, key='gender_filter')
+        
+        with col2:
+            # Get all ages from all swimmers for initial display
+            all_ages = sorted(df_all_swimmers['Age'].unique().tolist())
+            age_options = ['All'] + [str(age) for age in all_ages]
+            selected_age = st.selectbox("Age", age_options, key='age_filter')
+        
+        with col3:
+            # Submit button
+            st.write("")  # Spacing
+            submit_button = 'yes'
+    
+    # Only run analysis if button is pressed
+    if submit_button:
+        # Always show all swimmers (no eligibility filter needed)
+        df_display = df_all_swimmers.copy()
+        
+        # Apply gender filter FIRST
+        df_display = df_display[df_display['Gender'] == selected_gender]
+        
+        # Apply age filter
+        if selected_age != 'All':
+            df_display = df_display[df_display['Age'] == int(selected_age)]
+        
+        # Sort by total points descending
+        df_display = df_display.sort_values('Total_Points', ascending=False).reset_index(drop=True)
+        df_display.index = df_display.index + 1  # Start ranking from 1
+        
+        # Display summary stats
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("Total Swimmers", len(df_display))
+        
+        with col2:
+            if len(df_display) > 0:
+                st.metric("Attained at least 5 categories", len(df_display[df_display['Eligible'] == True]))
+            else:
+                st.metric("Attained at least 5 categories", 0)
+        
+        with col3:
+            if len(df_display) > 0:
+                st.metric("Average Total Points", f"{df_display['Total_Points'].mean():.0f}")
+            else:
+                st.metric("Average Total Points", 0)
+        
+        with col4:
+            if len(df_display) > 0:
+                st.metric("Highest Score", f"{df_display['Total_Points'].max():.0f}")
+            else:
+                st.metric("Highest Score", 0)
+        
+        # Display championship title
+        st.markdown("---")
+        age_text = f"Age {selected_age}" if selected_age != 'All' else 'All Ages'
+        
+        # Wrap rankings in an expander
+        if selected_gender == 'Male':
+            expander_title = f"📊 Boys Rankings - {age_text}"
+        elif selected_gender == 'Female':
+            expander_title = f"📊 Girls Rankings - {age_text}"
+        else:
+            expander_title = f"📊 All Rankings - {age_text}"
+        
+        with st.expander(expander_title, expanded=True):
+            # Display rankings table
+            if len(df_display) > 0:
+                # Prepare display dataframe
+                df_show = df_display.copy()
+                df_show['Rank'] = df_show.index
+            
+                # Select columns to display (removed Eligible)
+                display_columns = [
+                    'Rank', 'Name', 'Age', 
+                    'Total_Points', 'Average_Points', 'Events_Count', 
+                    'Categories_Competed',
+                    'Sprint_Events', 'Free_Events', 'Form_100_Events', 
+                    'Form_200_Events', 'IM_Events', 'Distance_Events'
+                ]
+            
+                # Rename columns for display
+                column_names = {
+                'Rank': 'Rank',
+                'Name': 'Name',
+                'Age': 'Age',
+                'Total_Points': 'Total Points',
+                'Average_Points': 'Avg Points',
+                'Events_Count': 'Events',
+                'Categories_Competed': 'Categories',
+                'Sprint_Events': 'Sprint',
+                'Free_Events': 'Free',
+                'Form_100_Events': '100 Form',
+                'Form_200_Events': '200 Form',
+                'IM_Events': 'IM',
+                'Distance_Events': 'Distance'
+            }
+        
+            df_show_renamed = df_show[display_columns].rename(columns=column_names)
+        
+            # Keep numeric version for chart
+            df_for_chart = df_show_renamed.copy()
+            df_for_chart['Total Points'] = df_display['Total_Points'].values
+            
+            # Format numbers for table display
+            df_show_renamed['Total Points'] = df_show_renamed['Total Points'].apply(lambda x: f"{x:.0f}")
+            df_show_renamed['Avg Points'] = df_show_renamed['Avg Points'].apply(lambda x: f"{x:.1f}")
+        
+            # Create tabs for chart and table (chart first)
+            tab1, tab2 = st.tabs(["📈 Points Chart", "📊 Data Table"])
+            
+            with tab1:
+                # Create horizontal bar chart with Altair
+                if len(df_display) > 0:
+                    import altair as alt
+                    
+                    # Sort by Total Points for better visualization
+                    chart_data = df_for_chart.sort_values('Total Points', ascending=False).head(20)  # Show top 20
+                    chart_data = chart_data[['Name', 'Total Points']].copy()
+                    
+                    if len(chart_data) > 0:
+                        # Create Altair chart
+                        chart = alt.Chart(chart_data).mark_bar(color='#7ef542').encode(
+                            x=alt.X('Total Points:Q', 
+                                    axis=alt.Axis(labels=False, title='', ticks=False, grid=False)),
+                            y=alt.Y('Name:N', 
+                                    sort='-x',
+                                    axis=alt.Axis(title='')),
+                            tooltip=['Name', 'Total Points']
+                        ).properties(
+                            title='Top Swimmers by Total Points',
+                            height=max(400, len(chart_data) * 30)
+                        )
+                        
+                        # Add text labels at the end of bars
+                        text = chart.mark_text(
+                            align='left',
+                            baseline='middle',
+                            dx=3,
+                            color='#1a1d5a',  # Worcester blue
+                            fontSize=12
+                        ).encode(
+                            text=alt.Text('Total Points:Q', format='.0f')
+                        )
+                        
+                        # Combine bar and text
+                        final_chart = (chart + text).configure_view(
+                            strokeWidth=0
+                        ).configure_axis(
+                            labelFontSize=10
+                        )
+                        
+                        st.altair_chart(final_chart, use_container_width=True)
+                    else:
+                        st.info("No data available for chart")
+                else:
+                    st.info("No swimmers found matching the selected filters.")
+            
+            with tab2:
+                # Display table using standard Streamlit dataframe (more reliable)
+                st.dataframe(df_show_renamed, height=600, use_container_width=True)
+        
+                # Download button
+                csv = df_show_renamed.to_csv(index=False).encode('utf-8')
+                filename = f"rankings_{selected_gender}_age{selected_age}.csv"
+                st.download_button(
+                    label="📥 Download Rankings as CSV",
+                    data=csv,
+                    file_name=filename,
+                    mime="text/csv"
+                )
+        
+        with st.expander("🔍 Individual Swimmer Details", expanded=False):
+            # Individual Swimmer Detail Section
+            st.markdown("---")
+            st.markdown("### 🔍 Swimmer Event Details")
+            st.markdown("Select a swimmer to view their individual event breakdown:")
+        
+            # Create a dropdown with swimmer names
+            swimmer_names = sorted(df_display['Name'].unique().tolist())
+            selected_swimmer = st.selectbox(
+                "Choose a swimmer:",
+                options=[''] + swimmer_names,
+                index=0
+            )
+        
+            if selected_swimmer:
+                # Get swimmer's info
+                swimmer_info = df_display[df_display['Name'] == selected_swimmer].iloc[0]
+            
+                # Display swimmer summary
+                st.markdown(f"#### {selected_swimmer}")
+                col_a, col_b, col_c = st.columns(3)
+                with col_a:
+                    st.metric("Age", swimmer_info['Age'])
+                with col_b:
+                    st.metric("Total Points", f"{swimmer_info['Total_Points']:.0f}")
+                with col_c:
+                    st.metric("Attained at least 5 categories", "Yes ✅" if swimmer_info['Eligible'] else "No ⭕")
+            
+                # Get all events for this swimmer
+                swimmer_events = df_all[df_all['Name'] == selected_swimmer].copy()
+            
+                if len(swimmer_events) > 0:
+                    # Sort by WA Points descending
+                    swimmer_events = swimmer_events.sort_values('WA Points', ascending=False)
+                
+                    # Add event gender
+                    swimmer_events['Gender'] = swimmer_events['Event Number'].map(event_gender_map)
+                
+                    # Prepare display dataframe
+                    event_display = swimmer_events[['Event Number', 'Event Name', 'Event Category', 'Time', 'WA Points']].copy()
+                
+                    # Format Time to hh:mm:ss:hs (hundredths of seconds)
+                    def format_time(time_val):
+                        if pd.isna(time_val) or time_val is None or time_val == '':
+                            return '-'
+                        
+                        time_str = str(time_val).strip()
+                        
+                        # If already a dash, return as is
+                        if time_str == '-':
+                            return '-'
+                        
+                        # Check if time has colons (already formatted)
+                        if ':' in time_str:
+                            parts = time_str.split(':')
+                            if len(parts) == 2:
+                                # mm:ss.cs format -> 00:mm:ss:hs
+                                mins, secs = parts
+                                # Extract hundredths
+                                if '.' in secs:
+                                    sec_parts = secs.split('.')
+                                    ss = sec_parts[0].zfill(2)
+                                    hs = sec_parts[1][:2].ljust(2, '0')
+                                    return f"00:{mins.zfill(2)}:{ss}:{hs}"
+                                else:
+                                    return f"00:{mins.zfill(2)}:{secs.zfill(2)}:00"
+                            elif len(parts) == 3:
+                                # hh:mm:ss format -> hh:mm:ss:hs
+                                hours, mins, secs = parts
+                                if '.' in secs:
+                                    sec_parts = secs.split('.')
+                                    ss = sec_parts[0].zfill(2)
+                                    hs = sec_parts[1][:2].ljust(2, '0')
+                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{ss}:{hs}"
+                                else:
+                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{secs.zfill(2)}:00"
+                        else:
+                            # Just seconds (e.g., "31.95") -> 00:00:ss:hs
+                            try:
+                                secs_float = float(time_str)
+                                ss = int(secs_float)
+                                hs = int((secs_float - ss) * 100)
+                                return f"00:00:{str(ss).zfill(2)}:{str(hs).zfill(2)}"
+                            except:
+                                return time_str
+                        
+                        return time_str
+                    
+                    event_display['Time'] = event_display['Time'].apply(format_time)
+                
+                    event_display = event_display.rename(columns={
+                        'Event Number': 'Event #',
+                        'Event Name': 'Event',
+                        'Event Category': 'Category',
+                        'Time': 'Time',
+                        'WA Points': 'FINA Points'
+                    })
+                
+                    # Reset index to start from 1
+                    event_display.insert(0, 'Rank', range(1, len(event_display) + 1))
+                
+                    st.markdown(f"**Total Events Competed: {len(swimmer_events)}**")
+                
+                    # Reset index for cleaner display
+                    event_display_clean = event_display.reset_index(drop=True)
+                
+                    # Display swimmer events using standard dataframe (more reliable)
+                    st.dataframe(event_display_clean, height=400, use_container_width=True)
+                
+                    # Championship Eligibility Status
+                    st.markdown("#### 🏆 Championship Eligibility Status")
+                    
+                    # Count categories competed in
+                    categories_competed = swimmer_events['Event Category'].nunique()
+                    categories_needed = 5
+                    categories_remaining = max(0, categories_needed - categories_competed)
+                    
+                    # Get swimmer's age to determine if they're eligible
+                    swimmer_age = swimmer_events['Age'].iloc[0]
+                    
+                    # All possible categories
+                    all_categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
+                    competed_categories = set(swimmer_events['Event Category'].unique())
+                    missing_categories = [cat for cat in all_categories if cat not in competed_categories]
+                    
+                    # Display eligibility status
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.metric(
+                            label="Categories Competed",
+                            value=f"{categories_competed}/6",
+                            delta=f"Need 5 for championship"
+                        )
+                    
+                    with col2:
+                        total_events = len(swimmer_events)
+                        st.metric(
+                            label="Total Events",
+                            value=total_events,
+                            delta=None
+                        )
+                    
+                    # Show which categories are missing
+                    if missing_categories:
+                        num_missing = len(missing_categories)
+                        missing_str = ", ".join(missing_categories)
+                        st.markdown("**Missing Categories:**")
+                        st.info(f"🎯 Compete in {categories_remaining} more from any of the {num_missing} remaining categories: {missing_str}")
+                    else:
+                        st.success("🎉 Competed in all 6 categories!")
+                    
+                    # Show category breakdown
+                    st.markdown("#### 📊 Category Breakdown")
+                    
+                    # Calculate statistics for each category
+                    category_stats = swimmer_events.groupby('Event Category').agg({
+                        'Event Number': 'count',
+                        'WA Points': ['mean', 'max', 'sum']
+                    }).round(1)
+                    
+                    # Flatten multi-level columns
+                    category_stats.columns = ['Events Count', 'Avg Points', 'Best Points', 'Total Points']
+                    
+                    # Transpose so categories are columns
+                    category_stats_T = category_stats.T
+                    
+                    # Create separate dataframes for each measure with better formatting
+                    measures = {
+                        'Events Count': 'Number of Events per Category',
+                        'Avg Points': 'Average FINA Points per Category',
+                        'Best Points': 'Best FINA Points per Category',
+                        'Total Points': 'Total FINA Points per Category'
+                    }
+                    
+                    for measure, title in measures.items():
+                        st.markdown(f"**{title}**")
+                        measure_df = pd.DataFrame([category_stats_T.loc[measure]])
+                        measure_df.index = ['Points' if 'Points' in measure else 'Count']
+                        
+                        # Format the values
+                        if 'Count' in measure:
+                            formatted_df = measure_df.astype(int)
+                        else:
+                            formatted_df = measure_df.round(1)
+                        
+                        st.dataframe(formatted_df, use_container_width=True)
+                else:
+                    st.warning(f"No events found for {selected_swimmer}")
+            else:
+                st.info("No swimmers found matching the selected filters.")
+        
+        # Event Rankings Section
+        with st.expander("🏁 Event Rankings - View All Swimmers by Event", expanded=False):
+            st.markdown("### Select an Event to View Rankings")
+            
+            # Filter events by selected gender first
+            df_gender_events = df_all[df_all['Gender'] == selected_gender].copy()
+            
+            # Get unique events for the selected gender
+            event_options = df_gender_events[['Event Number', 'Event Name']].drop_duplicates().sort_values('Event Number')
+            event_list = [f"{row['Event Number']} - {row['Event Name']}" for _, row in event_options.iterrows()]
+            
+            selected_event = st.selectbox(
+                "Choose an event:",
+                options=event_list,
+                key="event_selector"
+            )
+            
+            if selected_event:
+                # Extract event number
+                event_num = selected_event.split(' - ')[0].strip()
+                
+                # Get all swimmers for this event from the selected gender
+                event_swimmers = df_gender_events[df_gender_events['Event Number'].astype(str) == event_num].copy()
+                
+                # Apply age filter if not 'All'
+                if selected_age != 'All':
+                    event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
+                
+                if len(event_swimmers) > 0:
+                    # Sort by WA Points descending (best performance first)
+                    event_swimmers = event_swimmers.sort_values('WA Points', ascending=False)
+                    
+                    # Add rank
+                    event_swimmers['Rank'] = range(1, len(event_swimmers) + 1)
+                    
+                    # Format time
+                    def format_time_event(time_val):
+                        if pd.isna(time_val) or time_val is None or time_val == '':
+                            return '-'
+                        time_str = str(time_val).strip()
+                        if time_str == '-':
+                            return '-'
+                        if ':' in time_str:
+                            parts = time_str.split(':')
+                            if len(parts) == 2:
+                                mins, secs = parts
+                                if '.' in secs:
+                                    sec_parts = secs.split('.')
+                                    ss = sec_parts[0].zfill(2)
+                                    hs = sec_parts[1][:2].ljust(2, '0')
+                                    return f"00:{mins.zfill(2)}:{ss}:{hs}"
+                                else:
+                                    return f"00:{mins.zfill(2)}:{secs.zfill(2)}:00"
+                            elif len(parts) == 3:
+                                hours, mins, secs = parts
+                                if '.' in secs:
+                                    sec_parts = secs.split('.')
+                                    ss = sec_parts[0].zfill(2)
+                                    hs = sec_parts[1][:2].ljust(2, '0')
+                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{ss}:{hs}"
+                                else:
+                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{secs.zfill(2)}:00"
+                        else:
+                            try:
+                                secs_float = float(time_str)
+                                ss = int(secs_float)
+                                hs = int((secs_float - ss) * 100)
+                                return f"00:00:{str(ss).zfill(2)}:{str(hs).zfill(2)}"
+                            except:
+                                return time_str
+                        return time_str
+                    
+                    event_swimmers['Time'] = event_swimmers['Time'].apply(format_time_event)
+                    
+                    # Display event information
+                    st.markdown(f"**Event:** {selected_event}")
+                    st.markdown(f"**Category:** {event_swimmers['Event Category'].iloc[0]}")
+                    st.markdown(f"**Total Swimmers:** {len(event_swimmers)}")
+                    
+                    # Prepare display dataframe
+                    event_display = event_swimmers[['Rank', 'Name', 'Age', 'Time', 'WA Points']].copy()
+                    event_display.columns = ['Rank', 'Name', 'Age', 'Time', 'FINA Points']
+                    
+                    # Display table
+                    st.dataframe(event_display, height=400, use_container_width=True)
+                    
+                    # Download button
+                    csv_event = event_display.to_csv(index=False).encode('utf-8')
+                    st.download_button(
+                        label=f"📥 Download Event {event_num} Rankings",
+                        data=csv_event,
+                        file_name=f"event_{event_num}_rankings.csv",
+                        mime="text/csv"
+                    )
+                else:
+                    st.warning(f"No data found for this event.")
+    
+    # Footer with Worcester SC info
+    st.markdown("---")
+    st.markdown("""
+    <div style='text-align: center; padding: 2rem; background-color: #f8fafc; border-radius: 10px; margin-top: 2rem;'>
+        <p style='color: #1e3a8a; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;'>
+            Worcester Swimming Club
+        </p>
+        <p style='color: #64748b; font-size: 0.9rem; margin: 0.25rem 0;'>
+            📧 Contact: <a href='https://worcestersc.co.uk/contact' style='color: #dc2626;'>worcestersc.co.uk/contact</a>
+        </p>
+        <p style='color: #64748b; font-size: 0.9rem; margin: 0.25rem 0;'>
+            🌐 Website: <a href='https://worcestersc.co.uk' style='color: #dc2626;'>worcestersc.co.uk</a>
+        </p>
+        <p style='color: #94a3b8; font-size: 0.8rem; margin-top: 1rem;'>
+            © 2024 Worcester Swimming Club - Club Championships Dashboard
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Championship rules
+    st.markdown("---")
+
+if __name__ == '__main__':
+    main()
+
