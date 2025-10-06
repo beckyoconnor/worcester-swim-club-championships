@@ -1608,7 +1608,7 @@ def main():
         
         # Create male chart
         if male_chart_data is not None and len(male_chart_data) > 0:
-            st.markdown("### 🏊‍♂️ Male/Open Swimmers")
+            st.markdown("### Male/Open Swimmers")
             
             male_chart = alt.Chart(male_chart_data).mark_line(point=True, strokeWidth=3).encode(
                 x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
