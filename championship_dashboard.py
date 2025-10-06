@@ -1495,8 +1495,104 @@ def main():
     </div>
     """, unsafe_allow_html=True)
     
-    # Championship rules
-    st.markdown("---")
+        # FINA Points Analysis Charts
+        st.markdown("---")
+        st.markdown('<h3 style="color: #1a1d5a;">📈 Average FINA Points by Age and Event Category</h3>', unsafe_allow_html=True)
+        
+        # Create charts for average FINA points by age and event category
+        if len(df_all_with_gender) > 0:
+            # Calculate average FINA points by age and event category for each gender
+            chart_data_male = df_all_with_gender[df_all_with_gender['Gender'] == 'Male'].copy()
+            chart_data_female = df_all_with_gender[df_all_with_gender['Gender'] == 'Female'].copy()
+            
+            # Function to create chart data
+            def create_chart_data(data, gender_name):
+                if len(data) == 0:
+                    return None
+                
+                # Group by age and event category, calculate average WA Points
+                chart_df = data.groupby(['Age', 'Event Category'])['WA Points'].mean().reset_index()
+                chart_df = chart_df.rename(columns={'WA Points': 'Average FINA Points'})
+                
+                return chart_df
+            
+            # Create chart data for both genders
+            male_chart_data = create_chart_data(chart_data_male, 'Male')
+            female_chart_data = create_chart_data(chart_data_female, 'Female')
+            
+            # Create charts using Altair
+            import altair as alt
+            
+            # Define color palette for event categories
+            category_colors = {
+                'Sprint': '#FF6B6B',
+                'Free': '#4ECDC4', 
+                '100 Form': '#45B7D1',
+                '200 Form': '#96CEB4',
+                'IM': '#FFEAA7',
+                'Distance': '#DDA0DD'
+            }
+            
+            # Create male chart
+            if male_chart_data is not None and len(male_chart_data) > 0:
+                st.markdown("### 🏊‍♂️ Male/Open Swimmers")
+                
+                male_chart = alt.Chart(male_chart_data).mark_line(point=True, strokeWidth=3).encode(
+                    x=alt.X('Age:O', title='Age', axis=alt.Axis(labelAngle=0)),
+                    y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
+                    color=alt.Color('Event Category:N', 
+                                  scale=alt.Scale(domain=list(category_colors.keys()), 
+                                                range=list(category_colors.values())),
+                                  title='Event Category'),
+                    tooltip=['Age:O', 'Event Category:N', 'Average FINA Points:Q']
+                ).properties(
+                    width=600,
+                    height=400,
+                    title='Average FINA Points by Age - Male/Open Swimmers'
+                ).interactive()
+                
+                st.altair_chart(male_chart, use_container_width=True)
+            
+            # Create female chart
+            if female_chart_data is not None and len(female_chart_data) > 0:
+                st.markdown("### 🏊‍♀️ Female Swimmers")
+                
+                female_chart = alt.Chart(female_chart_data).mark_line(point=True, strokeWidth=3).encode(
+                    x=alt.X('Age:O', title='Age', axis=alt.Axis(labelAngle=0)),
+                    y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
+                    color=alt.Color('Event Category:N', 
+                                  scale=alt.Scale(domain=list(category_colors.keys()), 
+                                                range=list(category_colors.values())),
+                                  title='Event Category'),
+                    tooltip=['Age:O', 'Event Category:N', 'Average FINA Points:Q']
+                ).properties(
+                    width=600,
+                    height=400,
+                    title='Average FINA Points by Age - Female Swimmers'
+                ).interactive()
+                
+                st.altair_chart(female_chart, use_container_width=True)
+            
+            # Add explanation
+            st.markdown("""
+            <div style='background-color: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem;'>
+                <p style='color: #1a1d5a; font-weight: 600; margin-bottom: 0.5rem;'>
+                    📊 Chart Explanation:
+                </p>
+                <ul style='color: #64748b; margin: 0; padding-left: 1.5rem;'>
+                    <li>Each line represents a different event category (Sprint, Free, 100 Form, 200 Form, IM, Distance)</li>
+                    <li>X-axis shows swimmer age, Y-axis shows average FINA points achieved</li>
+                    <li>Points on each line show the average FINA points for swimmers of that age in that event category</li>
+                    <li>Hover over points to see exact values</li>
+                    <li>Generally, older swimmers tend to achieve higher FINA points due to physical development and experience</li>
+                </ul>
+            </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.info("No data available for FINA points analysis charts.")
+        
+        # Championship rules
+        st.markdown("---")
 
 if __name__ == '__main__':
     main()
