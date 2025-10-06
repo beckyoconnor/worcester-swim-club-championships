@@ -1525,22 +1525,6 @@ def main():
     **Important**: FINA points are calculated against **open (adult) world records**, not age-specific records. This means younger swimmers are compared against adult standards, which is why age progression in FINA points is so significant.
     """)
     
-    st.markdown("#### How FINA Points Work:")
-    st.markdown("""
-    - **1000 Points** = Performance matching the base time (typically world record level)
-    - **900+ Points** = Elite international level (Olympic/World Championship standard)
-    - **800+ Points** = National championship level (British Championships qualifying standard)
-    - **700+ Points** = Regional championship level (Midland Championships qualifying standard)
-    - **600+ Points** = County championship level (Worcestershire Championships qualifying standard)
-    - **500+ Points** = Strong club level performance (Level 1/2 meet qualifying times)
-    - **400+ Points** = Good club level performance (Level 3 meet maximum time limit)
-    - **300+ Points** = Developing swimmer level (Level 4 meet maximum time limit)
-    
-    **Note**: These levels are based on adult standards. Age group qualifying times will be different (typically much slower) and vary by age category.
-    """)
-    
-    st.markdown("*Note: Point ranges are approximate and vary by event. Base times are updated annually.*")
-    
     st.markdown("#### Why Age Matters:")
     st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
     st.markdown("""
