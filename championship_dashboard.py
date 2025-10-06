@@ -1531,8 +1531,8 @@ def main():
     - **700+ Points** = Regional championship level (Midland Championships qualifying standard)
     - **600+ Points** = County championship level (Worcestershire Championships qualifying standard)
     - **500+ Points** = Strong club level performance (Level 1/2 meet qualifying times)
-    - **400+ Points** = Good club level performance (Level 3 meet qualifying times)
-    - **300+ Points** = Developing swimmer level (Level 4 meet/beginner competitive)
+    - **400+ Points** = Good club level performance (Level 3 meet maximum time limit)
+    - **300+ Points** = Developing swimmer level (Level 4 meet maximum time limit)
     """)
     
     st.markdown("*Note: Point ranges are approximate and vary by event. Base times are updated annually.*")
