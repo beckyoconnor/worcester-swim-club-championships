@@ -15,6 +15,9 @@ if hasattr(st, 'cache_data'):
 else:
     cache_decorator = st.cache
 
+# Memory optimization settings
+MEMORY_OPTIMIZATION = True
+
 
 # Page configuration
 st.set_page_config(
@@ -419,7 +422,7 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
 
 @cache_decorator
 def load_all_events(folder: str) -> pd.DataFrame:
-    """Load all event CSV files into a single dataframe."""
+    """Load all event CSV files into a single dataframe with memory optimization."""
     # Look for event files in cleaned_files subfolder
     cleaned_folder = os.path.join(folder, 'cleaned_files')
     if os.path.exists(cleaned_folder):
@@ -429,13 +432,71 @@ def load_all_events(folder: str) -> pd.DataFrame:
     
     csv_files = [f for f in os.listdir(search_folder) if f.startswith('event_') and f.endswith('.csv')]
     
+    if not csv_files:
+        print(f"No CSV files found in {search_folder}")
+        return pd.DataFrame()
+    
     dfs = []
     for csv_file in csv_files:
         file_path = os.path.join(search_folder, csv_file)
-        df = pd.read_csv(file_path)
-        dfs.append(df)
+        try:
+            # Load with optimized data types for memory efficiency
+            df = pd.read_csv(file_path, dtype={
+                'Event Number': 'category',  # Use category for repeated values
+                'Event Name': 'category',    # Use category for repeated values
+                'Event Category': 'category', # Use category for repeated values
+                'Name': 'object',            # Use object for names
+                'Age': 'int8',              # Use smallest int type
+                'Club': 'category',          # Use category for repeated values
+                'Time': 'object',           # Keep as object for time format
+                'WA Points': 'int16'        # Use int16 instead of int64
+            })
+            dfs.append(df)
+        except Exception as e:
+            print(f"Error reading {file_path}: {e}")
+            continue
     
-    return pd.concat(dfs, ignore_index=True)
+    if not dfs:
+        return pd.DataFrame()
+    
+    # Concatenate and optimize memory usage
+    combined_df = pd.concat(dfs, ignore_index=True)
+    
+    # Additional memory optimizations
+    if MEMORY_OPTIMIZATION:
+        # Convert string columns to category where beneficial
+        for col in combined_df.columns:
+            if combined_df[col].dtype == 'object':
+                # Convert to category if it has many repeated values
+                if combined_df[col].nunique() / len(combined_df) < 0.5:
+                    combined_df[col] = combined_df[col].astype('category')
+    
+    return combined_df
+
+
+@cache_decorator
+def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, view_type: str) -> pd.DataFrame:
+    """Memory-efficient filtering of dataframe."""
+    # Start with a copy to avoid modifying original
+    filtered_df = df.copy()
+    
+    # Apply gender filter
+    if gender != 'All':
+        filtered_df = filtered_df[filtered_df['Gender'] == gender]
+    
+    # Apply age filter
+    if age != 'All':
+        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+    
+    # Apply view type filter (eligible vs all)
+    if view_type == 'Championship Eligible Only':
+        filtered_df = filtered_df[filtered_df['Eligible'] == True]
+    
+    # Sort by total points descending
+    filtered_df = filtered_df.sort_values('Total_Points', ascending=False).reset_index(drop=True)
+    filtered_df.index = filtered_df.index + 1  # Start ranking from 1
+    
+    return filtered_df
 
 
 @cache_decorator
@@ -621,9 +682,12 @@ def main():
         st.error(f"❌ Events folder not found: {events_folder}")
         return
     
-    # Load data
+    # Load data with memory optimization
     with st.spinner("Loading championship data..."):
+        # Load event mapping first (lightweight)
         event_gender_map = get_event_gender_map_from_csvs(events_folder)
+        
+        # Load all data with optimized types
         df_all = load_all_events(events_folder)
         
         # Add Gender column to df_all for event filtering
@@ -634,8 +698,21 @@ def main():
         # Calculate scores for all swimmers (no minimum)
         df_all_swimmers = calculate_all_championship_scores(df_all, event_gender_map, min_categories=0)
         
-        # Also get eligible swimmers (5+ categories)
-        df_eligible = df_all_swimmers[df_all_swimmers['Eligible'] == True].copy()
+        # Also get eligible swimmers (5+ categories) - create view instead of copy
+        df_eligible = df_all_swimmers[df_all_swimmers['Eligible'] == True]
+        
+        # Memory cleanup - remove intermediate variables
+        del df_all
+        if MEMORY_OPTIMIZATION:
+            import gc
+            gc.collect()
+    
+    # Display memory usage info (optional)
+    if MEMORY_OPTIMIZATION:
+        import psutil
+        memory_usage = psutil.virtual_memory()
+        st.sidebar.markdown(f"**Memory Usage:** {memory_usage.percent:.1f}%")
+        st.sidebar.markdown(f"**Available:** {memory_usage.available / (1024**3):.1f} GB")
     
     # Championship Rules Expander
     with st.expander("📋 Championship Rules & Scoring", expanded=False):
@@ -697,19 +774,13 @@ def main():
     
     # Only run analysis if button is pressed
     if submit_button:
-        # Always show all swimmers (no eligibility filter needed)
-        df_display = df_all_swimmers.copy()
-        
-        # Apply gender filter FIRST
-        df_display = df_display[df_display['Gender'] == selected_gender]
-        
-        # Apply age filter
-        if selected_age != 'All':
-            df_display = df_display[df_display['Age'] == int(selected_age)]
-        
-        # Sort by total points descending
-        df_display = df_display.sort_values('Total_Points', ascending=False).reset_index(drop=True)
-        df_display.index = df_display.index + 1  # Start ranking from 1
+        # Use memory-efficient filtering
+        df_display = filter_dataframe_memory_efficient(
+            df_all_swimmers, 
+            selected_gender, 
+            selected_age, 
+            'All Swimmers'  # Always show all swimmers
+        )
         
         # Display summary stats
         col1, col2, col3 = st.columns(3)
