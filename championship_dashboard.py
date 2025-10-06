@@ -969,7 +969,7 @@ def main():
             else:
                 st.info("No swimmers found matching the selected filters.")
         
-        with st.expander("🔍 Individual Swimmer Details", expanded=False):
+        with st.expander("🔍 Individual Swimmer Details", expanded=True):
             # Individual Swimmer Detail Section
             st.markdown("---")
             st.markdown("### 🔍 Swimmer Event Details")
@@ -1129,7 +1129,7 @@ def main():
                 st.info("No swimmers found matching the selected filters.")
         
         # Event Rankings Section
-        with st.expander("🏁 Event Rankings - View All Swimmers by Event", expanded=False):
+        with st.expander("🏁 Event Rankings - View All Swimmers by Event", expanded=True):
             st.markdown("### Select an Event to View Rankings")
             
             # Filter events by selected gender first
