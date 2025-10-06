@@ -512,7 +512,10 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
     
     # Apply age filter
     if age != 'All':
-        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+        if age == '18+':
+            filtered_df = filtered_df[filtered_df['Age'] >= 18]
+        else:
+            filtered_df = filtered_df[filtered_df['Age'] == int(age)]
     
     # Apply view type filter (eligible vs all)
     if view_type == 'Championship Eligible Only':
@@ -813,9 +816,15 @@ def main():
             selected_gender = st.selectbox("Gender", gender_options, key='gender_filter')
         
         with col2:
-            # Get all ages from all swimmers for initial display
+            # Get all ages from all swimmers for initial display, group 18+ together
             all_ages = sorted(df_all_swimmers['Age'].unique().tolist())
-            age_options = ['All'] + [str(age) for age in all_ages]
+            # Create age options with 18+ grouping
+            age_options = ['All']
+            for age in all_ages:
+                if age < 18:
+                    age_options.append(str(age))
+                elif age >= 18 and '18+' not in age_options:
+                    age_options.append('18+')
             selected_age = st.selectbox("Age", age_options, key='age_filter')
         
         with col3:
@@ -907,6 +916,8 @@ def main():
                 # Dynamic tooltip based on age selection
                 if selected_age == 'All':
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                elif selected_age == '18+':
+                    avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -924,6 +935,8 @@ def main():
                 # Dynamic tooltip for empty data
                 if selected_age == 'All':
                     empty_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                elif selected_age == '18+':
+                    empty_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -945,6 +958,8 @@ def main():
                 # Dynamic tooltip based on age selection
                 if selected_age == 'All':
                     highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                elif selected_age == '18+':
+                    highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -962,6 +977,8 @@ def main():
                 # Dynamic tooltip for empty data
                 if selected_age == 'All':
                     empty_highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
+                elif selected_age == '18+':
+                    empty_highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
