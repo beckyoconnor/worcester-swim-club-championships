@@ -993,7 +993,27 @@ def main():
                 with col_a:
                     st.metric("Age", swimmer_info['Age'])
                 with col_b:
-                    st.metric("Total Points", f"{swimmer_info['Total_Points']:.0f}")
+                    # Determine category limit based on age
+                    category_limit = 3 if swimmer_info['Age'] < 12 else 2
+                    age_text = "under 12" if swimmer_info['Age'] < 12 else "12 and over"
+                    
+                    # Create tooltip content
+                    tooltip_text = f"Total points from top 8 races across all categories. Maximum {category_limit} races per category ({age_text})."
+                    
+                    # Use st.metric with custom HTML for tooltip
+                    st.markdown(f"""
+                    <div style="position: relative; display: inline-block;">
+                        <div style="cursor: help; border-bottom: 1px dotted #2b1f5c;" 
+                             title="{tooltip_text}">
+                            <div style="font-size: 0.875rem; color: #64748b; font-weight: 600; margin-bottom: 0.25rem;">
+                                Total Points
+                            </div>
+                            <div style="font-size: 2rem; color: #2b1f5c; font-weight: bold;">
+                                {swimmer_info['Total_Points']:.0f}
+                            </div>
+                        </div>
+                    </div>
+                    """, unsafe_allow_html=True)
                 with col_c:
                     st.metric("Categories Competed", swimmer_info['Categories_Competed'])
             
