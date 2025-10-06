@@ -1422,7 +1422,10 @@ def main():
                 
                 # Apply age filter if not 'All'
                 if selected_age != 'All':
-                    event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
+                    if selected_age == '18+':
+                        event_swimmers = event_swimmers[event_swimmers['Age'] >= 18]
+                    else:
+                        event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
                 
                 if len(event_swimmers) > 0:
                     # Sort by WA Points descending (best performance first)
