@@ -1526,13 +1526,13 @@ def main():
     st.markdown("#### How FINA Points Work:")
     st.markdown("""
     - **1000 Points** = Performance matching the base time (typically world record level)
-    - **900+ Points** = Elite international level
-    - **800+ Points** = National championship level
-    - **700+ Points** = Regional championship level
-    - **600+ Points** = Strong club level performance
-    - **500+ Points** = Good club level performance
-    - **400+ Points** = Solid club level performance
-    - **300+ Points** = Developing swimmer level
+    - **900+ Points** = Elite international level (Olympic/World Championship standard)
+    - **800+ Points** = National championship level (British Championships qualifying standard)
+    - **700+ Points** = Regional championship level (Midland Championships qualifying standard)
+    - **600+ Points** = County championship level (Worcestershire Championships qualifying standard)
+    - **500+ Points** = Strong club level performance (Level 1/2 meet qualifying times)
+    - **400+ Points** = Good club level performance (Level 3 meet qualifying times)
+    - **300+ Points** = Developing swimmer level (Level 4 meet/beginner competitive)
     """)
     
     st.markdown("*Note: Point ranges are approximate and vary by event. Base times are updated annually.*")
@@ -1556,6 +1556,7 @@ def main():
     st.markdown("#### Sources & Further Reading:")
     st.markdown("""
     - [World Aquatics Official Website](https://www.worldaquatics.com) - Governing body for swimming
+    - [Swim England](https://www.swimming.org) - UK swimming governing body
     - [FINA Points Calculator](https://sites.google.com/view/fina-points/home) - Calculate your own points
     - [Understanding FINA Points](https://thebingeful.com/what-are-fina-points-in-swimming/) - Detailed explanation
     """)
