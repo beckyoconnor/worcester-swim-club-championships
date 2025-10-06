@@ -9,6 +9,12 @@ import pandas as pd
 import os
 from typing import Dict
 
+# Compatibility for different Streamlit versions
+if hasattr(st, 'cache_data'):
+    cache_decorator = st.cache_data
+else:
+    cache_decorator = st.cache
+
 
 # Page configuration
 st.set_page_config(
@@ -363,7 +369,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-@st.cache
+@cache_decorator
 def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
     """Map event numbers to gender by reading event names from CSV files."""
     import glob
@@ -411,7 +417,7 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
     return event_gender_map
 
 
-@st.cache
+@cache_decorator
 def load_all_events(folder: str) -> pd.DataFrame:
     """Load all event CSV files into a single dataframe."""
     # Look for event files in cleaned_files subfolder
