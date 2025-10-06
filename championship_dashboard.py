@@ -989,6 +989,8 @@ def main():
             
                 # Display swimmer summary
                 st.markdown(f"#### {selected_swimmer}")
+                
+                # First row of metrics
                 col_a, col_b, col_c = st.columns(3)
                 with col_a:
                     st.metric("Age", swimmer_info['Age'])
@@ -997,8 +999,8 @@ def main():
                     category_limit = 3 if swimmer_info['Age'] < 12 else 2
                     age_text = "under 12" if swimmer_info['Age'] < 12 else "12 and over"
                     
-                    # Create tooltip content
-                    tooltip_text = f"Total points from top 8 races across all categories. Maximum {category_limit} races per category ({age_text})."
+                    # Create tooltip content for Total Points
+                    total_tooltip_text = f"Total points from top 8 races across all categories. Maximum {category_limit} races per category ({age_text})."
                     
                     # Use CSS-based tooltip that works reliably in Streamlit
                     st.markdown(f"""
@@ -1063,11 +1065,40 @@ def main():
                     <div class="tooltip">
                         <div class="metric-label">Total Points</div>
                         <div class="metric-value">{swimmer_info['Total_Points']:.0f}</div>
-                        <span class="tooltiptext">{tooltip_text}</span>
+                        <span class="tooltiptext">{total_tooltip_text}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 with col_c:
                     st.metric("Categories Competed", swimmer_info['Categories_Competed'])
+                
+                # Second row of metrics with tooltips
+                col_d, col_e, col_f = st.columns(3)
+                with col_d:
+                    # Average Points tooltip
+                    avg_tooltip_text = f"Average FINA points per race from top 8 races. Calculated as total points ÷ number of races counted."
+                    
+                    st.markdown(f"""
+                    <div class="tooltip">
+                        <div class="metric-label">Average Points</div>
+                        <div class="metric-value">{swimmer_info['Average_Points']:.1f}</div>
+                        <span class="tooltiptext">{avg_tooltip_text}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_e:
+                    # Best Event Points tooltip
+                    best_tooltip_text = f"Highest FINA points achieved in a single race from the top 8 races counted towards championship total."
+                    
+                    st.markdown(f"""
+                    <div class="tooltip">
+                        <div class="metric-label">Best Event Points</div>
+                        <div class="metric-value">{swimmer_info['Best_Event_Points']:.0f}</div>
+                        <span class="tooltiptext">{best_tooltip_text}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                with col_f:
+                    st.metric("Events Counted", swimmer_info['Events_Count'])
             
                 # Get all events for this swimmer
                 swimmer_events = df_all_with_gender[df_all_with_gender['Name'] == selected_swimmer].copy()
