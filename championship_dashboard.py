@@ -846,7 +846,13 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("Total Swimmers", len(df_display))
+            st.markdown(f"""
+            <div class="main-tooltip">
+                <div class="main-metric-label">Total Swimmers</div>
+                <div class="main-metric-value">{len(df_display)}</div>
+                <span class="main-tooltiptext">Total number of swimmers in the current filtered view</span>
+            </div>
+            """, unsafe_allow_html=True)
         
         with col2:
             # Add CSS for tooltips
