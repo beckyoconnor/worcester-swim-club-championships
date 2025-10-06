@@ -554,7 +554,22 @@ def calculate_all_championship_scores(df_all: pd.DataFrame, event_gender_map: Di
         # Get swimmer info
         age = swimmer_events['Age'].iloc[0]
         club = swimmer_events['Club'].iloc[0]
-        gender = swimmer_events['Gender'].mode()[0] if len(swimmer_events['Gender'].mode()) > 0 else swimmer_events['Gender'].iloc[0]
+        # Use the most common gender across all events for this swimmer
+        gender_counts = swimmer_events['Gender'].value_counts()
+        if len(gender_counts) > 0:
+            # Get the most frequent gender
+            most_frequent_gender = gender_counts.index[0]
+            most_frequent_count = gender_counts.iloc[0]
+            
+            # If there's a tie, use the gender from the event with highest WA Points
+            if len(gender_counts) > 1 and gender_counts.iloc[1] == most_frequent_count:
+                # Tie - use gender from best performance
+                best_event = swimmer_events.loc[swimmer_events['WA Points'].idxmax()]
+                gender = best_event['Gender']
+            else:
+                gender = most_frequent_gender
+        else:
+            gender = swimmer_events['Gender'].iloc[0]
         
         # Determine max races per category based on age
         max_per_category = 3 if age < 12 else 2
