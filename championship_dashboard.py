@@ -701,6 +701,9 @@ def main():
         # Also get eligible swimmers (5+ categories) - create view instead of copy
         df_eligible = df_all_swimmers[df_all_swimmers['Eligible'] == True]
         
+        # Store filtered data for event rankings (before deleting df_all)
+        df_all_with_gender = df_all.copy()
+        
         # Memory cleanup - remove intermediate variables
         del df_all
         if MEMORY_OPTIMIZATION:
@@ -947,7 +950,7 @@ def main():
                     st.metric("Categories Competed", swimmer_info['Categories_Competed'])
             
                 # Get all events for this swimmer
-                swimmer_events = df_all[df_all['Name'] == selected_swimmer].copy()
+                swimmer_events = df_all_with_gender[df_all_with_gender['Name'] == selected_swimmer].copy()
             
                 if len(swimmer_events) > 0:
                     # Sort by WA Points descending
@@ -1082,7 +1085,7 @@ def main():
             st.markdown("### Select an Event to View Rankings")
             
             # Filter events by selected gender first
-            df_gender_events = df_all[df_all['Gender'] == selected_gender].copy()
+            df_gender_events = df_all_with_gender[df_all_with_gender['Gender'] == selected_gender].copy()
             
             # Get unique events for the selected gender
             event_options = df_gender_events[['Event Number', 'Event Name']].drop_duplicates().sort_values('Event Number')
