@@ -395,7 +395,7 @@ def main():
     
     # Filters in main page using form
     # Use stylesheet-driven headings
-    st.markdown('### Select Age and Gender then Retrieve Data')
+    st.markdown('<h3 class="wsc-h3">Select Age and Gender then Retrieve Data</h3>', unsafe_allow_html=True)
     
     with st.container():
         col1, col2, col3 = st.columns([2, 2, 1])
@@ -650,7 +650,7 @@ def main():
         with st.expander("Individual Swimmer Details", expanded=True):
             # Individual Swimmer Detail Section
             st.markdown("---")
-            st.markdown("### Swimmer Event Details")
+                st.markdown('<h3 class="wsc-h3">Swimmer Event Details</h3>', unsafe_allow_html=True)
             st.markdown("Select a swimmer to view their individual event breakdown:")
         
             # Create a dropdown with swimmer names
