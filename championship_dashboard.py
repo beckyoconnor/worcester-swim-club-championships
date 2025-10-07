@@ -176,7 +176,7 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
         min_categories: Minimum categories required (0 = show all)
     """
     # Ensure Event Number is string and Gender column exists
-        df_all['Event Number'] = df_all['Event Number'].astype(str)
+    df_all['Event Number'] = df_all['Event Number'].astype(str)
     if 'Gender' not in df_all.columns:
         df_all['Gender'] = 'Unknown'
     
