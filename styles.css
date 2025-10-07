@@ -322,3 +322,21 @@ section[data-testid="stSidebar"] {
   outline: 3px solid rgba(30,58,138,0.25) !important; /* blue focus ring */
 }
 
+/* Altair/Vega tooltip styling (Worcester blue + white) */
+.vega-tooltip {
+  background: var(--wsc-blue) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.4 !important;
+  max-width: 420px !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+}
+.vega-tooltip-table td { padding: 6px 10px !important; }
+.vega-tooltip .key { color: #c7d2fe !important; font-weight: 600 !important; }
+.vega-tooltip .value { color: #ffffff !important; font-weight: 700 !important; }
+
