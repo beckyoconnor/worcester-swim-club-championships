@@ -650,7 +650,7 @@ def main():
         with st.expander("Individual Swimmer Details", expanded=True):
             # Individual Swimmer Detail Section
             st.markdown("---")
-                st.markdown('<h3 class="wsc-h3">Swimmer Event Details</h3>', unsafe_allow_html=True)
+            st.markdown('<h3 class="wsc-h3">Swimmer Event Details</h3>', unsafe_allow_html=True)
             st.markdown("Select a swimmer to view their individual event breakdown:")
         
             # Create a dropdown with swimmer names
