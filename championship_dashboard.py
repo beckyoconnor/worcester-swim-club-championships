@@ -379,6 +379,53 @@ def build_swimmer_narratives(df_all: pd.DataFrame) -> pd.DataFrame:
     df_narr = pd.DataFrame(results)
     return df_narr
 
+
+@cache_decorator
+def load_precomputed_scoreboard(base_folder: str) -> pd.DataFrame | None:
+    """Load precomputed championship scoreboard (boys+girls) if available.
+
+    Expects CSVs under `<base_folder>/championship_results/` as written by
+    `club_championships_scoreboard.export_scoreboard()`.
+    Returns a dataframe matching the columns used by the dashboard, or None.
+    """
+    try:
+        results_dir = os.path.join(base_folder, 'championship_results')
+        boys_csv = os.path.join(results_dir, 'championship_scoreboard_boys.csv')
+        girls_csv = os.path.join(results_dir, 'championship_scoreboard_girls.csv')
+        if not (os.path.exists(boys_csv) and os.path.exists(girls_csv)):
+            return None
+        df_boys = pd.read_csv(boys_csv)
+        df_girls = pd.read_csv(girls_csv)
+        df_boys['Gender'] = 'Male'
+        df_girls['Gender'] = 'Female'
+        df = pd.concat([df_boys, df_girls], ignore_index=True)
+        # Ensure required columns exist and types are consistent
+        expected_cols = [
+            'Name', 'Age', 'Gender', 'Club', 'Total_Points', 'Average_Points',
+            'Best_Event_Points', 'Events_Count', 'Categories_Competed',
+            'Sprint_Events', 'Free_Events', 'Form_100_Events', 'Form_200_Events',
+            'IM_Events', 'Distance_Events'
+        ]
+        for col in expected_cols:
+            if col not in df.columns:
+                df[col] = 0 if 'Events' in col or 'Points' in col else ''
+        # Order columns (not strictly necessary, but helps consistency)
+        df = df[expected_cols + [c for c in df.columns if c not in expected_cols]]
+        return df
+    except Exception:
+        return None
+
+
+@cache_decorator
+def load_swimmer_narratives_csv(base_folder: str) -> pd.DataFrame | None:
+    """Load prebuilt swimmer narratives if present."""
+    try:
+        csv_path = os.path.join(base_folder, 'championship_results', 'championship_swimmer_narratives.csv')
+        if not os.path.exists(csv_path):
+            return None
+        return pd.read_csv(csv_path)
+    except Exception:
+        return None
 def main():
     """Main Streamlit app."""
     
@@ -446,17 +493,18 @@ def main():
         # Reuse the same dataframe (read-only below) to avoid extra memory copy
         df_all_with_gender = df_all
         
-        # Calculate scores for all swimmers (no minimum)
-        df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
-        # Build narratives for tooltips and export
-        df_narratives = build_swimmer_narratives(df_all)
-        try:
-            out_dir = os.path.join(events_folder, 'championship_results')
-            os.makedirs(out_dir, exist_ok=True)
-            narr_path = os.path.join(out_dir, 'championship_swimmer_narratives.csv')
-            df_narratives.to_csv(narr_path, index=False)
-        except Exception:
-            pass
+        # Prefer precomputed scoreboard if available (faster, consistent)
+        df_precomputed = load_precomputed_scoreboard(events_folder)
+        if df_precomputed is not None and len(df_precomputed) > 0:
+            df_all_swimmers = df_precomputed.copy()
+        else:
+            # Calculate scores for all swimmers (no minimum)
+            df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
+
+        # Try to load prebuilt narratives; if missing, build on the fly
+        df_narratives = load_swimmer_narratives_csv(events_folder)
+        if df_narratives is None or len(df_narratives) == 0:
+            df_narratives = build_swimmer_narratives(df_all)
         
         # Memory cleanup - remove intermediate variables
         del df_all

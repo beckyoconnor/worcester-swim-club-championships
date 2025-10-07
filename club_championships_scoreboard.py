@@ -14,6 +14,7 @@ import pandas as pd
 import os
 from typing import Dict, List, Tuple
 from openpyxl import load_workbook
+import glob
 
 
 def get_event_gender_map(excel_file: str) -> Dict[str, str]:
@@ -57,6 +58,37 @@ def get_event_gender_map(excel_file: str) -> Dict[str, str]:
     wb.close()
     return event_gender_map
 
+
+def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
+    """Fallback: infer event gender by reading event CSV filenames and header text.
+
+    Looks under cleaned_files/ if present, otherwise the folder itself.
+    """
+    cleaned_folder = os.path.join(folder, 'cleaned_files')
+    search_folder = cleaned_folder if os.path.exists(cleaned_folder) else folder
+
+    csv_files = glob.glob(os.path.join(search_folder, 'event_*.csv'))
+    event_gender_map: Dict[str, str] = {}
+    for csv_file in csv_files:
+        try:
+            basename = os.path.basename(csv_file)
+            event_number = os.path.splitext(basename)[0].split('_')[-1]
+            df = pd.read_csv(csv_file)
+            if 'Event Name' in df.columns and len(df) > 0:
+                event_name = str(df['Event Name'].iloc[0]).lower()
+                if 'female' in event_name or 'girl' in event_name:
+                    event_gender_map[event_number] = 'Female'
+                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name:
+                    event_gender_map[event_number] = 'Male'
+                elif 'open' in event_name:
+                    event_gender_map[event_number] = 'Male'
+                else:
+                    event_gender_map[event_number] = 'Male'
+            else:
+                event_gender_map[event_number] = 'Unknown'
+        except Exception:
+            event_gender_map[event_number] = 'Unknown'
+    return event_gender_map
 
 def load_all_events(folder: str) -> pd.DataFrame:
     """
@@ -302,15 +334,18 @@ def main():
     print("=" * 100)
     
     # Configuration
-    excel_file = 'WSC Club Champs 2024.xlsx'
-    events_folder = 'WSC_Club_Champs_2024/cleaned_files'
-    output_folder = 'WSC_Club_Champs_2024'
+    # Base championship folder; script will read cleaned_files/ within this
+    base_folder = 'WSC_Club_Champs_2024'
+    excel_file = 'WSC Club Champs 2024.xlsx'  # optional; ignored if missing
+    events_folder = base_folder  # load_all_events will pick cleaned_files/ automatically
+    output_folder = base_folder
     
     print("\n📊 Loading event data...")
     
-    # Get gender mapping
-    event_gender_map = get_event_gender_map(excel_file)
-    print(f"✓ Mapped {len(event_gender_map)} events to gender")
+    # Get gender mapping (try Excel, fallback to CSV inference)
+    # Always infer gender mapping from cleaned CSVs to avoid Excel dependency
+    event_gender_map = get_event_gender_map_from_csvs(base_folder)
+    print(f"✓ Mapped {len(event_gender_map)} events to gender (from CSVs)")
     
     # Load all events
     df_all = load_all_events(events_folder)
