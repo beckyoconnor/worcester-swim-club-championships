@@ -127,29 +127,32 @@ def load_all_events(folder: str) -> pd.DataFrame:
             if not s or s == '-':
                 return '-'
 
-            # HH:MM:SS(.HS)?
-            m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+            # HH:MM:SS(.H+)? - accept any decimals, trim to 2
+            m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d+))?$", s)
             if m:
                 hh = int(m.group(1))
                 mm = int(m.group(2))
                 ss = int(m.group(3))
-                hs = int(m.group(4)) if m.group(4) else 0
-                return f"{hh:02d}:{mm:02d}:{ss:02d}.{hs:02d}"
+                dec = m.group(4) or "0"
+                hs = (dec[:2]).ljust(2, '0')
+                return f"{hh:02d}:{mm:02d}:{ss:02d}.{hs}"
 
-            # MM:SS(.HS)?
-            m = re.match(r"^(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+            # MM:SS(.H+)?
+            m = re.match(r"^(\d{1,2}):(\d{1,2})(?:\.(\d+))?$", s)
             if m:
                 mm = int(m.group(1))
                 ss = int(m.group(2))
-                hs = int(m.group(3)) if m.group(3) else 0
-                return f"00:{mm:02d}:{ss:02d}.{hs:02d}"
+                dec = m.group(3) or "0"
+                hs = (dec[:2]).ljust(2, '0')
+                return f"00:{mm:02d}:{ss:02d}.{hs}"
 
-            # SS.HS
-            m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
+            # SS.H+ (any decimals)
+            m = re.match(r"^(\d{1,2})\.(\d+)$", s)
             if m:
                 ss = int(m.group(1))
-                hs = int(m.group(2))
-                return f"00:00:{ss:02d}.{hs:02d}"
+                dec = m.group(2)
+                hs = (dec[:2]).ljust(2, '0')
+                return f"00:00:{ss:02d}.{hs}"
 
             # MM:SS with single-digit seconds etc. already covered; if only digits or digits.decimals treat as seconds
             if re.match(r"^\d+$", s):
