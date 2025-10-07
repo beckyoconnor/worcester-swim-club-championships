@@ -813,7 +813,7 @@ def main():
                     )
                     
                     # Show category breakdown
-                    st.markdown('<h4 class="wsc-h4">📊 Category Breakdown</h4>', unsafe_allow_html=True)
+                    st.markdown('<wsc-h4>📊 Category Breakdown</wsc-h4>', unsafe_allow_html=True)
                     
                     # Calculate statistics for each category
                     category_stats = swimmer_events.groupby('Event Category').agg({
