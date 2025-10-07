@@ -976,7 +976,7 @@ def main():
     
 
     
-    st.markdown('<h4 class="wsc-h4">What are FINA Points?</h4>', unsafe_allow_html=True)
+    st.markdown('<wsc-h4>What are FINA Points?</wsc-h4>', unsafe_allow_html=True)
     st.markdown("""
     **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, distances, and genders. 
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
@@ -986,7 +986,7 @@ def main():
     **Important**: FINA points are calculated against **open (adult) world records**, not age-specific records. This means younger swimmers are compared against adult standards, which is why age progression in FINA points is so significant.
     """)
     
-    st.markdown('<h4 class="wsc-h4">Why Age Matters:</h4>', unsafe_allow_html=True)
+    st.markdown('<wsc-h4">Why Age Matters:</wsc-h4>', unsafe_allow_html=True)
     st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
     st.markdown("""
     - **Physical Development:** Increased strength, power, and endurance
@@ -995,14 +995,14 @@ def main():
     - **Competition Experience:** Better race strategy and mental preparation
     """)
     
-    st.markdown('<h4 class="wsc-h4">What the Charts Show:</h4>', unsafe_allow_html=True)
+    st.markdown('<wsc-h4>What the Charts Show:</wsc-h4>', unsafe_allow_html=True)
     st.markdown("""
     The charts below show how average FINA points progress with age across different event categories. 
     Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
     and how Worcester Swimming Club swimmers compare across different age groups.
     """)
     
-    st.markdown('<h4 class="wsc-h4">Sources & Further Reading:</h4>', unsafe_allow_html=True)
+    st.markdown('<wsc-h4>Sources & Further Reading:</wsc-h4>', unsafe_allow_html=True)
     st.markdown("""
     - [World Aquatics Official Website](https://www.worldaquatics.com) - Governing body for swimming
     - [Swim England](https://www.swimming.org) - UK swimming governing body
