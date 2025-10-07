@@ -437,23 +437,14 @@ def load_events_prefer_union(base_folder: str) -> pd.DataFrame:
       2) championship_results/events_all.csv
       3) Fall back to concatenating cleaned_files/event_*.csv
     """
-    # Try Parquet
-    try:
-        results_dir = os.path.join(base_folder, 'championship_results')
-        pq_path = os.path.join(results_dir, 'events_all.parquet')
-        if os.path.exists(pq_path):
-            df = pd.read_parquet(pq_path)
-            return df
-    except Exception:
-        pass
-    # Try CSV
-    try:
-        csv_path = os.path.join(results_dir, 'events_all.csv')
-        if os.path.exists(csv_path):
-            df = pd.read_csv(csv_path)
-            return df
-    except Exception:
-        pass
+    # Require Parquet (preferred); fall back to per-file loader only if missing
+    results_dir = os.path.join(base_folder, 'championship_results')
+    pq_path = os.path.join(results_dir, 'events_all.parquet')
+    if os.path.exists(pq_path):
+        try:
+            return pd.read_parquet(pq_path)
+        except Exception:
+            pass
     # Fallback to per-file loader
     return load_all_events(base_folder)
 def main():

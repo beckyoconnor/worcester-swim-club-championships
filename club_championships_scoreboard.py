@@ -109,10 +109,61 @@ def load_all_events(folder: str) -> pd.DataFrame:
     
     csv_files = [f for f in os.listdir(search_folder) if f.startswith('event_') and f.endswith('.csv')]
     
+    def _norm_time_str(val: str) -> str:
+        """Normalize time to HH:MM.SS.HS.
+
+        Accepts forms like '31.95', '1:57.04', '00:31.95', '1:02:03.45'.
+        Returns '-' for blanks.
+        """
+        try:
+            if pd.isna(val):
+                return '-'
+            s = str(val).strip()
+            if not s or s == '-':
+                return '-'
+            # SS.HS
+            import re
+            m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
+            if m:
+                ss = int(m.group(1))
+                hs = int(m.group(2))
+                return f"00:{0:02d}.{ss:02d}.{hs:02d}".format(0)  # keep hours 00
+            # MM:SS.HS
+            m = re.match(r"^(\d{1,2}):(\d{1,2})\.(\d{1,2})$", s)
+            if m:
+                mm = int(m.group(1))
+                ss = int(m.group(2))
+                hs = int(m.group(3))
+                return f"00:{mm:02d}.{ss:02d}.{hs:02d}"
+            # HH:MM:SS(.HS)?
+            m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+            if m:
+                hh = int(m.group(1))
+                mm = int(m.group(2))
+                ss = int(m.group(3))
+                hs = int(m.group(4)) if m.group(4) else 0
+                return f"{hh:02d}:{mm:02d}.{ss:02d}.{hs:02d}"
+            # Already in HH:MM.SS.HS
+            m = re.match(r"^(\d{2}):(\d{2})\.(\d{2})\.(\d{2})$", s)
+            if m:
+                return s
+            # Fallback: if digits only treat as seconds
+            if s.replace('.', '', 1).isdigit():
+                # e.g., '31' or '31.9'
+                parts = s.split('.')
+                ss = int(parts[0])
+                hs = int(parts[1]) if len(parts) > 1 else 0
+                return f"00:00.{ss:02d}.{hs:02d}"
+            return s
+        except Exception:
+            return '-'
+
     dfs = []
     for csv_file in csv_files:
         file_path = os.path.join(search_folder, csv_file)
         df = pd.read_csv(file_path)
+        if 'Time' in df.columns:
+            df['Time'] = df['Time'].apply(_norm_time_str)
         dfs.append(df)
     
     return pd.concat(dfs, ignore_index=True)
