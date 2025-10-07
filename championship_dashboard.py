@@ -499,7 +499,7 @@ def main():
                     highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
-            else:
+                else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
