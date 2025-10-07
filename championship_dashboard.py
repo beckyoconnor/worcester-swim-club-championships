@@ -812,8 +812,8 @@ def main():
                         mime="text/csv"
                     )
                     
-                    # Show category breakdown
-                    st.markdown('<wsc-h1> 📊 Category Breakdown</wsc-h1>', unsafe_allow_html=True)
+                    # Show category breakdown (larger heading)
+                    st.markdown('<h2 class="wsc-h2">📊 Category Breakdown</h2>', unsafe_allow_html=True)
                     
                     # Calculate statistics for each category
                     category_stats = swimmer_events.groupby('Event Category').agg({
