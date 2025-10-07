@@ -1058,7 +1058,7 @@ def main():
     st.markdown("""
     </div>
     """, unsafe_allow_html=True)
-    st.markdown('<wsc-h4>Average FINA Points by Age and Event Category</wsc-h4>', unsafe_allow_html=True)
+    st.markdown('<h4 class="wsc-h4">Average FINA Points by Age and Event Category</h4>', unsafe_allow_html=True)
     
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
@@ -1076,8 +1076,26 @@ def main():
             chart_data['Age_Group'] = chart_data['Age'].apply(lambda x: min(x, 18))
             
             # Group by age group and event category, calculate average WA Points
-            chart_df = chart_data.groupby(['Age_Group', 'Event Category'])['WA Points'].mean().reset_index()
+            grouped = chart_data.groupby(['Age_Group', 'Event Category'])
+            chart_df = grouped['WA Points'].mean().reset_index()
             chart_df = chart_df.rename(columns={'WA Points': 'Average FINA Points', 'Age_Group': 'Age'})
+
+            # Find min/max average event within each (Age_Group, Event Category)
+            # We compute per-event (Event Name) average first, then take argmax/argmin
+            per_event = chart_data.groupby(['Age_Group', 'Event Category', 'Event Name'])['WA Points'].mean().reset_index()
+            # For max
+            idx_max = per_event.groupby(['Age_Group', 'Event Category'])['WA Points'].idxmax()
+            max_ev = per_event.loc[idx_max][['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
+            max_ev = max_ev.rename(columns={'Event Name': 'Max Event', 'WA Points': 'Max Event Avg'})
+            # For min
+            idx_min = per_event.groupby(['Age_Group', 'Event Category'])['WA Points'].idxmin()
+            min_ev = per_event.loc[idx_min][['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
+            min_ev = min_ev.rename(columns={'Event Name': 'Min Event', 'WA Points': 'Min Event Avg'})
+
+            # Merge onto chart_df
+            chart_df = chart_df.merge(max_ev, how='left', left_on=['Age','Event Category'], right_on=['Age_Group','Event Category'])
+            chart_df = chart_df.merge(min_ev, how='left', left_on=['Age','Event Category'], right_on=['Age_Group','Event Category'])
+            chart_df = chart_df.drop(columns=['Age_Group_x','Age_Group_y'])
             
             # Convert age 18 to "18+" for display
             chart_df['Age'] = chart_df['Age'].apply(lambda x: '18+' if x == 18 else str(int(x)))
@@ -1091,14 +1109,14 @@ def main():
         # Create charts using Altair
         import altair as alt
         
-        # Define color palette for event categories
+        # Define color palette for event categories (Worcester SC palette)
         category_colors = {
-            'Sprint': '#FF6B6B',
-            'Free': '#4ECDC4', 
-            '100 Form': '#45B7D1',
-            '200 Form': '#96CEB4',
-            'IM': '#FFEAA7',
-            'Distance': '#DDA0DD'
+            'Sprint': '#7ef542',     # Worcester green
+            'Free': '#1a1d5a',       # Club navy
+            '100 Form': '#2b1f5c',   # Worcester indigo/purple
+            '200 Form': '#5cb82f',   # Darker club green
+            'IM': '#1e3a8a',         # Worcester blue
+            'Distance': '#25408f'    # Deep blue variant for contrast
         }
         
         # Create male chart
@@ -1112,7 +1130,15 @@ def main():
                               scale=alt.Scale(domain=list(category_colors.keys()), 
                                             range=list(category_colors.values())),
                               title='Event Category'),
-                tooltip=['Age:N', 'Event Category:N', 'Average FINA Points:Q']
+                tooltip=[
+                    alt.Tooltip('Age:N', title='Age'),
+                    alt.Tooltip('Event Category:N', title='Event Category'),
+                    alt.Tooltip('Average FINA Points:Q', title='Average FINA Points', format='.1f'),
+                    alt.Tooltip('Max Event:N', title='Top Avg Event'),
+                    alt.Tooltip('Max Event Avg:Q', title='Top Avg Points', format='.1f'),
+                    alt.Tooltip('Min Event:N', title='Lowest Avg Event'),
+                    alt.Tooltip('Min Event Avg:Q', title='Lowest Avg Points', format='.1f')
+                ]
             ).properties(
                 width=600,
                 height=400,
@@ -1132,7 +1158,15 @@ def main():
                               scale=alt.Scale(domain=list(category_colors.keys()), 
                                             range=list(category_colors.values())),
                               title='Event Category'),
-                tooltip=['Age:N', 'Event Category:N', 'Average FINA Points:Q']
+                tooltip=[
+                    alt.Tooltip('Age:N', title='Age'),
+                    alt.Tooltip('Event Category:N', title='Event Category'),
+                    alt.Tooltip('Average FINA Points:Q', title='Average FINA Points', format='.1f'),
+                    alt.Tooltip('Max Event:N', title='Top Avg Event'),
+                    alt.Tooltip('Max Event Avg:Q', title='Top Avg Points', format='.1f'),
+                    alt.Tooltip('Min Event:N', title='Lowest Avg Event'),
+                    alt.Tooltip('Min Event Avg:Q', title='Lowest Avg Points', format='.1f')
+                ]
             ).properties(
                 width=600,
                 height=400,
