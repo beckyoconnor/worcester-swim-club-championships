@@ -271,7 +271,8 @@ div[data-testid="stExpander"] > div > div {
 }
 .cat-chip:hover .cat-tooltip { visibility: visible; opacity: 1; }
 .cat-tooltip-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--wsc-heading); }
-.cat-tooltip-item { font-size: 0.9rem; margin: 0.15rem 0; }
+.cat-tooltip-item { font-size: 0.9rem; margin: 0.15rem 0; display: flex; align-items: center; gap: 0.5rem; }
+.cat-dot { width: 10px; height: 10px; background: var(--wsc-green); border-radius: 50%; display: inline-block; }
 .cat-tooltip-note { font-size: 0.8rem; color: #6b7280; margin-top: 0.5rem; }
 
 /* Utility heading classes for explicit HTML usage */

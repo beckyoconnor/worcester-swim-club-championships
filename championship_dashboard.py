@@ -853,12 +853,13 @@ def main():
                         cat_df = cat_df.sort_values('WA Points', ascending=False)
                         # mark included with star
                         def label_row(r):
-                            inc = ' ⭐' if str(r['Event Number']) in included_event_numbers else ''
-                            return f"{int(r['Event Number'])} - {r['Event Name']} ({int(r['WA Points'])} pts){inc}"
+                            included = str(r['Event Number']) in included_event_numbers
+                            dot = "<span class='cat-dot'></span>" if included else ""
+                            return f"{dot}{int(r['Event Number'])} - {r['Event Name']} ({int(r['WA Points'])} pts)"
                         items = [label_row(r) for _, r in cat_df.iterrows()]
                         tooltip_items = ''.join([f"<div class='cat-tooltip-item'>• {it}</div>" for it in items])
                         chip_html_parts.append(
-                            f"<div class='cat-chip'>{cat}<div class='cat-tooltip'><div class='cat-tooltip-title'>{cat} events</div>{tooltip_items}<div class='cat-tooltip-note'>⭐ indicates events included in scoring</div></div></div>"
+                            f"<div class='cat-chip'>{cat}<div class='cat-tooltip'><div class='cat-tooltip-title'>{cat} events</div>{tooltip_items}<div class='cat-tooltip-note'><span class='cat-dot'></span> indicates events included in scoring</div></div></div>"
                         )
                     chip_html_parts.append("</div>")
                     st.markdown(''.join(chip_html_parts), unsafe_allow_html=True)
