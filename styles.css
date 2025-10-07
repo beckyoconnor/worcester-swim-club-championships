@@ -135,15 +135,27 @@
   box-shadow: 0 2px 8px rgba(43, 31, 92, 0.1);
 }
 
-/* Global Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-  color: #1a1d5a; /* Worcester blue for headings */
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+/* Global Typography based on WSC site */
+:root {
+  --wsc-blue: #1a1d5a; /* Primary headings/nav blue */
+  --wsc-accent: #dc2626; /* Link/accent (red from site) */
+  --wsc-green: #7ef542; /* Club accent green */
+  --wsc-text: #0f172a; /* Slate-900 style body text */
 }
 
-/* Utility heading class if needed for explicit markup */
-.wsc-heading {
-  color: #1a1d5a;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+body, .main .block-container, [data-testid="stMarkdownContainer"] {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--wsc-text);
 }
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--wsc-blue);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* Links */
+a { color: var(--wsc-accent) !important; }
+a:hover { opacity: 0.9; }
 
