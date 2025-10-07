@@ -731,8 +731,27 @@ def main():
                     if 'Gender' not in swimmer_events.columns:
                         swimmer_events['Gender'] = 'Unknown'
                 
+                    # Determine which events are INCLUDED in championship scoring for this swimmer
+                    limit_per_category = 3 if swimmer_info['Age'] < 12 else 2
+                    categories_for_scoring = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
+                    selected_per_cat = []
+                    for cat in categories_for_scoring:
+                        cat_events = swimmer_events[swimmer_events['Event Category'] == cat]
+                        if len(cat_events) == 0:
+                            continue
+                        cat_events = cat_events.drop_duplicates(subset=['Event Number'], keep='first')
+                        top_cat = cat_events.head(limit_per_category)
+                        if len(top_cat) > 0:
+                            selected_per_cat.append(top_cat)
+                    included_event_numbers = set()
+                    if len(selected_per_cat) > 0:
+                        all_candidates = pd.concat(selected_per_cat, ignore_index=True)
+                        top8 = all_candidates.nlargest(8, 'WA Points')
+                        included_event_numbers = set(top8['Event Number'].astype(str).tolist())
+
                     # Prepare display dataframe
                     event_display = swimmer_events[['Event Number', 'Event Name', 'Event Category', 'Time', 'WA Points']].copy()
+                    event_display['Included'] = event_display['Event Number'].astype(str).apply(lambda x: '✅' if x in included_event_numbers else '')
                 
                     # Format Time to hh:mm:ss:hs (hundredths of seconds)
                     def format_time(time_val):
@@ -790,17 +809,23 @@ def main():
                         'Time': 'Time',
                         'WA Points': 'FINA Points'
                     })
-                
-                    # Reset index to start from 1
-                    event_display.insert(0, 'Rank', range(1, len(event_display) + 1))
+                    
+                    # Reorder columns and remove numeric rank
+                    event_display = event_display[['Included', 'Event #', 'Event', 'Category', 'Time', 'FINA Points']]
                 
                     st.markdown(f"**Total Events Competed: {len(swimmer_events)}**")
                 
                     # Reset index for cleaner display
                     event_display_clean = event_display.reset_index(drop=True)
                 
-                    # Display swimmer events using standard dataframe (more reliable)
-                    st.dataframe(event_display_clean, height=400, use_container_width=True)
+                    # Conditional highlight: lightly highlight included rows
+                    def _highlight_row(row: pd.Series):
+                        return ['background-color: #e8f7ee' if row.get('Included', '') == '✅' else '' for _ in row]
+                    try:
+                        styled = event_display_clean.style.apply(_highlight_row, axis=1)
+                        st.dataframe(styled, height=400, use_container_width=True)
+                    except Exception:
+                        st.dataframe(event_display_clean, height=400, use_container_width=True)
                     
                     # Download button for swimmer's events
                     csv_swimmer = event_display_clean.to_csv(index=False).encode('utf-8')
@@ -814,6 +839,8 @@ def main():
                     
                     # Show category breakdown (larger heading)
                     st.markdown('<h3 class="wsc-h3">Category Breakdown</h3>', unsafe_allow_html=True)
+
+                    st.markdown(' View total number of completed events counted by event category')
                     
                     # Calculate statistics for each category
                     category_stats = swimmer_events.groupby('Event Category').agg({
