@@ -666,7 +666,7 @@ def main():
                 swimmer_info = df_display[df_display['Name'] == selected_swimmer].iloc[0]
             
                 # Display swimmer summary
-                st.markdown(f"#### {selected_swimmer}")
+                st.markdown(f'<h4 class="wsc-h4">{selected_swimmer}</h4>', unsafe_allow_html=True)
                 
                 # First row of metrics
                 col_a, col_b, col_c = st.columns(3)
@@ -813,7 +813,7 @@ def main():
                     )
                     
                     # Show category breakdown
-                    st.markdown("#### 📊 Category Breakdown")
+                    st.markdown('<h4 class="wsc-h4">📊 Category Breakdown</h4>', unsafe_allow_html=True)
                     
                     # Calculate statistics for each category
                     category_stats = swimmer_events.groupby('Event Category').agg({
@@ -871,7 +871,7 @@ def main():
         
         # Event Rankings Section
         with st.expander("🏁 Event Rankings - View All Swimmers by Event", expanded=True):
-            st.markdown("### Select an Event to View Rankings")
+            st.markdown('<h3 class="wsc-h3">Select an Event to View Rankings</h3>', unsafe_allow_html=True)
             
             # Filter events by selected gender first
             df_gender_events = df_all_with_gender[df_all_with_gender['Gender'] == selected_gender].copy()
@@ -976,7 +976,7 @@ def main():
     
 
     
-    st.markdown("#### What are FINA Points?")
+    st.markdown('<h4 class="wsc-h4">What are FINA Points?</h4>', unsafe_allow_html=True)
     st.markdown("""
     **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, distances, and genders. 
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
@@ -986,7 +986,7 @@ def main():
     **Important**: FINA points are calculated against **open (adult) world records**, not age-specific records. This means younger swimmers are compared against adult standards, which is why age progression in FINA points is so significant.
     """)
     
-    st.markdown("#### Why Age Matters:")
+    st.markdown('<h4 class="wsc-h4">Why Age Matters:</h4>', unsafe_allow_html=True)
     st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
     st.markdown("""
     - **Physical Development:** Increased strength, power, and endurance
@@ -995,14 +995,14 @@ def main():
     - **Competition Experience:** Better race strategy and mental preparation
     """)
     
-    st.markdown("#### What the Charts Show:")
+    st.markdown('<h4 class="wsc-h4">What the Charts Show:</h4>', unsafe_allow_html=True)
     st.markdown("""
     The charts below show how average FINA points progress with age across different event categories. 
     Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
     and how Worcester Swimming Club swimmers compare across different age groups.
     """)
     
-    st.markdown("#### Sources & Further Reading:")
+    st.markdown('<h4 class="wsc-h4">Sources & Further Reading:</h4>', unsafe_allow_html=True)
     st.markdown("""
     - [World Aquatics Official Website](https://www.worldaquatics.com) - Governing body for swimming
     - [Swim England](https://www.swimming.org) - UK swimming governing body
@@ -1013,7 +1013,7 @@ def main():
     st.markdown("""
     </div>
     """, unsafe_allow_html=True)
-    st.markdown('#### Average FINA Points by Age and Event Category', unsafe_allow_html=True)
+    st.markdown('<h4 class="wsc-h4">Average FINA Points by Age and Event Category</h4>', unsafe_allow_html=True)
     
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
@@ -1058,7 +1058,7 @@ def main():
         
         # Create male chart
         if male_chart_data is not None and len(male_chart_data) > 0:
-            st.markdown("### Male/Open Swimmers")
+            st.markdown('<h3 class="wsc-h3">Male/Open Swimmers</h3>', unsafe_allow_html=True)
             
             male_chart = alt.Chart(male_chart_data).mark_line(point=True, strokeWidth=3).encode(
                 x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
@@ -1078,7 +1078,7 @@ def main():
         
         # Create female chart
         if female_chart_data is not None and len(female_chart_data) > 0:
-            st.markdown("###   Female Swimmers")
+            st.markdown('<h3 class="wsc-h3">Female Swimmers</h3>', unsafe_allow_html=True)
             
             female_chart = alt.Chart(female_chart_data).mark_line(point=True, strokeWidth=3).encode(
                 x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
