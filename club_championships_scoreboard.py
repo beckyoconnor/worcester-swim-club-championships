@@ -110,31 +110,23 @@ def load_all_events(folder: str) -> pd.DataFrame:
     csv_files = [f for f in os.listdir(search_folder) if f.startswith('event_') and f.endswith('.csv')]
     
     def _norm_time_str(val: str) -> str:
-        """Normalize time to HH:MM.SS.HS.
+        """Normalize time to HH:MM:SS.HS (hours:minutes:seconds.hundredths).
 
-        Accepts forms like '31.95', '1:57.04', '00:31.95', '1:02:03.45'.
-        Returns '-' for blanks.
+        Accepted inputs:
+        - SS.HS (e.g., '31.95')
+        - MM:SS.HS (e.g., '1:57.04') or MM:SS (e.g., '4:17')
+        - HH:MM:SS.HS or HH:MM:SS
+        - Numeric seconds (e.g., '31')
+        Returns '-' for blanks or unparsable values.
         """
+        import re
         try:
             if pd.isna(val):
                 return '-'
             s = str(val).strip()
             if not s or s == '-':
                 return '-'
-            # SS.HS
-            import re
-            m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
-            if m:
-                ss = int(m.group(1))
-                hs = int(m.group(2))
-                return f"00:{0:02d}.{ss:02d}.{hs:02d}".format(0)  # keep hours 00
-            # MM:SS.HS
-            m = re.match(r"^(\d{1,2}):(\d{1,2})\.(\d{1,2})$", s)
-            if m:
-                mm = int(m.group(1))
-                ss = int(m.group(2))
-                hs = int(m.group(3))
-                return f"00:{mm:02d}.{ss:02d}.{hs:02d}"
+
             # HH:MM:SS(.HS)?
             m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
             if m:
@@ -142,19 +134,38 @@ def load_all_events(folder: str) -> pd.DataFrame:
                 mm = int(m.group(2))
                 ss = int(m.group(3))
                 hs = int(m.group(4)) if m.group(4) else 0
-                return f"{hh:02d}:{mm:02d}.{ss:02d}.{hs:02d}"
-            # Already in HH:MM.SS.HS
-            m = re.match(r"^(\d{2}):(\d{2})\.(\d{2})\.(\d{2})$", s)
+                return f"{hh:02d}:{mm:02d}:{ss:02d}.{hs:02d}"
+
+            # MM:SS(.HS)?
+            m = re.match(r"^(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
             if m:
-                return s
-            # Fallback: if digits only treat as seconds
-            if s.replace('.', '', 1).isdigit():
-                # e.g., '31' or '31.9'
+                mm = int(m.group(1))
+                ss = int(m.group(2))
+                hs = int(m.group(3)) if m.group(3) else 0
+                return f"00:{mm:02d}:{ss:02d}.{hs:02d}"
+
+            # SS.HS
+            m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
+            if m:
+                ss = int(m.group(1))
+                hs = int(m.group(2))
+                return f"00:00:{ss:02d}.{hs:02d}"
+
+            # MM:SS with single-digit seconds etc. already covered; if only digits or digits.decimals treat as seconds
+            if re.match(r"^\d+$", s):
+                ss = int(s)
+                return f"00:00:{ss:02d}.00"
+            if re.match(r"^\d+\.\d+$", s):
                 parts = s.split('.')
                 ss = int(parts[0])
-                hs = int(parts[1]) if len(parts) > 1 else 0
-                return f"00:00.{ss:02d}.{hs:02d}"
-            return s
+                hs = int(parts[1])
+                return f"00:00:{ss:02d}.{hs:02d}"
+
+            # Already normalized
+            if re.match(r"^\d{2}:\d{2}:\d{2}\.\d{2}$", s):
+                return s
+
+            return '-'
         except Exception:
             return '-'
 

@@ -941,52 +941,42 @@ def main():
                     event_display = swimmer_events[['Event Number', 'Event Name', 'Event Category', 'Time', 'WA Points']].copy()
                     event_display['Included'] = event_display['Event Number'].astype(str).apply(lambda x: '✅' if x in included_event_numbers else '')
                 
-                    # Format Time to hh:mm:ss:hs (hundredths of seconds)
+                    # Format Time to hh:mm:ss.hh (hundredths of seconds)
                     def format_time(time_val):
                         if pd.isna(time_val) or time_val is None or time_val == '':
                             return '-'
-                        
-                        time_str = str(time_val).strip()
-                        
-                        # If already a dash, return as is
-                        if time_str == '-':
+                        s = str(time_val).strip()
+                        if s == '-':
                             return '-'
-                        
-                        # Check if time has colons (already formatted)
-                        if ':' in time_str:
-                            parts = time_str.split(':')
-                            if len(parts) == 2:
-                                # mm:ss.cs format -> 00:mm:ss:hs
-                                mins, secs = parts
-                                # Extract hundredths
-                                if '.' in secs:
-                                    sec_parts = secs.split('.')
-                                    ss = sec_parts[0].zfill(2)
-                                    hs = sec_parts[1][:2].ljust(2, '0')
-                                    return f"00:{mins.zfill(2)}:{ss}:{hs}"
-                                else:
-                                    return f"00:{mins.zfill(2)}:{secs.zfill(2)}:00"
-                            elif len(parts) == 3:
-                                # hh:mm:ss format -> hh:mm:ss:hs
-                                hours, mins, secs = parts
-                                if '.' in secs:
-                                    sec_parts = secs.split('.')
-                                    ss = sec_parts[0].zfill(2)
-                                    hs = sec_parts[1][:2].ljust(2, '0')
-                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{ss}:{hs}"
-                                else:
-                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{secs.zfill(2)}:00"
-                        else:
-                            # Just seconds (e.g., "31.95") -> 00:00:ss:hs
-                            try:
-                                secs_float = float(time_str)
-                                ss = int(secs_float)
-                                hs = int((secs_float - ss) * 100)
-                                return f"00:00:{str(ss).zfill(2)}:{str(hs).zfill(2)}"
-                            except:
-                                return time_str
-                        
-                        return time_str
+                        # If already normalized (HH:MM:SS.HS), keep as-is
+                        import re
+                        if re.match(r"^\d{2}:\d{2}:\d{2}\.\d{2}$", s):
+                            return s
+                        # HH:MM:SS(.HS)? -> HH:MM:SS.HS
+                        m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+                        if m:
+                            hh = int(m.group(1)); mm = int(m.group(2)); ss = int(m.group(3)); hs = int(m.group(4)) if m.group(4) else 0
+                            return f"{hh:02d}:{mm:02d}:{ss:02d}.{hs:02d}"
+                        # MM:SS(.HS)? -> 00:MM:SS.HS
+                        m = re.match(r"^(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+                        if m:
+                            mm = int(m.group(1)); ss = int(m.group(2)); hs = int(m.group(3)) if m.group(3) else 0
+                            return f"00:{mm:02d}:{ss:02d}.{hs:02d}"
+                        # SS.HS -> 00:00:SS.HS
+                        m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
+                        if m:
+                            ss = int(m.group(1)); hs = int(m.group(2))
+                            return f"00:00:{ss:02d}.{hs:02d}"
+                        # Seconds only -> 00:00:SS.00
+                        if re.match(r"^\d+$", s):
+                            ss = int(s)
+                            return f"00:00:{ss:02d}.00"
+                        # Seconds with decimals -> 00:00:SS.HS
+                        if re.match(r"^\d+\.\d+$", s):
+                            parts = s.split('.')
+                            ss = int(parts[0]); hs = int(parts[1])
+                            return f"00:00:{ss:02d}.{hs:02d}"
+                        return s
                     
                     event_display['Time'] = event_display['Time'].apply(format_time)
                 
@@ -1147,42 +1137,36 @@ def main():
                     # Add rank
                     event_swimmers['Rank'] = range(1, len(event_swimmers) + 1)
                     
-                    # Format time
+                    # Format time for rankings to hh:mm:ss.hh
                     def format_time_event(time_val):
                         if pd.isna(time_val) or time_val is None or time_val == '':
                             return '-'
-                        time_str = str(time_val).strip()
-                        if time_str == '-':
+                        s = str(time_val).strip()
+                        if s == '-':
                             return '-'
-                        if ':' in time_str:
-                            parts = time_str.split(':')
-                            if len(parts) == 2:
-                                mins, secs = parts
-                                if '.' in secs:
-                                    sec_parts = secs.split('.')
-                                    ss = sec_parts[0].zfill(2)
-                                    hs = sec_parts[1][:2].ljust(2, '0')
-                                    return f"00:{mins.zfill(2)}:{ss}:{hs}"
-                                else:
-                                    return f"00:{mins.zfill(2)}:{secs.zfill(2)}:00"
-                            elif len(parts) == 3:
-                                hours, mins, secs = parts
-                                if '.' in secs:
-                                    sec_parts = secs.split('.')
-                                    ss = sec_parts[0].zfill(2)
-                                    hs = sec_parts[1][:2].ljust(2, '0')
-                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{ss}:{hs}"
-                                else:
-                                    return f"{hours.zfill(2)}:{mins.zfill(2)}:{secs.zfill(2)}:00"
-                        else:
-                            try:
-                                secs_float = float(time_str)
-                                ss = int(secs_float)
-                                hs = int((secs_float - ss) * 100)
-                                return f"00:00:{str(ss).zfill(2)}:{str(hs).zfill(2)}"
-                            except:
-                                return time_str
-                        return time_str
+                        import re
+                        if re.match(r"^\d{2}:\d{2}:\d{2}\.\d{2}$", s):
+                            return s
+                        m = re.match(r"^(\d{1,2}):(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+                        if m:
+                            hh = int(m.group(1)); mm = int(m.group(2)); ss = int(m.group(3)); hs = int(m.group(4)) if m.group(4) else 0
+                            return f"{hh:02d}:{mm:02d}:{ss:02d}.{hs:02d}"
+                        m = re.match(r"^(\d{1,2}):(\d{1,2})(?:\.(\d{1,2}))?$", s)
+                        if m:
+                            mm = int(m.group(1)); ss = int(m.group(2)); hs = int(m.group(3)) if m.group(3) else 0
+                            return f"00:{mm:02d}:{ss:02d}.{hs:02d}"
+                        m = re.match(r"^(\d{1,2})\.(\d{1,2})$", s)
+                        if m:
+                            ss = int(m.group(1)); hs = int(m.group(2))
+                            return f"00:00:{ss:02d}.{hs:02d}"
+                        if re.match(r"^\d+$", s):
+                            ss = int(s)
+                            return f"00:00:{ss:02d}.00"
+                        if re.match(r"^\d+\.\d+$", s):
+                            parts = s.split('.')
+                            ss = int(parts[0]); hs = int(parts[1])
+                            return f"00:00:{ss:02d}.{hs:02d}"
+                        return s
                     
                     event_swimmers['Time'] = event_swimmers['Time'].apply(format_time_event)
                     
