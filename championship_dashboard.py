@@ -152,7 +152,7 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
         if age == '18+':
             filtered_df = filtered_df[filtered_df['Age'] >= 18]
         else:
-        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+            filtered_df = filtered_df[filtered_df['Age'] == int(age)]
     
     # Apply view type filter (eligible vs all)
     if view_type == 'Championship Eligible Only':
