@@ -1116,21 +1116,13 @@ def main():
     # Championship rules
     st.markdown("---")
     
-    # Footer with Worcester SC info
+    # Footer with Worcester SC info - styled via stylesheet
     st.markdown("""
-    <div style='text-align: center; padding: 2rem; background-color: #f8fafc; border-radius: 10px; margin-top: 2rem;'>
-        <p style='color: #1e3a8a; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;'>
-            Worcester Swimming Club
-        </p>
-        <p style='color: #64748b; font-size: 0.9rem; margin: 0.25rem 0;'>
-            📧 Contact: <a href='https://worcestersc.co.uk/contact' style='color: #dc2626;'>worcestersc.co.uk/contact</a>
-        </p>
-        <p style='color: #64748b; font-size: 0.9rem; margin: 0.25rem 0;'>
-            🌐 Website: <a href='https://worcestersc.co.uk' style='color: #dc2626;'>worcestersc.co.uk</a>
-        </p>
-        <p style='color: #94a3b8; font-size: 0.8rem; margin-top: 1rem;'>
-            © 2024 Worcester Swimming Club - Club Championships Dashboard
-        </p>
+    <div class='wsc-footer'>
+        <h4>Worcester Swimming Club</h4>
+        <p>📧 Contact: <a href='https://worcestersc.co.uk/contact'>worcestersc.co.uk/contact</a></p>
+        <p>🌐 Website: <a href='https://worcestersc.co.uk'>worcestersc.co.uk</a></p>
+        <p style='margin-top: 1rem;'>© 2024 Worcester Swimming Club - Club Championships Dashboard</p>
     </div>
     """, unsafe_allow_html=True)
     

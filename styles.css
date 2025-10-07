@@ -1,3 +1,17 @@
+/* Footer styling */
+.wsc-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--wsc-blue);
+  color: #ffffff;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.wsc-footer h4 { color: #ffffff; margin: 0 0 0.5rem 0; font-weight: 700; }
+.wsc-footer p { color: #e5e7eb; margin: 0.25rem 0; }
+.wsc-footer a { color: var(--wsc-green) !important; font-weight: 600; text-decoration: underline; }
+.wsc-footer a:hover { opacity: 0.9; }
 /* Global Header Styles */
 .wsc-header {
   background-color: #1a1d5a;
