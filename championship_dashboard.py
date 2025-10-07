@@ -979,6 +979,13 @@ def main():
                         return s
                     
                     event_display['Time'] = event_display['Time'].apply(format_time)
+                    # Ensure any lingering microsecond-style values are trimmed to 2 decimals
+                    try:
+                        event_display['Time'] = event_display['Time'].astype(str).str.replace(
+                            r'^(\d{2}:\d{2}:\d{2})\.(\d{2}).*$', r'\1.\2', regex=True
+                        )
+                    except Exception:
+                        pass
                 
                     event_display = event_display.rename(columns={
                         'Event Number': 'Event #',
@@ -1169,6 +1176,13 @@ def main():
                         return s
                     
                     event_swimmers['Time'] = event_swimmers['Time'].apply(format_time_event)
+                    # Enforce 2-decimal display even if upstream produced microseconds
+                    try:
+                        event_swimmers['Time'] = event_swimmers['Time'].astype(str).str.replace(
+                            r'^(\d{2}:\d{2}:\d{2})\.(\d{2}).*$', r'\1.\2', regex=True
+                        )
+                    except Exception:
+                        pass
                     
                     # Display event information
                     st.markdown(f"**Event:** {selected_event}")
