@@ -647,10 +647,10 @@ def main():
             else:
                 st.info("No swimmers found matching the selected filters.")
         
-        with st.expander("🔍 Individual Swimmer Details", expanded=True):
+        with st.expander("Individual Swimmer Details", expanded=True):
             # Individual Swimmer Detail Section
             st.markdown("---")
-            st.markdown("### 🔍 Swimmer Event Details")
+            st.markdown("### Swimmer Event Details")
             st.markdown("Select a swimmer to view their individual event breakdown:")
         
             # Create a dropdown with swimmer names
