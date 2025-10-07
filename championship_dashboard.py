@@ -275,6 +275,97 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
     
     return df
 
+
+@cache_decorator
+def build_swimmer_narratives(df_all: pd.DataFrame) -> pd.DataFrame:
+    """Build per-swimmer narratives describing included/excluded events.
+
+    Returns a dataframe with columns:
+      Name, Age, Gender, Total_Points, Narrative
+    """
+    if len(df_all) == 0:
+        return pd.DataFrame(columns=['Name', 'Age', 'Gender', 'Total_Points', 'Narrative'])
+
+    results = []
+    for swimmer_name, swimmer_events in df_all.groupby('Name'):
+        swimmer_events = swimmer_events.sort_values('WA Points', ascending=False).copy()
+        age = int(swimmer_events['Age'].iloc[0])
+        gender = swimmer_events['Gender'].iloc[0]
+
+        # Category limit and selection
+        limit_per_category = 3 if age < 12 else 2
+        categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
+        selected_rows = []
+        excluded_due_to_limit = []
+
+        # Ensure one best per Event Number
+        swimmer_events = swimmer_events.drop_duplicates(subset=['Event Number'], keep='first')
+
+        for cat in categories:
+            cat_df = swimmer_events[swimmer_events['Event Category'] == cat]
+            if len(cat_df) == 0:
+                continue
+            top_cat = cat_df.head(limit_per_category)
+            selected_rows.append(top_cat)
+            if len(cat_df) > len(top_cat):
+                over_limit = cat_df.iloc[len(top_cat):]
+                excluded_due_to_limit.extend(
+                    [f"{row['Event Name']} ({int(row['WA Points'])} pts)" for _, row in over_limit.iterrows()]
+                )
+
+        included_numbers = []
+        if selected_rows:
+            all_candidates = pd.concat(selected_rows, ignore_index=True)
+            top8 = all_candidates.nlargest(8, 'WA Points')
+            included_numbers = top8['Event Number'].astype(str).tolist()
+        else:
+            top8 = pd.DataFrame(columns=swimmer_events.columns)
+
+        # Included/Excluded lists
+        included_by_cat = {}
+        for _, row in top8.iterrows():
+            cat = row['Event Category']
+            included_by_cat.setdefault(cat, []).append(f"{row['Event Name']} ({int(row['WA Points'])} pts)")
+
+        excluded_other = []
+        for _, row in swimmer_events.iterrows():
+            if str(row['Event Number']) not in included_numbers:
+                excluded_other.append(f"{row['Event Name']} ({int(row['WA Points'])} pts)")
+
+        total_points = int(top8['WA Points'].sum()) if len(top8) else 0
+        avg_points = float(top8['WA Points'].mean()) if len(top8) else 0.0
+        best_points = int(top8['WA Points'].max()) if len(top8) else 0
+
+        # Compose narrative
+        included_parts = []
+        for cat in categories:
+            if cat in included_by_cat:
+                included_parts.append(f"{cat}: " + ", ".join(included_by_cat[cat]))
+        included_text = "; ".join(included_parts) if included_parts else "No events yet counted"
+
+        reasons = []
+        if excluded_due_to_limit:
+            reasons.append("Exceeded category limits: " + ", ".join(excluded_due_to_limit))
+        if excluded_other:
+            reasons.append("Outside top 8 after category limits: " + ", ".join(excluded_other[:6]) + (" …" if len(excluded_other) > 6 else ""))
+        reasons_text = "; ".join(reasons) if reasons else "All eligible events counted so far"
+
+        narrative = (
+            f"Total {total_points} pts (avg {avg_points:.1f}, best {best_points}). "
+            f"Included events: {included_text}. {reasons_text}."
+        )
+
+        results.append({
+            'Name': swimmer_name,
+            'Age': age,
+            'Gender': gender,
+            'Total_Points': total_points,
+            'Narrative': narrative,
+        })
+
+    df_narr = pd.DataFrame(results)
+    return df_narr
+
 def main():
     """Main Streamlit app."""
     
@@ -344,6 +435,15 @@ def main():
         
         # Calculate scores for all swimmers (no minimum)
         df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
+        # Build narratives for tooltips and export
+        df_narratives = build_swimmer_narratives(df_all)
+        try:
+            out_dir = os.path.join(events_folder, 'championship_results')
+            os.makedirs(out_dir, exist_ok=True)
+            narr_path = os.path.join(out_dir, 'championship_swimmer_narratives.csv')
+            df_narratives.to_csv(narr_path, index=False)
+        except Exception:
+            pass
         
         # Memory cleanup - remove intermediate variables
         del df_all
@@ -581,12 +681,18 @@ def main():
                 tab1, tab2 = st.tabs(["📈 Points Chart", "📊 Data Table"])
                 
                 with tab1:
+                    # Join narratives for tooltips
+                    try:
+                        df_with_narr = df_for_chart.merge(df_narratives[['Name','Narrative']], on='Name', how='left')
+                    except Exception:
+                        df_with_narr = df_for_chart.copy()
+
                     # Create horizontal bar chart with Altair
                     import altair as alt
                     
                     # Sort by Total Points for better visualization
-                    chart_data = df_for_chart.sort_values('Total Points', ascending=False).head(20)  # Show top 20
-                    chart_data = chart_data[['Name', 'Total Points']].copy()
+                    chart_data = df_with_narr.sort_values('Total Points', ascending=False).head(20)
+                    chart_data = chart_data[['Name', 'Total Points', 'Narrative']].copy()
                     
                     if len(chart_data) > 0:
                         # Create Altair chart
@@ -596,7 +702,9 @@ def main():
                             y=alt.Y('Name:N', 
                                     sort='-x',
                                     axis=alt.Axis(title='')),
-                            tooltip=['Name', 'Total Points']
+                            tooltip=[alt.Tooltip('Name:N', title='Swimmer'),
+                                     alt.Tooltip('Total Points:Q', title='Total Points', format='.0f'),
+                                     alt.Tooltip('Narrative:N', title='Summary')]
                         ).properties(
                             title='Top Swimmers by Total Points',
                             height=max(400, len(chart_data) * 30)
