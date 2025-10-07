@@ -426,6 +426,36 @@ def load_swimmer_narratives_csv(base_folder: str) -> pd.DataFrame | None:
         return pd.read_csv(csv_path)
     except Exception:
         return None
+
+
+@cache_decorator
+def load_events_prefer_union(base_folder: str) -> pd.DataFrame:
+    """Load all events, preferring a single union file if present.
+
+    Order of preference:
+      1) championship_results/events_all.parquet (fastest)
+      2) championship_results/events_all.csv
+      3) Fall back to concatenating cleaned_files/event_*.csv
+    """
+    # Try Parquet
+    try:
+        results_dir = os.path.join(base_folder, 'championship_results')
+        pq_path = os.path.join(results_dir, 'events_all.parquet')
+        if os.path.exists(pq_path):
+            df = pd.read_parquet(pq_path)
+            return df
+    except Exception:
+        pass
+    # Try CSV
+    try:
+        csv_path = os.path.join(results_dir, 'events_all.csv')
+        if os.path.exists(csv_path):
+            df = pd.read_csv(csv_path)
+            return df
+    except Exception:
+        pass
+    # Fallback to per-file loader
+    return load_all_events(base_folder)
 def main():
     """Main Streamlit app."""
     
@@ -477,8 +507,8 @@ def main():
     
     # Load data with memory optimization
     with st.spinner("Loading championship data..."):
-        # Load all data with optimized types
-        df_all = load_all_events(events_folder)
+        # Load all data (prefer union file for performance)
+        df_all = load_events_prefer_union(events_folder)
         
         # Ensure Gender column exists; derive from event CSVs if needed
         if 'Gender' not in df_all.columns:

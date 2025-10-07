@@ -118,6 +118,43 @@ def load_all_events(folder: str) -> pd.DataFrame:
     return pd.concat(dfs, ignore_index=True)
 
 
+def export_all_events_union(base_folder: str, df_all: pd.DataFrame) -> None:
+    """Write a single unioned events file to championship_results/.
+
+    Tries Parquet first (fastest, smallest); falls back to CSV if Parquet engine
+    is unavailable.
+    """
+    try:
+        out_dir = os.path.join(base_folder, 'championship_results')
+        os.makedirs(out_dir, exist_ok=True)
+
+        # Optimize dtypes prior to write
+        df = df_all.copy()
+        if 'Event Number' in df.columns:
+            df['Event Number'] = df['Event Number'].astype(str)
+            df['Event Number'] = df['Event Number'].astype('category')
+        for col in ['Event Name', 'Event Category', 'Club']:
+            if col in df.columns:
+                df[col] = df[col].astype('category')
+        if 'Age' in df.columns:
+            df['Age'] = pd.to_numeric(df['Age'], errors='coerce').fillna(0).astype('int16')
+        if 'WA Points' in df.columns:
+            df['WA Points'] = pd.to_numeric(df['WA Points'], errors='coerce').fillna(0).astype('int32')
+
+        parquet_path = os.path.join(out_dir, 'events_all.parquet')
+        try:
+            df.to_parquet(parquet_path, index=False)
+            print(f"✓ Saved unioned events Parquet: {parquet_path} ({len(df)} rows)")
+            return
+        except Exception as e:
+            print(f"⚠️ Could not write Parquet ({e}); falling back to CSV…")
+        # Fallback to CSV
+        csv_path = os.path.join(out_dir, 'events_all.csv')
+        df.to_csv(csv_path, index=False)
+        print(f"✓ Saved unioned events CSV: {csv_path} ({len(df)} rows)")
+    except Exception as e:
+        print(f"⚠️ Failed to export unioned events: {e}")
+
 def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[str, str]) -> pd.DataFrame:
     """
     Calculate championship scores based on the rules:
@@ -327,6 +364,87 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     print(f"✓ Saved: {output_file} ({len(df_winners)} age group winners)")
 
 
+def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gender_map: Dict[str, str]) -> None:
+    """Create per-swimmer natural-language narratives and write CSV.
+
+    Output: championship_results/championship_swimmer_narratives.csv
+    """
+    try:
+        events = df_all.copy()
+        events['Event Number'] = events['Event Number'].astype(str)
+        events['Gender'] = events['Event Number'].map(event_gender_map)
+        out_rows: List[Dict] = []
+
+        categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
+
+        for swimmer, swimmer_events in events.groupby('Name'):
+            swimmer_events = swimmer_events.sort_values('WA Points', ascending=False)
+            age = int(swimmer_events['Age'].iloc[0])
+            gender = swimmer_events['Gender'].iloc[0]
+
+            # Deduplicate per event, then keep per-category top N
+            dedup = swimmer_events.drop_duplicates(subset=['Event Number'], keep='first')
+            limit_per_category = 3 if age < 12 else 2
+            selected = []
+            for cat in categories:
+                cat_df = dedup[dedup['Event Category'] == cat]
+                if len(cat_df) > 0:
+                    selected.append(cat_df.head(limit_per_category))
+            included_numbers: List[str] = []
+            top8 = None
+            if selected:
+                all_cand = pd.concat(selected, ignore_index=True)
+                top8 = all_cand.nlargest(8, 'WA Points')
+                included_numbers = top8['Event Number'].astype(str).tolist()
+
+            total_pts = int(top8['WA Points'].sum()) if top8 is not None and len(top8) else 0
+            avg_pts = float(top8['WA Points'].mean()) if top8 is not None and len(top8) else 0.0
+            best_pts = int(top8['WA Points'].max()) if top8 is not None and len(top8) else 0
+
+            # Included list by category
+            included_by_cat: Dict[str, List[str]] = {}
+            if top8 is not None:
+                for _, row in top8.iterrows():
+                    included_by_cat.setdefault(row['Event Category'], []).append(
+                        f"{row['Event Name']} – {int(row['WA Points'])} pts"
+                    )
+
+            def _join(items: List[str], max_items: int = 2) -> str:
+                items = [i for i in items if i]
+                if not items:
+                    return ''
+                if len(items) > max_items:
+                    return ", ".join(items[:max_items]) + f" and {len(items)-max_items} more"
+                if len(items) == 1:
+                    return items[0]
+                return ", ".join(items[:-1]) + f" and {items[-1]}"
+
+            parts = []
+            for cat in categories:
+                if cat in included_by_cat:
+                    parts.append(f"{cat} (" + _join(included_by_cat[cat], 2) + ")")
+            included_short = _join(parts, 4) if parts else "no events yet counted"
+
+            out_rows.append({
+                'Name': swimmer,
+                'Age': age,
+                'Gender': gender,
+                'Total_Points': total_pts,
+                'IncludedShort': included_short,
+                'Average_Points': avg_pts,
+                'Best_Event_Points': best_pts,
+            })
+
+        df_narr = pd.DataFrame(out_rows)
+        out_dir = os.path.join(base_folder, 'championship_results')
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, 'championship_swimmer_narratives.csv')
+        df_narr.to_csv(out_path, index=False)
+        print(f"✓ Saved swimmer narratives: {out_path} ({len(df_narr)} swimmers)")
+    except Exception as e:
+        print(f"⚠️ Failed to export swimmer narratives: {e}")
+
+
 def main():
     """Main function to run championship scoreboard calculation."""
     print("=" * 100)
@@ -350,6 +468,9 @@ def main():
     # Load all events
     df_all = load_all_events(events_folder)
     print(f"✓ Loaded {len(df_all)} total entries from {df_all['Event Number'].nunique()} events")
+
+    # Export a single unioned file for the dashboard to load efficiently
+    export_all_events_union(base_folder, df_all)
     
     # Calculate championship scores
     print("\n🏊 Calculating championship scores...")
@@ -373,6 +494,9 @@ def main():
     print("📁 EXPORTING RESULTS")
     print("=" * 100)
     export_scoreboard(df_champs, output_folder)
+
+    # Export narratives for dashboard tooltips
+    export_swimmer_narratives(base_folder, df_all, event_gender_map)
     
     # Summary statistics
     print("\n" + "=" * 100)
