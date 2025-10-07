@@ -287,6 +287,17 @@ div[data-testid="stExpander"] > div > div {
 a { color: var(--wsc-accent) !important; }
 a:hover { opacity: 0.9; }
 
+/* Hide Streamlit sidebar completely */
+[data-testid="stSidebar"],
+section[data-testid="stSidebar"] {
+  display: none !important;
+}
+
+/* Expand main area when sidebar is hidden */
+.main .block-container {
+  max-width: 100% !important;
+}
+
 /* Download buttons - Worcester style */
 .stDownloadButton > button {
   background: var(--wsc-green) !important;
