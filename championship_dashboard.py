@@ -1031,7 +1031,7 @@ def main():
     **Important**: FINA points are calculated against **open (adult) world records**, not age-specific records. This means younger swimmers are compared against adult standards, which is why age progression in FINA points is so significant.
     """)
     
-    st.markdown('<wsc-h4">Why Age Matters:</wsc-h4>', unsafe_allow_html=True)
+    st.markdown('<h3 class="wsc-h3">Why Age Matters:</h3>', unsafe_allow_html=True)
     st.markdown("As swimmers get older, they typically achieve higher FINA points due to:")
     st.markdown("""
     - **Physical Development:** Increased strength, power, and endurance
