@@ -395,7 +395,7 @@ def main():
     
     # Filters in main page using form
     # Use stylesheet-driven headings
-    st.markdown('### Select Age and Gender then Retrieve Data')
+    st.markdown('<h3> Select Age and Gender then Retrieve Data</h3>', allow_unsafe_html=True)
     
     with st.container():
         col1, col2, col3 = st.columns([2, 2, 1])
