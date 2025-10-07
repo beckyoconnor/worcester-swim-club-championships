@@ -273,7 +273,6 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
     
     return df
 
-
 def main():
     """Main Streamlit app."""
     
@@ -537,11 +536,11 @@ def main():
         
         # Wrap rankings in an expander
         if selected_gender == 'Male':
-            expander_title = f"📊 Boys Rankings - {age_text}"
+            expander_title = f"Boys Rankings - {age_text}"
         elif selected_gender == 'Female':
-            expander_title = f"📊 Girls Rankings - {age_text}"
+            expander_title = f"Girls Rankings - {age_text}"
         else:
-            expander_title = f"📊 All Rankings - {age_text}"
+            expander_title = f"All Rankings - {age_text}"
         
         with st.expander(expander_title, expanded=True):
             # Display rankings table
@@ -832,10 +831,10 @@ def main():
                     
                     # Create separate dataframes for each measure with better formatting
                     measures = {
-                        'Events Count': '📈 Number of Events per Category',
-                        'Avg Points': '📊 Average FINA Points per Category',
-                        'Best Points': '🏆 Best FINA Points per Category',
-                        'Total Points': '🎯 Total FINA Points per Category'
+                        'Events Count': 'Number of Events per Category',
+                        'Avg Points': 'Average FINA Points per Category',
+                        'Best Points': 'Best FINA Points per Category',
+                        'Total Points': 'Total FINA Points per Category'
                     }
                     
                     # Create columns for better layout
@@ -1100,7 +1099,7 @@ def main():
         st.markdown("""
         <div style='background-color: #f8fafc; padding: 1rem; border-radius: 8px; margin-top: 1rem;'>
             <p style='color: #1a1d5a; font-weight: 600; margin-bottom: 0.5rem;'>
-                📊 Chart Explanation:
+                Chart Explanation:
             </p>
             <ul style='color: #64748b; margin: 0; padding-left: 1.5rem;'>
                 <li>Each line represents a different event category (Sprint, Free, 100 Form, 200 Form, IM, Distance)</li>

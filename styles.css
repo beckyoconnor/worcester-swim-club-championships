@@ -190,8 +190,28 @@ h6 { font-size: 0.95rem; line-height: 1.35; margin: 0.5rem 0 0.25rem; }
 
 /* Streamlit expander header styling to match headings */
 .streamlit-expanderHeader {
-  color: var(--wsc-heading) !important;
+  color: #ffffff !important; /* Worcester white */
   font-weight: 700 !important;
+  background-color: var(--wsc-blue) !important; /* Worcester blue */
+  padding: 0.75rem 1rem !important;
+  border-radius: 8px !important;
+}
+
+/* Expander container tweaks */
+div[data-testid="stExpander"] {
+  background: transparent !important; /* header handles color */
+  border-radius: 10px !important;
+}
+
+/* Ensure the chevron/icon is white */
+div[data-testid="stExpander"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Optional: expander content area spacing and subtle separation */
+div[data-testid="stExpander"] > div > div {
+  padding-top: 0.5rem;
 }
 
 /* Utility heading classes for explicit HTML usage */
