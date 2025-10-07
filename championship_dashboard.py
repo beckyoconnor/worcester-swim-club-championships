@@ -1021,7 +1021,7 @@ def main():
     
 
     
-    st.markdown('<wsc-h4>What are FINA Points?</wsc-h4>', unsafe_allow_html=True)
+    st.markdown('<h3 class="wsc-h3">What are FINA Points?</wsc-h4>', unsafe_allow_html=True)
     st.markdown("""
     **FINA Points** (now called **World Aquatics Points**) are a standardized scoring system used worldwide to compare swimming performances across different events, distances, and genders. 
     They provide a fair way to evaluate swimmers regardless of the specific event or distance they compete in.
