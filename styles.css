@@ -1,0 +1,119 @@
+/* Global Header Styles */
+.wsc-header {
+  background-color: #1a1d5a;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.wsc-header-logo { flex-shrink: 0; }
+.wsc-header-text { flex-grow: 1; }
+
+/* Main Dashboard Metrics (tooltips) */
+.main-tooltip { position: relative; display: inline-block; cursor: help; }
+.main-tooltip .main-tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #2b1f5c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.main-tooltip .main-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2b1f5c transparent transparent transparent;
+}
+.main-tooltip:hover .main-tooltiptext { visibility: visible; opacity: 1; }
+.main-metric-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px dotted #2b1f5c;
+  line-height: 1.2;
+}
+.main-metric-value {
+  font-size: 2rem;
+  color: #2b1f5c;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Swimmer Detail Metrics (tooltips) */
+.tooltip { position: relative; display: inline-block; cursor: help; }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #2b1f5c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2b1f5c transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+.metric-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px dotted #2b1f5c;
+}
+.metric-value {
+  font-size: 2rem;
+  color: #2b1f5c;
+  font-weight: bold;
+}
+
+/* Category Breakdown tables */
+.category-breakdown-table { margin-bottom: 1rem; }
+
+/* FINA Explanation container */
+.fina-explanation-container {
+  background-color: #f0f4ff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  border-left: 5px solid #2b1f5c;
+  box-shadow: 0 2px 8px rgba(43, 31, 92, 0.1);
+}
+
