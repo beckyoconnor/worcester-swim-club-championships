@@ -1040,7 +1040,7 @@ def main():
     - **Competition Experience:** Better race strategy and mental preparation
     """)
     
-    st.markdown('<wsc-h4>What the Charts Show:</wsc-h4>', unsafe_allow_html=True)
+    st.markdown('<h3 class="wsc-h3">What the Charts Show:</h3>', unsafe_allow_html=True)
     st.markdown("""
     The charts below show how average FINA points progress with age across different event categories. 
     Each line represents a different type of swimming event, helping you understand which events show the strongest age-related improvements 
