@@ -323,7 +323,8 @@ section[data-testid="stSidebar"] {
 }
 
 /* Altair/Vega tooltip styling (Worcester blue + white) */
-.vega-tooltip {
+.vega-tooltip,
+.vg-tooltip {
   background: var(--wsc-blue) !important;
   color: #ffffff !important;
   border: 1px solid rgba(255,255,255,0.25) !important;
@@ -336,7 +337,10 @@ section[data-testid="stSidebar"] {
   word-wrap: break-word !important;
   white-space: normal !important;
 }
-.vega-tooltip-table td { padding: 6px 10px !important; }
-.vega-tooltip .key { color: #c7d2fe !important; font-weight: 600 !important; }
-.vega-tooltip .value { color: #ffffff !important; font-weight: 700 !important; }
+.vega-tooltip-table td,
+.vg-tooltip-table td { padding: 6px 10px !important; }
+.vega-tooltip .key,
+.vg-tooltip .key { color: #c7d2fe !important; font-weight: 600 !important; }
+.vega-tooltip .value,
+.vg-tooltip .value { color: #ffffff !important; font-weight: 700 !important; }
 
