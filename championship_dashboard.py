@@ -152,7 +152,7 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
         if age == '18+':
             filtered_df = filtered_df[filtered_df['Age'] >= 18]
         else:
-            filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
     
     # Apply view type filter (eligible vs all)
     if view_type == 'Championship Eligible Only':
@@ -176,7 +176,7 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
         min_categories: Minimum categories required (0 = show all)
     """
     # Ensure Event Number is string and Gender column exists
-    df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
     if 'Gender' not in df_all.columns:
         df_all['Gender'] = 'Unknown'
     
@@ -457,7 +457,7 @@ def main():
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
-                else:
+            else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
