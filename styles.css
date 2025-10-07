@@ -144,12 +144,23 @@
   --wsc-heading: #2b2b2b; /* Site-like dark heading color */
   --wsc-accent: #dc2626; /* Link/accent (red from site) */
   --wsc-green: #7ef542; /* Club accent green */
-  --wsc-text: #0f172a; /* Slate-900 style body text */
+  --wsc-text: #2b2b2b; /* Body copy colour to match site */
 }
 
 body, .main .block-container, [data-testid="stMarkdownContainer"] {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color: var(--wsc-text);
+  font-weight: 400;
+  font-size: 1.0625rem; /* ~17px */
+  line-height: 1.75; /* comfortable reading */
+  letter-spacing: 0.005em;
+}
+
+/* Paragraph + list item rhythm inside markdown */
+.main [data-testid="stMarkdownContainer"] p,
+.main [data-testid="stMarkdownContainer"] li {
+  color: var(--wsc-text) !important;
+  margin: 0 0 1rem 0;
 }
 
 /* Global Heading Styles */
