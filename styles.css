@@ -11,6 +11,24 @@
 }
 .wsc-header-logo { flex-shrink: 0; }
 .wsc-header-text { flex-grow: 1; }
+.wsc-header-text h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.wsc-header-text h2 {
+  color: #ffffff;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.wsc-header-text p {
+  color: #7ef542;
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
 
 /* Main Dashboard Metrics (tooltips) */
 .main-tooltip { position: relative; display: inline-block; cursor: help; }
