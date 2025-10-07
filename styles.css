@@ -228,6 +228,52 @@ div[data-testid="stExpander"] > div > div {
   padding-top: 0.5rem;
 }
 
+/* Category chips with hover tooltips (individual swimmer breakdown) */
+.cat-chip-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+.cat-chip {
+  position: relative;
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: var(--wsc-blue);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+}
+.cat-chip .cat-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120%;
+  z-index: 10;
+  background: #ffffff;
+  color: var(--wsc-text);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 0.75rem 1rem;
+}
+.cat-chip .cat-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+.cat-chip:hover .cat-tooltip { visibility: visible; opacity: 1; }
+.cat-tooltip-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--wsc-heading); }
+.cat-tooltip-item { font-size: 0.9rem; margin: 0.15rem 0; }
+.cat-tooltip-note { font-size: 0.8rem; color: #6b7280; margin-top: 0.5rem; }
+
 /* Utility heading classes for explicit HTML usage */
 .wsc-h1 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:2.25rem; line-height:1.2; margin:1.5rem 0 0.75rem; }
 .wsc-h2 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:1.75rem; line-height:1.3; margin:1.25rem 0 0.5rem; }

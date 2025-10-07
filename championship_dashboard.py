@@ -840,10 +840,38 @@ def main():
                     # Show category breakdown (larger heading)
                     st.markdown('<h3 class="wsc-h3">Category Breakdown</h3>', unsafe_allow_html=True)
 
-                    st.markdown(' View total number of completed events counted by event category')
+                    st.markdown(' View number of included events counted by event category (only those used in scoring)')
+
+                    # Interactive category chips with hover details
+                    chip_html_parts = ["<div class='cat-chip-wrap'>"]
+                    for cat in ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']:
+                        cat_df = swimmer_events[swimmer_events['Event Category'] == cat].copy()
+                        if len(cat_df) == 0:
+                            continue
+                        # Best per event number, sorted by points
+                        cat_df = cat_df.drop_duplicates(subset=['Event Number'], keep='first')
+                        cat_df = cat_df.sort_values('WA Points', ascending=False)
+                        # mark included with star
+                        def label_row(r):
+                            inc = ' ⭐' if str(r['Event Number']) in included_event_numbers else ''
+                            return f"{int(r['Event Number'])} - {r['Event Name']} ({int(r['WA Points'])} pts){inc}"
+                        items = [label_row(r) for _, r in cat_df.iterrows()]
+                        tooltip_items = ''.join([f"<div class='cat-tooltip-item'>• {it}</div>" for it in items])
+                        chip_html_parts.append(
+                            f"<div class='cat-chip'>{cat}<div class='cat-tooltip'><div class='cat-tooltip-title'>{cat} events</div>{tooltip_items}<div class='cat-tooltip-note'>⭐ indicates events included in scoring</div></div></div>"
+                        )
+                    chip_html_parts.append("</div>")
+                    st.markdown(''.join(chip_html_parts), unsafe_allow_html=True)
                     
-                    # Calculate statistics for each category
-                    category_stats = swimmer_events.groupby('Event Category').agg({
+                    # Filter to only INCLUDED events for category stats
+                    swimmer_events_included = swimmer_events.copy()
+                    swimmer_events_included['__included'] = swimmer_events_included['Event Number'].astype(str).apply(
+                        lambda x: x in included_event_numbers
+                    )
+                    swimmer_events_included = swimmer_events_included[swimmer_events_included['__included']]
+                    
+                    # Calculate statistics for each category (only included events)
+                    category_stats = swimmer_events_included.groupby('Event Category').agg({
                         'Event Number': 'count',
                         'WA Points': ['mean', 'max', 'sum']
                     }).round(1)
