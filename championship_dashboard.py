@@ -394,7 +394,8 @@ def main():
         """)
     
     # Filters in main page using form
-    st.markdown('<h3 style="color: #1a1d5a;">🔍 Select Filters</h3>', unsafe_allow_html=True)
+    # Use stylesheet-driven headings
+    st.markdown('### Select Filters')
     
     with st.container():
         col1, col2, col3 = st.columns([2, 2, 1])
