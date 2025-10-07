@@ -373,6 +373,7 @@ def build_swimmer_narratives(df_all: pd.DataFrame) -> pd.DataFrame:
             'Gender': gender,
             'Total_Points': total_points,
             'Narrative': narrative,
+            'IncludedShort': included_sentence,
         })
 
     df_narr = pd.DataFrame(results)
@@ -704,7 +705,12 @@ def main():
                     
                     # Sort by Total Points for better visualization
                     chart_data = df_with_narr.sort_values('Total Points', ascending=False).head(20)
-                    chart_data = chart_data[['Name', 'Total Points', 'Narrative']].copy()
+                    # Prefer compact included list if available
+                    if 'IncludedShort' in df_with_narr.columns:
+                        chart_data['Included'] = df_with_narr['IncludedShort']
+                    else:
+                        chart_data['Included'] = df_with_narr.get('Narrative', '')
+                    chart_data = chart_data[['Name', 'Total Points', 'Included']].copy()
                     
                     if len(chart_data) > 0:
                         # Create Altair chart
@@ -716,7 +722,7 @@ def main():
                                     axis=alt.Axis(title='')),
                             tooltip=[alt.Tooltip('Name:N', title='Swimmer'),
                                      alt.Tooltip('Total Points:Q', title='Total Points', format='.0f'),
-                                     alt.Tooltip('Narrative:N', title='Summary')]
+                                     alt.Tooltip('Included:N', title='Included Events')]
                         ).properties(
                             title='Top Swimmers by Total Points',
                             height=max(400, len(chart_data) * 30)
