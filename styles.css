@@ -331,15 +331,15 @@ section[data-testid="stSidebar"] {
   border-radius: 10px !important;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
-  font-size: 0.85rem !important; /* slightly smaller to reduce truncation */
-  line-height: 1.45 !important;
+  font-size: 0.75rem !important; /* smaller to avoid truncation */
+  line-height: 1.35 !important;
   max-width: 560px !important;   /* allow wider tooltips */
   width: max-content !important;
   word-wrap: break-word !important;
   white-space: normal !important;
 }
 .vega-tooltip-table td,
-.vg-tooltip-table td { padding: 6px 12px !important; }
+.vg-tooltip-table td { padding: 4px 8px !important; }
 .vega-tooltip .key,
 .vg-tooltip .key { color: #c7d2fe !important; font-weight: 600 !important; }
 .vega-tooltip .value,
