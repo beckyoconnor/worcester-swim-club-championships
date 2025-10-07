@@ -449,7 +449,6 @@ def main():
             """, unsafe_allow_html=True)
         
         with col2:
-            
             if len(df_display) > 0:
                 avg_points = df_display['Total_Points'].mean()
                 
@@ -458,7 +457,7 @@ def main():
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
-            else:
+                else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
