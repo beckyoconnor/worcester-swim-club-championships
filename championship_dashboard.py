@@ -1081,16 +1081,25 @@ def main():
             chart_df = chart_df.rename(columns={'WA Points': 'Average FINA Points', 'Age_Group': 'Age'})
 
             # Find min/max average event within each (Age_Group, Event Category)
-            # We compute per-event (Event Name) average first, then take argmax/argmin
+            # Compute per-event (Event Name) averages first
             per_event = chart_data.groupby(['Age_Group', 'Event Category', 'Event Name'])['WA Points'].mean().reset_index()
-            # For max
-            idx_max = per_event.groupby(['Age_Group', 'Event Category'])['WA Points'].idxmax()
-            max_ev = per_event.loc[idx_max][['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
-            max_ev = max_ev.rename(columns={'Event Name': 'Max Event', 'WA Points': 'Max Event Avg'})
-            # For min
-            idx_min = per_event.groupby(['Age_Group', 'Event Category'])['WA Points'].idxmin()
-            min_ev = per_event.loc[idx_min][['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
-            min_ev = min_ev.rename(columns={'Event Name': 'Min Event', 'WA Points': 'Min Event Avg'})
+            # Robustly pick max/min using groupby + head after sorting (works even for single groups)
+            max_ev = (
+                per_event
+                .sort_values(['Age_Group', 'Event Category', 'WA Points'], ascending=[True, True, False])
+                .groupby(['Age_Group', 'Event Category'], as_index=False)
+                .head(1)
+                [['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
+                .rename(columns={'Event Name': 'Max Event', 'WA Points': 'Max Event Avg'})
+            )
+            min_ev = (
+                per_event
+                .sort_values(['Age_Group', 'Event Category', 'WA Points'], ascending=[True, True, True])
+                .groupby(['Age_Group', 'Event Category'], as_index=False)
+                .head(1)
+                [['Age_Group', 'Event Category', 'Event Name', 'WA Points']]
+                .rename(columns={'Event Name': 'Min Event', 'WA Points': 'Min Event Avg'})
+            )
 
             # Merge onto chart_df
             chart_df = chart_df.merge(max_ev, how='left', left_on=['Age','Event Category'], right_on=['Age_Group','Event Category'])
