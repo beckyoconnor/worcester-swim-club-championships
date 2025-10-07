@@ -12,7 +12,9 @@ from typing import Dict
 
 # Compatibility for different Streamlit versions
 if hasattr(st, 'cache_data'):
-    cache_decorator = st.cache_data
+    # Add conservative defaults for cache: 1 entry and 1-hour TTL
+    def cache_decorator(func=None, *, max_entries=1, ttl=3600):
+        return st.cache_data(func, max_entries=max_entries, ttl=ttl) if func else (lambda f: st.cache_data(f, max_entries=max_entries, ttl=ttl))
 else:
     cache_decorator = st.cache
 
@@ -150,7 +152,7 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
         if age == '18+':
             filtered_df = filtered_df[filtered_df['Age'] >= 18]
         else:
-            filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
     
     # Apply view type filter (eligible vs all)
     if view_type == 'Championship Eligible Only':
@@ -174,7 +176,7 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
         min_categories: Minimum categories required (0 = show all)
     """
     # Ensure Event Number is string and Gender column exists
-    df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
     if 'Gender' not in df_all.columns:
         df_all['Gender'] = 'Unknown'
     
@@ -337,8 +339,8 @@ def main():
             # Ensure Event Number is string for consistency
             df_all['Event Number'] = df_all['Event Number'].astype(str)
         
-        # Preserve a copy for downstream views/charts that need per-event gender
-        df_all_with_gender = df_all.copy()
+        # Reuse the same dataframe (read-only below) to avoid extra memory copy
+        df_all_with_gender = df_all
         
         # Calculate scores for all swimmers (no minimum)
         df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
@@ -456,7 +458,7 @@ def main():
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
-                else:
+            else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
@@ -498,7 +500,7 @@ def main():
                     highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
-                else:
+            else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
@@ -748,7 +750,7 @@ def main():
                         all_candidates = pd.concat(selected_per_cat, ignore_index=True)
                         top8 = all_candidates.nlargest(8, 'WA Points')
                         included_event_numbers = set(top8['Event Number'].astype(str).tolist())
-
+                
                     # Prepare display dataframe
                     event_display = swimmer_events[['Event Number', 'Event Name', 'Event Category', 'Time', 'WA Points']].copy()
                     event_display['Included'] = event_display['Event Number'].astype(str).apply(lambda x: '✅' if x in included_event_numbers else '')
@@ -809,7 +811,7 @@ def main():
                         'Time': 'Time',
                         'WA Points': 'FINA Points'
                     })
-                    
+                
                     # Reorder columns and remove numeric rank
                     event_display = event_display[['Included', 'Event #', 'Event', 'Category', 'Time', 'FINA Points']]
                 
@@ -825,7 +827,7 @@ def main():
                         styled = event_display_clean.style.apply(_highlight_row, axis=1)
                         st.dataframe(styled, height=400, use_container_width=True)
                     except Exception:
-                        st.dataframe(event_display_clean, height=400, use_container_width=True)
+                    st.dataframe(event_display_clean, height=400, use_container_width=True)
                     
                     # Download button for swimmer's events
                     csv_swimmer = event_display_clean.to_csv(index=False).encode('utf-8')
@@ -900,21 +902,21 @@ def main():
                     for i, (measure, title) in enumerate(measures.items()):
                         # Alternate between columns
                         with col1 if i % 2 == 0 else col2:
-                            st.markdown(f"**{title}**")
+                        st.markdown(f"**{title}**")
                             
                             # Create dataframe with proper formatting
-                            measure_df = pd.DataFrame([category_stats_T.loc[measure]])
-                            
+                        measure_df = pd.DataFrame([category_stats_T.loc[measure]])
+                        
                             # Set better index name
-                            if 'Count' in measure:
+                        if 'Count' in measure:
                                 measure_df.index = ['Events']
                                 # Format as integers and ensure no None values
-                                formatted_df = measure_df.astype(int)
-                            else:
+                            formatted_df = measure_df.astype(int)
+                        else:
                                 measure_df.index = ['Points']
                                 # Format as floats with 1 decimal place and ensure no None values
-                                formatted_df = measure_df.round(1)
-                            
+                            formatted_df = measure_df.round(1)
+                        
                             # Ensure all values are properly formatted (replace any remaining None with 0)
                             formatted_df = formatted_df.fillna(0)
                             
@@ -954,7 +956,7 @@ def main():
                     if selected_age == '18+':
                         event_swimmers = event_swimmers[event_swimmers['Age'] >= 18]
                     else:
-                        event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
+                    event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
                 
                 if len(event_swimmers) > 0:
                     # Sort by WA Points descending (best performance first)
@@ -1165,8 +1167,8 @@ def main():
                 <li>Hover over points to see exact values</li>
                 <li>Generally, older swimmers tend to achieve higher FINA points due to physical development and experience</li>
             </ul>
-        </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
     else:
         st.info("No data available for FINA points analysis charts.")
     
