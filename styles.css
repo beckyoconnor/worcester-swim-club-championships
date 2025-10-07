@@ -136,8 +136,11 @@
 }
 
 /* Global Typography based on WSC site */
+/* Load fonts from Google (fallbacks provided) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
 :root {
-  --wsc-blue: #1a1d5a; /* Primary headings/nav blue */
+  --wsc-blue: #1e3a8a; /* Primary headings/nav blue from site */
   --wsc-accent: #dc2626; /* Link/accent (red from site) */
   --wsc-green: #7ef542; /* Club accent green */
   --wsc-text: #0f172a; /* Slate-900 style body text */
@@ -149,16 +152,19 @@ body, .main .block-container, [data-testid="stMarkdownContainer"] {
 }
 
 /* Global Heading Styles */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--wsc-blue);
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-}
+h1, h2, h3, h4, h5, h6 { color: var(--wsc-blue); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+/* Ensure Streamlit markdown headings adopt our style (specificity + !important) */
+.main [data-testid="stMarkdownContainer"] h1,
+.main [data-testid="stMarkdownContainer"] h2,
+.main [data-testid="stMarkdownContainer"] h3,
+.main [data-testid="stMarkdownContainer"] h4,
+.main [data-testid="stMarkdownContainer"] h5,
+.main [data-testid="stMarkdownContainer"] h6 { color: var(--wsc-blue) !important; font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif !important; font-weight: 700 !important; }
 
 /* Heading sizes and spacing (desktop) */
 h1 { font-size: 2.25rem; line-height: 1.2; margin: 1.5rem 0 0.75rem; }
 h2 { font-size: 1.75rem; line-height: 1.3; margin: 1.25rem 0 0.5rem; }
-h3 { font-size: 1.25rem; line-height: 1.35; margin: 1rem 0 0.5rem; }
+h3 { font-size: 1.5rem;  line-height: 1.35; margin: 1rem 0 0.5rem; }
 h4 { font-size: 1.1rem;  line-height: 1.35; margin: 0.75rem 0 0.5rem; }
 h5 { font-size: 1rem;    line-height: 1.35; margin: 0.5rem 0 0.25rem; }
 h6 { font-size: 0.95rem; line-height: 1.35; margin: 0.5rem 0 0.25rem; }
@@ -167,7 +173,7 @@ h6 { font-size: 0.95rem; line-height: 1.35; margin: 0.5rem 0 0.25rem; }
 @media screen and (max-width: 768px) {
   h1 { font-size: 1.8rem; }
   h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.15rem; }
+  h3 { font-size: 1.25rem; }
 }
 
 /* Streamlit expander header styling to match headings */
