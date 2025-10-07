@@ -142,26 +142,26 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
     """Memory-efficient filtering of dataframe."""
     # Start with a copy to avoid modifying original
     filtered_df = df.copy()
-
+    
     # Apply gender filter
     if gender != 'All':
         filtered_df = filtered_df[filtered_df['Gender'] == gender]
-
+    
     # Apply age filter
     if age != 'All':
         if age == '18+':
             filtered_df = filtered_df[filtered_df['Age'] >= 18]
         else:
-            filtered_df = filtered_df[filtered_df['Age'] == int(age)]
-
+        filtered_df = filtered_df[filtered_df['Age'] == int(age)]
+    
     # Apply view type filter (eligible vs all)
     if view_type == 'Championship Eligible Only':
         filtered_df = filtered_df[filtered_df['Eligible'] == True]
-
+    
     # Sort by total points descending
     filtered_df = filtered_df.sort_values('Total_Points', ascending=False).reset_index(drop=True)
     filtered_df.index = filtered_df.index + 1  # Start ranking from 1
-
+    
     return filtered_df
 
 
@@ -176,7 +176,7 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
         min_categories: Minimum categories required (0 = show all)
     """
     # Ensure Event Number is string and Gender column exists
-    df_all['Event Number'] = df_all['Event Number'].astype(str)
+        df_all['Event Number'] = df_all['Event Number'].astype(str)
     if 'Gender' not in df_all.columns:
         df_all['Gender'] = 'Unknown'
     
@@ -325,34 +325,46 @@ def build_swimmer_narratives(df_all: pd.DataFrame) -> pd.DataFrame:
         included_by_cat = {}
         for _, row in top8.iterrows():
             cat = row['Event Category']
-            included_by_cat.setdefault(cat, []).append(f"{row['Event Name']} ({int(row['WA Points'])} pts)")
+            included_by_cat.setdefault(cat, []).append(f"{row['Event Name']} – {int(row['WA Points'])} pts")
 
         excluded_other = []
         for _, row in swimmer_events.iterrows():
             if str(row['Event Number']) not in included_numbers:
-                excluded_other.append(f"{row['Event Name']} ({int(row['WA Points'])} pts)")
+                excluded_other.append(f"{row['Event Name']} – {int(row['WA Points'])} pts")
 
         total_points = int(top8['WA Points'].sum()) if len(top8) else 0
         avg_points = float(top8['WA Points'].mean()) if len(top8) else 0.0
         best_points = int(top8['WA Points'].max()) if len(top8) else 0
 
-        # Compose narrative
+        # Helpers for natural language joins
+        def _join(items, max_items=3):
+            items = [i for i in items if i]
+            if not items:
+                return ""
+            if len(items) > max_items:
+                shown = items[:max_items]
+                return ", ".join(shown) + f" and {len(items)-max_items} more"
+            if len(items) == 1:
+                return items[0]
+            return ", ".join(items[:-1]) + f" and {items[-1]}"
+
+        # Compose narrative (natural language)
         included_parts = []
         for cat in categories:
             if cat in included_by_cat:
-                included_parts.append(f"{cat}: " + ", ".join(included_by_cat[cat]))
-        included_text = "; ".join(included_parts) if included_parts else "No events yet counted"
+                included_parts.append(f"{cat} (" + _join(included_by_cat[cat], max_items=2) + ")")
+        included_sentence = _join(included_parts, max_items=4) if included_parts else "no events yet counted"
 
-        reasons = []
+        reason_bits = []
         if excluded_due_to_limit:
-            reasons.append("Exceeded category limits: " + ", ".join(excluded_due_to_limit))
+            reason_bits.append("some races exceeded the per‑category limit: " + _join(excluded_due_to_limit, max_items=3))
         if excluded_other:
-            reasons.append("Outside top 8 after category limits: " + ", ".join(excluded_other[:6]) + (" …" if len(excluded_other) > 6 else ""))
-        reasons_text = "; ".join(reasons) if reasons else "All eligible events counted so far"
+            reason_bits.append("others were just outside the swimmer’s top eight: " + _join(excluded_other, max_items=3))
+        reasons_sentence = ("; ".join(reason_bits) + ".") if reason_bits else "All eligible races are currently counted."
 
         narrative = (
-            f"Total {total_points} pts (avg {avg_points:.1f}, best {best_points}). "
-            f"Included events: {included_text}. {reasons_text}."
+            f"{total_points} points from the top eight races (average {avg_points:.1f}, best {best_points}). "
+            f"Included: {included_sentence}. {reasons_sentence}"
         )
 
         results.append({
@@ -555,7 +567,7 @@ def main():
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
-                else:
+            else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
@@ -592,7 +604,7 @@ def main():
                     highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
                 elif selected_age == '18+':
                     highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
-                else:
+            else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
                     age_text = "under 12" if age_int < 12 else "12 and over"
@@ -926,7 +938,7 @@ def main():
                         styled = event_display_clean.style.apply(_highlight_row, axis=1)
                         st.dataframe(styled, height=400, use_container_width=True)
                     except Exception:
-                        st.dataframe(event_display_clean, height=400, use_container_width=True)
+                    st.dataframe(event_display_clean, height=400, use_container_width=True)
                     
                     # Download button for swimmer's events
                     csv_swimmer = event_display_clean.to_csv(index=False).encode('utf-8')
@@ -1001,18 +1013,18 @@ def main():
                     for i, (measure, title) in enumerate(measures.items()):
                         # Alternate between columns
                         with (col1 if i % 2 == 0 else col2):
-                            st.markdown(f"**{title}**")
+                        st.markdown(f"**{title}**")
                             # Create dataframe with proper formatting
-                            measure_df = pd.DataFrame([category_stats_T.loc[measure]])
+                        measure_df = pd.DataFrame([category_stats_T.loc[measure]])
                             # Set better index name
-                            if 'Count' in measure:
+                        if 'Count' in measure:
                                 measure_df.index = ['Events']
                                 # Format as integers and ensure no None values
-                                formatted_df = measure_df.astype(int)
-                            else:
+                            formatted_df = measure_df.astype(int)
+                        else:
                                 measure_df.index = ['Points']
                                 # Format as floats with 1 decimal place and ensure no None values
-                                formatted_df = measure_df.round(1)
+                            formatted_df = measure_df.round(1)
                             # Ensure all values are properly formatted (replace any remaining None with 0)
                             formatted_df = formatted_df.fillna(0)
                             # Styling provided by styles.css (.category-breakdown-table)
@@ -1051,7 +1063,7 @@ def main():
                     if selected_age == '18+':
                         event_swimmers = event_swimmers[event_swimmers['Age'] >= 18]
                     else:
-                        event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
+                    event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
                 
                 if len(event_swimmers) > 0:
                     # Sort by WA Points descending (best performance first)
