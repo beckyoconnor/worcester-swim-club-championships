@@ -287,3 +287,27 @@ div[data-testid="stExpander"] > div > div {
 a { color: var(--wsc-accent) !important; }
 a:hover { opacity: 0.9; }
 
+/* Download buttons - Worcester style */
+.stDownloadButton > button {
+  background: var(--wsc-green) !important;
+  color: var(--wsc-blue) !important;
+  border: 2px solid var(--wsc-green) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1rem !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+  transition: transform 0.08s ease-in-out, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+.stDownloadButton > button:hover {
+  background: #5cb82f !important; /* darker Worcester green */
+  border-color: #5cb82f !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+.stDownloadButton > button:active {
+  transform: translateY(0) !important;
+}
+.stDownloadButton > button:focus-visible {
+  outline: 3px solid rgba(30,58,138,0.25) !important; /* blue focus ring */
+}
+
