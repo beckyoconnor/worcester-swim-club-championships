@@ -120,14 +120,12 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
 
                 if 'female' in event_name or 'girl' in event_name:
                     event_gender_map[event_number] = 'Female'
-                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name:
-                    event_gender_map[event_number] = 'Male'
-                elif 'open' in event_name:
-                    # Treat open as Male for championship grouping
-                    event_gender_map[event_number] = 'Male'
+                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name or 'open' in event_name:
+                    # Treat any open/male indicator as Male/Open
+                    event_gender_map[event_number] = 'Male/Open'
                 else:
                     # Default if unspecified
-                    event_gender_map[event_number] = 'Male'
+                    event_gender_map[event_number] = 'Male/Open'
             else:
                 event_gender_map[event_number] = 'Unknown'
         except Exception:
@@ -138,14 +136,17 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
 
 
 @cache_decorator
-def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str) -> pd.DataFrame:
+def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str | list, age: str) -> pd.DataFrame:
     """Memory-efficient filtering of dataframe."""
     # Start with a copy to avoid modifying original
     filtered_df = df.copy()
     
-    # Apply gender filter
+    # Apply gender filter (supports single value or list of acceptable values)
     if gender != 'All':
-        filtered_df = filtered_df[filtered_df['Gender'] == gender]
+        if isinstance(gender, (list, set, tuple)):
+            filtered_df = filtered_df[filtered_df['Gender'].isin(list(gender))]
+        else:
+            filtered_df = filtered_df[filtered_df['Gender'] == gender]
     
     # Apply age filter
     if age != 'All':
@@ -505,6 +506,8 @@ def main():
         else:
             # Ensure Event Number is string for consistency
             df_all['Event Number'] = df_all['Event Number'].astype(str)
+            # Normalize legacy gender labels to new scheme
+            df_all['Gender'] = df_all['Gender'].replace({'Male': 'Male/Open'})
         
         # Reuse the same dataframe (read-only below) to avoid extra memory copy
         df_all_with_gender = df_all
@@ -580,7 +583,7 @@ def main():
             # Gender filter (UI shows 'Male/Open' but data uses 'Male')
             gender_options = ['Male/Open', 'Female']
             selected_gender = st.selectbox("Gender", gender_options, key='gender_filter')
-            gender_filter_value = 'Male' if selected_gender == 'Male/Open' else 'Female'
+            gender_filter_value = 'Male/Open' if selected_gender == 'Male/Open' else 'Female'
         
         with col2:
             # Get all ages from all swimmers for initial display, group 16+ together
@@ -703,7 +706,7 @@ def main():
         age_text = f"Age {selected_age}" if selected_age != 'All' else 'All Ages'
         
         # Wrap rankings in an expander
-        if gender_filter_value == 'Male':
+        if gender_filter_value == 'Male/Open':
             expander_title = f"Male/Open Rankings - {age_text}"
         elif gender_filter_value == 'Female':
             expander_title = f"Female Rankings - {age_text}"
@@ -1255,7 +1258,7 @@ def main():
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
         # Calculate average FINA points by age and event category for each gender
-        chart_data_male = df_all_with_gender[df_all_with_gender['Gender'] == 'Male/Open'].copy()
+        chart_data_male = df_all_with_gender[df_all_with_gender['Gender'].isin(['Male/Open','Male'])].copy()
         chart_data_female = df_all_with_gender[df_all_with_gender['Gender'] == 'Female'].copy()
         
         # Function to create chart data
