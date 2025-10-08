@@ -149,8 +149,8 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str) -
     
     # Apply age filter
     if age != 'All':
-        if age == '18+':
-            filtered_df = filtered_df[filtered_df['Age'] >= 18]
+        if age == '16+':
+            filtered_df = filtered_df[filtered_df['Age'] >= 16]
         else:
             filtered_df = filtered_df[filtered_df['Age'] == int(age)]
     
@@ -263,9 +263,9 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
     
     df = pd.DataFrame(championship_results)
     
-    # Create age groups (18+ is Open)
-    bins = [0, 10, 12, 14, 16, 17, 100]
-    labels = ['9-10', '11-12', '13-14', '15-16', '17', 'Open (18+)']
+    # Create age groups (16+ is Open)
+    bins = [0, 10, 12, 14, 15, 100]
+    labels = ['9-10', '11-12', '13-14', '15', 'Open (16+)']
     df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
     
     return df
@@ -583,15 +583,15 @@ def main():
             gender_filter_value = 'Male' if selected_gender == 'Male/Open' else 'Female'
         
         with col2:
-            # Get all ages from all swimmers for initial display, group 18+ together
+            # Get all ages from all swimmers for initial display, group 16+ together
             all_ages = sorted(df_all_swimmers['Age'].unique().tolist())
-            # Create age options with 18+ grouping
+            # Create age options with 16+ grouping
             age_options = ['All']
             for age in all_ages:
-                if age < 18:
+                if age < 16:
                     age_options.append(str(age))
-                elif age >= 18 and '18+' not in age_options:
-                    age_options.append('18+')
+                elif age >= 16 and '16+' not in age_options:
+                    age_options.append('16+')
             selected_age = st.selectbox("Age", age_options, key='age_filter')
         
         with col3:
@@ -627,8 +627,8 @@ def main():
                 avg_points = df_display['Total_Points'].mean()
                 if selected_age == 'All':
                     avg_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
-                elif selected_age == '18+':
-                    avg_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
+                elif selected_age == '16+':
+                    avg_tooltip_text = "Average total points for 16+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -644,8 +644,8 @@ def main():
             else:
                 if selected_age == 'All':
                     empty_tooltip_text = "Average total points across all swimmers. Based on top 8 races per swimmer with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
-                elif selected_age == '18+':
-                    empty_tooltip_text = "Average total points for 18+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
+                elif selected_age == '16+':
+                    empty_tooltip_text = "Average total points for 16+ swimmers. Based on top 8 races per swimmer with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -664,8 +664,8 @@ def main():
                 highest_score = df_display['Total_Points'].max()
                 if selected_age == 'All':
                     highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
-                elif selected_age == '18+':
-                    highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
+                elif selected_age == '16+':
+                    highest_tooltip_text = "Highest total points for 16+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -682,8 +682,8 @@ def main():
                 # Dynamic tooltip for empty data
                 if selected_age == 'All':
                     empty_highest_tooltip_text = "Highest total points achieved by any swimmer. Based on their top 8 races with category limits: max 3 races per category (under 12) and max 2 races per category (12 and over)."
-                elif selected_age == '18+':
-                    empty_highest_tooltip_text = "Highest total points for 18+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
+                elif selected_age == '16+':
+                    empty_highest_tooltip_text = "Highest total points for 16+ swimmers. Based on their top 8 races with max 2 races per category (12 and over)."
                 else:
                     age_int = int(selected_age)
                     category_limit = 3 if age_int < 12 else 2
@@ -1131,8 +1131,8 @@ def main():
                 
                 # Apply age filter if not 'All'
                 if selected_age != 'All':
-                    if selected_age == '18+':
-                        event_swimmers = event_swimmers[event_swimmers['Age'] >= 18]
+                    if selected_age == '16+':
+                        event_swimmers = event_swimmers[event_swimmers['Age'] >= 16]
                     else:
                         event_swimmers = event_swimmers[event_swimmers['Age'] == int(selected_age)]
                 
@@ -1263,9 +1263,9 @@ def main():
             if len(data) == 0:
                 return None
             
-            # Create a copy and cap ages at 18+ for swimmers over 18
+            # Create a copy and cap ages at 16+ for swimmers over 16
             chart_data = data.copy()
-            chart_data['Age_Group'] = chart_data['Age'].apply(lambda x: min(x, 18))
+            chart_data['Age_Group'] = chart_data['Age'].apply(lambda x: 16 if x >= 16 else x)
             
             # Group by age group and event category, calculate average WA Points
             grouped = chart_data.groupby(['Age_Group', 'Event Category'])
@@ -1298,8 +1298,8 @@ def main():
             chart_df = chart_df.merge(min_ev, how='left', left_on=['Age','Event Category'], right_on=['Age_Group','Event Category'])
             chart_df = chart_df.drop(columns=['Age_Group_x','Age_Group_y'])
             
-            # Convert age 18 to "18+" for display
-            chart_df['Age'] = chart_df['Age'].apply(lambda x: '18+' if x == 18 else str(int(x)))
+            # Convert age 16 and above to "16+" for display
+            chart_df['Age'] = chart_df['Age'].apply(lambda x: '16+' if int(x) == 16 else str(int(x)))
             
             return chart_df
         
@@ -1325,7 +1325,7 @@ def main():
             st.markdown('<h3 class="wsc-h3">Male/Open Swimmers</h3>', unsafe_allow_html=True)
             
             male_chart = alt.Chart(male_chart_data).mark_line(point=True, strokeWidth=3).encode(
-                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
+                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16+']),
                 y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
                 color=alt.Color('Event Category:N', 
                               scale=alt.Scale(domain=list(category_colors.keys()), 
@@ -1353,7 +1353,7 @@ def main():
             st.markdown('<h3 class="wsc-h3">Female Swimmers</h3>', unsafe_allow_html=True)
             
             female_chart = alt.Chart(female_chart_data).mark_line(point=True, strokeWidth=3).encode(
-                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16', '17', '18+']),
+                x=alt.X('Age:N', title='Age', sort=['9', '10', '11', '12', '13', '14', '15', '16+']),
                 y=alt.Y('Average FINA Points:Q', title='Average FINA Points'),
                 color=alt.Color('Event Category:N', 
                               scale=alt.Scale(domain=list(category_colors.keys()), 
