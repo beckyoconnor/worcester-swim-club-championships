@@ -577,9 +577,10 @@ def main():
         col1, col2, col3 = st.columns([2, 2, 1])
         
         with col1:
-            # Gender filter
-            gender_options = ['Male', 'Female']
+            # Gender filter (UI shows 'Male/Open' but data uses 'Male')
+            gender_options = ['Male/Open', 'Female']
             selected_gender = st.selectbox("Gender", gender_options, key='gender_filter')
+            gender_filter_value = 'Male' if selected_gender == 'Male/Open' else 'Female'
         
         with col2:
             # Get all ages from all swimmers for initial display, group 18+ together
@@ -603,7 +604,7 @@ def main():
         # Use memory-efficient filtering
         df_display = filter_dataframe_memory_efficient(
             df_all_swimmers, 
-            selected_gender, 
+            gender_filter_value, 
             selected_age
         )
         
@@ -702,10 +703,10 @@ def main():
         age_text = f"Age {selected_age}" if selected_age != 'All' else 'All Ages'
         
         # Wrap rankings in an expander
-        if selected_gender == 'Male':
-            expander_title = f"Boys Rankings - {age_text}"
-        elif selected_gender == 'Female':
-            expander_title = f"Girls Rankings - {age_text}"
+        if gender_filter_value == 'Male':
+            expander_title = f"Male/Open Rankings - {age_text}"
+        elif gender_filter_value == 'Female':
+            expander_title = f"Female Rankings - {age_text}"
         else:
             expander_title = f"All Rankings - {age_text}"
         
@@ -816,7 +817,7 @@ def main():
                 
                 # Download button
                 csv = df_show_renamed.to_csv(index=False).encode('utf-8')
-                filename = f"rankings_{selected_gender}_age{selected_age}.csv"
+                filename = f"rankings_{selected_gender.replace('/', '_')}_age{selected_age}.csv"
                 st.download_button(
                     label="📥 Download Rankings as CSV",
                     data=csv,
@@ -1102,7 +1103,7 @@ def main():
             st.markdown('<h3 class="wsc-h3">Select an Event to View Rankings</h3>', unsafe_allow_html=True)
             
             # Filter events by selected gender first
-            df_gender_events = df_all_with_gender[df_all_with_gender['Gender'] == selected_gender].copy()
+            df_gender_events = df_all_with_gender[df_all_with_gender['Gender'] == gender_filter_value].copy()
             
             # Get unique events for the selected gender
             event_options = df_gender_events[['Event Number', 'Event Name']].drop_duplicates().sort_values('Event Number')
