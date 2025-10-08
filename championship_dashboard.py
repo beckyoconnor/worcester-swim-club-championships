@@ -514,13 +514,10 @@ def main():
         # Reuse the same dataframe (read-only below) to avoid extra memory copy
         df_all_with_gender = df_all
         
-        # Prefer precomputed scoreboard if available (faster, consistent)
+        # Always compute scores for ALL swimmers (no minimum) so counts aren't limited to eligible only
+        # Precomputed CSVs contain only championship-eligible swimmers; that undercounts.
         df_precomputed = load_precomputed_scoreboard(events_folder)
-        if df_precomputed is not None and len(df_precomputed) > 0:
-            df_all_swimmers = df_precomputed.copy()
-        else:
-            # Calculate scores for all swimmers (no minimum)
-            df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
+        df_all_swimmers = calculate_all_championship_scores(df_all, min_categories=0)
 
         # Try to load prebuilt narratives; if missing, build on the fly
         df_narratives = load_swimmer_narratives_csv(events_folder)
