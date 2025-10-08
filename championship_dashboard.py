@@ -755,9 +755,14 @@ def main():
                 tab1, tab2 = st.tabs(["📈 Points Chart", "📊 Data Table"])
                 
                 with tab1:
-                    # Join narratives for tooltips
+                    # Join narratives for tooltips (prefer IncludedShort -> compact included events list)
                     try:
-                        df_with_narr = df_for_chart.merge(df_narratives[['Name','Narrative']], on='Name', how='left')
+                        cols = ['Name']
+                        if 'IncludedShort' in df_narratives.columns:
+                            cols.append('IncludedShort')
+                        if 'Narrative' in df_narratives.columns:
+                            cols.append('Narrative')
+                        df_with_narr = df_for_chart.merge(df_narratives[cols].drop_duplicates('Name'), on='Name', how='left')
                     except Exception:
                         df_with_narr = df_for_chart.copy()
 
@@ -766,11 +771,13 @@ def main():
                     
                     # Sort by Total Points for better visualization
                     chart_data = df_with_narr.sort_values('Total Points', ascending=False).head(20)
-                    # Prefer compact included list if available
+                    # Prefer compact included list if available; fallback to Narrative; else blank
                     if 'IncludedShort' in df_with_narr.columns:
-                        chart_data['Included'] = df_with_narr['IncludedShort']
+                        chart_data['Included'] = df_with_narr['IncludedShort'].fillna('')
+                    elif 'Narrative' in df_with_narr.columns:
+                        chart_data['Included'] = df_with_narr['Narrative'].fillna('')
                     else:
-                        chart_data['Included'] = df_with_narr.get('Narrative', '')
+                        chart_data['Included'] = ''
                     chart_data = chart_data[['Name', 'Total Points', 'Included']].copy()
                     
                     if len(chart_data) > 0:
