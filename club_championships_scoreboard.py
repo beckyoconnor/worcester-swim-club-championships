@@ -4,7 +4,6 @@ Club Championships Scoreboard
 Calculates age group trophies based on championship rules.
 
 Rules:
-- Top 8 events across at least 5 of the 6 categories
 - Under 12s: max 3 races per category
 - 12 and over: max 2 races per category
 - Highest collated FINA/WA points wins
