@@ -5,18 +5,15 @@ An interactive Streamlit dashboard to view and explore championship rankings.
 ## Features
 
 ✅ **Interactive Filtering**
-- Filter by gender (Boys/Girls/All)
-- Filter by age group (9-10, 11-12, 13-14, 15-16, 17+, All)
-- Toggle between all swimmers or championship-eligible only
+- Filter by gender (Boys/Girls)
+- Filter by age (specific age or All)
 
 ✅ **Complete Rankings**
 - View all swimmers sorted by total points
 - See detailed category breakdown for each swimmer
-- Championship eligibility indicator (✅/❌)
 
 ✅ **Real-time Statistics**
 - Total swimmers count
-- Championship-eligible count
 - Average total points
 - Highest score
 
@@ -48,13 +45,10 @@ Once launched, the dashboard will automatically open in your default web browser
 
 ## Using the Dashboard
 
-### Sidebar Filters
+### Filters
 
-1. **Gender**: Select Boys, Girls, or All swimmers
-2. **Age Group**: Choose specific age group or view all ages
-3. **Swimmers**: Toggle between:
-   - **All Swimmers** - Shows everyone who competed
-   - **Championship Eligible Only** - Shows only swimmers with 5+ categories
+1. **Gender**: Select Boys or Girls
+2. **Age**: Choose specific age or view all ages (18+ grouped)
 
 ### Main Display
 
@@ -68,7 +62,7 @@ The main table shows:
 - **Avg Points** - Average points per event
 - **Events** - Number of events counted (up to 8)
 - **Categories** - Number of categories competed in
-- **Eligible** - ✅ if eligible for championship (5+ categories)
+  
 - **Category Breakdown** - Number of events per category:
   - Sprint (50m events)
   - Free (100m, 200m, 400m freestyle)
@@ -82,10 +76,7 @@ The main table shows:
 Click the **"📥 Download Rankings as CSV"** button to export the current filtered view to a CSV file.
 
 ## Championship Rules
-
-### Eligibility
-- Must compete in **at least 5 of the 6 categories**
-- Best 8 events are counted
+All swimmers are displayed. Scoring uses best 8 events with per‑category limits (under 12: max 3; 12 and over: max 2).
 
 ### Category Limits
 - **Under 12s**: Maximum 3 races per category

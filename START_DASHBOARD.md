@@ -35,19 +35,16 @@ The dashboard will automatically open in your web browser at:
    - 17+ years
    - All
 
-3. **Choose View** (left sidebar)
-   - All Swimmers (everyone who competed)
-   - Championship Eligible Only (5+ categories)
+3. **Choose Filters** (left sidebar)
+   - All rankings now include every swimmer who competed; no eligibility filter
 
 ### 📥 Export Results
 
 Click the **"Download Rankings as CSV"** button at the bottom to export the current view.
 
-### ✅ Championship Eligibility
+### Championship Eligibility
 
-Look for the ✅ symbol in the "Eligible" column:
-- ✅ = Eligible for championship (competed in 5+ categories)
-- ❌ = Not eligible (competed in fewer than 5 categories)
+All swimmers are shown. The dashboard no longer marks or filters by eligibility.
 
 ## Features
 

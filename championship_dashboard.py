@@ -138,7 +138,7 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
 
 
 @cache_decorator
-def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, view_type: str) -> pd.DataFrame:
+def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str) -> pd.DataFrame:
     """Memory-efficient filtering of dataframe."""
     # Start with a copy to avoid modifying original
     filtered_df = df.copy()
@@ -153,10 +153,6 @@ def filter_dataframe_memory_efficient(df: pd.DataFrame, gender: str, age: str, v
             filtered_df = filtered_df[filtered_df['Age'] >= 18]
         else:
             filtered_df = filtered_df[filtered_df['Age'] == int(age)]
-    
-    # Apply view type filter (eligible vs all)
-    if view_type == 'Championship Eligible Only':
-        filtered_df = filtered_df[filtered_df['Eligible'] == True]
     
     # Sort by total points descending
     filtered_df = filtered_df.sort_values('Total_Points', ascending=False).reset_index(drop=True)
@@ -262,8 +258,7 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
             'Form_100_Events': category_counts.get('100 Form', 0),
             'Form_200_Events': category_counts.get('200 Form', 0),
             'IM_Events': category_counts.get('IM', 0),
-            'Distance_Events': category_counts.get('Distance', 0),
-            'Eligible': num_categories >= 5  # Mark if eligible for championship
+            'Distance_Events': category_counts.get('Distance', 0)
         })
     
     df = pd.DataFrame(championship_results)
@@ -609,8 +604,7 @@ def main():
         df_display = filter_dataframe_memory_efficient(
             df_all_swimmers, 
             selected_gender, 
-            selected_age, 
-            'All Swimmers'  # Always show all swimmers
+            selected_age
         )
         
         # Global tooltip styles now provided by styles.css
