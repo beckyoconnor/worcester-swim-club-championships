@@ -318,8 +318,8 @@ def create_age_groups(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     
     # Define age groups
-    bins = [0, 10, 12, 14, 16, 100]
-    labels = ['9-10', '11-12', '13-14', '15-16', '17+']
+    bins = [0, 10, 12, 14, 15, 100]
+    labels = ['9-10', '11-12', '13-14', '15', '16+']
     
     df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
     
@@ -403,7 +403,7 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     
     # Export age group winners
     winners = []
-    for age_group in ['9-10', '11-12', '13-14', '15-16', '17+']:
+    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
         for gender in ['Male/Open', 'Female']:
             ag_gender = df_champs[(df_champs['Age Group'] == age_group) & 
                                   (df_champs['Gender'] == gender)]
@@ -565,7 +565,7 @@ def main():
     print("📊 SUMMARY STATISTICS")
     print("=" * 100)
     
-    for age_group in ['9-10', '11-12', '13-14', '15-16', '17+']:
+    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
         boys_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Male/Open')])
         girls_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Female')])
         print(f"{age_group:<8} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
