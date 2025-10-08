@@ -1248,7 +1248,7 @@ def main():
     # Create charts for average FINA points by age and event category
     if len(df_all_with_gender) > 0:
         # Calculate average FINA points by age and event category for each gender
-        chart_data_male = df_all_with_gender[df_all_with_gender['Gender'] == 'Male'].copy()
+        chart_data_male = df_all_with_gender[df_all_with_gender['Gender'] == 'Male/Open'].copy()
         chart_data_female = df_all_with_gender[df_all_with_gender['Gender'] == 'Female'].copy()
         
         # Function to create chart data

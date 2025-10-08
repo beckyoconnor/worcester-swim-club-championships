@@ -308,14 +308,14 @@ class SwimEventExtractor:
             event_name: Clean event name (e.g., "Male 100m IM", "Female 50m Backstroke")
             
         Returns:
-            Gender string ("Male", "Female", or "Unknown")
+            Gender string ("Male/Open", "Female", or "Unknown")
         """
         event_lower = event_name.lower()
         
         if 'female' in event_lower:
             return 'Female'
-        elif 'male' in event_lower:
-            return 'Male'
+        elif 'male' in event_lower or 'open' in event_lower:
+            return 'Male/Open'
         else:
             return 'Unknown'
     

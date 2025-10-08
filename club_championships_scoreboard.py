@@ -77,12 +77,10 @@ def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
                 event_name = str(df['Event Name'].iloc[0]).lower()
                 if 'female' in event_name or 'girl' in event_name:
                     event_gender_map[event_number] = 'Female'
-                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name:
-                    event_gender_map[event_number] = 'Male'
-                elif 'open' in event_name:
-                    event_gender_map[event_number] = 'Male'
+                elif 'male' in event_name or 'open/male' in event_name or 'boy' in event_name or 'open' in event_name:
+                    event_gender_map[event_number] = 'Male/Open'
                 else:
-                    event_gender_map[event_number] = 'Male'
+                    event_gender_map[event_number] = 'Male/Open'
             else:
                 event_gender_map[event_number] = 'Unknown'
         except Exception:
@@ -381,9 +379,9 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     results_folder = os.path.join(output_folder, 'championship_results')
     os.makedirs(results_folder, exist_ok=True)
     
-    # Export boys results
-    df_boys = df_champs[df_champs['Gender'] == 'Male'].sort_values(['Age Group', 'Total_Points'], 
-                                                                     ascending=[True, False])
+    # Export boys/open results
+    df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age Group', 'Total_Points'], 
+                                                                      ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_boys.csv')
     df_boys_export = df_boys[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
                                'Best_Event_Points', 'Events_Count', 'Categories_Competed',
@@ -394,7 +392,7 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     
     # Export girls results
     df_girls = df_champs[df_champs['Gender'] == 'Female'].sort_values(['Age Group', 'Total_Points'], 
-                                                                        ascending=[True, False])
+                                                                         ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_girls.csv')
     df_girls_export = df_girls[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
                                  'Best_Event_Points', 'Events_Count', 'Categories_Competed',
@@ -406,7 +404,7 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     # Export age group winners
     winners = []
     for age_group in ['9-10', '11-12', '13-14', '15-16', '17+']:
-        for gender in ['Male', 'Female']:
+        for gender in ['Male/Open', 'Female']:
             ag_gender = df_champs[(df_champs['Age Group'] == age_group) & 
                                   (df_champs['Gender'] == gender)]
             if len(ag_gender) > 0:
@@ -568,7 +566,7 @@ def main():
     print("=" * 100)
     
     for age_group in ['9-10', '11-12', '13-14', '15-16', '17+']:
-        boys_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Male')])
+        boys_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Male/Open')])
         girls_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Female')])
         print(f"{age_group:<8} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
     
