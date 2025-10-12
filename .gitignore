@@ -14,11 +14,12 @@ build/
 
 # Virtual environments
 venv/
-env/
+.env/
 ENV/
 dashboard_env/
 dashboard_env_new/
 swim_analysis_env/
+.venv/
 
 # IDEs
 .vscode/
