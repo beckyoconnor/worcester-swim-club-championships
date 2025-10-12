@@ -12,7 +12,10 @@ Rules:
 import pandas as pd
 import os
 from typing import Dict, List, Tuple
-from openpyxl import load_workbook
+try:
+    from openpyxl import load_workbook as _oxl_load_workbook
+except Exception:
+    _oxl_load_workbook = None
 import glob
 
 
@@ -26,7 +29,9 @@ def get_event_gender_map(excel_file: str) -> Dict[str, str]:
     Returns:
         Dictionary mapping event number to gender ('Male' or 'Female')
     """
-    wb = load_workbook(excel_file, data_only=True)
+    if _oxl_load_workbook is None:
+        raise RuntimeError("openpyxl is required to infer gender from Excel. Use get_event_gender_map_from_csvs instead.")
+    wb = _oxl_load_workbook(excel_file, data_only=True)
     numbered_sheets = [sheet for sheet in wb.sheetnames if sheet.isdigit()]
     
     event_gender_map = {}
@@ -220,7 +225,7 @@ def export_all_events_union(base_folder: str, df_all: pd.DataFrame) -> None:
 def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[str, str]) -> pd.DataFrame:
     """
     Calculate championship scores based on the rules:
-    - Top 8 events across at least 5 categories
+    - Count up to 8 scoring events total
     - Under 12s: max 3 races per category
     - 12 and over: max 2 races per category
     
@@ -231,9 +236,13 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
     Returns:
         Dataframe with championship scores
     """
-    # Add gender column
+    # Add gender column and ensure numeric types for scoring
     df_all['Event Number'] = df_all['Event Number'].astype(str)
     df_all['Gender'] = df_all['Event Number'].map(event_gender_map)
+    if 'WA Points' in df_all.columns:
+        df_all['WA Points'] = pd.to_numeric(df_all['WA Points'], errors='coerce').fillna(0).astype(int)
+    if 'Age' in df_all.columns:
+        df_all['Age'] = pd.to_numeric(df_all['Age'], errors='coerce').fillna(0).astype(int)
     
     # Remove Unknown gender entries
     df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
@@ -264,13 +273,9 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
             if len(top_n) > 0:
                 category_events[category] = top_n
         
-        # Check if swimmer competed in at least 5 categories
+        # Number of categories competed (informational only)
         num_categories = len(category_events)
-        
-        if num_categories < 5:
-            # Not eligible - didn't compete in at least 5 categories
-            continue
-        
+
         # Combine all category events and take top 8
         all_category_events = pd.concat(category_events.values(), ignore_index=True)
         top_8_events = all_category_events.nlargest(8, 'WA Points')
@@ -302,6 +307,15 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
             'Distance_Events': category_counts.get('Distance', 0)
         })
     
+    # If no swimmers qualified, return an empty DataFrame with expected columns
+    if len(championship_results) == 0:
+        return pd.DataFrame(columns=[
+            'Name', 'Age', 'Gender', 'Club',
+            'Total_Points', 'Average_Points', 'Best_Event_Points', 'Events_Count',
+            'Categories_Competed', 'Sprint_Events', 'Free_Events',
+            'Form_100_Events', 'Form_200_Events', 'IM_Events', 'Distance_Events'
+        ])
+
     return pd.DataFrame(championship_results)
 
 
@@ -316,7 +330,15 @@ def create_age_groups(df: pd.DataFrame) -> pd.DataFrame:
         Dataframe with age group column added
     """
     df = df.copy()
-    
+    # Handle empty or missing Age column gracefully
+    if df is None or len(df) == 0:
+        if 'Age Group' not in df.columns:
+            df['Age Group'] = pd.Categorical([])
+        return df
+    if 'Age' not in df.columns:
+        df['Age Group'] = pd.Categorical([])
+        return df
+
     # Define age groups
     bins = [0, 10, 12, 14, 15, 100]
     labels = ['9-10', '11-12', '13-14', '15', '16+']
@@ -435,6 +457,9 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
         events = df_all.copy()
         events['Event Number'] = events['Event Number'].astype(str)
         events['Gender'] = events['Event Number'].map(event_gender_map)
+        # Ensure numeric type for points for robust ranking
+        if 'WA Points' in events.columns:
+            events['WA Points'] = pd.to_numeric(events['WA Points'], errors='coerce').fillna(0).astype(int)
         out_rows: List[Dict] = []
 
         categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
@@ -456,7 +481,11 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
             top8 = None
             if selected:
                 all_cand = pd.concat(selected, ignore_index=True)
-                top8 = all_cand.nlargest(8, 'WA Points')
+                # Guard when WA Points may still be missing
+                if 'WA Points' in all_cand.columns:
+                    top8 = all_cand.nlargest(8, 'WA Points')
+                else:
+                    top8 = all_cand.head(8)
                 included_numbers = top8['Event Number'].astype(str).tolist()
 
             total_pts = int(top8['WA Points'].sum()) if top8 is not None and len(top8) else 0
@@ -537,7 +566,7 @@ def main():
     # Calculate championship scores
     print("\n🏊 Calculating championship scores...")
     print("Rules:")
-    print("  • Top 8 events across at least 5 of 6 categories")
+    print("  • Count up to 8 scoring events total")
     print("  • Under 12s: max 3 races per category")
     print("  • 12 and over: max 2 races per category")
     

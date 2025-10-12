@@ -2,18 +2,26 @@
 Swim Event Data Extractor
 ==========================
 
-A library to extract and clean swimming event data from Excel files.
-Automatically detects numbered event sheets and extracts swimmer information
-including name, age, club, and WA points.
+A library to extract and clean swimming event data from Excel files, and now
+also from MeetManager-style .RES text files. Automatically detects numbered
+event sheets (Excel) or parses event blocks (RES) and extracts swimmer
+information including name, age, club, time and WA points.
 
-Usage:
+Usage (Excel):
     from swim_event_extractor import SwimEventExtractor
     
     extractor = SwimEventExtractor('WSC Club Champs 2024.xlsx')
     extractor.extract_all_events()
 
+Usage (RES files):
+    from swim_event_extractor import SwimEventExtractor
+
+    extractor = SwimEventExtractor(excel_file='RES', output_dir='WSC_Club_Champs_2025', auto_create_folder=False)
+    extractor.extract_all_events_from_res('WSC_Club_Champs_2025/raw_files')
+
 Or run from command line:
     python swim_event_extractor.py <excel_file>
+    python swim_event_extractor.py --res-dir <folder> [--output-dir <folder>]
 """
 
 import csv
@@ -22,8 +30,12 @@ import re
 import sys
 from datetime import datetime
 from typing import List, Dict, Optional, Tuple
-from openpyxl import load_workbook
-from openpyxl.worksheet.worksheet import Worksheet
+try:
+    from openpyxl import load_workbook as _oxl_load_workbook
+    from openpyxl.worksheet.worksheet import Worksheet as _Worksheet
+except Exception:
+    _oxl_load_workbook = None
+    _Worksheet = object
 
 
 class SwimEventExtractor:
@@ -53,8 +65,10 @@ class SwimEventExtractor:
         
     def load_workbook(self):
         """Load the Excel workbook."""
+        if _oxl_load_workbook is None:
+            raise RuntimeError("openpyxl is required for Excel mode but is not installed. Use --res-dir for RES parsing.")
         print(f"Loading workbook: {self.excel_file}")
-        self.workbook = load_workbook(self.excel_file)
+        self.workbook = _oxl_load_workbook(self.excel_file)
     
     def extract_competition_info(self) -> Dict[str, str]:
         """
@@ -208,7 +222,7 @@ class SwimEventExtractor:
         numbered_sheets = [sheet for sheet in self.workbook.sheetnames if sheet.isdigit()]
         return sorted(numbered_sheets)
     
-    def find_columns(self, worksheet: Worksheet) -> Optional[Dict[str, int]]:
+    def find_columns(self, worksheet: _Worksheet) -> Optional[Dict[str, int]]:
         """
         Find the column indices for Name, Age, Club, Time, and WA Points.
         
@@ -686,6 +700,201 @@ class SwimEventExtractor:
         
         return results
     
+    # =========================
+    # RES (.RES) parsing support
+    # =========================
+
+    @staticmethod
+    def _map_club_code(club_code: str) -> str:
+        """
+        Map common club codes found in RES files to full club names.
+        Defaults to returning the original string if unknown.
+        """
+        code = (club_code or '').strip().upper()
+        mapping = {
+            'WORM': 'Worcester',
+        }
+        return mapping.get(code, club_code)
+
+    def _parse_res_file(self, res_path: str) -> Tuple[str, str, str, str, List[Dict]]:
+        """
+        Parse a single .RES file into standardized event rows.
+
+        Returns:
+            (event_number, event_name_clean, gender, event_category, data_rows)
+        """
+        event_number: Optional[str] = None
+        event_full_name: Optional[str] = None
+        data: List[Dict] = []
+
+        try:
+            with open(res_path, 'r', encoding='utf-8', errors='ignore') as f:
+                lines = [ln.rstrip('\n') for ln in f]
+        except Exception as e:
+            print(f"⚠ Failed to read {res_path}: {e}")
+            return '', '', 'Unknown', 'Other', []
+
+        # Find event header like: "EVENT 302 Open/Male 400m Freestyle"
+        header_re = re.compile(r'^\s*EVENT\s+(\d{3})\s+(.+?)\s*$', flags=re.IGNORECASE)
+        for ln in lines:
+            m = header_re.match(ln)
+            if m:
+                event_number = m.group(1)
+                event_full_name = m.group(2).strip()
+                break
+
+        if not event_number:
+            # If filename is like CC25E302.RES, fall back to extracting digits
+            base = os.path.basename(res_path)
+            m = re.search(r'E(\d{3})', base, flags=re.IGNORECASE)
+            if m:
+                event_number = m.group(1)
+            else:
+                event_number = ''
+        if not event_full_name:
+            # Try to derive a minimal name from file if header missing
+            event_full_name = f"Event {event_number}" if event_number else "Event"
+
+        event_name_clean = self._extract_clean_event_name(f"EVENT {event_number} {event_full_name}", event_number or '')
+        gender = self._determine_gender_from_event_name(event_name_clean)
+        event_category = self._categorize_event(event_name_clean)
+
+        # Parse result rows. Typical line example (tabs/separated spacing):
+        # 1.\tLucy PIPER\t12\tWORM\t 6:04.09\t\t\t359
+        # Skip header lines containing 'Place' or 'Age Group'
+        place_line_re = re.compile(r'^\s*\d+\.', re.ASCII)
+        dnc_markers = ('DNC', 'DNF', 'DQ', 'NS')
+
+        for raw in lines:
+            line = raw.strip()
+            if not line:
+                continue
+            upper = line.upper()
+            if 'AGE GROUP' in upper or 'PLACE' in upper:
+                continue
+            if not place_line_re.match(line):
+                continue
+            if any(tok in upper for tok in dnc_markers):
+                # Skip non-scoring rows
+                continue
+
+            # Extract columns via regex aimed at: place, name, age, club, time, wa
+            # Name can include spaces and hyphens; club typically 3-4 uppercase letters
+            m = re.match(r'^\s*\d+\.\s+(.+?)\s+(\d{1,2})\s+([A-Za-z]{3,4})\s+([0-9:\.]+)\s+(\d+)\s*$', line)
+            if not m:
+                # Try a more permissive split on tabs / multi-space, then pick last numeric as WA
+                parts = [p for p in re.split(r'\t+|\s{2,}', line) if p]
+                # Expect at least: place, name, age, club, time, wa
+                if len(parts) < 6:
+                    continue
+                place = parts[0]
+                name = parts[1]
+                age = parts[2]
+                club = parts[3]
+                # WA points tends to be last numeric token
+                wa_match = None
+                for p in reversed(parts):
+                    if re.fullmatch(r'\d+', p):
+                        wa_match = p
+                        break
+                if not wa_match:
+                    continue
+                time_token = None
+                # time likely the token just before last numeric
+                try:
+                    wa_index = parts.index(wa_match)
+                    if wa_index - 1 >= 0:
+                        time_token = parts[wa_index - 1]
+                except ValueError:
+                    pass
+                if not time_token:
+                    continue
+            else:
+                name = m.group(1).strip()
+                age = m.group(2).strip()
+                club = m.group(3).strip()
+                time_token = m.group(4).strip()
+                wa_match = m.group(5).strip()
+
+            # Validate using existing validators
+            if not self.validate_name(name):
+                continue
+            age_valid = self.validate_age(age)
+            if age_valid is None:
+                continue
+            club_clean = self._map_club_code(club)
+            if self.validate_club(club_clean) is None:
+                continue
+            time_clean = self.validate_time(time_token)
+            wa_valid = self.validate_wa_points(wa_match)
+            if wa_valid is None:
+                continue
+
+            data.append({
+                'Event Number': event_number,
+                'Event Name': event_name_clean,
+                'Event Category': event_category,
+                'Gender': gender,
+                'Name': str(name).strip(),
+                'Age': age_valid,
+                'Club': club_clean,
+                'Time': time_clean,
+                'WA Points': wa_valid,
+            })
+
+        return event_number or '', event_name_clean, gender, event_category, data
+
+    def extract_all_events_from_res(self, res_dir: str, verbose: bool = True) -> Dict[str, int]:
+        """
+        Parse all .RES files in a folder and write standardized CSVs to cleaned_files/.
+        """
+        if not os.path.isdir(res_dir):
+            raise FileNotFoundError(f"RES folder not found: {res_dir}")
+
+        # Ensure output directory configured
+        if self.output_dir is None:
+            # Default to parent of res_dir
+            self.output_dir = os.path.abspath(os.path.join(res_dir, os.pardir))
+
+        cleaned_dir = os.path.join(self.output_dir, 'cleaned_files')
+        os.makedirs(cleaned_dir, exist_ok=True)
+
+        results: Dict[str, int] = {}
+        total_swimmers = 0
+
+        files = sorted([f for f in os.listdir(res_dir) if f.upper().endswith('.RES')])
+        if verbose:
+            print(f"\n🏊 Found {len(files)} RES files")
+            print(f"📂 Output directory: {self.output_dir}/cleaned_files\n")
+
+        for fname in files:
+            path = os.path.join(res_dir, fname)
+            event_number, event_name, _, _, rows = self._parse_res_file(path)
+            if not event_number:
+                if verbose:
+                    print(f"⚠ Skipping {fname}: could not determine event number")
+                continue
+            if rows:
+                self.save_to_csv(rows, event_number)
+                results[event_number] = len(rows)
+                total_swimmers += len(rows)
+                if verbose:
+                    print(f"✓ event_{event_number}.csv: {len(rows)} swimmers ({event_name})")
+            else:
+                results[event_number] = 0
+                if verbose:
+                    print(f"⚠ event_{event_number}.csv: 0 swimmers ({event_name})")
+
+        if verbose:
+            print(f"\n{'='*60}")
+            print("SUMMARY:")
+            print(f"  Total events: {len(results)}")
+            print(f"  Total swimmers: {total_swimmers}")
+            print(f"  CSV files saved to: {self.output_dir}/cleaned_files")
+            print(f"{'='*60}")
+
+        return results
+
     def create_combined_csv(self, output_filename: str = "all_events_combined.csv") -> str:
         """
         Create a single CSV file containing all events.
@@ -724,30 +933,53 @@ class SwimEventExtractor:
 
 def main():
     """Command-line interface."""
-    if len(sys.argv) < 2:
-        print("Usage: python swim_event_extractor.py <excel_file> [output_directory]")
-        print("\nExample:")
-        print("  python swim_event_extractor.py 'WSC Club Champs 2024.xlsx'")
-        print("  python swim_event_extractor.py 'WSC Club Champs 2024.xlsx' './output'")
+    # Simple CLI parsing to support both Excel and RES modes
+    args = sys.argv[1:]
+    if not args:
+        print("Usage:")
+        print("  python swim_event_extractor.py <excel_file> [output_directory]")
+        print("  python swim_event_extractor.py --res-dir <folder> [--output-dir <folder>]")
         sys.exit(1)
-    
-    excel_file = sys.argv[1]
-    output_dir = sys.argv[2] if len(sys.argv) > 2 else None
-    
+
+    if '--res-dir' in args:
+        try:
+            res_idx = args.index('--res-dir')
+            res_dir = args[res_idx + 1]
+        except Exception:
+            print("Error: --res-dir requires a folder path")
+            sys.exit(1)
+
+        output_dir = None
+        if '--output-dir' in args:
+            try:
+                out_idx = args.index('--output-dir')
+                output_dir = args[out_idx + 1]
+            except Exception:
+                print("Error: --output-dir requires a folder path")
+                sys.exit(1)
+
+        extractor = SwimEventExtractor(excel_file='RES', output_dir=output_dir, auto_create_folder=False)
+        extractor.extract_all_events_from_res(res_dir)
+        print("\n✓ RES processing complete!")
+        return
+
+    # Default Excel mode
+    excel_file = args[0]
+    output_dir = args[1] if len(args) > 1 else None
+
     if not os.path.exists(excel_file):
         print(f"Error: File '{excel_file}' not found")
         sys.exit(1)
-    
-    # Create extractor and process
+
     extractor = SwimEventExtractor(excel_file, output_dir)
     extractor.extract_all_events()
-    
+
     # Ask if user wants combined CSV
     print("\n" + "="*60)
     response = input("Create a combined CSV with all events? (y/n): ").strip().lower()
     if response == 'y':
         extractor.create_combined_csv()
-    
+
     print("\n✓ Processing complete!")
 
 
