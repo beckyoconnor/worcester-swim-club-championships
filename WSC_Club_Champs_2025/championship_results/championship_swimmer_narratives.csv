@@ -1,7 +1,9 @@
 Name,Age,Gender,Total_Points,IncludedShort,Average_Points,Best_Event_Points
 Aeris TAYLOR,10,Female,138,Sprint (Female 50m Backstroke – 69 pts) and 100 Form (Female 100m Breaststroke – 69 pts),69.0,69
 Alana BUCKLEY,12,Female,442,"Sprint (Female 50m Backstroke – 173 pts), 100 Form (Female 100m Breaststroke – 120 pts) and IM (Female 100m IM – 149 pts)",147.33333333333334,173
+Albert WILKINSON,9,Male/Open,254,Free (Open/Male 400m Freestyle – 151 pts) and 100 Form (Open/Male 100m Breaststroke – 103 pts),127.0,151
 Alexia AGOSTON,15,Female,1149,100 Form (Female 100m Breaststroke – 575 pts) and IM (Female 100m IM – 574 pts),574.5,575
+Alfie MANSELL,10,Male/Open,569,"Sprint (Open/Male 50m Backstroke – 168 pts), Free (Open/Male 400m Freestyle – 150 pts), 100 Form (Open/Male 100m Breaststroke – 115 pts) and IM (Open/Male 100m IM – 136 pts)",142.25,168
 Alice WICKETT,14,Female,974,"Sprint (Female 50m Backstroke – 325 pts), 100 Form (Female 100m Breaststroke – 300 pts) and IM (Female 100m IM – 349 pts)",324.6666666666667,349
 Amelia BOOTH,12,Female,908,"Sprint (Female 50m Backstroke – 259 pts), 100 Form (Female 100m Breaststroke – 331 pts) and IM (Female 100m IM – 318 pts)",302.6666666666667,331
 Amelia WOOD,10,Female,541,"Sprint (Female 50m Backstroke – 182 pts), 100 Form (Female 100m Breaststroke – 181 pts) and IM (Female 100m IM – 178 pts)",180.33333333333334,182
@@ -60,6 +62,7 @@ Heidi COTTERILL,10,Female,285,Sprint (Female 50m Backstroke – 147 pts) and 100
 Helena COOKE,13,Female,1386,"Sprint (Female 50m Backstroke – 335 pts), 100 Form (Female 100m Breaststroke – 330 pts) and IM (Female 100m IM – 371 pts and Female 400m IM – 350 pts)",346.5,371
 Henry HOWARD,12,Male/Open,254,Sprint (Open/Male 50m Backstroke – 135 pts) and 100 Form (Open/Male 100m Breaststroke – 119 pts),127.0,135
 Holly SADLER,16,Female,1167,"Sprint (Female 50m Backstroke – 267 pts), 100 Form (Female 100m Breaststroke – 284 pts), 200 Form (Female 200m Butterfly – 276 pts) and IM (Female 400m IM – 340 pts)",291.75,340
+Hope MANSELL,12,Female,914,"Sprint (Female 50m Backstroke – 286 pts), 100 Form (Female 100m Breaststroke – 307 pts) and IM (Female 100m IM – 321 pts)",304.6666666666667,321
 Imogen AMPHLETT,11,Female,67,Sprint (Female 50m Backstroke – 67 pts),67.0,67
 Imogen CIANCIO,15,Female,1379,"Sprint (Female 50m Backstroke – 338 pts), 100 Form (Female 100m Breaststroke – 334 pts) and IM (Female 400m IM – 363 pts and Female 100m IM – 344 pts)",344.75,363
 Imogen KINBRUM,9,Female,142,Sprint (Female 50m Backstroke – 65 pts) and IM (Female 100m IM – 77 pts),71.0,77
@@ -79,11 +82,13 @@ James COOKE,15,Male/Open,807,"Sprint (Open/Male 50m Backstroke – 234 pts), Fre
 James ROBERTSON ACOURT,11,Male/Open,178,Sprint (Open/Male 50m Backstroke – 96 pts) and IM (Open/Male 100m IM – 82 pts),89.0,96
 James WALTER,12,Male/Open,984,"Sprint (Open/Male 50m Backstroke – 185 pts), Free (Open/Male 400m Freestyle – 264 pts), 100 Form (Open/Male 100m Breaststroke – 148 pts), 200 Form (Open/Male 200m Butterfly – 192 pts) and 1 more",196.8,264
 Jessica HADLEY,9,Female,90,Sprint (Female 50m Backstroke – 90 pts),90.0,90
+Jessica HUTCHINSON,10,Female,63,Sprint (Female 50m Backstroke – 63 pts),63.0,63
 Jonas HARVEY,12,Male/Open,194,Sprint (Open/Male 50m Backstroke – 194 pts),194.0,194
 Joseph AGOSTON,15,Male/Open,2388,"Sprint (Open/Male 50m Backstroke – 449 pts), Free (Open/Male 400m Freestyle – 525 pts), 100 Form (Open/Male 100m Breaststroke – 496 pts), 200 Form (Open/Male 200m Butterfly – 427 pts) and 1 more",477.6,525
 Joseph JENNINGS,12,Male/Open,109,Sprint (Open/Male 50m Backstroke – 109 pts),109.0,109
 Joseph O'LEARY,15,Male/Open,990,"Sprint (Open/Male 50m Backstroke – 231 pts), Free (Open/Male 400m Freestyle – 379 pts) and 100 Form (Open/Male 100m Breaststroke – 380 pts)",330.0,380
 Joseph REAY,12,Male/Open,259,Sprint (Open/Male 50m Backstroke – 120 pts) and 100 Form (Open/Male 100m Breaststroke – 139 pts),129.5,139
+Julia CZERWINSKA-WOJCI,12,Female,249,100 Form (Female 100m Breaststroke – 249 pts),249.0,249
 Julia WOLSKA-BAILEY,15,Female,1227,"Sprint (Female 50m Backstroke – 435 pts), 100 Form (Female 100m Breaststroke – 365 pts) and IM (Female 100m IM – 427 pts)",409.0,435
 Julian KOCUR,13,Male/Open,102,Sprint (Open/Male 50m Backstroke – 102 pts),102.0,102
 Katie HARTE,12,Female,228,Sprint (Female 50m Backstroke – 228 pts),228.0,228
@@ -115,6 +120,7 @@ Olivia THOMAS,12,Female,636,"Sprint (Female 50m Backstroke – 220 pts), 100 For
 Olivier KONCZUK,13,Male/Open,822,"Sprint (Open/Male 50m Backstroke – 296 pts), 100 Form (Open/Male 100m Breaststroke – 242 pts) and IM (Open/Male 100m IM – 284 pts)",274.0,296
 Orlando GRANT,15,Male/Open,823,"Sprint (Open/Male 50m Backstroke – 270 pts), 100 Form (Open/Male 100m Breaststroke – 259 pts) and IM (Open/Male 100m IM – 294 pts)",274.3333333333333,294
 Oscar WHEELER,12,Male/Open,421,"Sprint (Open/Male 50m Backstroke – 118 pts), 100 Form (Open/Male 100m Breaststroke – 144 pts) and IM (Open/Male 100m IM – 159 pts)",140.33333333333334,159
+Pippa JENKINS,11,Female,661,"Sprint (Female 50m Backstroke – 229 pts), 100 Form (Female 100m Breaststroke – 183 pts) and IM (Female 100m IM – 249 pts)",220.33333333333334,249
 Pippa PRESTON,11,Female,747,"Sprint (Female 50m Backstroke – 289 pts), 100 Form (Female 100m Breaststroke – 207 pts) and IM (Female 100m IM – 251 pts)",249.0,289
 Poppy MORGAN,15,Female,287,100 Form (Female 100m Breaststroke – 287 pts),287.0,287
 Poppy MORTON,13,Female,344,Sprint (Female 50m Backstroke – 171 pts) and IM (Female 100m IM – 173 pts),172.0,173
@@ -136,6 +142,7 @@ Ted CARPENTER,12,Male/Open,733,"Sprint (Open/Male 50m Backstroke – 226 pts), F
 Thea EVERITT,11,Female,699,"Sprint (Female 50m Backstroke – 252 pts), 100 Form (Female 100m Breaststroke – 228 pts) and IM (Female 100m IM – 219 pts)",233.0,252
 Thea PICKSTOCK,13,Female,1212,"Sprint (Female 50m Backstroke – 337 pts), 100 Form (Female 100m Breaststroke – 280 pts), 200 Form (Female 200m Butterfly – 244 pts) and IM (Female 100m IM – 351 pts)",303.0,351
 Theodore LYMAN,9,Male/Open,273,"Sprint (Open/Male 50m Backstroke – 110 pts), 100 Form (Open/Male 100m Breaststroke – 77 pts) and IM (Open/Male 100m IM – 86 pts)",91.0,110
+Thomas JENKINSON,11,Male/Open,482,"Sprint (Open/Male 50m Backstroke – 172 pts), 100 Form (Open/Male 100m Breaststroke – 136 pts) and IM (Open/Male 100m IM – 174 pts)",160.66666666666666,174
 Toby PUGH,15,Male/Open,1491,"Sprint (Open/Male 50m Backstroke – 304 pts), Free (Open/Male 400m Freestyle – 430 pts), 100 Form (Open/Male 100m Breaststroke – 384 pts) and IM (Open/Male 100m IM – 373 pts)",372.75,430
 William HADLEY,27,Male/Open,575,Sprint (Open/Male 50m Backstroke – 255 pts) and IM (Open/Male 100m IM – 320 pts),287.5,320
 Wren GOODISON,13,Female,1559,"Sprint (Female 50m Backstroke – 454 pts), 100 Form (Female 100m Breaststroke – 313 pts) and IM (Female 400m IM – 404 pts and Female 100m IM – 388 pts)",389.75,454

@@ -774,8 +774,10 @@ class SwimEventExtractor:
                 continue
             if not place_line_re.match(line):
                 continue
-            if any(tok in upper for tok in dnc_markers):
-                # Skip non-scoring rows
+            # Skip non-scoring rows only if markers appear as standalone tokens
+            # (avoid false positives like 'JENKINS' containing 'NS')
+            import re as _re
+            if _re.search(r'(?:^|\s)(?:DNC|DNF|DQ|NS)(?:\s|$)', upper):
                 continue
 
             # Extract columns via regex aimed at: place, name, age, club, time, wa
