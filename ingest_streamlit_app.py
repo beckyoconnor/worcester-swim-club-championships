@@ -107,6 +107,8 @@ def main():
                 st.write(f"Saving {len(uploaded_files)} .RES file(s) to raw_files…")
                 for uploaded_file in uploaded_files:
                     target_path = os.path.join(raw_files_dir, uploaded_file.name)
+                    if os.path.exists(target_path):
+                        st.warning(f"  ⚠️ {uploaded_file.name} already exists - overwriting")
                     write_uploaded_file(uploaded_file, target_path)
                     st.write(f"  ✓ {uploaded_file.name}")
 
