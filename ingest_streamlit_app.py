@@ -61,8 +61,48 @@ def write_uploaded_file(uploaded, target_path: str) -> None:
 
 def ui_header():
     st.set_page_config(page_title="WSC - Ingest & Scoreboard", page_icon="🏊", layout="wide")
-    st.title("🏊 Worcester SC - Data Ingest & Scoreboard")
-    st.caption("Upload .RES files → Extract to cleaned_files → Run Scoreboard → Export results")
+    
+    # Load custom CSS
+    try:
+        with open("styles.css", "r") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except Exception:
+        pass
+    
+    # Worcester SC Header with Logo
+    import base64
+    header_html = """
+    <div class="wsc-header">
+        <div class="wsc-header-logo">
+            <img src="data:image/jpeg;base64,{}" style="display: block; border-radius: 5px; width: 150px; max-width: 100%;">
+        </div>
+        <div class="wsc-header-text">
+            <h1>Worcester Swimming Club</h1>
+            <h2>Data Ingest & Scoreboard</h2>
+            <p>Upload .RES files → Extract → Calculate → Export Results</p>
+        </div>
+    </div>
+    """
+    
+    try:
+        with open("cropped-WSC_Blue.jpg", "rb") as img_file:
+            img_base64 = base64.b64encode(img_file.read()).decode()
+        st.markdown(header_html.format(img_base64), unsafe_allow_html=True)
+    except:
+        # Fallback without logo
+        header_html_no_logo = """
+        <div class="wsc-header">
+            <div class="wsc-header-logo">
+                <div style='font-size: clamp(2.5rem, 5vw, 4rem);'>🏊</div>
+            </div>
+            <div class="wsc-header-text">
+                <h1>Worcester Swimming Club</h1>
+                <h2>Data Ingest & Scoreboard</h2>
+                <p>Upload .RES files → Extract → Calculate → Export Results</p>
+            </div>
+        </div>
+        """
+        st.markdown(header_html_no_logo, unsafe_allow_html=True)
 
 
 def main():
