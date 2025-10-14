@@ -196,10 +196,57 @@ h5 { font-size: 1rem;    line-height: 1.35; margin: 0.5rem 0 0.25rem; }
 h6 { font-size: 0.95rem; line-height: 1.35; margin: 0.5rem 0 0.25rem; }
 
 /* Responsive heading scaling (mobile) */
+/* Mobile responsive styles */
 @media screen and (max-width: 768px) {
+  /* General heading sizes */
   h1 { font-size: 1.8rem; }
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
+  
+  /* Header mobile optimization */
+  .wsc-header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .wsc-header-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .wsc-header-logo img {
+    max-width: 100px !important;
+    width: 100px !important;
+    height: auto !important;
+  }
+  
+  .wsc-header-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .wsc-header-text h2 {
+    font-size: 1.1rem;
+  }
+  
+  .wsc-header-text p {
+    font-size: 0.9rem;
+  }
+  
+  /* Tooltips on mobile - adjust positioning */
+  .main-tooltip .main-tooltiptext {
+    width: 250px;
+    margin-left: -125px;
+    font-size: 0.75rem;
+  }
+  
+  .tooltip .tooltiptext {
+    width: 250px;
+    margin-left: -125px;
+    font-size: 0.75rem;
+  }
 }
 
 /* Streamlit expander header styling to match headings */

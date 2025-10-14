@@ -452,7 +452,7 @@ def main():
     header_html = """
     <div class="wsc-header">
         <div class="wsc-header-logo">
-            <img src="data:image/jpeg;base64,{}" width="150" style="display: block; border-radius: 5px;">
+            <img src="data:image/jpeg;base64,{}" style="display: block; border-radius: 5px; width: 150px; max-width: 100%;">
         </div>
         <div class="wsc-header-text">
             <h1>Worcester Swimming Club</h1>
@@ -473,7 +473,7 @@ def main():
         header_html_no_logo = """
         <div class="wsc-header">
             <div class="wsc-header-logo">
-                <div style='font-size: 4rem;'>🏊</div>
+                <div style='font-size: clamp(2.5rem, 5vw, 4rem);'>🏊</div>
             </div>
             <div class="wsc-header-text">
                 <h1>Worcester Swimming Club</h1>
