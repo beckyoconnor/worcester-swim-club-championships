@@ -4,7 +4,7 @@ Streamlit Frontend - Data Ingest + Scoreboard Runner
 
 Allows a user to:
 - Select a championship year (creates `WSC_Club_Champs_{YEAR}` if missing)
-- Upload an Excel file and extract events via SwimEventExtractor into `cleaned_files/`
+- Upload .RES files and extract events via SwimEventExtractor into `cleaned_files/`
 - Run the scoreboard process to generate results into `championship_results/`
 """
 
@@ -45,8 +45,10 @@ def list_existing_years(base_dir: str = ".") -> List[int]:
 
 def ensure_year_structure(year: int) -> str:
     base_folder = f"WSC_Club_Champs_{year}"
+    raw_files = os.path.join(base_folder, "raw_files")
     cleaned = os.path.join(base_folder, "cleaned_files")
     results = os.path.join(base_folder, "championship_results")
+    os.makedirs(raw_files, exist_ok=True)
     os.makedirs(cleaned, exist_ok=True)
     os.makedirs(results, exist_ok=True)
     return base_folder
@@ -60,7 +62,7 @@ def write_uploaded_file(uploaded, target_path: str) -> None:
 def ui_header():
     st.set_page_config(page_title="WSC - Ingest & Scoreboard", page_icon="🏊", layout="wide")
     st.title("🏊 Worcester SC - Data Ingest & Scoreboard")
-    st.caption("Upload Excel → Extract to cleaned_files → Run Scoreboard → Export results")
+    st.caption("Upload .RES files → Extract to cleaned_files → Run Scoreboard → Export results")
 
 
 def main():
@@ -83,25 +85,34 @@ def main():
         st.info(f"Base folder: `{base_folder}`")
 
     st.markdown("---")
-    st.subheader("1) Upload Excel and Extract Events")
+    st.subheader("1) Upload .RES Files and Extract Events")
 
-    uploaded = st.file_uploader("Excel file (.xlsx/.xlsm)", type=["xlsx", "xlsm", "xls"], accept_multiple_files=False)
+    uploaded_files = st.file_uploader(
+        "MeetManager .RES files", 
+        type=["RES", "res"], 
+        accept_multiple_files=True,
+        help="Upload one or more .RES files from MeetManager"
+    )
     extract_btn = st.button("Extract events to cleaned_files")
 
     if extract_btn:
-        if not uploaded:
-            st.error("Please upload an Excel file first.")
+        if not uploaded_files:
+            st.error("Please upload at least one .RES file first.")
         else:
             try:
-                # Persist upload to a temporary timestamped file
-                ts = int(time.time())
-                excel_filename = f"uploaded_{year}_{ts}.xlsx"
-                excel_path = os.path.join(base_folder, excel_filename)
-                write_uploaded_file(uploaded, excel_path)
+                # Save uploaded .RES files to raw_files folder
+                raw_files_dir = os.path.join(base_folder, "raw_files")
+                os.makedirs(raw_files_dir, exist_ok=True)
+                
+                st.write(f"Saving {len(uploaded_files)} .RES file(s) to raw_files…")
+                for uploaded_file in uploaded_files:
+                    target_path = os.path.join(raw_files_dir, uploaded_file.name)
+                    write_uploaded_file(uploaded_file, target_path)
+                    st.write(f"  ✓ {uploaded_file.name}")
 
-                st.write("Loading workbook and extracting events…")
-                extractor = SwimEventExtractor(excel_file=excel_path, output_dir=base_folder, auto_create_folder=False)
-                results: Dict[str, int] = extractor.extract_all_events(verbose=False)
+                st.write("Extracting events from .RES files…")
+                extractor = SwimEventExtractor(output_dir=base_folder)
+                results: Dict[str, int] = extractor.extract_all_events_from_res(raw_files_dir, verbose=False)
 
                 total_events = len(results)
                 total_swimmers = sum(results.values())
