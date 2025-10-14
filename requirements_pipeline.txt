@@ -1,8 +1,8 @@
 # Minimal dependencies to run the data pipeline (extractor + scoreboard)
 # Note: Excludes Streamlit and dashboard UI packages
 
+# Core data processing
 pandas>=2.0.0
-openpyxl>=3.1.2
+
+# Efficient Parquet file writing (for events_all.parquet)
 pyarrow>=15.0.0
-
-
