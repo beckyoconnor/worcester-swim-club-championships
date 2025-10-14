@@ -1,0 +1,33 @@
+# Streamlit Configuration for Worcester Swimming Club
+# Club Championships Dashboard Theme
+
+[theme]
+# Primary color - Worcester SC Blue
+primaryColor = "#1a1d5a"
+
+# Background color - Light/White
+backgroundColor = "#ffffff"
+
+# Secondary background color - Light grey for cards
+secondaryBackgroundColor = "#f8fafc"
+
+# Text color - Dark grey/black for readability
+textColor = "#1a1d5a"
+
+# Font - Sans serif for clean, modern look
+font = "sans serif"
+
+[server]
+# Increase max upload size for larger data files
+maxUploadSize = 200
+
+# Enable CORS for embedding
+enableCORS = false
+
+# Enable XSRF protection
+enableXsrfProtection = true
+
+[browser]
+# Automatically open browser on streamlit run
+gatherUsageStats = false
+
