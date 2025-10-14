@@ -211,6 +211,98 @@ def main():
 
         except Exception as e:
             st.error(f"Scoreboard run failed: {e}")
+    
+    st.markdown("---")
+    st.subheader("3) Preview Existing Data")
+    
+    tab1, tab2 = st.tabs(["📊 Cleaned Event Files", "🏆 Championship Results"])
+    
+    with tab1:
+        st.markdown("**Preview extracted event data from cleaned_files/**")
+        
+        cleaned_dir = os.path.join(base_folder, "cleaned_files")
+        if os.path.exists(cleaned_dir):
+            csv_files = sorted([f for f in os.listdir(cleaned_dir) if f.startswith("event_") and f.endswith(".csv")])
+            
+            if csv_files:
+                selected_event = st.selectbox(
+                    "Select event to preview:",
+                    options=csv_files,
+                    format_func=lambda x: x.replace("event_", "Event ").replace(".csv", "")
+                )
+                
+                if selected_event:
+                    try:
+                        import pandas as pd
+                        event_path = os.path.join(cleaned_dir, selected_event)
+                        df = pd.read_csv(event_path)
+                        
+                        st.write(f"**{selected_event}** - {len(df)} swimmers")
+                        if len(df) > 0 and 'Event Name' in df.columns:
+                            st.caption(f"Event: {df['Event Name'].iloc[0]}")
+                        
+                        st.dataframe(df, use_container_width=True, height=400)
+                        
+                        # Download button
+                        csv = df.to_csv(index=False).encode('utf-8')
+                        st.download_button(
+                            label=f"📥 Download {selected_event}",
+                            data=csv,
+                            file_name=selected_event,
+                            mime="text/csv"
+                        )
+                    except Exception as e:
+                        st.error(f"Error loading {selected_event}: {e}")
+            else:
+                st.info("No cleaned event files found. Extract events first.")
+        else:
+            st.info("No cleaned_files folder found. Extract events first.")
+    
+    with tab2:
+        st.markdown("**Preview championship scoreboard results**")
+        
+        results_dir = os.path.join(base_folder, "championship_results")
+        
+        if os.path.exists(results_dir):
+            result_files = {
+                "Boys Scoreboard": "championship_scoreboard_boys.csv",
+                "Girls Scoreboard": "championship_scoreboard_girls.csv",
+                "Age Group Winners": "championship_age_group_winners.csv",
+                "Swimmer Narratives": "championship_swimmer_narratives.csv"
+            }
+            
+            available_files = {name: file for name, file in result_files.items() 
+                             if os.path.exists(os.path.join(results_dir, file))}
+            
+            if available_files:
+                selected_result = st.selectbox(
+                    "Select result to preview:",
+                    options=list(available_files.keys())
+                )
+                
+                if selected_result:
+                    try:
+                        import pandas as pd
+                        result_path = os.path.join(results_dir, available_files[selected_result])
+                        df = pd.read_csv(result_path)
+                        
+                        st.write(f"**{selected_result}** - {len(df)} rows")
+                        st.dataframe(df, use_container_width=True, height=400)
+                        
+                        # Download button
+                        csv = df.to_csv(index=False).encode('utf-8')
+                        st.download_button(
+                            label=f"📥 Download {selected_result}",
+                            data=csv,
+                            file_name=available_files[selected_result],
+                            mime="text/csv"
+                        )
+                    except Exception as e:
+                        st.error(f"Error loading {selected_result}: {e}")
+            else:
+                st.info("No championship results found. Run scoreboard first.")
+        else:
+            st.info("No championship_results folder found. Run scoreboard first.")
 
 
 if __name__ == "__main__":
