@@ -1,0 +1,8 @@
+# Minimal dependencies to run the data pipeline (extractor + scoreboard)
+# Note: Excludes Streamlit and dashboard UI packages
+
+pandas>=2.0.0
+openpyxl>=3.1.2
+pyarrow>=15.0.0
+
+

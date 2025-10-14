@@ -1,0 +1,347 @@
+/* Footer styling */
+.wsc-footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--wsc-blue);
+  color: #ffffff;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.wsc-footer h4 { color: #ffffff; margin: 0 0 0.5rem 0; font-weight: 700; }
+.wsc-footer p { color: #e5e7eb; margin: 0.25rem 0; }
+.wsc-footer a { color: var(--wsc-green) !important; font-weight: 600; text-decoration: underline; }
+.wsc-footer a:hover { opacity: 0.9; }
+/* Global Header Styles */
+.wsc-header {
+  background-color: #1a1d5a;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.wsc-header-logo { flex-shrink: 0; }
+.wsc-header-text { flex-grow: 1; }
+.wsc-header-text h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.wsc-header-text h2 {
+  color: #ffffff;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.wsc-header-text p {
+  color: #7ef542;
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Main Dashboard Metrics (tooltips) */
+.main-tooltip { position: relative; display: inline-block; cursor: help; }
+.main-tooltip .main-tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #2b1f5c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.main-tooltip .main-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2b1f5c transparent transparent transparent;
+}
+.main-tooltip:hover .main-tooltiptext { visibility: visible; opacity: 1; }
+.main-metric-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px dotted #2b1f5c;
+  line-height: 1.2;
+}
+.main-metric-value {
+  font-size: 2rem;
+  color: #2b1f5c;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Swimmer Detail Metrics (tooltips) */
+.tooltip { position: relative; display: inline-block; cursor: help; }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: #2b1f5c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -150px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2b1f5c transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+.metric-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px dotted #2b1f5c;
+}
+.metric-value {
+  font-size: 2rem;
+  color: #2b1f5c;
+  font-weight: bold;
+}
+
+/* Category Breakdown tables */
+.category-breakdown-table { margin-bottom: 1rem; }
+
+/* FINA Explanation container */
+.fina-explanation-container {
+  background-color: #f0f4ff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  border-left: 5px solid #2b1f5c;
+  box-shadow: 0 2px 8px rgba(43, 31, 92, 0.1);
+}
+
+/* Global Typography based on WSC site */
+/* Load fonts from Google (fallbacks provided) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --wsc-blue: #1e3a8a; /* Legacy club blue if needed elsewhere */
+  --wsc-heading: #2b2b2b; /* Site-like dark heading color */
+  --wsc-accent: #dc2626; /* Link/accent (red from site) */
+  --wsc-green: #7ef542; /* Club accent green */
+  --wsc-text: #2b2b2b; /* Body copy colour to match site */
+}
+
+body, .main .block-container, [data-testid="stMarkdownContainer"] {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--wsc-text);
+  font-weight: 400;
+  font-size: 1.0625rem; /* ~17px */
+  line-height: 1.75; /* comfortable reading */
+  letter-spacing: 0.005em;
+}
+
+/* Paragraph + list item rhythm inside markdown */
+.main [data-testid="stMarkdownContainer"] p,
+.main [data-testid="stMarkdownContainer"] li {
+  color: var(--wsc-text) !important;
+  margin: 0 0 1rem 0;
+}
+
+/* Global Heading Styles */
+h1, h2, h3, h4, h5, h6 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+/* Ensure Streamlit markdown headings adopt our style (specificity + !important) */
+.main [data-testid="stMarkdownContainer"] h1,
+.main [data-testid="stMarkdownContainer"] h2,
+.main [data-testid="stMarkdownContainer"] h3,
+.main [data-testid="stMarkdownContainer"] h4,
+.main [data-testid="stMarkdownContainer"] h5,
+.main [data-testid="stMarkdownContainer"] h6 { color: var(--wsc-heading) !important; font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif !important; font-weight: 700 !important; }
+
+/* Heading sizes and spacing (desktop) */
+h1 { font-size: 2.25rem; line-height: 1.2; margin: 1.5rem 0 0.75rem; }
+h2 { font-size: 1.75rem; line-height: 1.3; margin: 1.25rem 0 0.5rem; }
+h3 { font-size: 1.5rem;  line-height: 1.35; margin: 1rem 0 0.5rem; }
+h4 { font-size: 1.1rem;  line-height: 1.35; margin: 0.75rem 0 0.5rem; }
+h5 { font-size: 1rem;    line-height: 1.35; margin: 0.5rem 0 0.25rem; }
+h6 { font-size: 0.95rem; line-height: 1.35; margin: 0.5rem 0 0.25rem; }
+
+/* Responsive heading scaling (mobile) */
+@media screen and (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+/* Streamlit expander header styling to match headings */
+.streamlit-expanderHeader {
+  color: #ffffff !important; /* Worcester white */
+  font-weight: 700 !important;
+  background-color: var(--wsc-blue) !important; /* Worcester blue */
+  padding: 0.75rem 1rem !important;
+  border-radius: 8px !important;
+}
+
+/* Expander container tweaks */
+div[data-testid="stExpander"] {
+  background: transparent !important; /* header handles color */
+  border-radius: 10px !important;
+}
+
+/* Ensure the chevron/icon is white */
+div[data-testid="stExpander"] svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Optional: expander content area spacing and subtle separation */
+div[data-testid="stExpander"] > div > div {
+  padding-top: 0.5rem;
+}
+
+/* Category chips with hover tooltips (individual swimmer breakdown) */
+.cat-chip-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+.cat-chip {
+  position: relative;
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: var(--wsc-blue);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+}
+.cat-chip .cat-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120%;
+  z-index: 10;
+  background: #ffffff;
+  color: var(--wsc-text);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 0.75rem 1rem;
+}
+.cat-chip .cat-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+.cat-chip:hover .cat-tooltip { visibility: visible; opacity: 1; }
+.cat-tooltip-title { font-weight: 700; margin-bottom: 0.25rem; color: var(--wsc-heading); }
+.cat-tooltip-item { font-size: 0.9rem; margin: 0.15rem 0; display: flex; align-items: center; gap: 0.5rem; }
+.cat-dot { width: 10px; height: 10px; background: var(--wsc-green); border-radius: 50%; display: inline-block; }
+.cat-tooltip-note { font-size: 0.8rem; color: #6b7280; margin-top: 0.5rem; }
+
+/* Utility heading classes for explicit HTML usage */
+.wsc-h1 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:2.25rem; line-height:1.2; margin:1.5rem 0 0.75rem; }
+.wsc-h2 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:1.75rem; line-height:1.3; margin:1.25rem 0 0.5rem; }
+.wsc-h3 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:1.5rem;  line-height:1.35; margin:1rem 0 0.5rem; }
+.wsc-h4 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:1.1rem;  line-height:1.35; margin:0.75rem 0 0.5rem; }
+.wsc-h5 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:1rem;    line-height:1.35; margin:0.5rem 0 0.25rem; }
+.wsc-h6 { color: var(--wsc-heading); font-family: 'Montserrat', 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight:700; font-size:0.95rem; line-height:1.35; margin:0.5rem 0 0.25rem; }
+
+/* Links */
+a { color: var(--wsc-accent) !important; }
+a:hover { opacity: 0.9; }
+
+/* Hide Streamlit sidebar completely */
+[data-testid="stSidebar"],
+section[data-testid="stSidebar"] {
+  display: none !important;
+}
+
+/* Expand main area when sidebar is hidden */
+.main .block-container {
+  max-width: 100% !important;
+}
+
+/* Download buttons - Worcester style */
+.stDownloadButton > button {
+  background: var(--wsc-green) !important;
+  color: var(--wsc-blue) !important;
+  border: 2px solid var(--wsc-green) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1rem !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+  transition: transform 0.08s ease-in-out, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease !important;
+}
+.stDownloadButton > button:hover {
+  background: #5cb82f !important; /* darker Worcester green */
+  border-color: #5cb82f !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+.stDownloadButton > button:active {
+  transform: translateY(0) !important;
+}
+.stDownloadButton > button:focus-visible {
+  outline: 3px solid rgba(30,58,138,0.25) !important; /* blue focus ring */
+}
+
+/* Altair/Vega tooltip styling (Worcester blue + white) */
+.vega-tooltip,
+.vg-tooltip {
+  background: var(--wsc-blue) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
+  font-size: 0.75rem !important; /* smaller to avoid truncation */
+  line-height: 1.35 !important;
+  max-width: 560px !important;   /* allow wider tooltips */
+  width: max-content !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+}
+.vega-tooltip-table td,
+.vg-tooltip-table td { padding: 4px 8px !important; }
+.vega-tooltip .key,
+.vg-tooltip .key { color: #c7d2fe !important; font-weight: 600 !important; }
+.vega-tooltip .value,
+.vg-tooltip .value { color: #ffffff !important; font-weight: 700 !important; }
+
