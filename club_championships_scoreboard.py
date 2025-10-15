@@ -321,19 +321,23 @@ def display_scoreboard(df_champs: pd.DataFrame, gender: str, title: str):
         print(f"\nNo eligible swimmers found for {gender}")
         return
     
-    # Sort by age group and total points
-    df_gender = df_gender.sort_values(['Age Group', 'Total_Points'], ascending=[True, False])
+    # Sort by age and total points
+    df_gender = df_gender.sort_values(['Age', 'Total_Points'], ascending=[True, False])
     
     print(f"\n{'='*100}")
     print(f"{title}")
     print('='*100)
     
-    current_age_group = None
+    current_age = None
     
     for _, swimmer in df_gender.iterrows():
-        if swimmer['Age Group'] != current_age_group:
-            current_age_group = swimmer['Age Group']
-            print(f"\n🏆 {current_age_group} AGE GROUP")
+        swimmer_age = swimmer['Age']
+        # Display "16+" for ages 16 and above
+        display_age = '16+' if swimmer_age >= 16 else str(swimmer_age)
+        
+        if swimmer_age != current_age:
+            current_age = swimmer_age
+            print(f"\n🏆 AGE {display_age}")
             print('-'*100)
             print(f"{'Pos':<4} {'Name':<25} {'Age':<4} {'Club':<15} {'Total':<7} {'Avg':<6} {'Events':<7} {'Categories'}")
             print('-'*100)
@@ -359,22 +363,22 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     results_folder = os.path.join(output_folder, 'championship_results')
     os.makedirs(results_folder, exist_ok=True)
     
-    # Export boys/open results
-    df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age Group', 'Total_Points'], 
+    # Export boys/open results - sorted by Age (not Age Group), then Total_Points
+    df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age', 'Total_Points'], 
                                                                       ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_boys.csv')
-    df_boys_export = df_boys[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
+    df_boys_export = df_boys[['Age', 'Name', 'Club', 'Total_Points', 'Average_Points',
                                'Best_Event_Points', 'Events_Count', 'Categories_Competed',
                                'Sprint_Events', 'Free_Events', 'Form_100_Events', 'Form_200_Events',
                                'IM_Events', 'Distance_Events']]
     df_boys_export.to_csv(output_file, index=False)
     print(f"\n✓ Saved: {output_file} ({len(df_boys)} boys)")
     
-    # Export girls results
-    df_girls = df_champs[df_champs['Gender'] == 'Female'].sort_values(['Age Group', 'Total_Points'], 
+    # Export girls results - sorted by Age (not Age Group), then Total_Points
+    df_girls = df_champs[df_champs['Gender'] == 'Female'].sort_values(['Age', 'Total_Points'], 
                                                                          ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_girls.csv')
-    df_girls_export = df_girls[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
+    df_girls_export = df_girls[['Age', 'Name', 'Club', 'Total_Points', 'Average_Points',
                                  'Best_Event_Points', 'Events_Count', 'Categories_Competed',
                                  'Sprint_Events', 'Free_Events', 'Form_100_Events', 'Form_200_Events',
                                  'IM_Events', 'Distance_Events']]
@@ -590,10 +594,15 @@ def main():
     print("📊 SUMMARY STATISTICS")
     print("=" * 100)
     
-    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
-        boys_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Male/Open')])
-        girls_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Female')])
-        print(f"{age_group:<8} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
+    for age in [9, 10, 11, 12, 13, 14, 15]:
+        boys_count = len(df_champs[(df_champs['Age'] == age) & (df_champs['Gender'] == 'Male/Open')])
+        girls_count = len(df_champs[(df_champs['Age'] == age) & (df_champs['Gender'] == 'Female')])
+        print(f"Age {age:<3} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
+    
+    # Handle 16+ separately
+    boys_count_16plus = len(df_champs[(df_champs['Age'] >= 16) & (df_champs['Gender'] == 'Male/Open')])
+    girls_count_16plus = len(df_champs[(df_champs['Age'] >= 16) & (df_champs['Gender'] == 'Female')])
+    print(f"Age 16+ - Boys: {boys_count_16plus:<3} Girls: {girls_count_16plus:<3} Total: {boys_count_16plus + girls_count_16plus}")
     
     print("\n" + "=" * 100)
     print("✅ CHAMPIONSHIP SCOREBOARD COMPLETE!")
