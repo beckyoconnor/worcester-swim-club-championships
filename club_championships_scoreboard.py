@@ -7,6 +7,12 @@ Rules:
 - Under 12s: max 3 races per category
 - 12 and over: max 2 races per category
 - Highest collated FINA/WA points wins
+
+Usage:
+    python club_championships_scoreboard.py              # Auto-detect most recent folder
+    python club_championships_scoreboard.py 2025         # Use WSC_Club_Champs_2025
+    python club_championships_scoreboard.py 2026         # Use WSC_Club_Champs_2026
+    python club_championships_scoreboard.py my_folder    # Use custom folder path
 """
 
 import pandas as pd
@@ -490,17 +496,42 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
 
 def main():
     """Main function to run championship scoreboard calculation."""
+    import sys
+    
     print("=" * 100)
     print("🏆 CLUB CHAMPIONSHIPS SCOREBOARD")
     print("=" * 100)
     
-    # Configuration
-    # Base championship folder; script will read cleaned_files/ within this
-    base_folder = 'WSC_Club_Champs_2025'
+    # Configuration - accept year from command line or use current year
+    if len(sys.argv) > 1:
+        # User provided a year or folder path
+        arg = sys.argv[1]
+        if arg.isdigit():
+            # Year provided (e.g., 2025)
+            base_folder = f'WSC_Club_Champs_{arg}'
+        else:
+            # Full folder path provided
+            base_folder = arg
+    else:
+        # Auto-detect: look for WSC_Club_Champs_* folders in current directory
+        import glob
+        folders = sorted(glob.glob('WSC_Club_Champs_*'))
+        if folders:
+            # Use most recent folder (sorted alphabetically, which works for years)
+            base_folder = folders[-1]
+            print(f"📁 Auto-detected folder: {base_folder}")
+        else:
+            # Default to current year
+            import datetime
+            current_year = datetime.datetime.now().year
+            base_folder = f'WSC_Club_Champs_{current_year}'
+            print(f"⚠️  No existing folders found, using: {base_folder}")
+    
     events_folder = base_folder  # load_all_events will pick cleaned_files/ automatically
     output_folder = base_folder
     
-    print("\n📊 Loading event data...")
+    print(f"📂 Working with: {base_folder}\n")
+    print("📊 Loading event data...")
     
     # Get gender mapping from cleaned CSV files
     event_gender_map = get_event_gender_map_from_csvs(base_folder)
