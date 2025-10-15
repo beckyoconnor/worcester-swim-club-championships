@@ -381,29 +381,44 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     df_girls_export.to_csv(output_file, index=False)
     print(f"✓ Saved: {output_file} ({len(df_girls)} girls)")
     
-    # Export age group winners
+    # Export age winners (individual ages: 9, 10, 11, 12, 13, 14, 15, 16+)
     winners = []
-    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
+    for age in [9, 10, 11, 12, 13, 14, 15]:
         for gender in ['Male/Open', 'Female']:
-            ag_gender = df_champs[(df_champs['Age Group'] == age_group) & 
-                                  (df_champs['Gender'] == gender)]
-            if len(ag_gender) > 0:
-                winner = ag_gender.nlargest(1, 'Total_Points').iloc[0]
+            age_gender = df_champs[(df_champs['Age'] == age) & 
+                                   (df_champs['Gender'] == gender)]
+            if len(age_gender) > 0:
+                winner = age_gender.nlargest(1, 'Total_Points').iloc[0]
                 winners.append({
-                    'Age Group': age_group,
+                    'Age': age,
                     'Gender': gender,
                     'Winner': winner['Name'],
-                    'Age': winner['Age'],
                     'Club': winner['Club'],
                     'Total Points': winner['Total_Points'],
                     'Events': winner['Events_Count'],
                     'Categories': winner['Categories_Competed']
                 })
     
+    # Handle 16+ separately
+    for gender in ['Male/Open', 'Female']:
+        age_gender = df_champs[(df_champs['Age'] >= 16) & 
+                               (df_champs['Gender'] == gender)]
+        if len(age_gender) > 0:
+            winner = age_gender.nlargest(1, 'Total_Points').iloc[0]
+            winners.append({
+                'Age': '16+',
+                'Gender': gender,
+                'Winner': winner['Name'],
+                'Club': winner['Club'],
+                'Total Points': winner['Total_Points'],
+                'Events': winner['Events_Count'],
+                'Categories': winner['Categories_Competed']
+            })
+    
     df_winners = pd.DataFrame(winners)
     output_file = os.path.join(results_folder, 'championship_age_group_winners.csv')
     df_winners.to_csv(output_file, index=False)
-    print(f"✓ Saved: {output_file} ({len(df_winners)} age group winners)")
+    print(f"✓ Saved: {output_file} ({len(df_winners)} age winners)")
 
 
 def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gender_map: Dict[str, str]) -> None:
