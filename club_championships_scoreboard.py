@@ -11,60 +11,12 @@ Rules:
 
 import pandas as pd
 import os
-from typing import Dict, List, Tuple
-try:
-    from openpyxl import load_workbook as _oxl_load_workbook
-except Exception:
-    _oxl_load_workbook = None
+from typing import Dict, List
 import glob
 
 
-def get_event_gender_map(excel_file: str) -> Dict[str, str]:
-    """
-    Map event numbers to gender by reading event names from Excel.
-    
-    Args:
-        excel_file: Path to Excel file
-        
-    Returns:
-        Dictionary mapping event number to gender ('Male' or 'Female')
-    """
-    if _oxl_load_workbook is None:
-        raise RuntimeError("openpyxl is required to infer gender from Excel. Use get_event_gender_map_from_csvs instead.")
-    wb = _oxl_load_workbook(excel_file, data_only=True)
-    numbered_sheets = [sheet for sheet in wb.sheetnames if sheet.isdigit()]
-    
-    event_gender_map = {}
-    
-    for sheet_name in numbered_sheets:
-        ws = wb[sheet_name]
-        event_name = ws.cell(1, 1).value
-        event_name_row2 = ws.cell(2, 1).value
-        
-        combined_text = ''
-        if event_name:
-            combined_text += str(event_name).lower() + ' '
-        if event_name_row2:
-            combined_text += str(event_name_row2).lower()
-        
-        if combined_text:
-            if 'female' in combined_text or 'girl' in combined_text:
-                event_gender_map[sheet_name] = 'Female'
-            elif 'male' in combined_text or 'open/male' in combined_text or 'boy' in combined_text:
-                event_gender_map[sheet_name] = 'Male'
-            elif 'open' in combined_text:
-                event_gender_map[sheet_name] = 'Male'
-            else:
-                event_gender_map[sheet_name] = 'Unknown'
-        else:
-            event_gender_map[sheet_name] = 'Unknown'
-    
-    wb.close()
-    return event_gender_map
-
-
 def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
-    """Fallback: infer event gender by reading event CSV filenames and header text.
+    """Infer event gender by reading event CSV filenames and header text.
 
     Looks under cleaned_files/ if present, otherwise the folder itself.
     """
@@ -544,15 +496,13 @@ def main():
     
     # Configuration
     # Base championship folder; script will read cleaned_files/ within this
-    base_folder = 'WSC_Club_Champs_2024'
-    excel_file = 'WSC Club Champs 2024.xlsx'  # optional; ignored if missing
+    base_folder = 'WSC_Club_Champs_2025'
     events_folder = base_folder  # load_all_events will pick cleaned_files/ automatically
     output_folder = base_folder
     
     print("\n📊 Loading event data...")
     
-    # Get gender mapping (try Excel, fallback to CSV inference)
-    # Always infer gender mapping from cleaned CSVs to avoid Excel dependency
+    # Get gender mapping from cleaned CSV files
     event_gender_map = get_event_gender_map_from_csvs(base_folder)
     print(f"✓ Mapped {len(event_gender_map)} events to gender (from CSVs)")
     
