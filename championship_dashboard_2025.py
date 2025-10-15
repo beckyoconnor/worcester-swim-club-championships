@@ -263,12 +263,6 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
         })
     
     df = pd.DataFrame(championship_results)
-    
-    # Create age groups (16+ is Open)
-    bins = [0, 10, 12, 14, 15, 100]
-    labels = ['9-10', '11-12', '13-14', '15', 'Open (16+)']
-    df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
-    
     return df
 
 

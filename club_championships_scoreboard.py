@@ -277,35 +277,6 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
     return pd.DataFrame(championship_results)
 
 
-def create_age_groups(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Create age group categories for the championship.
-    
-    Args:
-        df: Dataframe with championship scores
-        
-    Returns:
-        Dataframe with age group column added
-    """
-    df = df.copy()
-    # Handle empty or missing Age column gracefully
-    if df is None or len(df) == 0:
-        if 'Age Group' not in df.columns:
-            df['Age Group'] = pd.Categorical([])
-        return df
-    if 'Age' not in df.columns:
-        df['Age Group'] = pd.Categorical([])
-        return df
-
-    # Define age groups
-    bins = [0, 10, 12, 14, 15, 100]
-    labels = ['9-10', '11-12', '13-14', '15', '16+']
-    
-    df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
-    
-    return df
-
-
 def display_scoreboard(df_champs: pd.DataFrame, gender: str, title: str):
     """
     Display championship scoreboard for a specific gender.
@@ -572,9 +543,6 @@ def main():
     
     df_champs = calculate_championship_scores(df_all, event_gender_map)
     print(f"✓ {len(df_champs)} swimmers eligible for championship")
-    
-    # Create age groups
-    df_champs = create_age_groups(df_champs)
     
     # Display scoreboards
     display_scoreboard(df_champs, 'Male', '🏊‍♂️ BOYS CHAMPIONSHIP SCOREBOARD')
