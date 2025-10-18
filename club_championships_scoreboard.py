@@ -7,64 +7,22 @@ Rules:
 - Under 12s: max 3 races per category
 - 12 and over: max 2 races per category
 - Highest collated FINA/WA points wins
+
+Usage:
+    python club_championships_scoreboard.py              # Auto-detect most recent folder
+    python club_championships_scoreboard.py 2025         # Use WSC_Club_Champs_2025
+    python club_championships_scoreboard.py 2026         # Use WSC_Club_Champs_2026
+    python club_championships_scoreboard.py my_folder    # Use custom folder path
 """
 
 import pandas as pd
 import os
-from typing import Dict, List, Tuple
-try:
-    from openpyxl import load_workbook as _oxl_load_workbook
-except Exception:
-    _oxl_load_workbook = None
+from typing import Dict, List
 import glob
 
 
-def get_event_gender_map(excel_file: str) -> Dict[str, str]:
-    """
-    Map event numbers to gender by reading event names from Excel.
-    
-    Args:
-        excel_file: Path to Excel file
-        
-    Returns:
-        Dictionary mapping event number to gender ('Male' or 'Female')
-    """
-    if _oxl_load_workbook is None:
-        raise RuntimeError("openpyxl is required to infer gender from Excel. Use get_event_gender_map_from_csvs instead.")
-    wb = _oxl_load_workbook(excel_file, data_only=True)
-    numbered_sheets = [sheet for sheet in wb.sheetnames if sheet.isdigit()]
-    
-    event_gender_map = {}
-    
-    for sheet_name in numbered_sheets:
-        ws = wb[sheet_name]
-        event_name = ws.cell(1, 1).value
-        event_name_row2 = ws.cell(2, 1).value
-        
-        combined_text = ''
-        if event_name:
-            combined_text += str(event_name).lower() + ' '
-        if event_name_row2:
-            combined_text += str(event_name_row2).lower()
-        
-        if combined_text:
-            if 'female' in combined_text or 'girl' in combined_text:
-                event_gender_map[sheet_name] = 'Female'
-            elif 'male' in combined_text or 'open/male' in combined_text or 'boy' in combined_text:
-                event_gender_map[sheet_name] = 'Male'
-            elif 'open' in combined_text:
-                event_gender_map[sheet_name] = 'Male'
-            else:
-                event_gender_map[sheet_name] = 'Unknown'
-        else:
-            event_gender_map[sheet_name] = 'Unknown'
-    
-    wb.close()
-    return event_gender_map
-
-
 def get_event_gender_map_from_csvs(folder: str) -> Dict[str, str]:
-    """Fallback: infer event gender by reading event CSV filenames and header text.
+    """Infer event gender by reading event CSV filenames and header text.
 
     Looks under cleaned_files/ if present, otherwise the folder itself.
     """
@@ -319,35 +277,6 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
     return pd.DataFrame(championship_results)
 
 
-def create_age_groups(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Create age group categories for the championship.
-    
-    Args:
-        df: Dataframe with championship scores
-        
-    Returns:
-        Dataframe with age group column added
-    """
-    df = df.copy()
-    # Handle empty or missing Age column gracefully
-    if df is None or len(df) == 0:
-        if 'Age Group' not in df.columns:
-            df['Age Group'] = pd.Categorical([])
-        return df
-    if 'Age' not in df.columns:
-        df['Age Group'] = pd.Categorical([])
-        return df
-
-    # Define age groups
-    bins = [0, 10, 12, 14, 15, 100]
-    labels = ['9-10', '11-12', '13-14', '15', '16+']
-    
-    df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=True)
-    
-    return df
-
-
 def display_scoreboard(df_champs: pd.DataFrame, gender: str, title: str):
     """
     Display championship scoreboard for a specific gender.
@@ -363,19 +292,23 @@ def display_scoreboard(df_champs: pd.DataFrame, gender: str, title: str):
         print(f"\nNo eligible swimmers found for {gender}")
         return
     
-    # Sort by age group and total points
-    df_gender = df_gender.sort_values(['Age Group', 'Total_Points'], ascending=[True, False])
+    # Sort by age and total points
+    df_gender = df_gender.sort_values(['Age', 'Total_Points'], ascending=[True, False])
     
     print(f"\n{'='*100}")
     print(f"{title}")
     print('='*100)
     
-    current_age_group = None
+    current_age = None
     
     for _, swimmer in df_gender.iterrows():
-        if swimmer['Age Group'] != current_age_group:
-            current_age_group = swimmer['Age Group']
-            print(f"\n🏆 {current_age_group} AGE GROUP")
+        swimmer_age = swimmer['Age']
+        # Display "16+" for ages 16 and above
+        display_age = '16+' if swimmer_age >= 16 else str(swimmer_age)
+        
+        if swimmer_age != current_age:
+            current_age = swimmer_age
+            print(f"\n🏆 AGE {display_age}")
             print('-'*100)
             print(f"{'Pos':<4} {'Name':<25} {'Age':<4} {'Club':<15} {'Total':<7} {'Avg':<6} {'Events':<7} {'Categories'}")
             print('-'*100)
@@ -401,51 +334,66 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     results_folder = os.path.join(output_folder, 'championship_results')
     os.makedirs(results_folder, exist_ok=True)
     
-    # Export boys/open results
-    df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age Group', 'Total_Points'], 
+    # Export boys/open results - sorted by Age (not Age Group), then Total_Points
+    df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age', 'Total_Points'], 
                                                                       ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_boys.csv')
-    df_boys_export = df_boys[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
+    df_boys_export = df_boys[['Age', 'Name', 'Club', 'Total_Points', 'Average_Points',
                                'Best_Event_Points', 'Events_Count', 'Categories_Competed',
                                'Sprint_Events', 'Free_Events', 'Form_100_Events', 'Form_200_Events',
                                'IM_Events', 'Distance_Events']]
     df_boys_export.to_csv(output_file, index=False)
     print(f"\n✓ Saved: {output_file} ({len(df_boys)} boys)")
     
-    # Export girls results
-    df_girls = df_champs[df_champs['Gender'] == 'Female'].sort_values(['Age Group', 'Total_Points'], 
+    # Export girls results - sorted by Age (not Age Group), then Total_Points
+    df_girls = df_champs[df_champs['Gender'] == 'Female'].sort_values(['Age', 'Total_Points'], 
                                                                          ascending=[True, False])
     output_file = os.path.join(results_folder, 'championship_scoreboard_girls.csv')
-    df_girls_export = df_girls[['Age Group', 'Name', 'Age', 'Club', 'Total_Points', 'Average_Points',
+    df_girls_export = df_girls[['Age', 'Name', 'Club', 'Total_Points', 'Average_Points',
                                  'Best_Event_Points', 'Events_Count', 'Categories_Competed',
                                  'Sprint_Events', 'Free_Events', 'Form_100_Events', 'Form_200_Events',
                                  'IM_Events', 'Distance_Events']]
     df_girls_export.to_csv(output_file, index=False)
     print(f"✓ Saved: {output_file} ({len(df_girls)} girls)")
     
-    # Export age group winners
+    # Export age winners (individual ages: 9, 10, 11, 12, 13, 14, 15, 16+)
     winners = []
-    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
+    for age in [9, 10, 11, 12, 13, 14, 15]:
         for gender in ['Male/Open', 'Female']:
-            ag_gender = df_champs[(df_champs['Age Group'] == age_group) & 
-                                  (df_champs['Gender'] == gender)]
-            if len(ag_gender) > 0:
-                winner = ag_gender.nlargest(1, 'Total_Points').iloc[0]
+            age_gender = df_champs[(df_champs['Age'] == age) & 
+                                   (df_champs['Gender'] == gender)]
+            if len(age_gender) > 0:
+                winner = age_gender.nlargest(1, 'Total_Points').iloc[0]
                 winners.append({
-                    'Age Group': age_group,
+                    'Age': age,
                     'Gender': gender,
                     'Winner': winner['Name'],
-                    'Age': winner['Age'],
                     'Club': winner['Club'],
                     'Total Points': winner['Total_Points'],
                     'Events': winner['Events_Count'],
                     'Categories': winner['Categories_Competed']
                 })
     
+    # Handle 16+ separately
+    for gender in ['Male/Open', 'Female']:
+        age_gender = df_champs[(df_champs['Age'] >= 16) & 
+                               (df_champs['Gender'] == gender)]
+        if len(age_gender) > 0:
+            winner = age_gender.nlargest(1, 'Total_Points').iloc[0]
+            winners.append({
+                'Age': '16+',
+                'Gender': gender,
+                'Winner': winner['Name'],
+                'Club': winner['Club'],
+                'Total Points': winner['Total_Points'],
+                'Events': winner['Events_Count'],
+                'Categories': winner['Categories_Competed']
+            })
+    
     df_winners = pd.DataFrame(winners)
     output_file = os.path.join(results_folder, 'championship_age_group_winners.csv')
     df_winners.to_csv(output_file, index=False)
-    print(f"✓ Saved: {output_file} ({len(df_winners)} age group winners)")
+    print(f"✓ Saved: {output_file} ({len(df_winners)} age winners)")
 
 
 def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gender_map: Dict[str, str]) -> None:
@@ -538,21 +486,44 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
 
 def main():
     """Main function to run championship scoreboard calculation."""
+    import sys
+    
     print("=" * 100)
     print("🏆 CLUB CHAMPIONSHIPS SCOREBOARD")
     print("=" * 100)
     
-    # Configuration
-    # Base championship folder; script will read cleaned_files/ within this
-    base_folder = 'WSC_Club_Champs_2024'
-    excel_file = 'WSC Club Champs 2024.xlsx'  # optional; ignored if missing
+    # Configuration - accept year from command line or use current year
+    if len(sys.argv) > 1:
+        # User provided a year or folder path
+        arg = sys.argv[1]
+        if arg.isdigit():
+            # Year provided (e.g., 2025)
+            base_folder = f'WSC_Club_Champs_{arg}'
+        else:
+            # Full folder path provided
+            base_folder = arg
+    else:
+        # Auto-detect: look for WSC_Club_Champs_* folders in current directory
+        import glob
+        folders = sorted(glob.glob('WSC_Club_Champs_*'))
+        if folders:
+            # Use most recent folder (sorted alphabetically, which works for years)
+            base_folder = folders[-1]
+            print(f"📁 Auto-detected folder: {base_folder}")
+        else:
+            # Default to current year
+            import datetime
+            current_year = datetime.datetime.now().year
+            base_folder = f'WSC_Club_Champs_{current_year}'
+            print(f"⚠️  No existing folders found, using: {base_folder}")
+    
     events_folder = base_folder  # load_all_events will pick cleaned_files/ automatically
     output_folder = base_folder
     
-    print("\n📊 Loading event data...")
+    print(f"📂 Working with: {base_folder}\n")
+    print("📊 Loading event data...")
     
-    # Get gender mapping (try Excel, fallback to CSV inference)
-    # Always infer gender mapping from cleaned CSVs to avoid Excel dependency
+    # Get gender mapping from cleaned CSV files
     event_gender_map = get_event_gender_map_from_csvs(base_folder)
     print(f"✓ Mapped {len(event_gender_map)} events to gender (from CSVs)")
     
@@ -573,9 +544,6 @@ def main():
     df_champs = calculate_championship_scores(df_all, event_gender_map)
     print(f"✓ {len(df_champs)} swimmers eligible for championship")
     
-    # Create age groups
-    df_champs = create_age_groups(df_champs)
-    
     # Display scoreboards
     display_scoreboard(df_champs, 'Male', '🏊‍♂️ BOYS CHAMPIONSHIP SCOREBOARD')
     display_scoreboard(df_champs, 'Female', '🏊‍♀️ GIRLS CHAMPIONSHIP SCOREBOARD')
@@ -594,10 +562,15 @@ def main():
     print("📊 SUMMARY STATISTICS")
     print("=" * 100)
     
-    for age_group in ['9-10', '11-12', '13-14', '15', '16+']:
-        boys_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Male/Open')])
-        girls_count = len(df_champs[(df_champs['Age Group'] == age_group) & (df_champs['Gender'] == 'Female')])
-        print(f"{age_group:<8} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
+    for age in [9, 10, 11, 12, 13, 14, 15]:
+        boys_count = len(df_champs[(df_champs['Age'] == age) & (df_champs['Gender'] == 'Male/Open')])
+        girls_count = len(df_champs[(df_champs['Age'] == age) & (df_champs['Gender'] == 'Female')])
+        print(f"Age {age:<3} - Boys: {boys_count:<3} Girls: {girls_count:<3} Total: {boys_count + girls_count}")
+    
+    # Handle 16+ separately
+    boys_count_16plus = len(df_champs[(df_champs['Age'] >= 16) & (df_champs['Gender'] == 'Male/Open')])
+    girls_count_16plus = len(df_champs[(df_champs['Age'] >= 16) & (df_champs['Gender'] == 'Female')])
+    print(f"Age 16+ - Boys: {boys_count_16plus:<3} Girls: {girls_count_16plus:<3} Total: {boys_count_16plus + girls_count_16plus}")
     
     print("\n" + "=" * 100)
     print("✅ CHAMPIONSHIP SCOREBOARD COMPLETE!")

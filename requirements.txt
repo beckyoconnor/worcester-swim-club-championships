@@ -1,6 +1,17 @@
+# Streamlit Dashboard Requirements
+# Optimized for minimal memory footprint on Streamlit Community Cloud
+
+# Core data processing
 pandas>=2.0.0
+
+# Dashboard UI framework
 streamlit>=1.36.0
-psutil>=5.8.0
-openpyxl>=3.0.0
+
+# Visualization
 altair>=5.0.0
 
+# Efficient Parquet file reading (for events_all.parquet)
+pyarrow>=15.0.0
+
+# System monitoring (optional - for memory usage display)
+psutil>=5.8.0

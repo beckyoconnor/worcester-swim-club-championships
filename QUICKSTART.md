@@ -1,135 +1,289 @@
-# Quick Start Guide
+# Quick Start Guide - Worcester SC Club Championships
 
-Get started with the Swim Event Extractor in under 2 minutes!
+Get your championship dashboard running in under 5 minutes!
 
-## 1. Install Dependencies
+## 🚀 Complete Workflow Overview
 
-```bash
-pip install openpyxl
-```
+This system has 3 main components:
 
-Or use the requirements file:
+1. **Extract** - Process .RES files from MeetManager → Clean CSV files
+2. **Calculate** - Compute championship scores → Result CSVs
+3. **Display** - Launch interactive dashboard → View rankings
+
+Let's get started! 🏊
+
+---
+
+## Step 1: Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## 2. Run the Extractor
+This installs:
+- `pandas` - Data processing
+- `streamlit` - Dashboard framework
+- `altair` - Visualization
+- `pyarrow` - Fast Parquet file reading
+- `psutil` - System monitoring
 
-### Command Line (Easiest)
+**Note**: No Excel libraries needed! We only process .RES files.
+
+---
+
+## Step 2: Prepare Your Data
+
+Place your MeetManager .RES files in the raw files folder:
+
+```
+WSC_Club_Champs_2025/
+└── raw_files/
+    ├── CC25E301.RES
+    ├── CC25E302.RES
+    ├── CC25E303.RES
+    └── ...
+```
+
+---
+
+## Step 3: Extract Events from .RES Files
+
+Run the extractor to convert .RES files to clean CSVs:
 
 ```bash
-python swim_event_extractor.py "WSC Club Champs 2024.xlsx"
+python swim_event_extractor.py --res-dir WSC_Club_Champs_2025/raw_files --output-dir WSC_Club_Champs_2025
 ```
 
-That's it! The script will:
-- Extract all numbered event sheets
-- Validate and clean the data
-- Create individual CSV files for each event
-- Show a summary of results
+**What it does:**
+- ✅ Parses all .RES files
+- ✅ Validates swimmer data (name, age, club, time, WA points)
+- ✅ Categorizes events (Sprint, Free, 100 Form, 200 Form, IM, Distance)
+- ✅ Determines gender from event names
+- ✅ Creates CSV files in `cleaned_files/` folder
 
-### Python Script
+**Output:**
+```
+🏊 Found 8 RES files
+📂 Output directory: WSC_Club_Champs_2025/cleaned_files
 
-Create a file called `extract.py`:
+✓ event_301.csv: 45 swimmers (Open/Male 200m Butterfly)
+✓ event_302.csv: 52 swimmers (Female 400m IM)
+✓ event_303.csv: 48 swimmers (Open/Male 400m Freestyle)
+...
 
-```python
-from swim_event_extractor import SwimEventExtractor
-
-extractor = SwimEventExtractor('WSC Club Champs 2024.xlsx')
-extractor.extract_all_events()
+============================================================
+SUMMARY:
+  Total events: 8
+  Total swimmers: 387
+  CSV files saved to: WSC_Club_Champs_2025/cleaned_files
+============================================================
 ```
 
-Run it:
+---
+
+## Step 4: Calculate Championship Scores
+
+Run the scoreboard calculator to compute championship results:
+
 ```bash
-python extract.py
+python club_championships_scoreboard.py
 ```
 
-## 3. Output
+**What it does:**
+- ✅ Loads all event CSVs
+- ✅ Applies championship rules (max events per category by age)
+- ✅ Calculates top 8 events for each swimmer
+- ✅ Creates age group rankings
+- ✅ Generates result files
 
-You'll get CSV files named `event_101.csv`, `event_102.csv`, etc., each containing:
+**Output files created in `championship_results/`:**
+- `championship_scoreboard_boys.csv` - Boys rankings
+- `championship_scoreboard_girls.csv` - Girls rankings  
+- `championship_age_group_winners.csv` - Trophy winners
+- `championship_swimmer_narratives.csv` - Detailed breakdowns
+- `events_all.parquet` - Combined events (for fast dashboard loading)
 
-| Event Number | Name | Age | Club | WA Points |
-|--------------|------|-----|------|-----------|
-| 101 | James Walter | 11 | Worcester | 148 |
-| 101 | Tarek Bluck | 14 | Worcester | 410 |
+---
 
-## Advanced Usage
+## Step 5: Launch the Dashboard
 
-### Create Combined CSV
+Start the interactive Streamlit dashboard:
 
+```bash
+streamlit run championship_dashboard_2025.py
+```
+
+Your browser will automatically open to `http://localhost:8501`
+
+**Dashboard Features:**
+- 📊 Interactive rankings by age and gender
+- 🏊 Individual swimmer event breakdowns
+- 🏁 Event-by-event rankings
+- 📈 FINA points analysis charts
+- 📥 Download reports as CSV
+
+---
+
+## 🎯 One-Command Quick Start
+
+If your data is already in place, run all steps:
+
+```bash
+# Extract events
+python swim_event_extractor.py --res-dir WSC_Club_Champs_2025/raw_files --output-dir WSC_Club_Champs_2025
+
+# Calculate scores
+python club_championships_scoreboard.py
+
+# Launch dashboard
+streamlit run championship_dashboard_2025.py
+```
+
+---
+
+## 📁 Expected File Structure
+
+After running all steps:
+
+```
+WSC_Club_Champs_2025/
+├── raw_files/                    # Your .RES files
+│   ├── CC25E301.RES
+│   ├── CC25E302.RES
+│   └── ...
+├── cleaned_files/                # Extracted CSVs (auto-created)
+│   ├── event_301.csv
+│   ├── event_302.csv
+│   └── ...
+└── championship_results/         # Championship scores (auto-created)
+    ├── championship_scoreboard_boys.csv
+    ├── championship_scoreboard_girls.csv
+    ├── championship_age_group_winners.csv
+    ├── championship_swimmer_narratives.csv
+    └── events_all.parquet
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### No .RES files found
+**Problem**: `RES folder not found` error
+
+**Solution**: Check the path to your raw_files folder:
+```bash
+python swim_event_extractor.py --res-dir WSC_Club_Champs_2025/raw_files
+```
+
+### Module not found error
+**Problem**: `ModuleNotFoundError: No module named 'pandas'`
+
+**Solution**: Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Dashboard shows no data
+**Problem**: Dashboard displays "No data available"
+
+**Solution**: Make sure you've run the scoreboard calculator first:
+```bash
+python club_championships_scoreboard.py
+```
+
+### Wrong championship folder
+**Problem**: Scripts can't find your data
+
+**Solution**: Update the folder name in the scripts:
+- In `club_championships_scoreboard.py`, line 547: `base_folder = 'YOUR_FOLDER_NAME'`
+- In `championship_dashboard_2025.py`, line 488: `events_folder = 'YOUR_FOLDER_NAME'`
+
+---
+
+## 🎨 Customization
+
+### Change Worcester SC branding colors
+
+Edit `.streamlit/config.toml`:
+```toml
+[theme]
+primaryColor = "#1a1d5a"        # Your primary color
+backgroundColor = "#ffffff"      # Background
+textColor = "#1a1d5a"           # Text color
+```
+
+### Add more club codes
+
+Edit `swim_event_extractor.py`, around line 713:
 ```python
-from swim_event_extractor import SwimEventExtractor
-
-extractor = SwimEventExtractor('WSC Club Champs 2024.xlsx')
-extractor.extract_all_events()
-extractor.create_combined_csv('all_events.csv')
+mapping = {
+    'WORM': 'Worcester',
+    'YOUR_CODE': 'Your Club Name',
+}
 ```
 
-### Custom Output Directory
+---
 
-```python
-extractor = SwimEventExtractor(
-    excel_file='WSC Club Champs 2024.xlsx',
-    output_dir='./my_output_folder'
-)
-extractor.extract_all_events()
-```
+## 📱 Mobile Access
 
-### Analyze Data
+The dashboard is mobile-responsive! Access it on your phone by:
 
-```python
-extractor = SwimEventExtractor('WSC Club Champs 2024.xlsx')
-extractor.load_workbook()
+1. Find your computer's local IP address:
+   ```bash
+   # Mac/Linux
+   ipconfig getifaddr en0
+   
+   # Windows
+   ipconfig
+   ```
 
-# Get event data
-data, event_name = extractor.extract_event_data('101')
+2. Run the dashboard with network access:
+   ```bash
+   streamlit run championship_dashboard_2025.py --server.address 0.0.0.0
+   ```
 
-print(f"Event: {event_name}")
-print(f"Swimmers: {len(data)}")
+3. On your phone, visit: `http://YOUR_IP_ADDRESS:8501`
 
-for swimmer in data:
-    print(f"{swimmer['Name']} - {swimmer['WA Points']} points")
-```
+---
 
-## Need More Examples?
+## 🚀 Deploy to Streamlit Community Cloud (Free!)
 
-Check out `example_usage.py` for detailed examples of:
-- Filtering by club
-- Analyzing statistics
-- Top performers
-- And more!
+Share your dashboard online:
 
-## Troubleshooting
+1. Push your code to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub repository
+4. Deploy with:
+   - **Main file**: `championship_dashboard_2025.py`
+   - **Python version**: 3.9+
+   - **Requirements**: Uses `requirements.txt` automatically
 
-**File not found error?**
-- Make sure the Excel file is in the current directory
-- Or provide the full path: `SwimEventExtractor('/full/path/to/file.xlsx')`
+Your dashboard will be live with a public URL! 🎉
 
-**Import error?**
-- Install openpyxl: `pip install openpyxl`
+---
 
-**No data extracted?**
-- Check that your Excel file has numbered sheet tabs (101, 102, etc.)
-- Check that sheets have columns: Name, AaD, Club, WA Pts
+## 📚 Learn More
 
-## File Structure
+- **Full Documentation**: See `README.md`
+- **Championship Rules**: See the dashboard's "Championship Rules & Scoring" section
+- **Worcester SC Website**: [worcestersc.co.uk](https://worcestersc.co.uk)
 
-After running, you'll have:
-```
-worcester_swim_club/
-├── swim_event_extractor.py  ← The library
-├── requirements.txt          ← Dependencies
-├── README.md                 ← Full documentation
-├── QUICKSTART.md            ← This file
-├── example_usage.py         ← Usage examples
-├── WSC Club Champs 2024.xlsx ← Your Excel file
-└── event_*.csv              ← Generated CSV files
-```
+---
 
-## Next Steps
+## 🏊 Next Steps
 
-- Read the full documentation in `README.md`
-- Try the examples in `example_usage.py`
-- Modify the library for your specific needs
+1. ✅ Run the complete workflow with your data
+2. ✅ Explore the dashboard features
+3. ✅ Download reports for your coaches
+4. ✅ Share the dashboard URL with your club
+5. ✅ Update data after each competition session
 
-Happy swimming! 🏊‍♂️
+Happy swimming! 🏊‍♂️🏊‍♀️
 
+---
+
+**Need Help?**
+- Check the full `README.md` for detailed documentation
+- Review error messages carefully
+- Ensure your .RES files are in the correct format
+- Contact Worcester SC via [worcestersc.co.uk/contact](https://worcestersc.co.uk/contact)
