@@ -437,8 +437,31 @@ def load_events_prefer_union(base_folder: str) -> pd.DataFrame:
             pass
     # Fallback to per-file loader
     return load_all_events(base_folder)
+
+
+def load_last_updated_timestamp(base_folder: str) -> str | None:
+    """Load the last updated timestamp from the championship results folder.
+    
+    Returns:
+        Timestamp string in format 'YYYY-MM-DD HH:MM:SS' or None if not available
+    """
+    try:
+        timestamp_file = os.path.join(base_folder, 'championship_results', 'last_updated.txt')
+        if os.path.exists(timestamp_file):
+            with open(timestamp_file, 'r') as f:
+                return f.read().strip()
+    except Exception:
+        pass
+    return None
 def main():
     """Main Streamlit app."""
+    
+    # Configuration
+    events_folder = 'WSC_Club_Champs_2025'
+    
+    # Load last updated timestamp early
+    last_updated = load_last_updated_timestamp(events_folder)
+    last_updated_text = f"Last Updated: {last_updated}" if last_updated else ""
     
     # Worcester SC Header with Logo - styles now in styles.css
     
@@ -452,16 +475,20 @@ def main():
             <h1>Worcester Swimming Club</h1>
             <h2>Club Championships Dashboard 2025</h2>
             <p>Interactive Rankings & Competition Analysis</p>
+            {}
         </div>
     </div>
     """
+    
+    # Add timestamp styling if available
+    timestamp_html = f'<p style="color: #64748b; font-size: 0.9em; margin-top: 0.5rem;">📅 {last_updated_text}</p>' if last_updated_text else ''
     
     # Load and encode the logo
     import base64
     try:
         with open("cropped-WSC_Blue.jpg", "rb") as img_file:
             img_base64 = base64.b64encode(img_file.read()).decode()
-        st.markdown(header_html.format(img_base64), unsafe_allow_html=True)
+        st.markdown(header_html.format(img_base64, timestamp_html), unsafe_allow_html=True)
     except:
         # Fallback without logo
         header_html_no_logo = """
@@ -473,13 +500,11 @@ def main():
                 <h1>Worcester Swimming Club</h1>
                 <h2>Club Championships Dashboard 2025</h2>
                 <p>Interactive Rankings & Competition Analysis</p>
+                {}
             </div>
         </div>
         """
-        st.markdown(header_html_no_logo, unsafe_allow_html=True)
-    
-    # Configuration
-    events_folder = 'WSC_Club_Champs_2025'
+        st.markdown(header_html_no_logo.format(timestamp_html), unsafe_allow_html=True)
     
     # Check if events folder exists
     if not os.path.exists(events_folder):

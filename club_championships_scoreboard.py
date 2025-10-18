@@ -334,6 +334,14 @@ def export_scoreboard(df_champs: pd.DataFrame, output_folder: str):
     results_folder = os.path.join(output_folder, 'championship_results')
     os.makedirs(results_folder, exist_ok=True)
     
+    # Save timestamp of when scoreboard was last updated
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp_file = os.path.join(results_folder, 'last_updated.txt')
+    with open(timestamp_file, 'w') as f:
+        f.write(timestamp)
+    print(f"✓ Saved last updated timestamp: {timestamp}")
+    
     # Export boys/open results - sorted by Age (not Age Group), then Total_Points
     df_boys = df_champs[df_champs['Gender'] == 'Male/Open'].sort_values(['Age', 'Total_Points'], 
                                                                       ascending=[True, False])
