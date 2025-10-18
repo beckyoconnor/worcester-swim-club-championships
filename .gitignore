@@ -39,7 +39,6 @@ venv.bak/
 .DS_Store
 
 # Development Container
-.devcontainer/
 
 # Streamlit
 .streamlit/secrets.toml
