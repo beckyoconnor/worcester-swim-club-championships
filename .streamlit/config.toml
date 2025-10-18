@@ -1,0 +1,23 @@
+[theme]
+# Primary colors
+primaryColor = "#2b1f5c"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+
+# Font settings
+font = "sans serif"
+
+# Other theme options
+base = "light"
+
+[server]
+# Server configuration
+port = 8501
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+# Browser settings
+gatherUsageStats = false
