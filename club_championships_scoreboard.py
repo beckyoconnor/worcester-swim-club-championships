@@ -4,8 +4,7 @@ Club Championships Scoreboard
 Calculates age group trophies based on championship rules.
 
 Rules:
-- Under 12s: max 3 races per category
-- 12 and over: max 2 races per category
+- Maximum 2 races per category (all ages)
 - Highest collated FINA/WA points wins
 
 Usage:
@@ -184,8 +183,7 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
     """
     Calculate championship scores based on the rules:
     - Count up to 8 scoring events total
-    - Under 12s: max 3 races per category
-    - 12 and over: max 2 races per category
+    - Maximum 2 races per category (all ages)
     
     Args:
         df_all: Dataframe with all events
@@ -214,8 +212,8 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
         club = swimmer_events['Club'].iloc[0]
         gender = swimmer_events['Gender'].mode()[0] if len(swimmer_events['Gender'].mode()) > 0 else swimmer_events['Gender'].iloc[0]
         
-        # Determine max races per category based on age
-        max_per_category = 3 if age < 12 else 2
+        # Max 2 races per category for all ages (updated rule)
+        max_per_category = 2
         
         # Sort by WA Points descending
         swimmer_events_sorted = swimmer_events.sort_values('WA Points', ascending=False)
@@ -427,7 +425,7 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
 
             # Deduplicate per event, then keep per-category top N
             dedup = swimmer_events.drop_duplicates(subset=['Event Number'], keep='first')
-            limit_per_category = 3 if age < 12 else 2
+            limit_per_category = 2  # Max 2 races per category for all ages
             selected = []
             for cat in categories:
                 cat_df = dedup[dedup['Event Category'] == cat]
@@ -546,8 +544,7 @@ def main():
     print("\n🏊 Calculating championship scores...")
     print("Rules:")
     print("  • Count up to 8 scoring events total")
-    print("  • Under 12s: max 3 races per category")
-    print("  • 12 and over: max 2 races per category")
+    print("  • Maximum 2 races per category (all ages)")
     
     df_champs = calculate_championship_scores(df_all, event_gender_map)
     print(f"✓ {len(df_champs)} swimmers eligible for championship")

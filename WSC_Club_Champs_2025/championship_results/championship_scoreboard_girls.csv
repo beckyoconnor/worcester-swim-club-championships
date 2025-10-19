@@ -1,8 +1,8 @@
 Age,Name,Club,Total_Points,Average_Points,Best_Event_Points,Events_Count,Categories_Competed,Sprint_Events,Free_Events,Form_100_Events,Form_200_Events,IM_Events,Distance_Events
-9,Esther STEELEFOX,Worcester,484,80.66666666666667,108,6,4,3,1,1,0,1,0
+9,Esther STEELEFOX,Worcester,436,87.2,108,5,4,2,1,1,0,1,0
 9,Sophia KAPISIKIS,Worcester,371,123.66666666666667,147,3,2,2,1,0,0,0,0
 9,Tiegan WHITE,Worcester,326,81.5,88,4,3,1,2,0,1,0,0
-9,Felicity ANDREWS,Worcester,268,67.0,78,4,2,3,0,0,0,1,0
+9,Felicity ANDREWS,Worcester,216,72.0,78,3,2,2,0,0,0,1,0
 9,Imogen KINBRUM,Worcester,214,71.33333333333333,77,3,2,2,0,0,0,1,0
 9,Annie HARTE,Worcester,212,106.0,118,2,1,2,0,0,0,0,0
 9,Ffion WILLIAMS,Worcester,212,53.0,71,4,3,2,1,0,0,1,0
@@ -11,12 +11,12 @@ Age,Name,Club,Total_Points,Average_Points,Best_Event_Points,Events_Count,Categor
 9,Emily GRIFFIN,Worcester,112,112.0,112,1,1,1,0,0,0,0,0
 9,Matilda CLAY,Worcester,103,103.0,103,1,1,1,0,0,0,0,0
 9,Miriam BROWNING,Worcester,74,74.0,74,1,1,1,0,0,0,0,0
-10,Amelia WOOD,Worcester,1490,186.25,210,8,5,3,2,1,1,1,0
-10,Emma GRAHAM,Worcester,884,147.33333333333334,173,6,4,3,0,1,1,1,0
-10,Lily ETHERIDGE,Worcester,788,131.33333333333334,158,6,4,3,1,1,0,1,0
-10,Elodie HAND,Worcester,732,104.57142857142857,145,7,5,3,1,1,1,1,0
-10,Blakely JOINER,Worcester,670,134.0,148,5,3,3,1,1,0,0,0
-10,Heidi COTTERILL,Worcester,609,121.8,147,5,3,3,1,1,0,0,0
+10,Amelia WOOD,Worcester,1367,195.28571428571428,210,7,5,2,2,1,1,1,0
+10,Emma GRAHAM,Worcester,744,148.8,173,5,4,2,0,1,1,1,0
+10,Lily ETHERIDGE,Worcester,706,141.2,158,5,4,2,1,1,0,1,0
+10,Elodie HAND,Worcester,669,111.5,145,6,5,2,1,1,1,1,0
+10,Blakely JOINER,Worcester,556,139.0,148,4,3,2,1,1,0,0,0
+10,Heidi COTTERILL,Worcester,540,135.0,147,4,3,2,1,1,0,0,0
 10,Dulcie BLACKSHAW,Worcester,500,125.0,131,4,3,2,0,1,0,1,0
 10,Roseanne WHEELER,Worcester,267,89.0,93,3,2,2,0,1,0,0,0
 10,Lucy HARDING,Worcester,152,76.0,98,2,1,2,0,0,0,0,0
@@ -26,11 +26,11 @@ Age,Name,Club,Total_Points,Average_Points,Best_Event_Points,Events_Count,Categor
 10,Edith CROSS,Worcester,89,89.0,89,1,1,1,0,0,0,0,0
 10,Hui Yau CHOW,Worcester,87,87.0,87,1,1,1,0,0,0,0,0
 10,Jessica HUTCHINSON,Worcester,63,63.0,63,1,1,1,0,0,0,0,0
-11,Savannah WRIGHT,Worcester,1930,275.7142857142857,335,7,5,3,1,1,1,1,0
-11,Angela O'CONNOR,Worcester,1917,239.625,284,8,5,3,2,1,1,1,0
-11,Pippa PRESTON,Worcester,1883,235.375,289,8,5,3,2,1,1,1,0
 11,Thea EVERITT,Worcester,1761,251.57142857142858,285,7,5,2,2,1,1,1,0
-11,Pippa JENKINS,Worcester,1492,213.14285714285714,249,7,4,3,2,1,0,1,0
+11,Savannah WRIGHT,Worcester,1735,289.1666666666667,335,6,5,2,1,1,1,1,0
+11,Angela O'CONNOR,Worcester,1734,247.71428571428572,284,7,5,2,2,1,1,1,0
+11,Pippa PRESTON,Worcester,1702,243.14285714285714,289,7,5,2,2,1,1,1,0
+11,Pippa JENKINS,Worcester,1295,215.83333333333334,249,6,4,2,2,1,0,1,0
 11,Isabelle REA,Worcester,896,179.2,232,5,4,2,1,1,0,1,0
 11,Amy LYNN,Worcester,857,171.4,185,5,4,2,1,1,0,1,0
 11,Lily Grace BENHAM-WILL,Worcester,615,102.5,125,6,4,2,2,1,0,1,0
