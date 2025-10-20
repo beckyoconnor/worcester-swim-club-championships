@@ -180,7 +180,7 @@ Calculates age group trophies based on Worcester SC championship rules.
 ### Features
 
 - ✅ Implements club-specific scoring rules
-- ✅ Enforces category limits (3 per category for U12, 2 for 12+)
+- ✅ Enforces category limits (2 per category for all ages)
 - ✅ Calculates top 8 events per swimmer
 - ✅ Creates age group categories (9-10, 11-12, 13-14, 15, 16+)
 - ✅ Generates detailed scoreboard CSVs
@@ -191,8 +191,7 @@ Calculates age group trophies based on Worcester SC championship rules.
 
 **Scoring System:**
 - Top 8 events count toward total score
-- **Under 12s**: Maximum 3 races per category
-- **12 and over**: Maximum 2 races per category
+- Maximum 2 races per category (all ages)
 - Winner determined by highest total WA/FINA points
 
 **Categories:** Sprint, Free, 100 Form, 200 Form, IM, Distance
@@ -272,8 +271,7 @@ The script creates files in `championship_results/` subfolder:
 🏊 Calculating championship scores...
 Rules:
   • Count up to 8 scoring events total
-  • Under 12s: max 3 races per category
-  • 12 and over: max 2 races per category
+  • Maximum 2 races per category (all ages)
 
 ✓ 247 swimmers eligible for championship
 
@@ -413,10 +411,9 @@ Competition is spread across **6 categories**:
 Age group trophies are awarded to swimmers who gain the highest collated number of **FINA/WA points** from their **top 8 events** across the 6 categories.
 
 **Category Limits:**
-- **Under 12s**: Maximum of **3 races** counted per category
-- **12 and over**: Maximum of **2 races** counted per category
+- Maximum of **2 races** counted per category (all ages)
 
-Your **best 8 events** (by WA Points) will count toward your total score, respecting the category limits based on your age.
+Your **best 8 events** (by WA Points) will count toward your total score, respecting the category limits.
 
 #### Age Groups
 
