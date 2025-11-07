@@ -180,6 +180,9 @@ def calculate_all_championship_scores(df_all: pd.DataFrame,
     # Remove Unknown gender entries
     df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
     
+    # Filter for Worcester/WORM swimmers only
+    df_all = df_all[df_all['Club'].isin(['Worcester', 'WORM'])].copy()
+    
     championship_results = []
     
     # Group by swimmer name
@@ -275,6 +278,9 @@ def build_swimmer_narratives(df_all: pd.DataFrame) -> pd.DataFrame:
     """
     if len(df_all) == 0:
         return pd.DataFrame(columns=['Name', 'Age', 'Gender', 'Total_Points', 'Narrative'])
+
+    # Filter for Worcester/WORM swimmers only
+    df_all = df_all[df_all['Club'].isin(['Worcester', 'WORM'])].copy()
 
     results = []
     for swimmer_name, swimmer_events in df_all.groupby('Name'):

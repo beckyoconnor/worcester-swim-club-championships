@@ -203,6 +203,9 @@ def calculate_championship_scores(df_all: pd.DataFrame, event_gender_map: Dict[s
     # Remove Unknown gender entries
     df_all = df_all[df_all['Gender'] != 'Unknown'].copy()
     
+    # Filter for Worcester/WORM swimmers only
+    df_all = df_all[df_all['Club'].isin(['Worcester', 'WORM'])].copy()
+    
     championship_results = []
     
     # Group by swimmer name
@@ -414,6 +417,10 @@ def export_swimmer_narratives(base_folder: str, df_all: pd.DataFrame, event_gend
         # Ensure numeric type for points for robust ranking
         if 'WA Points' in events.columns:
             events['WA Points'] = pd.to_numeric(events['WA Points'], errors='coerce').fillna(0).astype(int)
+        
+        # Filter for Worcester/WORM swimmers only
+        events = events[events['Club'].isin(['Worcester', 'WORM'])].copy()
+        
         out_rows: List[Dict] = []
 
         categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
