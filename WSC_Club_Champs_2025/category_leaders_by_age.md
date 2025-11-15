@@ -1,6 +1,6 @@
 ## 🏅 Category Leaders by Age Group
 
-*Highest average points per event in each category for each age group*
+*Highest single performance in each category for each age group*
 
 
 ### Age 9
@@ -9,19 +9,19 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Albert WILKINSON | 113.0 |
+| **Sprint** | Albert WILKINSON | 144 |
 
-| **Free** | Albert WILKINSON | 151.0 |
+| **Free** | Albert WILKINSON | 154 |
 
-| **100 Form** | Albert WILKINSON | 117.5 |
+| **100 Form** | Albert WILKINSON | 132 |
 
-| **200 Form** | Albert WILKINSON | 130.0 |
+| **200 Form** | Albert WILKINSON | 148 |
 
-| **IM** | Albert WILKINSON | 139.0 |
+| **IM** | Albert WILKINSON | 139 |
 
 | **Distance** | — | 0 |
 
@@ -29,19 +29,19 @@
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Sophia KAPISIKIS | 133.0 |
+| **Sprint** | Sophia KAPISIKIS | 175 |
 
-| **Free** | Sophia KAPISIKIS | 137.5 |
+| **Free** | Sophia KAPISIKIS | 147 |
 
-| **100 Form** | Sophia KAPISIKIS | 116.0 |
+| **100 Form** | Sophia KAPISIKIS | 116 |
 
-| **200 Form** | Sophia KAPISIKIS | 138.0 |
+| **200 Form** | Sophia KAPISIKIS | 138 |
 
-| **IM** | Sophia KAPISIKIS | 173.0 |
+| **IM** | Sophia KAPISIKIS | 173 |
 
 | **Distance** | — | 0 |
 
@@ -52,39 +52,39 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Rocco KNOTT | 144.2 |
+| **Sprint** | Rocco KNOTT | 173 |
 
-| **Free** | Rocco KNOTT | 154.5 |
+| **Free** | Rocco KNOTT | 155 |
 
-| **100 Form** | Rocco KNOTT | 122.3 |
+| **100 Form** | Alfie MANSELL | 164 |
 
-| **200 Form** | Rocco KNOTT | 149.5 |
+| **200 Form** | Alfie MANSELL | 165 |
 
-| **IM** | Rocco KNOTT | 150.0 |
+| **IM** | Rocco KNOTT | 154 |
 
-| **Distance** | Alfie MANSELL | 153.0 |
+| **Distance** | Alfie MANSELL | 153 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Amelia WOOD | 185.8 |
+| **Sprint** | Amelia WOOD | 233 |
 
-| **Free** | Amelia WOOD | 215.7 |
+| **Free** | Amelia WOOD | 230 |
 
-| **100 Form** | Amelia WOOD | 186.0 |
+| **100 Form** | Amelia WOOD | 191 |
 
-| **200 Form** | Amelia WOOD | 204.0 |
+| **200 Form** | Amelia WOOD | 204 |
 
-| **IM** | Amelia WOOD | 186.0 |
+| **IM** | Amelia WOOD | 194 |
 
 | **Distance** | — | 0 |
 
@@ -95,41 +95,41 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Zachary CHERRY | 209.0 |
+| **Sprint** | Zachary CHERRY | 249 |
 
-| **Free** | Zachary CHERRY | 247.3 |
+| **Free** | Zachary CHERRY | 258 |
 
-| **100 Form** | Zachary CHERRY | 186.0 |
+| **100 Form** | Zachary CHERRY | 243 |
 
-| **200 Form** | Zachary CHERRY | 202.7 |
+| **200 Form** | Zachary CHERRY | 242 |
 
-| **IM** | Zachary CHERRY | 234.0 |
+| **IM** | Zachary CHERRY | 259 |
 
-| **Distance** | Zachary CHERRY | 270.5 |
+| **Distance** | Zachary CHERRY | 271 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Thea EVERITT | 287.0 |
+| **Sprint** | Savannah WRIGHT | 368 |
 
-| **Free** | Savannah WRIGHT | 333.5 |
+| **Free** | Savannah WRIGHT | 335 |
 
-| **100 Form** | Savannah WRIGHT | 280.0 |
+| **100 Form** | Savannah WRIGHT | 284 |
 
-| **200 Form** | Savannah WRIGHT | 290.5 |
+| **200 Form** | Savannah WRIGHT | 305 |
 
-| **IM** | Savannah WRIGHT | 299.5 |
+| **IM** | Savannah WRIGHT | 316 |
 
-| **Distance** | Savannah WRIGHT | 332.0 |
+| **Distance** | Savannah WRIGHT | 332 |
 
 
 ### Age 12
@@ -138,41 +138,41 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Ted CARPENTER | 239.8 |
+| **Sprint** | Ted CARPENTER | 273 |
 
-| **Free** | Ted CARPENTER | 291.5 |
+| **Free** | Ted CARPENTER | 299 |
 
-| **100 Form** | Ted CARPENTER | 189.0 |
+| **100 Form** | Edward HICKMAN | 213 |
 
-| **200 Form** | Ted CARPENTER | 289.0 |
+| **200 Form** | Ted CARPENTER | 289 |
 
-| **IM** | Ted CARPENTER | 257.5 |
+| **IM** | Ted CARPENTER | 281 |
 
-| **Distance** | Ted CARPENTER | 307.0 |
+| **Distance** | Ted CARPENTER | 307 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Lucy PIPER | 355.0 |
+| **Sprint** | Lucy PIPER | 429 |
 
-| **Free** | Lucy PIPER | 394.0 |
+| **Free** | Lucy PIPER | 400 |
 
-| **100 Form** | Hope MANSELL | 277.0 |
+| **100 Form** | Lucy PIPER | 337 |
 
-| **200 Form** | Lucy PIPER | 354.0 |
+| **200 Form** | Lucy PIPER | 354 |
 
-| **IM** | Lucy PIPER | 358.3 |
+| **IM** | Lucy PIPER | 364 |
 
-| **Distance** | Lucy PIPER | 355.0 |
+| **Distance** | Lucy PIPER | 355 |
 
 
 ### Age 13
@@ -181,41 +181,41 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Harry CLAY | 317.0 |
+| **Sprint** | Harry CLAY | 394 |
 
-| **Free** | Harry CLAY | 391.7 |
+| **Free** | Harry CLAY | 392 |
 
-| **100 Form** | Harry CLAY | 260.7 |
+| **100 Form** | Harry CLAY | 307 |
 
-| **200 Form** | Harry CLAY | 314.5 |
+| **200 Form** | Harry CLAY | 338 |
 
-| **IM** | Harry CLAY | 313.3 |
+| **IM** | Harry CLAY | 333 |
 
-| **Distance** | Harry CLAY | 370.5 |
+| **Distance** | Harry CLAY | 378 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Wren GOODISON | 400.3 |
+| **Sprint** | Wren GOODISON | 454 |
 
-| **Free** | Wren GOODISON | 407.0 |
+| **Free** | Wren GOODISON | 414 |
 
-| **100 Form** | Wren GOODISON | 376.0 |
+| **100 Form** | Wren GOODISON | 442 |
 
-| **200 Form** | Wren GOODISON | 443.0 |
+| **200 Form** | Wren GOODISON | 443 |
 
-| **IM** | Wren GOODISON | 411.3 |
+| **IM** | Wren GOODISON | 442 |
 
-| **Distance** | Wren GOODISON | 414.0 |
+| **Distance** | Wren GOODISON | 420 |
 
 
 ### Age 14
@@ -224,41 +224,41 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Charlie COLEMAN | 327.0 |
+| **Sprint** | Charlie COLEMAN | 351 |
 
-| **Free** | Charlie COLEMAN | 401.3 |
+| **Free** | Charlie COLEMAN | 415 |
 
-| **100 Form** | Charlie COLEMAN | 317.5 |
+| **100 Form** | Charlie COLEMAN | 350 |
 
-| **200 Form** | Charlie COLEMAN | 342.5 |
+| **200 Form** | Charlie COLEMAN | 344 |
 
-| **IM** | Charlie COLEMAN | 382.0 |
+| **IM** | Charlie COLEMAN | 399 |
 
-| **Distance** | Charlie COLEMAN | 370.0 |
+| **Distance** | Charlie COLEMAN | 370 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Xanthe CARRINGTON-ABRA | 376.3 |
+| **Sprint** | Xanthe CARRINGTON-ABRA | 444 |
 
-| **Free** | Xanthe CARRINGTON-ABRA | 413.7 |
+| **Free** | Xanthe CARRINGTON-ABRA | 425 |
 
-| **100 Form** | Xanthe CARRINGTON-ABRA | 301.5 |
+| **100 Form** | Eva ANDERSON | 332 |
 
-| **200 Form** | Sophie KILGOUR | 322.0 |
+| **200 Form** | Sophie KILGOUR | 322 |
 
-| **IM** | Xanthe CARRINGTON-ABRA | 356.0 |
+| **IM** | Xanthe CARRINGTON-ABRA | 384 |
 
-| **Distance** | Sophie KILGOUR | 399.5 |
+| **Distance** | Sophie KILGOUR | 410 |
 
 
 ### Age 15
@@ -267,41 +267,41 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Tarek BLUCK | 479.5 |
+| **Sprint** | Tarek BLUCK | 526 |
 
-| **Free** | Tarek BLUCK | 599.7 |
+| **Free** | Tarek BLUCK | 608 |
 
-| **100 Form** | Joseph AGOSTON | 496.0 |
+| **100 Form** | Joseph AGOSTON | 496 |
 
-| **200 Form** | Joseph AGOSTON | 452.3 |
+| **200 Form** | Joseph AGOSTON | 472 |
 
-| **IM** | Joseph AGOSTON | 522.3 |
+| **IM** | Joseph AGOSTON | 559 |
 
-| **Distance** | Tarek BLUCK | 561.5 |
+| **Distance** | Tarek BLUCK | 567 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Prudence GOODISON | 523.7 |
+| **Sprint** | Prudence GOODISON | 558 |
 
-| **Free** | Alexia AGOSTON | 572.3 |
+| **Free** | Alexia AGOSTON | 590 |
 
-| **100 Form** | Alexia AGOSTON | 529.5 |
+| **100 Form** | Alexia AGOSTON | 575 |
 
-| **200 Form** | Alexia AGOSTON | 550.0 |
+| **200 Form** | Alexia AGOSTON | 581 |
 
-| **IM** | Alexia AGOSTON | 585.0 |
+| **IM** | Alexia AGOSTON | 596 |
 
-| **Distance** | Alexia AGOSTON | 587.0 |
+| **Distance** | Alexia AGOSTON | 587 |
 
 
 ### Age 16+
@@ -310,38 +310,38 @@
 #### Boys
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Ben GOOCH | 565.8 |
+| **Sprint** | Harry CHANDLER | 626 |
 
-| **Free** | Ben GOOCH | 637.7 |
+| **Free** | Ben GOOCH | 673 |
 
-| **100 Form** | Ben GOOCH | 581.0 |
+| **100 Form** | Ben GOOCH | 601 |
 
-| **200 Form** | Harry CHANDLER | 575.0 |
+| **200 Form** | Harry CHANDLER | 617 |
 
-| **IM** | Harry CHANDLER | 581.0 |
+| **IM** | Ben GOOCH | 622 |
 
-| **Distance** | Harry CHANDLER | 606.0 |
+| **Distance** | Harry CHANDLER | 613 |
 
 
 #### Girls
 
 
-| Category | Leader | Points |
+| Category | Leader | Best Points |
 
-|----------|--------|--------|
+|----------|--------|-------------|
 
-| **Sprint** | Asha MAHANTA | 509.8 |
+| **Sprint** | Asha MAHANTA | 556 |
 
-| **Free** | Asha MAHANTA | 581.0 |
+| **Free** | Asha MAHANTA | 589 |
 
-| **100 Form** | Asha MAHANTA | 526.0 |
+| **100 Form** | Asha MAHANTA | 569 |
 
-| **200 Form** | Asha MAHANTA | 525.3 |
+| **200 Form** | Asha MAHANTA | 592 |
 
-| **IM** | Asha MAHANTA | 582.3 |
+| **IM** | Asha MAHANTA | 595 |
 
-| **Distance** | Asha MAHANTA | 566.0 |
+| **Distance** | Asha MAHANTA | 566 |

@@ -14,7 +14,7 @@ def main():
     # Load all events to calculate category totals
     df_all = pd.read_parquet('WSC_Club_Champs_2025/championship_results/events_all.parquet')
     
-    # For each swimmer, calculate average points per category
+    # For each swimmer, calculate best performance per category
     def calculate_category_points(swimmer_name, age, gender):
         swimmer_events = df_all[
             (df_all['Name'] == swimmer_name) & 
@@ -25,9 +25,9 @@ def main():
         category_points = {}
         for category in ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']:
             cat_events = swimmer_events[swimmer_events['Event Category'] == category]
-            # Calculate average points for this category
+            # Get best (max) points for this category
             if len(cat_events) > 0:
-                category_points[category] = cat_events['WA Points'].mean()
+                category_points[category] = cat_events['WA Points'].max()
             else:
                 category_points[category] = 0
         
@@ -67,7 +67,7 @@ def main():
     # Create output for markdown
     output = []
     output.append("## 🏅 Category Leaders by Age Group\n")
-    output.append("*Highest average points per event in each category for each age group*\n")
+    output.append("*Highest single performance in each category for each age group*\n")
     
     categories = ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']
     
@@ -88,15 +88,15 @@ def main():
             
             gender_label = "Boys" if gender == 'Male/Open' else "Girls"
             output.append(f"\n#### {gender_label}\n")
-            output.append("\n| Category | Leader | Points |\n")
-            output.append("|----------|--------|--------|\n")
+            output.append("\n| Category | Leader | Best Points |\n")
+            output.append("|----------|--------|-------------|\n")
             
             for category in categories:
-                # Find swimmer with highest average points in this category
+                # Find swimmer with highest single performance in this category
                 if df_gender[category].max() > 0:
                     top_swimmer = df_gender.loc[df_gender[category].idxmax()]
-                    # Format with one decimal place
-                    output.append(f"| **{category}** | {top_swimmer['Name']} | {top_swimmer[category]:.1f} |\n")
+                    # Format as integer since it's a single event
+                    output.append(f"| **{category}** | {top_swimmer['Name']} | {int(top_swimmer[category])} |\n")
                 else:
                     output.append(f"| **{category}** | — | 0 |\n")
     
