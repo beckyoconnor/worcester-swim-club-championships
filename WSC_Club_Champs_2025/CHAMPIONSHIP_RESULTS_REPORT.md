@@ -345,81 +345,81 @@
 
 ## 🏊 Stroke Specialists by Age Group
 
-*The strongest swimmers in each stroke - showing average points per stroke across all distances*
+*The strongest swimmers in each stroke - showing best single performance regardless of distance*
 
-**Note:** Each stroke includes all distances for that discipline (e.g., Freestyle includes 50m, 100m, 200m, 400m, 800m, 1500m). IM events are excluded from this analysis.
+**Note:** Each stroke includes all distances for that discipline (e.g., Freestyle includes 50m, 100m, 200m, 400m, 800m, 1500m). Leaders are determined by their highest-scoring performance in that stroke. IM events are excluded from this analysis.
 
 ### Age 9
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Albert WILKINSON | 149.2 | Sophia KAPISIKIS | 150.0 |
-| **Backstroke** | Albert WILKINSON | 140.0 | Sophia KAPISIKIS | 120.5 |
-| **Breaststroke** | Albert WILKINSON | 103.0 | Sophia KAPISIKIS | 138.0 |
-| **Butterfly** | Albert WILKINSON | 101.0 | Sophia KAPISIKIS | 99.0 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Albert WILKINSON | 154 | Sophia KAPISIKIS | 175 |
+| **Backstroke** | Albert WILKINSON | 148 | Sophia KAPISIKIS | 125 |
+| **Breaststroke** | Albert WILKINSON | 112 | Sophia KAPISIKIS | 138 |
+| **Butterfly** | Albert WILKINSON | 101 | Sophia KAPISIKIS | 99 |
 
 ### Age 10
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Rocco KNOTT | 160.7 | Amelia WOOD | 220.0 |
-| **Backstroke** | Alfie MANSELL | 165.7 | Amelia WOOD | 192.3 |
-| **Breaststroke** | Rocco KNOTT | 129.0 | Amelia WOOD | 196.7 |
-| **Butterfly** | Rocco KNOTT | 119.5 | Emma GRAHAM | 173.0 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Rocco KNOTT | 173 | Amelia WOOD | 233 |
+| **Backstroke** | Alfie MANSELL | 168 | Amelia WOOD | 204 |
+| **Breaststroke** | Rocco KNOTT | 137 | Amelia WOOD | 205 |
+| **Butterfly** | Rocco KNOTT | 146 | Emma GRAHAM | 173 |
 
 ### Age 11
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Zachary CHERRY | 255.3 | Savannah WRIGHT | 341.8 |
-| **Backstroke** | Zachary CHERRY | 235.3 | Pippa PRESTON | 280.3 |
-| **Breaststroke** | Logan HADLEY | 194.3 | Savannah WRIGHT | 288.7 |
-| **Butterfly** | Isaac MAY | 203.0 | Pippa JENKINS | 199.0 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Zachary CHERRY | 271 | Savannah WRIGHT | 368 |
+| **Backstroke** | Zachary CHERRY | 243 | Pippa PRESTON | 289 |
+| **Breaststroke** | Logan HADLEY | 214 | Savannah WRIGHT | 305 |
+| **Butterfly** | Zachary CHERRY | 224 | Angela O'CONNOR | 221 |
 
 ### Age 12
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Ted CARPENTER | 290.8 | Lucy PIPER | 393.2 |
-| **Backstroke** | Ted CARPENTER | 257.5 | Lucy PIPER | 345.3 |
-| **Breaststroke** | Edward HICKMAN | 216.7 | Amelia BOOTH | 327.3 |
-| **Butterfly** | Ted CARPENTER | 212.0 | Emily BUFI | 260.0 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Ted CARPENTER | 307 | Lucy PIPER | 429 |
+| **Backstroke** | Ted CARPENTER | 289 | Lucy PIPER | 354 |
+| **Breaststroke** | Edward HICKMAN | 225 | Amelia BOOTH | 338 |
+| **Butterfly** | Ted CARPENTER | 254 | Hope MANSELL | 294 |
 
 ### Age 13
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Harry CLAY | 385.0 | Wren GOODISON | 403.3 |
-| **Backstroke** | Harry CLAY | 320.3 | Wren GOODISON | 446.3 |
-| **Breaststroke** | Harry CLAY | 273.3 | Zoe WALSH | 368.3 |
-| **Butterfly** | Olivier KONCZUK | 256.0 | Wren GOODISON | 374.5 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Harry CLAY | 394 | Wren GOODISON | 420 |
+| **Backstroke** | Harry CLAY | 338 | Wren GOODISON | 454 |
+| **Breaststroke** | Harry CLAY | 291 | Zoe WALSH | 392 |
+| **Butterfly** | Harry CLAY | 279 | Wren GOODISON | 376 |
 
 ### Age 14
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Charlie COLEMAN | 385.0 | Xanthe CARRINGTON-ABRA | 407.2 |
-| **Backstroke** | Charlie COLEMAN | 324.0 | Xanthe CARRINGTON-ABRA | 313.0 |
-| **Breaststroke** | Charlie COLEMAN | 338.7 | Xanthe CARRINGTON-ABRA | 297.5 |
-| **Butterfly** | Charlie COLEMAN | 306.5 | Eva ANDERSON | 363.5 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Charlie COLEMAN | 415 | Xanthe CARRINGTON-ABRA | 444 |
+| **Backstroke** | Charlie COLEMAN | 341 | Alice WICKETT | 325 |
+| **Breaststroke** | Charlie COLEMAN | 350 | Eva ANDERSON | 306 |
+| **Butterfly** | Charlie COLEMAN | 328 | Eva ANDERSON | 395 |
 
 ### Age 15
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Tarek BLUCK | 572.3 | Alexia AGOSTON | 558.0 |
-| **Backstroke** | Tarek BLUCK | 456.7 | Alexia AGOSTON | 519.0 |
-| **Breaststroke** | Joseph AGOSTON | 459.3 | Alexia AGOSTON | 553.0 |
-| **Butterfly** | Tarek BLUCK | 476.3 | Prudence GOODISON | 517.0 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Tarek BLUCK | 608 | Alexia AGOSTON | 590 |
+| **Backstroke** | Tarek BLUCK | 496 | Alexia AGOSTON | 519 |
+| **Breaststroke** | Joseph AGOSTON | 496 | Alexia AGOSTON | 581 |
+| **Butterfly** | Tarek BLUCK | 526 | Prudence GOODISON | 530 |
 
 ### Age 16+
 
-| Stroke | Boys Leader | Avg Points | Girls Leader | Avg Points |
-|--------|-------------|------------|--------------|------------|
-| **Freestyle** | Ben GOOCH | 630.8 | Asha MAHANTA | 569.4 |
-| **Backstroke** | Ben GOOCH | 552.5 | Asha MAHANTA | 564.7 |
-| **Breaststroke** | Harry CHANDLER | 529.5 | Grace RYDER | 523.0 |
-| **Butterfly** | Harry CHANDLER | 614.3 | Asha MAHANTA | 551.3 |
+| Stroke | Boys Leader | Best Points | Girls Leader | Best Points |
+|--------|-------------|-------------|--------------|-------------|
+| **Freestyle** | Ben GOOCH | 673 | Asha MAHANTA | 589 |
+| **Backstroke** | Ben GOOCH | 561 | Asha MAHANTA | 592 |
+| **Breaststroke** | Harry CHANDLER | 540 | Grace RYDER | 523 |
+| **Butterfly** | Harry CHANDLER | 626 | Asha MAHANTA | 569 |
 
 ---
 

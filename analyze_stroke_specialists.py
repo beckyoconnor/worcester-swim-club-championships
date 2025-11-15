@@ -37,7 +37,7 @@ def main():
     # Remove IM events
     df_all = df_all[df_all['Stroke'].notna()]
     
-    # For each swimmer, calculate average points per stroke
+    # For each swimmer, calculate best performance per stroke
     def calculate_stroke_points(swimmer_name, age, gender):
         swimmer_events = df_all[
             (df_all['Name'] == swimmer_name) & 
@@ -48,9 +48,9 @@ def main():
         stroke_points = {}
         for stroke in ['Freestyle', 'Backstroke', 'Breaststroke', 'Butterfly']:
             stroke_events = swimmer_events[swimmer_events['Stroke'] == stroke]
-            # Calculate average points for this stroke
+            # Get best (max) points for this stroke
             if len(stroke_events) > 0:
-                stroke_points[stroke] = stroke_events['WA Points'].mean()
+                stroke_points[stroke] = stroke_events['WA Points'].max()
             else:
                 stroke_points[stroke] = 0
         
@@ -90,7 +90,7 @@ def main():
     # Create output for markdown
     output = []
     output.append("## 🏊 Stroke Specialists by Age Group\n")
-    output.append("*Highest average points per stroke (Freestyle, Backstroke, Breaststroke, Butterfly)*\n")
+    output.append("*Highest single performance in each stroke (best event score regardless of distance)*\n")
     
     strokes = ['Freestyle', 'Backstroke', 'Breaststroke', 'Butterfly']
     
@@ -111,15 +111,15 @@ def main():
             
             gender_label = "Boys" if gender == 'Male/Open' else "Girls"
             output.append(f"\n#### {gender_label}\n")
-            output.append("\n| Stroke | Leader | Avg Points |\n")
-            output.append("|--------|--------|------------|\n")
+            output.append("\n| Stroke | Leader | Best Points |\n")
+            output.append("|--------|--------|-------------|\n")
             
             for stroke in strokes:
-                # Find swimmer with highest average points in this stroke
+                # Find swimmer with highest single performance in this stroke
                 if df_gender[stroke].max() > 0:
                     top_swimmer = df_gender.loc[df_gender[stroke].idxmax()]
-                    # Format with one decimal place
-                    output.append(f"| **{stroke}** | {top_swimmer['Name']} | {top_swimmer[stroke]:.1f} |\n")
+                    # Format as integer since it's a single event
+                    output.append(f"| **{stroke}** | {top_swimmer['Name']} | {int(top_swimmer[stroke])} |\n")
                 else:
                     output.append(f"| **{stroke}** | — | 0 |\n")
     
