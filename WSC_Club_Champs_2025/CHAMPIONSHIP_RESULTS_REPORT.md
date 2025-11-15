@@ -249,95 +249,97 @@
 
 ## 🏅 Category Leaders by Age Group
 
-*The strongest swimmers in each category - showing total points scored within that category*
+*The strongest swimmers in each category - showing total points scored across ALL events in that category*
+
+**Note:** These points represent cumulative totals from all events swum in each category, not just the events counted toward championship scores (which are limited to 2 per category).
 
 ### Age 9
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Albert WILKINSON | 144 | Sophia KAPISIKIS | 175 |
-| **Free** | Albert WILKINSON | 154 | Sophia KAPISIKIS | 147 |
-| **100 Form** | Albert WILKINSON | 132 | Sophia KAPISIKIS | 116 |
-| **200 Form** | Albert WILKINSON | 148 | Sophia KAPISIKIS | 138 |
-| **IM** | — | 0 | Esther STEELEFOX | 90 |
+| **Sprint** | Albert WILKINSON | 339 | Sophia KAPISIKIS | 399 |
+| **Free** | Albert WILKINSON | 453 | Sophia KAPISIKIS | 275 |
+| **100 Form** | Albert WILKINSON | 235 | Esther STEELEFOX | 181 |
+| **200 Form** | Albert WILKINSON | 260 | Tiegan WHITE | 161 |
+| **IM** | Albert WILKINSON | 139 | Sophia KAPISIKIS | 173 |
 | **Distance** | — | 0 | — | 0 |
 
 ### Age 10
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Rocco KNOTT | 173 | Amelia WOOD | 233 |
-| **Free** | Rocco KNOTT | 155 | Amelia WOOD | 230 |
-| **100 Form** | Alfie MANSELL | 164 | Amelia WOOD | 191 |
-| **200 Form** | Alfie MANSELL | 165 | Amelia WOOD | 204 |
-| **IM** | — | 0 | Emma GRAHAM | 146 |
-| **Distance** | — | 0 | — | 0 |
+| **Sprint** | Rocco KNOTT | 577 | Amelia WOOD | 743 |
+| **Free** | Alfie MANSELL | 445 | Amelia WOOD | 647 |
+| **100 Form** | Rocco KNOTT | 367 | Amelia WOOD | 372 |
+| **200 Form** | Rocco KNOTT | 299 | Amelia WOOD | 408 |
+| **IM** | Rocco KNOTT | 300 | Amelia WOOD | 372 |
+| **Distance** | Alfie MANSELL | 153 | — | 0 |
 
 ### Age 11
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Zachary CHERRY | 249 | Savannah WRIGHT | 368 |
-| **Free** | Zachary CHERRY | 258 | Savannah WRIGHT | 335 |
-| **100 Form** | Zachary CHERRY | 243 | Savannah WRIGHT | 284 |
-| **200 Form** | Zachary CHERRY | 242 | Savannah WRIGHT | 305 |
-| **IM** | Leonardo GENOVESI | 205 | Angela O'CONNOR | 262 |
-| **Distance** | — | 0 | — | 0 |
+| **Sprint** | Zachary CHERRY | 836 | Savannah WRIGHT | 1,128 |
+| **Free** | Zachary CHERRY | 742 | Angela O'CONNOR | 820 |
+| **100 Form** | Zachary CHERRY | 558 | Savannah WRIGHT | 560 |
+| **200 Form** | Zachary CHERRY | 608 | Savannah WRIGHT | 581 |
+| **IM** | Zachary CHERRY | 702 | Savannah WRIGHT | 599 |
+| **Distance** | Zachary CHERRY | 541 | Savannah WRIGHT | 332 |
 
 ### Age 12
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Ted CARPENTER | 273 | Lucy PIPER | 429 |
-| **Free** | Ted CARPENTER | 299 | Lucy PIPER | 400 |
-| **100 Form** | Edward HICKMAN | 213 | Amelia BOOTH | 331 |
-| **200 Form** | Ted CARPENTER | 289 | Lucy PIPER | 354 |
-| **IM** | Ted CARPENTER | 281 | Lucy PIPER | 364 |
-| **Distance** | Harry STATE-DAVEY | 279 | — | 0 |
+| **Sprint** | Ted CARPENTER | 959 | Hope MANSELL | 1,258 |
+| **Free** | James WALTER | 746 | Lucy PIPER | 1,182 |
+| **100 Form** | Harry STATE-DAVEY | 557 | Hope MANSELL | 831 |
+| **200 Form** | James WALTER | 583 | Amelia BOOTH | 646 |
+| **IM** | Edward HICKMAN | 666 | Lucy PIPER | 1,075 |
+| **Distance** | Harry STATE-DAVEY | 544 | Emily BUFI | 658 |
 
 ### Age 13
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Harry CLAY | 394 | Wren GOODISON | 454 |
-| **Free** | Harry CLAY | 392 | Wren GOODISON | 414 |
-| **100 Form** | Olivier KONCZUK | 279 | Wren GOODISON | 442 |
-| **200 Form** | Harry CLAY | 338 | Wren GOODISON | 443 |
-| **IM** | Harry CLAY | 333 | Zoe WALSH | 413 |
-| **Distance** | — | 0 | Millie HIGGINS | 369 |
+| **Sprint** | Harry CLAY | 1,268 | Thea PICKSTOCK | 1,336 |
+| **Free** | Harry CLAY | 1,175 | Wren GOODISON | 1,221 |
+| **100 Form** | Harry CLAY | 782 | Wren GOODISON | 1,128 |
+| **200 Form** | Harry CLAY | 629 | Zoe WALSH | 818 |
+| **IM** | Harry CLAY | 940 | Wren GOODISON | 1,234 |
+| **Distance** | Harry CLAY | 741 | Wren GOODISON | 828 |
 
 ### Age 14
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Charlie COLEMAN | 351 | Xanthe CARRINGTON-ABRA | 444 |
-| **Free** | Charlie COLEMAN | 415 | Xanthe CARRINGTON-ABRA | 425 |
-| **100 Form** | Charlie COLEMAN | 350 | Eva ANDERSON | 332 |
-| **200 Form** | Charlie COLEMAN | 344 | Sophie KILGOUR | 322 |
-| **IM** | Cody TAYLOR | 207 | Xanthe CARRINGTON-ABRA | 384 |
-| **Distance** | — | 0 | Xanthe CARRINGTON-ABRA | 389 |
+| **Sprint** | Charlie COLEMAN | 1,308 | Eva ANDERSON | 1,345 |
+| **Free** | Charlie COLEMAN | 1,204 | Xanthe CARRINGTON-ABRA | 1,241 |
+| **100 Form** | Charlie COLEMAN | 635 | Eva ANDERSON | 894 |
+| **200 Form** | Charlie COLEMAN | 685 | Xanthe CARRINGTON-ABRA | 594 |
+| **IM** | Charlie COLEMAN | 1,146 | Xanthe CARRINGTON-ABRA | 712 |
+| **Distance** | Charlie COLEMAN | 370 | Sophie KILGOUR | 799 |
 
 ### Age 15
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Tarek BLUCK | 526 | Prudence GOODISON | 558 |
-| **Free** | Tarek BLUCK | 608 | Alexia AGOSTON | 590 |
-| **100 Form** | Joseph AGOSTON | 496 | Alexia AGOSTON | 575 |
-| **200 Form** | Joseph AGOSTON | 472 | Alexia AGOSTON | 581 |
-| **IM** | Tarek BLUCK | 541 | Alexia AGOSTON | 596 |
-| **Distance** | Tarek BLUCK | 567 | — | 0 |
+| **Sprint** | Tarek BLUCK | 1,918 | Julia WOLSKA-BAILEY | 1,657 |
+| **Free** | Tarek BLUCK | 1,799 | Alexia AGOSTON | 1,717 |
+| **100 Form** | Tarek BLUCK | 1,277 | Alexia AGOSTON | 1,059 |
+| **200 Form** | Joseph AGOSTON | 1,357 | Alexia AGOSTON | 1,100 |
+| **IM** | Joseph AGOSTON | 1,567 | Alexia AGOSTON | 1,170 |
+| **Distance** | Tarek BLUCK | 1,123 | Caitlin PRIDDEN | 803 |
 
 ### Age 16+
 
 | Category | Boys Leader | Points | Girls Leader | Points |
 |----------|-------------|--------|--------------|--------|
-| **Sprint** | Harry CHANDLER | 626 | Grace RYDER | 516 |
-| **Free** | Ben GOOCH | 673 | Asha MAHANTA | 589 |
-| **100 Form** | Ben GOOCH | 601 | Asha MAHANTA | 569 |
-| **200 Form** | Harry CHANDLER | 617 | Asha MAHANTA | 592 |
-| **IM** | Ben GOOCH | 622 | Asha MAHANTA | 595 |
-| **Distance** | Matt JAMES | 419 | Charlotte RICHARDSON | 440 |
+| **Sprint** | Ben GOOCH | 2,263 | Asha MAHANTA | 2,039 |
+| **Free** | Ben GOOCH | 1,913 | Asha MAHANTA | 1,743 |
+| **100 Form** | Ben GOOCH | 1,162 | Asha MAHANTA | 1,578 |
+| **200 Form** | Harry CHANDLER | 1,150 | Asha MAHANTA | 1,576 |
+| **IM** | Harry CHANDLER | 1,743 | Asha MAHANTA | 1,747 |
+| **Distance** | Harry CHANDLER | 1,212 | Holly SADLER | 713 |
 
 ---
 

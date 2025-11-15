@@ -1,62 +1,53 @@
 #!/usr/bin/env python3
 """
 Analyze championship data to find the strongest swimmers in each category by age group.
+Uses the scoreboard data directly instead of parsing narrative text.
 """
 
 import pandas as pd
-import re
-from collections import defaultdict
-
-def extract_category_points(included_text):
-    """Extract points per category from the IncludedShort column."""
-    category_points = {
-        'Sprint': 0,
-        'Free': 0,
-        '100 Form': 0,
-        '200 Form': 0,
-        'IM': 0,
-        'Distance': 0
-    }
-    
-    if pd.isna(included_text):
-        return category_points
-    
-    # Pattern to match category names and their events with points
-    patterns = {
-        'Sprint': r'Sprint \([^)]+?(\d+) pts[^)]*\)',
-        'Free': r'Free \([^)]+?(\d+) pts[^)]*\)',
-        '100 Form': r'100 Form \([^)]+?(\d+) pts[^)]*\)',
-        '200 Form': r'200 Form \([^)]+?(\d+) pts[^)]*\)',
-        'IM': r'IM \([^)]+?(\d+) pts[^)]*\)',
-        'Distance': r'Distance \([^)]+?(\d+) pts[^)]*\)'
-    }
-    
-    for category, pattern in patterns.items():
-        matches = re.findall(pattern, included_text)
-        if matches:
-            # Sum all points found for this category
-            category_points[category] = sum(int(pts) for pts in matches)
-    
-    return category_points
 
 def main():
-    # Load the swimmer narratives
-    df = pd.read_csv('WSC_Club_Champs_2025/championship_results/championship_swimmer_narratives.csv')
+    # Load the scoreboard data (has Distance_Events column)
+    df_boys = pd.read_csv('WSC_Club_Champs_2025/championship_results/championship_scoreboard_boys.csv')
+    df_girls = pd.read_csv('WSC_Club_Champs_2025/championship_results/championship_scoreboard_girls.csv')
     
-    # Extract category points for each swimmer
-    category_data = []
-    for _, row in df.iterrows():
-        cat_points = extract_category_points(row['IncludedShort'])
+    # Load all events to calculate category totals
+    df_all = pd.read_parquet('WSC_Club_Champs_2025/championship_results/events_all.parquet')
+    
+    # For each swimmer, calculate total points per category
+    def calculate_category_points(swimmer_name, age, gender):
+        swimmer_events = df_all[
+            (df_all['Name'] == swimmer_name) & 
+            (df_all['Age'] == age) & 
+            (df_all['Gender'] == gender)
+        ]
+        
+        category_points = {}
+        for category in ['Sprint', 'Free', '100 Form', '200 Form', 'IM', 'Distance']:
+            cat_events = swimmer_events[swimmer_events['Event Category'] == category]
+            # Sum all points for this category (top 2 events are already counted in championship)
+            category_points[category] = cat_events['WA Points'].sum()
+        
+        return category_points
+    
+    # Combine boys and girls data
+    df_boys['Gender'] = 'Male/Open'
+    df_girls['Gender'] = 'Female'
+    df_all_swimmers = pd.concat([df_boys, df_girls], ignore_index=True)
+    
+    # Calculate category points for each swimmer
+    swimmer_categories = []
+    for _, swimmer in df_all_swimmers.iterrows():
+        cat_points = calculate_category_points(swimmer['Name'], swimmer['Age'], swimmer['Gender'])
         entry = {
-            'Name': row['Name'],
-            'Age': row['Age'],
-            'Gender': row['Gender'],
-            'Total_Points': row['Total_Points'],
+            'Name': swimmer['Name'],
+            'Age': swimmer['Age'],
+            'Gender': swimmer['Gender'],
             **cat_points
         }
-        category_data.append(entry)
+        swimmer_categories.append(entry)
     
-    df_categories = pd.DataFrame(category_data)
+    df_categories = pd.DataFrame(swimmer_categories)
     
     # Define age groups
     age_groups = {
@@ -116,4 +107,3 @@ if __name__ == '__main__':
     
     print(result)
     print("\n✅ Analysis saved to: WSC_Club_Champs_2025/category_leaders_by_age.md")
-

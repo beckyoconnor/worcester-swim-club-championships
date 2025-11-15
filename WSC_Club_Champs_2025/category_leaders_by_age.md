@@ -13,15 +13,15 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Albert WILKINSON | 144 |
+| **Sprint** | Albert WILKINSON | 339 |
 
-| **Free** | Albert WILKINSON | 154 |
+| **Free** | Albert WILKINSON | 453 |
 
-| **100 Form** | Albert WILKINSON | 132 |
+| **100 Form** | Albert WILKINSON | 235 |
 
-| **200 Form** | Albert WILKINSON | 148 |
+| **200 Form** | Albert WILKINSON | 260 |
 
-| **IM** | — | 0 |
+| **IM** | Albert WILKINSON | 139 |
 
 | **Distance** | — | 0 |
 
@@ -33,15 +33,15 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Sophia KAPISIKIS | 175 |
+| **Sprint** | Sophia KAPISIKIS | 399 |
 
-| **Free** | Sophia KAPISIKIS | 147 |
+| **Free** | Sophia KAPISIKIS | 275 |
 
-| **100 Form** | Sophia KAPISIKIS | 116 |
+| **100 Form** | Esther STEELEFOX | 181 |
 
-| **200 Form** | Sophia KAPISIKIS | 138 |
+| **200 Form** | Tiegan WHITE | 161 |
 
-| **IM** | Esther STEELEFOX | 90 |
+| **IM** | Sophia KAPISIKIS | 173 |
 
 | **Distance** | — | 0 |
 
@@ -56,17 +56,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Rocco KNOTT | 173 |
+| **Sprint** | Rocco KNOTT | 577 |
 
-| **Free** | Rocco KNOTT | 155 |
+| **Free** | Alfie MANSELL | 445 |
 
-| **100 Form** | Alfie MANSELL | 164 |
+| **100 Form** | Rocco KNOTT | 367 |
 
-| **200 Form** | Alfie MANSELL | 165 |
+| **200 Form** | Rocco KNOTT | 299 |
 
-| **IM** | — | 0 |
+| **IM** | Rocco KNOTT | 300 |
 
-| **Distance** | — | 0 |
+| **Distance** | Alfie MANSELL | 153 |
 
 
 #### Girls
@@ -76,15 +76,15 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Amelia WOOD | 233 |
+| **Sprint** | Amelia WOOD | 743 |
 
-| **Free** | Amelia WOOD | 230 |
+| **Free** | Amelia WOOD | 647 |
 
-| **100 Form** | Amelia WOOD | 191 |
+| **100 Form** | Amelia WOOD | 372 |
 
-| **200 Form** | Amelia WOOD | 204 |
+| **200 Form** | Amelia WOOD | 408 |
 
-| **IM** | Emma GRAHAM | 146 |
+| **IM** | Amelia WOOD | 372 |
 
 | **Distance** | — | 0 |
 
@@ -99,17 +99,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Zachary CHERRY | 249 |
+| **Sprint** | Zachary CHERRY | 836 |
 
-| **Free** | Zachary CHERRY | 258 |
+| **Free** | Zachary CHERRY | 742 |
 
-| **100 Form** | Zachary CHERRY | 243 |
+| **100 Form** | Zachary CHERRY | 558 |
 
-| **200 Form** | Zachary CHERRY | 242 |
+| **200 Form** | Zachary CHERRY | 608 |
 
-| **IM** | Leonardo GENOVESI | 205 |
+| **IM** | Zachary CHERRY | 702 |
 
-| **Distance** | — | 0 |
+| **Distance** | Zachary CHERRY | 541 |
 
 
 #### Girls
@@ -119,17 +119,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Savannah WRIGHT | 368 |
+| **Sprint** | Savannah WRIGHT | 1128 |
 
-| **Free** | Savannah WRIGHT | 335 |
+| **Free** | Angela O'CONNOR | 820 |
 
-| **100 Form** | Savannah WRIGHT | 284 |
+| **100 Form** | Savannah WRIGHT | 560 |
 
-| **200 Form** | Savannah WRIGHT | 305 |
+| **200 Form** | Savannah WRIGHT | 581 |
 
-| **IM** | Angela O'CONNOR | 262 |
+| **IM** | Savannah WRIGHT | 599 |
 
-| **Distance** | — | 0 |
+| **Distance** | Savannah WRIGHT | 332 |
 
 
 ### Age 12
@@ -142,17 +142,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Ted CARPENTER | 273 |
+| **Sprint** | Ted CARPENTER | 959 |
 
-| **Free** | Ted CARPENTER | 299 |
+| **Free** | James WALTER | 746 |
 
-| **100 Form** | Edward HICKMAN | 213 |
+| **100 Form** | Harry STATE-DAVEY | 557 |
 
-| **200 Form** | Ted CARPENTER | 289 |
+| **200 Form** | James WALTER | 583 |
 
-| **IM** | Ted CARPENTER | 281 |
+| **IM** | Edward HICKMAN | 666 |
 
-| **Distance** | Harry STATE-DAVEY | 279 |
+| **Distance** | Harry STATE-DAVEY | 544 |
 
 
 #### Girls
@@ -162,17 +162,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Lucy PIPER | 429 |
+| **Sprint** | Hope MANSELL | 1258 |
 
-| **Free** | Lucy PIPER | 400 |
+| **Free** | Lucy PIPER | 1182 |
 
-| **100 Form** | Amelia BOOTH | 331 |
+| **100 Form** | Hope MANSELL | 831 |
 
-| **200 Form** | Lucy PIPER | 354 |
+| **200 Form** | Amelia BOOTH | 646 |
 
-| **IM** | Lucy PIPER | 364 |
+| **IM** | Lucy PIPER | 1075 |
 
-| **Distance** | — | 0 |
+| **Distance** | Emily BUFI | 658 |
 
 
 ### Age 13
@@ -185,17 +185,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Harry CLAY | 394 |
+| **Sprint** | Harry CLAY | 1268 |
 
-| **Free** | Harry CLAY | 392 |
+| **Free** | Harry CLAY | 1175 |
 
-| **100 Form** | Olivier KONCZUK | 279 |
+| **100 Form** | Harry CLAY | 782 |
 
-| **200 Form** | Harry CLAY | 338 |
+| **200 Form** | Harry CLAY | 629 |
 
-| **IM** | Harry CLAY | 333 |
+| **IM** | Harry CLAY | 940 |
 
-| **Distance** | — | 0 |
+| **Distance** | Harry CLAY | 741 |
 
 
 #### Girls
@@ -205,17 +205,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Wren GOODISON | 454 |
+| **Sprint** | Thea PICKSTOCK | 1336 |
 
-| **Free** | Wren GOODISON | 414 |
+| **Free** | Wren GOODISON | 1221 |
 
-| **100 Form** | Wren GOODISON | 442 |
+| **100 Form** | Wren GOODISON | 1128 |
 
-| **200 Form** | Wren GOODISON | 443 |
+| **200 Form** | Zoe WALSH | 818 |
 
-| **IM** | Zoe WALSH | 413 |
+| **IM** | Wren GOODISON | 1234 |
 
-| **Distance** | Millie HIGGINS | 369 |
+| **Distance** | Wren GOODISON | 828 |
 
 
 ### Age 14
@@ -228,17 +228,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Charlie COLEMAN | 351 |
+| **Sprint** | Charlie COLEMAN | 1308 |
 
-| **Free** | Charlie COLEMAN | 415 |
+| **Free** | Charlie COLEMAN | 1204 |
 
-| **100 Form** | Charlie COLEMAN | 350 |
+| **100 Form** | Charlie COLEMAN | 635 |
 
-| **200 Form** | Charlie COLEMAN | 344 |
+| **200 Form** | Charlie COLEMAN | 685 |
 
-| **IM** | Cody TAYLOR | 207 |
+| **IM** | Charlie COLEMAN | 1146 |
 
-| **Distance** | — | 0 |
+| **Distance** | Charlie COLEMAN | 370 |
 
 
 #### Girls
@@ -248,17 +248,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Xanthe CARRINGTON-ABRA | 444 |
+| **Sprint** | Eva ANDERSON | 1345 |
 
-| **Free** | Xanthe CARRINGTON-ABRA | 425 |
+| **Free** | Xanthe CARRINGTON-ABRA | 1241 |
 
-| **100 Form** | Eva ANDERSON | 332 |
+| **100 Form** | Eva ANDERSON | 894 |
 
-| **200 Form** | Sophie KILGOUR | 322 |
+| **200 Form** | Xanthe CARRINGTON-ABRA | 594 |
 
-| **IM** | Xanthe CARRINGTON-ABRA | 384 |
+| **IM** | Xanthe CARRINGTON-ABRA | 712 |
 
-| **Distance** | Xanthe CARRINGTON-ABRA | 389 |
+| **Distance** | Sophie KILGOUR | 799 |
 
 
 ### Age 15
@@ -271,17 +271,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Tarek BLUCK | 526 |
+| **Sprint** | Tarek BLUCK | 1918 |
 
-| **Free** | Tarek BLUCK | 608 |
+| **Free** | Tarek BLUCK | 1799 |
 
-| **100 Form** | Joseph AGOSTON | 496 |
+| **100 Form** | Tarek BLUCK | 1277 |
 
-| **200 Form** | Joseph AGOSTON | 472 |
+| **200 Form** | Joseph AGOSTON | 1357 |
 
-| **IM** | Tarek BLUCK | 541 |
+| **IM** | Joseph AGOSTON | 1567 |
 
-| **Distance** | Tarek BLUCK | 567 |
+| **Distance** | Tarek BLUCK | 1123 |
 
 
 #### Girls
@@ -291,17 +291,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Prudence GOODISON | 558 |
+| **Sprint** | Julia WOLSKA-BAILEY | 1657 |
 
-| **Free** | Alexia AGOSTON | 590 |
+| **Free** | Alexia AGOSTON | 1717 |
 
-| **100 Form** | Alexia AGOSTON | 575 |
+| **100 Form** | Alexia AGOSTON | 1059 |
 
-| **200 Form** | Alexia AGOSTON | 581 |
+| **200 Form** | Alexia AGOSTON | 1100 |
 
-| **IM** | Alexia AGOSTON | 596 |
+| **IM** | Alexia AGOSTON | 1170 |
 
-| **Distance** | — | 0 |
+| **Distance** | Caitlin PRIDDEN | 803 |
 
 
 ### Age 16+
@@ -314,17 +314,17 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Harry CHANDLER | 626 |
+| **Sprint** | Ben GOOCH | 2263 |
 
-| **Free** | Ben GOOCH | 673 |
+| **Free** | Ben GOOCH | 1913 |
 
-| **100 Form** | Ben GOOCH | 601 |
+| **100 Form** | Ben GOOCH | 1162 |
 
-| **200 Form** | Harry CHANDLER | 617 |
+| **200 Form** | Harry CHANDLER | 1150 |
 
-| **IM** | Ben GOOCH | 622 |
+| **IM** | Harry CHANDLER | 1743 |
 
-| **Distance** | Matt JAMES | 419 |
+| **Distance** | Harry CHANDLER | 1212 |
 
 
 #### Girls
@@ -334,14 +334,14 @@
 
 |----------|--------|--------|
 
-| **Sprint** | Grace RYDER | 516 |
+| **Sprint** | Asha MAHANTA | 2039 |
 
-| **Free** | Asha MAHANTA | 589 |
+| **Free** | Asha MAHANTA | 1743 |
 
-| **100 Form** | Asha MAHANTA | 569 |
+| **100 Form** | Asha MAHANTA | 1578 |
 
-| **200 Form** | Asha MAHANTA | 592 |
+| **200 Form** | Asha MAHANTA | 1576 |
 
-| **IM** | Asha MAHANTA | 595 |
+| **IM** | Asha MAHANTA | 1747 |
 
-| **Distance** | Charlotte RICHARDSON | 440 |
+| **Distance** | Holly SADLER | 713 |
