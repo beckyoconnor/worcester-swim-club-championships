@@ -247,7 +247,117 @@
 
 ---
 
+## 🏅 Category Leaders by Age Group
+
+*The strongest swimmers in each category - showing total points scored within that category*
+
+### Age 9
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Albert WILKINSON | 144 | Sophia KAPISIKIS | 175 |
+| **Free** | Albert WILKINSON | 154 | Sophia KAPISIKIS | 147 |
+| **100 Form** | Albert WILKINSON | 132 | Sophia KAPISIKIS | 116 |
+| **200 Form** | Albert WILKINSON | 148 | Sophia KAPISIKIS | 138 |
+| **IM** | — | 0 | Esther STEELEFOX | 90 |
+| **Distance** | — | 0 | — | 0 |
+
+### Age 10
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Rocco KNOTT | 173 | Amelia WOOD | 233 |
+| **Free** | Rocco KNOTT | 155 | Amelia WOOD | 230 |
+| **100 Form** | Alfie MANSELL | 164 | Amelia WOOD | 191 |
+| **200 Form** | Alfie MANSELL | 165 | Amelia WOOD | 204 |
+| **IM** | — | 0 | Emma GRAHAM | 146 |
+| **Distance** | — | 0 | — | 0 |
+
+### Age 11
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Zachary CHERRY | 249 | Savannah WRIGHT | 368 |
+| **Free** | Zachary CHERRY | 258 | Savannah WRIGHT | 335 |
+| **100 Form** | Zachary CHERRY | 243 | Savannah WRIGHT | 284 |
+| **200 Form** | Zachary CHERRY | 242 | Savannah WRIGHT | 305 |
+| **IM** | Leonardo GENOVESI | 205 | Angela O'CONNOR | 262 |
+| **Distance** | — | 0 | — | 0 |
+
+### Age 12
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Ted CARPENTER | 273 | Lucy PIPER | 429 |
+| **Free** | Ted CARPENTER | 299 | Lucy PIPER | 400 |
+| **100 Form** | Edward HICKMAN | 213 | Amelia BOOTH | 331 |
+| **200 Form** | Ted CARPENTER | 289 | Lucy PIPER | 354 |
+| **IM** | Ted CARPENTER | 281 | Lucy PIPER | 364 |
+| **Distance** | Harry STATE-DAVEY | 279 | — | 0 |
+
+### Age 13
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Harry CLAY | 394 | Wren GOODISON | 454 |
+| **Free** | Harry CLAY | 392 | Wren GOODISON | 414 |
+| **100 Form** | Olivier KONCZUK | 279 | Wren GOODISON | 442 |
+| **200 Form** | Harry CLAY | 338 | Wren GOODISON | 443 |
+| **IM** | Harry CLAY | 333 | Zoe WALSH | 413 |
+| **Distance** | — | 0 | Millie HIGGINS | 369 |
+
+### Age 14
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Charlie COLEMAN | 351 | Xanthe CARRINGTON-ABRA | 444 |
+| **Free** | Charlie COLEMAN | 415 | Xanthe CARRINGTON-ABRA | 425 |
+| **100 Form** | Charlie COLEMAN | 350 | Eva ANDERSON | 332 |
+| **200 Form** | Charlie COLEMAN | 344 | Sophie KILGOUR | 322 |
+| **IM** | Cody TAYLOR | 207 | Xanthe CARRINGTON-ABRA | 384 |
+| **Distance** | — | 0 | Xanthe CARRINGTON-ABRA | 389 |
+
+### Age 15
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Tarek BLUCK | 526 | Prudence GOODISON | 558 |
+| **Free** | Tarek BLUCK | 608 | Alexia AGOSTON | 590 |
+| **100 Form** | Joseph AGOSTON | 496 | Alexia AGOSTON | 575 |
+| **200 Form** | Joseph AGOSTON | 472 | Alexia AGOSTON | 581 |
+| **IM** | Tarek BLUCK | 541 | Alexia AGOSTON | 596 |
+| **Distance** | Tarek BLUCK | 567 | — | 0 |
+
+### Age 16+
+
+| Category | Boys Leader | Points | Girls Leader | Points |
+|----------|-------------|--------|--------------|--------|
+| **Sprint** | Harry CHANDLER | 626 | Grace RYDER | 516 |
+| **Free** | Ben GOOCH | 673 | Asha MAHANTA | 589 |
+| **100 Form** | Ben GOOCH | 601 | Asha MAHANTA | 569 |
+| **200 Form** | Harry CHANDLER | 617 | Asha MAHANTA | 592 |
+| **IM** | Ben GOOCH | 622 | Asha MAHANTA | 595 |
+| **Distance** | Matt JAMES | 419 | Charlotte RICHARDSON | 440 |
+
+---
+
 ## 🎯 Notable Achievements
+
+### Multi-Category Dominance
+Several swimmers dominated multiple categories within their age groups:
+
+**Complete Category Sweep (All 4-6 categories in age group):**
+- **Albert WILKINSON** (9M) - Led boys in Sprint, Free, 100 Form, and 200 Form
+- **Sophia KAPISIKIS** (9F) - Led girls in Sprint, Free, 100 Form, and 200 Form
+- **Amelia WOOD** (10F) - Led girls in Sprint, Free, 100 Form, and 200 Form
+- **Zachary CHERRY** (11M) - Led boys in Sprint, Free, 100 Form, and 200 Form
+- **Savannah WRIGHT** (11F) - Led girls in Sprint, Free, 100 Form, and 200 Form
+- **Ted CARPENTER** (12M) - Led boys in Sprint, Free, 200 Form, and IM
+- **Lucy PIPER** (12F) - Led girls in Sprint, Free, 200 Form, and IM
+- **Harry CLAY** (13M) - Led boys in Sprint, Free, 200 Form, and IM
+- **Wren GOODISON** (13F) - Led girls in Sprint, Free, 100 Form, and 200 Form
+- **Charlie COLEMAN** (14M) - Led boys in Sprint, Free, 100 Form, and 200 Form
+- **Alexia AGOSTON** (15F) - Led girls in Free, 100 Form, 200 Form, and IM
 
 ### Perfect Category Coverage
 The following swimmers competed in all 6 categories:
@@ -267,11 +377,6 @@ The following swimmers competed in all 6 categories:
 - Alexia AGOSTON (15), Julia WOLSKA-BAILEY (15), Mia GOOCH (15)
 - Caitlin PRIDDEN (15), Imogen CIANCIO (15), Martha COLVILLE (16)
 - Asha MAHANTA (17), Charlotte CIANCIO (17)
-
-### Strong Distance Swimmers
-Swimmers with both distance events counted:
-- **Girls:** Emily BUFI (12), Wren GOODISON (13), Xanthe CARRINGTON-ABRA (14), Sophie KILGOUR (14), Caitlin PRIDDEN (15), Mahlia SHERWOOD (14), Holly SADLER (16)
-- **Boys:** Zachary CHERRY (11), Leonardo GENOVESI (11), Harry STATE-DAVEY (12), James WALTER (12), Harry CLAY (13), Tarek BLUCK (15), Lincoln LEWITZKYI (15), Robert GEAREY (15), Samuel JENNINGS (15), Lucas PEDLEY (16), Harry CHANDLER (17)
 
 ---
 
