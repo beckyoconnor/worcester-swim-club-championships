@@ -83,10 +83,9 @@ st.html(f"""
 using_sample = not find_res_files(DATA_FOLDER_2026)
 folder = SAMPLE_FOLDER if using_sample else DATA_FOLDER_2026
 if using_sample:
-    st.warning(
-        f"Showing the 2024 Wychavon results as sample data. Add the 2026 results (.RES) "
-        f"files to `{DATA_FOLDER_2026}/` and the app will switch over automatically.",
-        title="Preview mode", icon=":material/science:",
+    st.caption(
+        ":material/info: Showing example results from a previous meet so you can see how the new 2026 "
+        "scoring works. The 2026 Club Championship results will appear here once they're published."
     )
 
 df_all, board = get_data(folder)
@@ -204,7 +203,7 @@ else:
         chart_df['Bucket'] = chart_df['Bucket'].map(bucket_cols)
         bars = alt.Chart(chart_df).mark_bar().encode(
             x=alt.X('sum(Points):Q', title='WA points'),
-            y=alt.Y('Name:N', sort=alt.EncodingSortField('Total Points', order='descending'), title=None, axis=alt.Axis(labelOverlap=False, labelLimit=200)),
+            y=alt.Y('Name:N', sort=alt.EncodingSortField('Total Points', order='descending'), title=None, axis=alt.Axis(labelOverlap=False, labelLimit=110)),
             color=alt.Color('Bucket:N', legend=alt.Legend(orient='bottom', title=None),
                             scale=alt.Scale(domain=list(bucket_cols.values()), range=BUCKET_COLOURS)),
             order=alt.Order('Bucket:N'),
@@ -272,8 +271,8 @@ if pick:
     body = ''.join(
         f"<tr class='{row_class(r)}'>"
         f"<td class='tick'>{'✓' if r['Counted'] else ''}</td>"
-        f"<td class='num'>{'' if pd.isna(r['Event Number']) else int(r['Event Number'])}</td>"
-        f"<td>{html.escape(str(r['Event']))}</td><td>{html.escape(str(r['Bucket']))}</td>"
+        f"<td class='num hide-sm'>{'' if pd.isna(r['Event Number']) else int(r['Event Number'])}</td>"
+        f"<td>{html.escape(str(r['Event']))}</td><td class='hide-sm'>{html.escape(str(r['Bucket']))}</td>"
         f"<td class='num'>{html.escape(str(r['Time']))}</td><td class='num pts'>{int(r['WA Points'])}</td>"
         f"<td class='note'>{html.escape(r['Note'])}</td></tr>"
         for _, r in detail.iterrows()
@@ -293,10 +292,18 @@ if pick:
 .wsc-swims tr.dq td {{ color: #b42318; }}
 .wsc-swims tr.info td {{ color: #6b7280; }}
 .wsc-swims td.note {{ font-size: 0.82rem; color: #64748b; }}
+.wsc-swims-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
+@media (max-width: 640px) {{
+  .wsc-swims {{ font-size: 0.82rem; }}
+  .wsc-swims th, .wsc-swims td {{ padding: 0.45rem 0.4rem; }}
+  .wsc-swims .hide-sm {{ display: none; }}
+  .wsc-swims td.tick {{ width: 1.6rem; }}
+  .wsc-swims td.note {{ font-size: 0.72rem; }}
+}}
 </style>
-<table class="wsc-swims">
-  <thead><tr><th>Counted</th><th class="num">Event #</th><th>Event</th><th>Bucket</th>
-  <th class="num">Time</th><th class="num">WA points</th><th>Note</th></tr></thead>
+<div class="wsc-swims-wrap"><table class="wsc-swims">
+  <thead><tr><th>✓</th><th class="num hide-sm">Event #</th><th>Event</th><th class="hide-sm">Bucket</th>
+  <th class="num">Time</th><th class="num">Points</th><th>Note</th></tr></thead>
   <tbody>{body}</tbody>
-</table>""")
+</table></div>""")
     st.caption(f"Ages as at 31 December, as shown in the results file. Points use the base times in `{BASE_TIMES}`.")

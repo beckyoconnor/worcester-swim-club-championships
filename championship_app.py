@@ -15,6 +15,21 @@ import streamlit as st
 
 st.set_page_config(page_title="Worcester SC - Club Championships", page_icon="🏊", layout="wide")
 
+# Mobile tweaks shared by every year's page.
+# - styles.css hides the sidebar, but on narrow screens Streamlit moves the top-bar year
+#   switcher into the sidebar, so re-show it there (higher specificity beats styles.css).
+# - Shrink the club header so it doesn't fill a phone screen.
+st.html("""<style>
+@media (max-width: 768px) {
+  html body section[data-testid="stSidebar"] { display: flex !important; }
+  .wsc-header { padding: 1rem !important; gap: 0.9rem !important; margin-bottom: 1rem !important; }
+  .wsc-header-logo img { width: 64px !important; }
+  .wsc-header-text h1 { font-size: 1.35rem !important; line-height: 1.2 !important; }
+  .wsc-header-text h2 { font-size: 0.95rem !important; margin-top: 0.25rem !important; }
+  .wsc-header-text p { font-size: 0.8rem !important; margin-top: 0.25rem !important; }
+}
+</style>""")
+
 
 def run_dashboard(path: str, year: int):
     def page():
