@@ -462,8 +462,9 @@ def load_last_updated_timestamp(base_folder: str) -> str | None:
 def main():
     """Main Streamlit app."""
     
-    # Configuration
-    events_folder = 'WSC_Club_Champs_2025'
+    # Configuration - the year can be set by championship_app.py (year switcher); defaults to 2025
+    year = globals().get('CHAMPS_YEAR', 2025)
+    events_folder = f'WSC_Club_Champs_{year}'
     
     # Load last updated timestamp early
     last_updated = load_last_updated_timestamp(events_folder)
@@ -479,15 +480,16 @@ def main():
         </div>
         <div class="wsc-header-text">
             <h1>Worcester Swimming Club</h1>
-            <h2>Club Championships Dashboard 2025</h2>
+            <h2>Club Championships Dashboard YEAR</h2>
             <p>Interactive Rankings & Competition Analysis</p>
             {}
         </div>
     </div>
-    """
+    """.replace('YEAR', str(year))
     
-    # Add timestamp styling if available
-    timestamp_html = f'<p style="color: #64748b; font-size: 0.9em; margin-top: 0.5rem;">📅 {last_updated_text}</p>' if last_updated_text else ''
+    # Add timestamp styling if available (placeholder span when missing: an empty line here
+    # would make markdown render the closing </div> tags as a code block)
+    timestamp_html = f'<p style="color: #64748b; font-size: 0.9em; margin-top: 0.5rem;">📅 {last_updated_text}</p>' if last_updated_text else '<span></span>'
     
     # Load and encode the logo
     import base64
@@ -504,17 +506,21 @@ def main():
             </div>
             <div class="wsc-header-text">
                 <h1>Worcester Swimming Club</h1>
-                <h2>Club Championships Dashboard 2025</h2>
+                <h2>Club Championships Dashboard YEAR</h2>
                 <p>Interactive Rankings & Competition Analysis</p>
                 {}
             </div>
         </div>
-        """
+        """.replace('YEAR', str(year))
         st.markdown(header_html_no_logo.format(timestamp_html), unsafe_allow_html=True)
     
-    # Check if events folder exists
-    if not os.path.exists(events_folder):
-        st.error(f"❌ Events folder not found: {events_folder}")
+    # Check if events folder exists and has data
+    cleaned_dir = os.path.join(events_folder, 'cleaned_files')
+    has_data = os.path.exists(os.path.join(events_folder, 'championship_results', 'events_all.parquet')) or (
+        os.path.isdir(cleaned_dir) and any(f.startswith('event_') for f in os.listdir(cleaned_dir))
+    )
+    if not has_data:
+        st.info(f"No {year} championship results are available in this app.")
         return
     
     # Load data with memory optimization
