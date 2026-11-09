@@ -5,7 +5,8 @@ Worcester SC Club Championships 2026 - Streamlit dashboard.
 Scoring (2026 rules): four event buckets, best WA points score per bucket,
 total = sum of the four bucket scores (0 for a bucket not swum).
 
-Data: drop the results exports (.RES) into WSC_Club_Champs_2026/raw_files/.
+Data: add .RES files to WSC_Club_Champs_2026/raw_files/, then run
+`python build_2026_results.py` - the app only reads the precomputed CSVs.
 Until those arrive the app previews using the 2024 Wychavon meet files.
 .LEF files are not needed (and are git-ignored) as they contain dates of birth.
 """
@@ -20,11 +21,11 @@ import streamlit as st
 
 from champs_2026_scoring import (
     BUCKETS, BUCKET_NAMES_U9, BUCKET_NAMES_9PLUS, bucket_names_for_age,
-    build_scoreboard, find_res_files, load_results, mark_counted,
 )
 
-DATA_FOLDER_2026 = 'WSC_Club_Champs_2026/raw_files'
-SAMPLE_FOLDER = 'WSC_Club_champs_wychavon/raw_files'
+# Precomputed by build_2026_results.py - the app only reads these small CSVs
+DATA_FOLDER_2026 = 'WSC_Club_Champs_2026/championship_results'
+SAMPLE_FOLDER = 'WSC_Club_champs_wychavon/championship_results'
 BASE_TIMES = 'wa_base_times_scm.csv'
 HOME_CLUB = 'Worcester'  # club short name as it appears in .RES files
 AGE_RULE_TEXT = "31 December of the championship year (the age shown in the results file)"
@@ -57,16 +58,17 @@ st.html("""<style>
 BUCKET_COLOURS = ['#1a1d5a', '#7ef542', '#1e3a8a', '#b7f59a']
 
 
-@st.cache_data(ttl=3600, max_entries=4)
+def _read(path: str) -> pd.DataFrame:
+    df = pd.read_csv(path)
+    text_cols = df.select_dtypes(exclude=['number', 'bool']).columns
+    df[text_cols] = df[text_cols].fillna('')
+    return df
+
+
+# One shared copy for all visitors; max_entries=1 keeps only the current results in memory
+@st.cache_data(ttl=3600, max_entries=1)
 def get_data(folder: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    df = load_results(folder, BASE_TIMES)
-    if df.empty:
-        return df, pd.DataFrame()
-    df = df[df['Club'] == HOME_CLUB].copy()
-    if df.empty:
-        return df, pd.DataFrame()
-    df = mark_counted(df)
-    return df, build_scoreboard(df)
+    return _read(os.path.join(folder, 'swims_2026.csv')), _read(os.path.join(folder, 'scoreboard_2026.csv'))
 
 
 def age_label(age: int) -> str:
@@ -91,7 +93,7 @@ st.html(f"""
 </div>
 """)
 
-using_sample = not find_res_files(DATA_FOLDER_2026)
+using_sample = not os.path.exists(os.path.join(DATA_FOLDER_2026, 'scoreboard_2026.csv'))
 folder = SAMPLE_FOLDER if using_sample else DATA_FOLDER_2026
 if using_sample:
     st.caption(
@@ -101,7 +103,7 @@ if using_sample:
 
 df_all, board = get_data(folder)
 if board.empty:
-    st.error(f"No {HOME_CLUB} results found in `{folder}`.")
+    st.error("Results are not available yet.")
     st.stop()
 
 with st.expander("Championship rules and scoring", icon=":material/rule:"):
