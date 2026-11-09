@@ -40,6 +40,17 @@ st.html("""<style>
 [data-testid="stMetricValue"], [data-testid="stMetricValue"] [data-testid="stMarkdownContainer"] p {
   font-size: 2rem !important; line-height: 1.2 !important; color: #2b1f5c !important; font-weight: 700 !important;
 }
+/* Phones: smaller club header so results start higher up the screen */
+@media (max-width: 768px) {
+  .wsc-header { padding: 1rem !important; gap: 0.9rem !important; margin-bottom: 1rem !important; }
+  .wsc-header-logo img { width: 64px !important; }
+  .wsc-header-text h1 { font-size: 1.35rem !important; line-height: 1.2 !important; }
+  .wsc-header-text h2 { font-size: 0.95rem !important; margin-top: 0.25rem !important; }
+  .wsc-header-text p { font-size: 0.8rem !important; margin-top: 0.25rem !important; }
+  [data-testid="stMetricValue"], [data-testid="stMetricValue"] [data-testid="stMarkdownContainer"] p {
+    font-size: 1.5rem !important;
+  }
+}
 </style>""")
 
 # Worcester club colours for the bucket chart (navy, green, blue, light green)
