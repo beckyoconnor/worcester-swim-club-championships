@@ -11,6 +11,7 @@ Until those arrive the app previews using the 2024 Wychavon meet files.
 """
 
 import base64
+import html
 import os
 
 import altair as alt
@@ -259,9 +260,43 @@ if pick:
     detail.loc[(detail['Status'] == '') & detail['Bucket'].notna() & ~detail['Counted'], 'Note'] = (
         'Better score in this bucket already counted')
     detail['Bucket'] = detail['Bucket'].map(bucket_cols).fillna('Not a scoring event')
-    st.dataframe(
-        detail.drop(columns='Status'), hide_index=True,
-        column_config={'Counted': st.column_config.CheckboxColumn('Counted'),
-                       'Event Number': st.column_config.NumberColumn('Event #', format='%d')},
+
+    # Branded breakdown table (navy header, counted swims highlighted in club green)
+    def row_class(r):
+        if r['Counted']:
+            return 'counted'
+        if r['Status']:
+            return 'dq'
+        return 'info' if r['Bucket'] == 'Not a scoring event' else ''
+
+    body = ''.join(
+        f"<tr class='{row_class(r)}'>"
+        f"<td class='tick'>{'✓' if r['Counted'] else ''}</td>"
+        f"<td class='num'>{'' if pd.isna(r['Event Number']) else int(r['Event Number'])}</td>"
+        f"<td>{html.escape(str(r['Event']))}</td><td>{html.escape(str(r['Bucket']))}</td>"
+        f"<td class='num'>{html.escape(str(r['Time']))}</td><td class='num pts'>{int(r['WA Points'])}</td>"
+        f"<td class='note'>{html.escape(r['Note'])}</td></tr>"
+        for _, r in detail.iterrows()
     )
+    st.html(f"""
+<style>
+.wsc-swims {{ width: 100%; border-collapse: separate; border-spacing: 0; font-family: 'Inter', sans-serif;
+  font-size: 0.92rem; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(26,29,90,0.12); }}
+.wsc-swims th {{ background: #1a1d5a; color: #fff; text-align: left; padding: 0.6rem 0.75rem; font-weight: 600; }}
+.wsc-swims th.num, .wsc-swims td.num {{ text-align: right; }}
+.wsc-swims td {{ padding: 0.55rem 0.75rem; border-bottom: 1px solid #e5e7eb; color: #2b2b2b; }}
+.wsc-swims tr:last-child td {{ border-bottom: none; }}
+.wsc-swims tr.counted td {{ background: #eefbe5; }}
+.wsc-swims tr.counted td:first-child {{ border-left: 4px solid #7ef542; }}
+.wsc-swims td.tick {{ color: #3a9a12; font-weight: 700; text-align: center; width: 3rem; }}
+.wsc-swims td.pts {{ font-weight: 700; color: #2b1f5c; }}
+.wsc-swims tr.dq td {{ color: #b42318; }}
+.wsc-swims tr.info td {{ color: #6b7280; }}
+.wsc-swims td.note {{ font-size: 0.82rem; color: #64748b; }}
+</style>
+<table class="wsc-swims">
+  <thead><tr><th>Counted</th><th class="num">Event #</th><th>Event</th><th>Bucket</th>
+  <th class="num">Time</th><th class="num">WA points</th><th>Note</th></tr></thead>
+  <tbody>{body}</tbody>
+</table>""")
     st.caption(f"Ages as at 31 December, as shown in the results file. Points use the base times in `{BASE_TIMES}`.")
