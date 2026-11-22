@@ -1,0 +1,4 @@
+# Worcester swimmers who have opted out of the 2026 Club Championships.
+# One name per line, exactly as shown in the results (not case-sensitive).
+# Then run: python3 build_2026_results.py
+Chloe Gilbert-Bevan

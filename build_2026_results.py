@@ -18,6 +18,7 @@ from champs_2026_scoring import build_scoreboard, load_results, mark_counted
 
 BASE_TIMES = 'wa_base_times_scm.csv'
 HOME_CLUB = 'Worcester'
+EXCLUSIONS = 'champs_2026_exclusions.txt'  # swimmers who have opted out, one name per line
 FOLDERS = {'real': 'WSC_Club_Champs_2026', 'sample': 'WSC_Club_champs_wychavon'}
 
 
@@ -33,6 +34,14 @@ def main() -> None:
     df = df[df['Club'] == HOME_CLUB].copy()
     if df.empty:
         raise SystemExit(f'No {HOME_CLUB} swimmers found')
+    if os.path.exists(EXCLUSIONS):
+        with open(EXCLUSIONS) as f:
+            opted_out = {l.strip().lower() for l in f if l.strip() and not l.startswith('#')}
+        found = opted_out & set(df['Name'].str.lower())
+        df = df[~df['Name'].str.lower().isin(opted_out)].copy()
+        print(f'Excluded (opted out): {len(found)} of {len(opted_out)} listed')
+        for name in sorted(opted_out - found):
+            print(f'  warning: "{name}" not found in the results - check the spelling')
     df = mark_counted(df)
     board = build_scoreboard(df)
 

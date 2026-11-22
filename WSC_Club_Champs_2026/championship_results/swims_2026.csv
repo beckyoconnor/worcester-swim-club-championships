@@ -101,7 +101,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 01,5,Female 50m Backstroke,50,BACK,emilia spence|worcester,Emilia Spence,Female,15,Worcester,31.66,,WEB_Session01.RES,31.66,506,Bucket 1,50m Back,31.66,True
 01,5,Female 50m Backstroke,50,BACK,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,34.82,,WEB_Session01.RES,34.82,380,Bucket 1,50m Back,34.82,False
 01,5,Female 50m Backstroke,50,BACK,eva anderson|worcester,Eva Anderson,Female,15,Worcester,38.60,,WEB_Session01.RES,38.6,279,Bucket 1,50m Back,38.60,False
-01,5,Female 50m Backstroke,50,BACK,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,31.06,,WEB_Session01.RES,31.06,535,Bucket 1,50m Back,31.06,False
 01,5,Female 50m Backstroke,50,BACK,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,32.47,,WEB_Session01.RES,32.47,469,Bucket 1,50m Back,32.47,True
 01,5,Female 50m Backstroke,50,BACK,mia gooch|worcester,Mia Gooch,Female,16,Worcester,33.47,,WEB_Session01.RES,33.47,428,Bucket 1,50m Back,33.47,False
 01,5,Female 50m Backstroke,50,BACK,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,35.79,,WEB_Session01.RES,35.79,350,Bucket 1,50m Back,35.79,False
@@ -144,7 +143,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 01,8,Female 200m Freestyle,200,FREE,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,2:23.47,,WEB_Session01.RES,143.47,454,Bucket 3,200m Free,2:23.47,True
 01,8,Female 200m Freestyle,200,FREE,eva anderson|worcester,Eva Anderson,Female,15,Worcester,2:25.86,,WEB_Session01.RES,145.86,432,Bucket 3,200m Free,2:25.86,True
 01,8,Female 200m Freestyle,200,FREE,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,2:34.04,,WEB_Session01.RES,154.04,367,Bucket 3,200m Free,2:34.04,True
-01,8,Female 200m Freestyle,200,FREE,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,2:10.34,,WEB_Session01.RES,130.34,606,Bucket 3,200m Free,2:10.34,True
 01,8,Female 200m Freestyle,200,FREE,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,2:26.49,,WEB_Session01.RES,146.49,426,Bucket 3,200m Free,2:26.49,True
 01,8,Female 200m Freestyle,200,FREE,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,2:27.57,,WEB_Session01.RES,147.57,417,Bucket 3,200m Free,2:27.57,True
 01,8,Female 200m Freestyle,200,FREE,amelia hickman|worcester,Amelia Hickman,Female,17,Worcester,2:28.56,,WEB_Session01.RES,148.56,409,Bucket 3,200m Free,2:28.56,True
@@ -314,7 +312,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 02,12,Female 100m IM,100,MEDLEY,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:19.23,,WEB_Session02.RES,79.23,336,Bucket 4,100m IM,1:19.23,True
 02,12,Female 100m IM,100,MEDLEY,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,1:24.24,,WEB_Session02.RES,84.24,279,Bucket 4,100m IM,1:24.24,True
 02,12,Female 100m IM,100,MEDLEY,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
-02,12,Female 100m IM,100,MEDLEY,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,1:09.00,,WEB_Session02.RES,69.0,509,Bucket 4,100m IM,1:09.00,True
 02,12,Female 100m IM,100,MEDLEY,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:13.11,,WEB_Session02.RES,73.11,428,Bucket 4,100m IM,1:13.11,True
 02,12,Female 100m IM,100,MEDLEY,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:16.64,,WEB_Session02.RES,76.64,371,Bucket 4,100m IM,1:16.64,False
 02,12,Female 100m IM,100,MEDLEY,sophie earp|worcester,Sophie Earp,Female,17,Worcester,1:17.37,,WEB_Session02.RES,77.37,361,Bucket 4,100m IM,1:17.37,True
@@ -341,7 +338,7 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 02,13,Open/Male 200m Freestyle,200,FREE,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,2:34.20,,WEB_Session02.RES,154.2,261,Bucket 3,200m Free,2:34.20,True
 02,13,Open/Male 200m Freestyle,200,FREE,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,2:45.62,,WEB_Session02.RES,165.62,211,Bucket 3,200m Free,2:45.62,True
 02,13,Open/Male 200m Freestyle,200,FREE,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,2:09.90,,WEB_Session02.RES,129.9,437,Bucket 3,200m Free,2:09.90,False
-02,13,Open/Male 200m Freestyle,200,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,2:15.82,,WEB_Session02.RES,135.82,382,Bucket 3,200m Free,2:15.82,False
+02,13,Open/Male 200m Freestyle,200,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,2:15.82,,WEB_Session02.RES,135.82,382,Bucket 3,200m Free,2:15.82,True
 02,13,Open/Male 200m Freestyle,200,FREE,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,2:24.09,,WEB_Session02.RES,144.09,320,Bucket 3,200m Free,2:24.09,True
 02,13,Open/Male 200m Freestyle,200,FREE,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,2:41.06,,WEB_Session02.RES,161.06,229,Bucket 3,200m Free,2:41.06,False
 02,13,Open/Male 200m Freestyle,200,FREE,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,2:09.91,,WEB_Session02.RES,129.91,437,Bucket 3,200m Free,2:09.91,False
@@ -397,7 +394,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 02,15,Female 50m Butterfly,50,FLY,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,34.72,,WEB_Session02.RES,34.72,327,Bucket 1,50m Fly,34.72,False
 02,15,Female 50m Butterfly,50,FLY,ffion lea|worcester,Ffion Lea,Female,15,Worcester,35.03,,WEB_Session02.RES,35.03,319,Bucket 1,50m Fly,35.03,True
 02,15,Female 50m Butterfly,50,FLY,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,38.04,,WEB_Session02.RES,38.04,249,Bucket 1,50m Fly,38.04,False
-02,15,Female 50m Butterfly,50,FLY,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,30.46,,WEB_Session02.RES,30.46,485,Bucket 1,50m Fly,30.46,False
 02,15,Female 50m Butterfly,50,FLY,mia gooch|worcester,Mia Gooch,Female,16,Worcester,30.86,,WEB_Session02.RES,30.86,466,Bucket 1,50m Fly,30.86,True
 02,15,Female 50m Butterfly,50,FLY,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,32.68,,WEB_Session02.RES,32.68,393,Bucket 1,50m Fly,32.68,False
 02,15,Female 50m Butterfly,50,FLY,evie goodall|worcester,Evie Goodall,Female,17,Worcester,33.45,,WEB_Session02.RES,33.45,366,Bucket 1,50m Fly,33.45,True
@@ -649,7 +645,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 03,23,Female 50m Breaststroke,50,BREAST,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,39.07,,WEB_Session03.RES,39.07,382,Bucket 1,50m Breast,39.07,False
 03,23,Female 50m Breaststroke,50,BREAST,alice wickett|worcester,Alice Wickett,Female,15,Worcester,38.03,,WEB_Session03.RES,38.03,415,Bucket 1,50m Breast,38.03,True
 03,23,Female 50m Breaststroke,50,BREAST,eva anderson|worcester,Eva Anderson,Female,15,Worcester,40.94,,WEB_Session03.RES,40.94,332,Bucket 1,50m Breast,40.94,False
-03,23,Female 50m Breaststroke,50,BREAST,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,34.86,,WEB_Session03.RES,34.86,539,Bucket 1,50m Breast,34.86,False
 03,23,Female 50m Breaststroke,50,BREAST,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,35.36,,WEB_Session03.RES,35.36,516,Bucket 1,50m Breast,35.36,True
 03,23,Female 50m Breaststroke,50,BREAST,rebecca redfern|worcester,Rebecca Redfern,Female,27,Worcester,36.03,,WEB_Session03.RES,36.03,488,Bucket 1,50m Breast,36.03,True
 03,23,Female 50m Breaststroke,50,BREAST,sophie earp|worcester,Sophie Earp,Female,17,Worcester,37.66,,WEB_Session03.RES,37.66,427,Bucket 1,50m Breast,37.66,True
@@ -693,7 +688,7 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 03,24,Open/Male 100m Freestyle,100,FREE,joseph jennings|worcester,Joseph Jennings,Male/Open,13,Worcester,DQ ST,,WEB_Session03.RES,,0,Bucket 3,100m Free,-,False
 03,24,Open/Male 100m Freestyle,100,FREE,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,56.65,,WEB_Session03.RES,56.65,495,Bucket 3,100m Free,56.65,True
 03,24,Open/Male 100m Freestyle,100,FREE,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,56.82,,WEB_Session03.RES,56.82,491,Bucket 3,100m Free,56.82,True
-03,24,Open/Male 100m Freestyle,100,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:01.75,,WEB_Session03.RES,61.75,382,Bucket 3,100m Free,1:01.75,True
+03,24,Open/Male 100m Freestyle,100,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:01.75,,WEB_Session03.RES,61.75,382,Bucket 3,100m Free,1:01.75,False
 03,24,Open/Male 100m Freestyle,100,FREE,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:06.65,,WEB_Session03.RES,66.65,304,Bucket 3,100m Free,1:06.65,False
 03,24,Open/Male 100m Freestyle,100,FREE,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,1:12.42,,WEB_Session03.RES,72.42,237,Bucket 3,100m Free,1:12.42,True
 03,24,Open/Male 100m Freestyle,100,FREE,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,57.31,,WEB_Session03.RES,57.31,478,Bucket 3,100m Free,57.31,True
@@ -743,7 +738,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 03,25,Female 100m Backstroke,100,BACK,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,1:13.69,,WEB_Session03.RES,73.69,393,Bucket 2,100m Back,1:13.69,True
 03,25,Female 100m Backstroke,100,BACK,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:21.10,,WEB_Session03.RES,81.1,295,Bucket 2,100m Back,1:21.10,False
 03,25,Female 100m Backstroke,100,BACK,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
-03,25,Female 100m Backstroke,100,BACK,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,1:05.25,,WEB_Session03.RES,65.25,567,Bucket 2,100m Back,1:05.25,True
 03,25,Female 100m Backstroke,100,BACK,elizabeth wetherall|worcester,Elizabeth Wetherall,Female,16,Worcester,1:08.83,,WEB_Session03.RES,68.83,483,Bucket 2,100m Back,1:08.83,True
 03,25,Female 100m Backstroke,100,BACK,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:13.58,,WEB_Session03.RES,73.58,395,Bucket 2,100m Back,1:13.58,True
 03,25,Female 100m Backstroke,100,BACK,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:13.94,,WEB_Session03.RES,73.94,389,Bucket 2,100m Back,1:13.94,True
@@ -945,7 +939,6 @@ Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,
 04,35,Female 50m Freestyle,50,FREE,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,32.63,,WEB_Session04.RES,32.63,342,Bucket 1,50m Free,32.63,True
 04,35,Female 50m Freestyle,50,FREE,ffion lea|worcester,Ffion Lea,Female,15,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
 04,35,Female 50m Freestyle,50,FREE,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
-04,35,Female 50m Freestyle,50,FREE,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,27.90,,WEB_Session04.RES,27.9,547,Bucket 1,50m Free,27.90,True
 04,35,Female 50m Freestyle,50,FREE,elizabeth wetherall|worcester,Elizabeth Wetherall,Female,16,Worcester,28.79,,WEB_Session04.RES,28.79,498,Bucket 1,50m Free,28.79,True
 04,35,Female 50m Freestyle,50,FREE,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,28.93,,WEB_Session04.RES,28.93,491,Bucket 1,50m Free,28.93,False
 04,35,Female 50m Freestyle,50,FREE,mia gooch|worcester,Mia Gooch,Female,16,Worcester,30.42,,WEB_Session04.RES,30.42,422,Bucket 1,50m Free,30.42,False
