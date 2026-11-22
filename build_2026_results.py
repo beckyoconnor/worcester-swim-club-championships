@@ -34,7 +34,7 @@ def main() -> None:
     df = df[df['Club'] == HOME_CLUB].copy()
     if df.empty:
         raise SystemExit(f'No {HOME_CLUB} swimmers found')
-    if os.path.exists(EXCLUSIONS):
+    if os.path.exists(EXCLUSIONS) and not args.sample:
         with open(EXCLUSIONS) as f:
             opted_out = {l.strip().lower() for l in f if l.strip() and not l.startswith('#')}
         found = opted_out & set(df['Name'].str.lower())

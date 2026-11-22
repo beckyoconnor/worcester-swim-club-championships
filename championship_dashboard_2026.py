@@ -241,7 +241,7 @@ else:
 if len(unranked):
     st.caption(
         f"Not ranked (no points yet): {', '.join(unranked['Name'])}. Their swims were either "
-        "disqualified or not in a scoring bucket for their age. See the swimmer breakdown below."
+        "disqualified, did not compete, or not in a scoring bucket for their age. See the swimmer breakdown below."
     )
 
 # ---------- Swimmer detail ----------
@@ -255,7 +255,9 @@ if pick:
         if row[b]:
             return row[f'{b} Event']
         tried = swims[swims['Bucket'] == b]
-        return 'DQ' if len(tried) and (tried['Status'] != '').all() else 'not swum'
+        if len(tried) and (tried['Status'] != '').all():
+            return 'DQ' if tried['Status'].str.startswith(('DQ', 'DSQ')).any() else 'did not compete'
+        return 'not swum'
 
     with st.container(horizontal=True):
         st.metric("Total points", int(row['Total Points']), border=True)
@@ -263,22 +265,37 @@ if pick:
             st.metric(bucket_cols[b], int(row[b]), border=True,
                       delta=bucket_note(b), delta_color='off', delta_arrow='off')
 
-    detail = swims[['Counted', 'Event Number', 'Event', 'Bucket', 'Time', 'WA Points', 'Status']].copy()
+    detail = swims[['Counted', 'Event Number', 'Event', 'Bucket', 'Time', 'WA Points', 'Status',
+                    'Distance', 'Age']].copy()
     detail['Event Number'] = pd.to_numeric(detail['Event Number'], errors='coerce')
-    detail['Note'] = ''
-    detail.loc[detail['Status'] != '', 'Note'] = 'Disqualified, no points'
-    detail.loc[(detail['Status'] == '') & detail['Bucket'].isna(), 'Note'] = (
-        'Points shown for info only: not a scoring event at this age')
-    detail.loc[(detail['Status'] == '') & detail['Bucket'].notna() & ~detail['Counted'], 'Note'] = (
-        'Better score in this bucket already counted')
+
+    def note(r):
+        s = r['Status']
+        if s.startswith(('DQ', 'DSQ')):
+            return 'Disqualified, no points'
+        if s == 'DNF':
+            return 'Did not finish, no points'
+        if s:
+            return 'Did not compete (did not swim the race), no points'
+        if not r['Bucket']:  # blank = not a scoring event at this age
+            if r['Distance'] == 25 and r['Age'] >= 9:
+                return '25m events only count for 8 & unders: points shown for info only'
+            return 'Points shown for info only: not a scoring event at this age'
+        if not r['Counted']:
+            return 'Better score in this bucket already counted'
+        return ''
+
+    detail['Note'] = detail.apply(note, axis=1)
     detail['Bucket'] = detail['Bucket'].map(bucket_cols).fillna('Not a scoring event')
 
     # Branded breakdown table (navy header, counted swims highlighted in club green)
     def row_class(r):
         if r['Counted']:
             return 'counted'
-        if r['Status']:
+        if r['Status'].startswith(('DQ', 'DSQ')):
             return 'dq'
+        if r['Status']:
+            return 'info'
         return 'info' if r['Bucket'] == 'Not a scoring event' else ''
 
     body = ''.join(
