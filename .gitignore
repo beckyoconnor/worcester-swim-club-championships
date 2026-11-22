@@ -86,3 +86,6 @@ Thumbs.db
 *.tmp
 *.bak
 
+
+# Downloaded web results (all clubs) - only the Worcester championship_results are committed
+WSC_Club_Champs_2026/raw_files/web_results/

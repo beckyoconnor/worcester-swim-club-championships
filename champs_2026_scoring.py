@@ -132,7 +132,7 @@ def parse_res(path: str) -> pd.DataFrame:
         if len(cols) < 6 or not cols[1] or not cols[2].isdigit():
             continue
         time_txt = cols[5]
-        status = time_txt if time_txt.upper() in {'DQ', 'DNS', 'DNF', 'NS', 'DSQ'} else ''
+        status = time_txt if time_txt.upper() in {'DQ', 'DNS', 'DNF', 'NS', 'DSQ', 'DNC'} else ''
 
         # Gender comes from the event name, or the age-group heading for 'Mixed' events
         g = event['Event Gender'] if event['Event Gender'] != 'mixed' else section_gender

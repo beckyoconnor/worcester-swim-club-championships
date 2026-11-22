@@ -1,0 +1,1005 @@
+Session,Event Number,Event Name,Distance,Stroke,Athlete ID,Name,Gender,Age,Club,Swim Time,Status,Source File,Seconds,WA Points,Bucket,Event,Time,Counted
+01,1,Open/Male 400m IM,400,MEDLEY,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 4,400m IM,DNC,False
+01,1,Open/Male 400m IM,400,MEDLEY,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 4,400m IM,DNC,False
+01,1,Open/Male 400m IM,400,MEDLEY,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,5:53.28,,WEB_Session01.RES,353.28,293,Bucket 4,400m IM,5:53.28,True
+01,1,Open/Male 400m IM,400,MEDLEY,lucas chong rui yang|worcester,Lucas Chong Rui Yang,Male/Open,12,Worcester,6:47.30,,WEB_Session01.RES,407.3,191,Bucket 4,400m IM,6:47.30,True
+01,1,Open/Male 400m IM,400,MEDLEY,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,5:29.99,,WEB_Session01.RES,329.99,360,Bucket 4,400m IM,5:29.99,True
+01,1,Open/Male 400m IM,400,MEDLEY,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,5:40.67,,WEB_Session01.RES,340.67,327,Bucket 4,400m IM,5:40.67,True
+01,1,Open/Male 400m IM,400,MEDLEY,james walter|worcester,James Walter,Male/Open,13,Worcester,6:01.61,,WEB_Session01.RES,361.61,273,Bucket 4,400m IM,6:01.61,True
+01,1,Open/Male 400m IM,400,MEDLEY,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,5:48.68,,WEB_Session01.RES,348.68,305,Bucket 4,400m IM,5:48.68,False
+01,2,Female 400m IM,400,MEDLEY,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 4,400m IM,DNC,False
+01,2,Female 400m IM,400,MEDLEY,lucy hill|worcester,Lucy Hill,Female,12,Worcester,6:09.82,,WEB_Session01.RES,369.82,329,Bucket 4,400m IM,6:09.82,False
+01,2,Female 400m IM,400,MEDLEY,elsie thornton|worcester,Elsie Thornton,Female,12,Worcester,6:25.48,,WEB_Session01.RES,385.48,291,Bucket 4,400m IM,6:25.48,True
+01,2,Female 400m IM,400,MEDLEY,savannah wright|worcester,Savannah Wright,Female,12,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 4,400m IM,DNC,False
+01,2,Female 400m IM,400,MEDLEY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 4,400m IM,DNC,False
+01,3,Mixed 25m Backstroke,25,BACK,geoffrey wilkinson|worcester,Geoffrey Wilkinson,Male/Open,8,Worcester,21.04,,WEB_Session01.RES,21.04,144,Bucket 3,25m Back,21.04,True
+01,3,Mixed 25m Backstroke,25,BACK,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,19.59,,WEB_Session01.RES,19.59,179,,25m Back,19.59,False
+01,3,Mixed 25m Backstroke,25,BACK,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,21.78,,WEB_Session01.RES,21.78,130,,25m Back,21.78,False
+01,3,Mixed 25m Backstroke,25,BACK,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,26.20,,WEB_Session01.RES,26.2,75,,25m Back,26.20,False
+01,3,Mixed 25m Backstroke,25,BACK,thomas hill|worcester,Thomas Hill,Male/Open,9,Worcester,26.33,,WEB_Session01.RES,26.33,73,,25m Back,26.33,False
+01,3,Mixed 25m Backstroke,25,BACK,freya nuttall|worcester,Freya Nuttall,Female,8,Worcester,22.45,,WEB_Session01.RES,22.45,177,Bucket 3,25m Back,22.45,True
+01,3,Mixed 25m Backstroke,25,BACK,jessica troke|worcester,Jessica Troke,Female,8,Worcester,24.20,,WEB_Session01.RES,24.2,141,Bucket 3,25m Back,24.20,True
+01,3,Mixed 25m Backstroke,25,BACK,orla king|worcester,Orla King,Female,8,Worcester,25.27,,WEB_Session01.RES,25.27,124,Bucket 3,25m Back,25.27,True
+01,3,Mixed 25m Backstroke,25,BACK,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,22.45,,WEB_Session01.RES,22.45,177,,25m Back,22.45,False
+01,3,Mixed 25m Backstroke,25,BACK,olivia hill|worcester,Olivia Hill,Female,9,Worcester,24.19,,WEB_Session01.RES,24.19,141,,25m Back,24.19,False
+01,3,Mixed 25m Backstroke,25,BACK,flora hoare|worcester,Flora Hoare,Female,9,Worcester,26.43,,WEB_Session01.RES,26.43,108,,25m Back,26.43,False
+01,3,Mixed 25m Backstroke,25,BACK,elizabeth daniel|worcester,Elizabeth Daniel,Female,9,Worcester,27.94,,WEB_Session01.RES,27.94,92,,25m Back,27.94,False
+01,3,Mixed 25m Backstroke,25,BACK,zara turley|worcester,Zara Turley,Female,9,Worcester,DQ FI,,WEB_Session01.RES,,0,,25m Back,-,False
+01,4,Open/Male 100m Backstroke,100,BACK,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,1:37.50,,WEB_Session01.RES,97.5,121,Bucket 2,100m Back,1:37.50,True
+01,4,Open/Male 100m Backstroke,100,BACK,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,1:40.30,,WEB_Session01.RES,100.3,111,Bucket 2,100m Back,1:40.30,True
+01,4,Open/Male 100m Backstroke,100,BACK,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,1:41.50,,WEB_Session01.RES,101.5,107,Bucket 2,100m Back,1:41.50,True
+01,4,Open/Male 100m Backstroke,100,BACK,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,2:07.16,,WEB_Session01.RES,127.16,54,Bucket 2,100m Back,2:07.16,True
+01,4,Open/Male 100m Backstroke,100,BACK,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,1:22.37,,WEB_Session01.RES,82.37,201,Bucket 2,100m Back,1:22.37,True
+01,4,Open/Male 100m Backstroke,100,BACK,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,1:32.83,,WEB_Session01.RES,92.83,141,Bucket 2,100m Back,1:32.83,True
+01,4,Open/Male 100m Backstroke,100,BACK,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,1:35.66,,WEB_Session01.RES,95.66,128,Bucket 2,100m Back,1:35.66,True
+01,4,Open/Male 100m Backstroke,100,BACK,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,DQ T,,WEB_Session01.RES,,0,Bucket 2,100m Back,-,False
+01,4,Open/Male 100m Backstroke,100,BACK,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,1:22.23,,WEB_Session01.RES,82.23,203,Bucket 2,100m Back,1:22.23,False
+01,4,Open/Male 100m Backstroke,100,BACK,laith sabagh|worcester,Laith Sabagh,Male/Open,11,Worcester,1:29.29,,WEB_Session01.RES,89.28999999999999,158,Bucket 2,100m Back,1:29.29,True
+01,4,Open/Male 100m Backstroke,100,BACK,isaac may|worcester,Isaac May,Male/Open,12,Worcester,1:11.24,,WEB_Session01.RES,71.24,312,Bucket 2,100m Back,1:11.24,True
+01,4,Open/Male 100m Backstroke,100,BACK,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,1:11.44,,WEB_Session01.RES,71.44,309,Bucket 2,100m Back,1:11.44,True
+01,4,Open/Male 100m Backstroke,100,BACK,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,1:22.03,,WEB_Session01.RES,82.03,204,Bucket 2,100m Back,1:22.03,True
+01,4,Open/Male 100m Backstroke,100,BACK,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,1:25.90,,WEB_Session01.RES,85.9,178,Bucket 2,100m Back,1:25.90,True
+01,4,Open/Male 100m Backstroke,100,BACK,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,1:26.59,,WEB_Session01.RES,86.59,173,Bucket 2,100m Back,1:26.59,True
+01,4,Open/Male 100m Backstroke,100,BACK,leonardo hassan|worcester,Leonardo Hassan,Male/Open,12,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Back,DNC,False
+01,4,Open/Male 100m Backstroke,100,BACK,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,1:09.77,,WEB_Session01.RES,69.77,332,Bucket 2,100m Back,1:09.77,True
+01,4,Open/Male 100m Backstroke,100,BACK,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,1:18.50,,WEB_Session01.RES,78.5,233,Bucket 2,100m Back,1:18.50,False
+01,4,Open/Male 100m Backstroke,100,BACK,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,1:18.70,,WEB_Session01.RES,78.7,231,Bucket 2,100m Back,1:18.70,True
+01,4,Open/Male 100m Backstroke,100,BACK,james walter|worcester,James Walter,Male/Open,13,Worcester,1:19.02,,WEB_Session01.RES,79.02,228,Bucket 2,100m Back,1:19.02,True
+01,4,Open/Male 100m Backstroke,100,BACK,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,1:20.60,,WEB_Session01.RES,80.6,215,Bucket 2,100m Back,1:20.60,False
+01,4,Open/Male 100m Backstroke,100,BACK,lucas foxall|worcester,Lucas Foxall,Male/Open,13,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Back,DNC,False
+01,4,Open/Male 100m Backstroke,100,BACK,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Back,DNC,False
+01,4,Open/Male 100m Backstroke,100,BACK,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,1:06.78,,WEB_Session01.RES,66.78,379,Bucket 2,100m Back,1:06.78,True
+01,4,Open/Male 100m Backstroke,100,BACK,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:09.90,,WEB_Session01.RES,69.9,330,Bucket 2,100m Back,1:09.90,True
+01,4,Open/Male 100m Backstroke,100,BACK,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:18.64,,WEB_Session01.RES,78.64,232,Bucket 2,100m Back,1:18.64,False
+01,4,Open/Male 100m Backstroke,100,BACK,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,1:25.53,,WEB_Session01.RES,85.53,180,Bucket 2,100m Back,1:25.53,False
+01,4,Open/Male 100m Backstroke,100,BACK,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,1:06.39,,WEB_Session01.RES,66.39,385,Bucket 2,100m Back,1:06.39,True
+01,4,Open/Male 100m Backstroke,100,BACK,kaiden hitchins|worcester,Kaiden Hitchins,Male/Open,16,Worcester,1:02.28,,WEB_Session01.RES,62.28,467,Bucket 2,100m Back,1:02.28,True
+01,4,Open/Male 100m Backstroke,100,BACK,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,1:03.81,,WEB_Session01.RES,63.81,434,Bucket 2,100m Back,1:03.81,True
+01,4,Open/Male 100m Backstroke,100,BACK,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,1:03.99,,WEB_Session01.RES,63.99,430,Bucket 2,100m Back,1:03.99,True
+01,4,Open/Male 100m Backstroke,100,BACK,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,1:06.56,,WEB_Session01.RES,66.56,382,Bucket 2,100m Back,1:06.56,True
+01,4,Open/Male 100m Backstroke,100,BACK,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,1:06.61,,WEB_Session01.RES,66.61,381,Bucket 2,100m Back,1:06.61,True
+01,5,Female 50m Backstroke,50,BACK,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,46.91,,WEB_Session01.RES,46.91,155,Bucket 1,50m Back,46.91,True
+01,5,Female 50m Backstroke,50,BACK,victoria lemes|worcester,Victoria Lemes,Female,9,Worcester,50.30,,WEB_Session01.RES,50.3,126,Bucket 1,50m Back,50.30,False
+01,5,Female 50m Backstroke,50,BACK,jessica o'grady|worcester,Jessica O'Grady,Female,9,Worcester,53.40,,WEB_Session01.RES,53.4,105,Bucket 1,50m Back,53.40,False
+01,5,Female 50m Backstroke,50,BACK,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,53.83,,WEB_Session01.RES,53.83,102,Bucket 1,50m Back,53.83,False
+01,5,Female 50m Backstroke,50,BACK,carys smith|worcester,Carys Smith,Female,9,Worcester,55.52,,WEB_Session01.RES,55.52,93,Bucket 1,50m Back,55.52,False
+01,5,Female 50m Backstroke,50,BACK,flora hoare|worcester,Flora Hoare,Female,9,Worcester,1:00.18,,WEB_Session01.RES,60.18,73,Bucket 1,50m Back,1:00.18,False
+01,5,Female 50m Backstroke,50,BACK,hallie pinnock|worcester,Hallie Pinnock,Female,9,Worcester,1:02.26,,WEB_Session01.RES,62.26,66,Bucket 1,50m Back,1:02.26,False
+01,5,Female 50m Backstroke,50,BACK,zara turley|worcester,Zara Turley,Female,9,Worcester,DQ FI,,WEB_Session01.RES,,0,Bucket 1,50m Back,-,False
+01,5,Female 50m Backstroke,50,BACK,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,43.24,,WEB_Session01.RES,43.24,198,Bucket 1,50m Back,43.24,False
+01,5,Female 50m Backstroke,50,BACK,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,44.78,,WEB_Session01.RES,44.78,178,Bucket 1,50m Back,44.78,False
+01,5,Female 50m Backstroke,50,BACK,tiegan white|worcester,Tiegan White,Female,10,Worcester,45.11,,WEB_Session01.RES,45.11,174,Bucket 1,50m Back,45.11,False
+01,5,Female 50m Backstroke,50,BACK,matilda clay|worcester,Matilda Clay,Female,10,Worcester,45.99,,WEB_Session01.RES,45.99,165,Bucket 1,50m Back,45.99,False
+01,5,Female 50m Backstroke,50,BACK,emily griffin|worcester,Emily Griffin,Female,10,Worcester,48.41,,WEB_Session01.RES,48.41,141,Bucket 1,50m Back,48.41,False
+01,5,Female 50m Backstroke,50,BACK,freya murphy|worcester,Freya Murphy,Female,10,Worcester,48.65,,WEB_Session01.RES,48.65,139,Bucket 1,50m Back,48.65,False
+01,5,Female 50m Backstroke,50,BACK,fearne broadbent|worcester,Fearne Broadbent,Female,10,Worcester,48.98,,WEB_Session01.RES,48.98,136,Bucket 1,50m Back,48.98,True
+01,5,Female 50m Backstroke,50,BACK,miriam browning|worcester,Miriam Browning,Female,10,Worcester,49.40,,WEB_Session01.RES,49.4,133,Bucket 1,50m Back,49.40,False
+01,5,Female 50m Backstroke,50,BACK,ffion williams|worcester,Ffion Williams,Female,10,Worcester,53.14,,WEB_Session01.RES,53.14,107,Bucket 1,50m Back,53.14,True
+01,5,Female 50m Backstroke,50,BACK,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,37.13,,WEB_Session01.RES,37.13,313,Bucket 1,50m Back,37.13,False
+01,5,Female 50m Backstroke,50,BACK,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,40.97,,WEB_Session01.RES,40.97,233,Bucket 1,50m Back,40.97,False
+01,5,Female 50m Backstroke,50,BACK,elley price|worcester,Elley Price,Female,11,Worcester,41.29,,WEB_Session01.RES,41.29,228,Bucket 1,50m Back,41.29,True
+01,5,Female 50m Backstroke,50,BACK,freya flint|worcester,Freya Flint,Female,11,Worcester,43.33,,WEB_Session01.RES,43.33,197,Bucket 1,50m Back,43.33,False
+01,5,Female 50m Backstroke,50,BACK,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,43.88,,WEB_Session01.RES,43.88,190,Bucket 1,50m Back,43.88,False
+01,5,Female 50m Backstroke,50,BACK,daisy wise|worcester,Daisy Wise,Female,11,Worcester,44.37,,WEB_Session01.RES,44.37,183,Bucket 1,50m Back,44.37,False
+01,5,Female 50m Backstroke,50,BACK,blakely joiner|worcester,Blakely Joiner,Female,11,Worcester,DQ T,,WEB_Session01.RES,,0,Bucket 1,50m Back,-,False
+01,5,Female 50m Backstroke,50,BACK,savannah wright|worcester,Savannah Wright,Female,12,Worcester,35.92,,WEB_Session01.RES,35.92,346,Bucket 1,50m Back,35.92,False
+01,5,Female 50m Backstroke,50,BACK,isabelle rea|worcester,Isabelle Rea,Female,12,Worcester,41.02,,WEB_Session01.RES,41.02,232,Bucket 1,50m Back,41.02,True
+01,5,Female 50m Backstroke,50,BACK,ruby kilmartin|worcester,Ruby Kilmartin,Female,12,Worcester,43.30,,WEB_Session01.RES,43.3,197,Bucket 1,50m Back,43.30,False
+01,5,Female 50m Backstroke,50,BACK,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,45.78,,WEB_Session01.RES,45.78,167,Bucket 1,50m Back,45.78,False
+01,5,Female 50m Backstroke,50,BACK,phoebe turley|worcester,Phoebe Turley,Female,12,Worcester,46.49,,WEB_Session01.RES,46.49,159,Bucket 1,50m Back,46.49,False
+01,5,Female 50m Backstroke,50,BACK,lucy piper|worcester,Lucy Piper,Female,13,Worcester,34.15,,WEB_Session01.RES,34.15,403,Bucket 1,50m Back,34.15,False
+01,5,Female 50m Backstroke,50,BACK,emily bufi|worcester,Emily Bufi,Female,13,Worcester,35.45,,WEB_Session01.RES,35.45,360,Bucket 1,50m Back,35.45,False
+01,5,Female 50m Backstroke,50,BACK,alana buckley|worcester,Alana Buckley,Female,13,Worcester,44.52,,WEB_Session01.RES,44.52,182,Bucket 1,50m Back,44.52,True
+01,5,Female 50m Backstroke,50,BACK,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,35.16,,WEB_Session01.RES,35.16,369,Bucket 1,50m Back,35.16,False
+01,5,Female 50m Backstroke,50,BACK,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,35.66,,WEB_Session01.RES,35.66,354,Bucket 1,50m Back,35.66,False
+01,5,Female 50m Backstroke,50,BACK,lily wood|worcester,Lily Wood,Female,14,Worcester,37.48,,WEB_Session01.RES,37.48,305,Bucket 1,50m Back,37.48,False
+01,5,Female 50m Backstroke,50,BACK,lilliella page|worcester,Lilliella Page,Female,14,Worcester,37.86,,WEB_Session01.RES,37.86,295,Bucket 1,50m Back,37.86,True
+01,5,Female 50m Backstroke,50,BACK,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,39.51,,WEB_Session01.RES,39.51,260,Bucket 1,50m Back,39.51,False
+01,5,Female 50m Backstroke,50,BACK,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,40.16,,WEB_Session01.RES,40.16,247,Bucket 1,50m Back,40.16,True
+01,5,Female 50m Backstroke,50,BACK,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 1,50m Back,DNC,False
+01,5,Female 50m Backstroke,50,BACK,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,31.50,,WEB_Session01.RES,31.5,513,Bucket 1,50m Back,31.50,True
+01,5,Female 50m Backstroke,50,BACK,emilia spence|worcester,Emilia Spence,Female,15,Worcester,31.66,,WEB_Session01.RES,31.66,506,Bucket 1,50m Back,31.66,True
+01,5,Female 50m Backstroke,50,BACK,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,34.82,,WEB_Session01.RES,34.82,380,Bucket 1,50m Back,34.82,False
+01,5,Female 50m Backstroke,50,BACK,eva anderson|worcester,Eva Anderson,Female,15,Worcester,38.60,,WEB_Session01.RES,38.6,279,Bucket 1,50m Back,38.60,False
+01,5,Female 50m Backstroke,50,BACK,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,31.06,,WEB_Session01.RES,31.06,535,Bucket 1,50m Back,31.06,False
+01,5,Female 50m Backstroke,50,BACK,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,32.47,,WEB_Session01.RES,32.47,469,Bucket 1,50m Back,32.47,True
+01,5,Female 50m Backstroke,50,BACK,mia gooch|worcester,Mia Gooch,Female,16,Worcester,33.47,,WEB_Session01.RES,33.47,428,Bucket 1,50m Back,33.47,False
+01,5,Female 50m Backstroke,50,BACK,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,35.79,,WEB_Session01.RES,35.79,350,Bucket 1,50m Back,35.79,False
+01,6,Open/Male 200m Butterfly,200,FLY,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,2:39.62,,WEB_Session01.RES,159.62,299,,200m Fly,2:39.62,False
+01,6,Open/Male 200m Butterfly,200,FLY,james walter|worcester,James Walter,Male/Open,13,Worcester,3:00.40,,WEB_Session01.RES,180.4,207,,200m Fly,3:00.40,False
+01,7,Mixed 25m Butterfly,25,FLY,geoffrey wilkinson|worcester,Geoffrey Wilkinson,Male/Open,8,Worcester,20.02,,WEB_Session01.RES,20.02,150,Bucket 4,25m Fly,20.02,True
+01,7,Mixed 25m Butterfly,25,FLY,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,20.87,,WEB_Session01.RES,20.87,133,,25m Fly,20.87,False
+01,7,Mixed 25m Butterfly,25,FLY,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,22.37,,WEB_Session01.RES,22.37,108,,25m Fly,22.37,False
+01,7,Mixed 25m Butterfly,25,FLY,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,32.95,,WEB_Session01.RES,32.95,33,,25m Fly,32.95,False
+01,7,Mixed 25m Butterfly,25,FLY,jessica troke|worcester,Jessica Troke,Female,8,Worcester,22.56,,WEB_Session01.RES,22.56,149,Bucket 4,25m Fly,22.56,True
+01,7,Mixed 25m Butterfly,25,FLY,orla king|worcester,Orla King,Female,8,Worcester,25.02,,WEB_Session01.RES,25.02,109,Bucket 4,25m Fly,25.02,True
+01,7,Mixed 25m Butterfly,25,FLY,freya nuttall|worcester,Freya Nuttall,Female,8,Worcester,28.38,,WEB_Session01.RES,28.38,75,Bucket 4,25m Fly,28.38,True
+01,7,Mixed 25m Butterfly,25,FLY,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,22.33,,WEB_Session01.RES,22.33,154,,25m Fly,22.33,False
+01,7,Mixed 25m Butterfly,25,FLY,flora hoare|worcester,Flora Hoare,Female,9,Worcester,25.81,,WEB_Session01.RES,25.81,99,,25m Fly,25.81,False
+01,7,Mixed 25m Butterfly,25,FLY,hallie pinnock|worcester,Hallie Pinnock,Female,9,Worcester,27.45,,WEB_Session01.RES,27.45,82,,25m Fly,27.45,False
+01,7,Mixed 25m Butterfly,25,FLY,elizabeth daniel|worcester,Elizabeth Daniel,Female,9,Worcester,30.29,,WEB_Session01.RES,30.29,61,,25m Fly,30.29,False
+01,7,Mixed 25m Butterfly,25,FLY,olivia hill|worcester,Olivia Hill,Female,9,Worcester,31.59,,WEB_Session01.RES,31.59,54,,25m Fly,31.59,False
+01,8,Female 200m Freestyle,200,FREE,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,3:02.29,,WEB_Session01.RES,182.29,221,Bucket 3,200m Free,3:02.29,False
+01,8,Female 200m Freestyle,200,FREE,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,3:16.48,,WEB_Session01.RES,196.48,176,Bucket 3,200m Free,3:16.48,False
+01,8,Female 200m Freestyle,200,FREE,freya murphy|worcester,Freya Murphy,Female,10,Worcester,3:26.50,,WEB_Session01.RES,206.5,152,Bucket 3,200m Free,3:26.50,True
+01,8,Female 200m Freestyle,200,FREE,miriam browning|worcester,Miriam Browning,Female,10,Worcester,3:38.13,,WEB_Session01.RES,218.13,129,Bucket 3,200m Free,3:38.13,False
+01,8,Female 200m Freestyle,200,FREE,fearne broadbent|worcester,Fearne Broadbent,Female,10,Worcester,3:43.38,,WEB_Session01.RES,223.38,120,Bucket 3,200m Free,3:43.38,True
+01,8,Female 200m Freestyle,200,FREE,penny farnell|worcester,Penny Farnell,Female,11,Worcester,2:36.17,,WEB_Session01.RES,156.17000000000002,352,Bucket 3,200m Free,2:36.17,True
+01,8,Female 200m Freestyle,200,FREE,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,2:38.38,,WEB_Session01.RES,158.38,337,Bucket 3,200m Free,2:38.38,True
+01,8,Female 200m Freestyle,200,FREE,amelia wood|worcester,Amelia Wood,Female,11,Worcester,2:40.04,,WEB_Session01.RES,160.04,327,Bucket 3,200m Free,2:40.04,True
+01,8,Female 200m Freestyle,200,FREE,daisy wise|worcester,Daisy Wise,Female,11,Worcester,2:53.50,,WEB_Session01.RES,173.5,257,Bucket 3,200m Free,2:53.50,True
+01,8,Female 200m Freestyle,200,FREE,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,2:57.25,,WEB_Session01.RES,177.25,241,Bucket 3,200m Free,2:57.25,False
+01,8,Female 200m Freestyle,200,FREE,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,3:01.62,,WEB_Session01.RES,181.62,224,Bucket 3,200m Free,3:01.62,True
+01,8,Female 200m Freestyle,200,FREE,savannah wright|worcester,Savannah Wright,Female,12,Worcester,2:38.44,,WEB_Session01.RES,158.44,337,Bucket 3,200m Free,2:38.44,True
+01,8,Female 200m Freestyle,200,FREE,lucy hill|worcester,Lucy Hill,Female,12,Worcester,2:40.45,,WEB_Session01.RES,160.45,324,Bucket 3,200m Free,2:40.45,True
+01,8,Female 200m Freestyle,200,FREE,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,3:08.34,,WEB_Session01.RES,188.34,200,Bucket 3,200m Free,3:08.34,False
+01,8,Female 200m Freestyle,200,FREE,ruby kilmartin|worcester,Ruby Kilmartin,Female,12,Worcester,3:24.56,,WEB_Session01.RES,204.56,156,Bucket 3,200m Free,3:24.56,True
+01,8,Female 200m Freestyle,200,FREE,emily bufi|worcester,Emily Bufi,Female,13,Worcester,2:27.85,,WEB_Session01.RES,147.85,415,Bucket 3,200m Free,2:27.85,True
+01,8,Female 200m Freestyle,200,FREE,isobel white|worcester,Isobel White,Female,13,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 3,200m Free,DNC,False
+01,8,Female 200m Freestyle,200,FREE,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,2:24.76,,WEB_Session01.RES,144.76,442,Bucket 3,200m Free,2:24.76,True
+01,8,Female 200m Freestyle,200,FREE,lilliella page|worcester,Lilliella Page,Female,14,Worcester,2:31.40,,WEB_Session01.RES,151.4,386,Bucket 3,200m Free,2:31.40,True
+01,8,Female 200m Freestyle,200,FREE,lily wood|worcester,Lily Wood,Female,14,Worcester,2:40.77,,WEB_Session01.RES,160.77,323,Bucket 3,200m Free,2:40.77,True
+01,8,Female 200m Freestyle,200,FREE,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,2:40.95,,WEB_Session01.RES,160.95,321,Bucket 3,200m Free,2:40.95,True
+01,8,Female 200m Freestyle,200,FREE,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 3,200m Free,DNC,False
+01,8,Female 200m Freestyle,200,FREE,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,2:23.47,,WEB_Session01.RES,143.47,454,Bucket 3,200m Free,2:23.47,True
+01,8,Female 200m Freestyle,200,FREE,eva anderson|worcester,Eva Anderson,Female,15,Worcester,2:25.86,,WEB_Session01.RES,145.86,432,Bucket 3,200m Free,2:25.86,True
+01,8,Female 200m Freestyle,200,FREE,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,2:34.04,,WEB_Session01.RES,154.04,367,Bucket 3,200m Free,2:34.04,True
+01,8,Female 200m Freestyle,200,FREE,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,2:10.34,,WEB_Session01.RES,130.34,606,Bucket 3,200m Free,2:10.34,True
+01,8,Female 200m Freestyle,200,FREE,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,2:26.49,,WEB_Session01.RES,146.49,426,Bucket 3,200m Free,2:26.49,True
+01,8,Female 200m Freestyle,200,FREE,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,2:27.57,,WEB_Session01.RES,147.57,417,Bucket 3,200m Free,2:27.57,True
+01,8,Female 200m Freestyle,200,FREE,amelia hickman|worcester,Amelia Hickman,Female,17,Worcester,2:28.56,,WEB_Session01.RES,148.56,409,Bucket 3,200m Free,2:28.56,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,51.21,,WEB_Session01.RES,51.21,115,Bucket 1,50m Breast,51.21,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,53.49,,WEB_Session01.RES,53.49,101,Bucket 1,50m Breast,53.49,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,56.47,,WEB_Session01.RES,56.47,86,Bucket 1,50m Breast,56.47,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,59.13,,WEB_Session01.RES,59.13,75,Bucket 1,50m Breast,59.13,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,theo parker|worcester,Theo Parker,Male/Open,9,Worcester,1:04.98,,WEB_Session01.RES,64.98,56,Bucket 1,50m Breast,1:04.98,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,1:11.16,,WEB_Session01.RES,71.16,43,Bucket 1,50m Breast,1:11.16,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,thomas hill|worcester,Thomas Hill,Male/Open,9,Worcester,1:19.95,,WEB_Session01.RES,79.95,30,Bucket 1,50m Breast,1:19.95,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,william ryan|worcester,William Ryan,Male/Open,10,Worcester,45.56,,WEB_Session01.RES,45.56,164,Bucket 1,50m Breast,45.56,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,47.53,,WEB_Session01.RES,47.53,144,Bucket 1,50m Breast,47.53,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,51.07,,WEB_Session01.RES,51.07,116,Bucket 1,50m Breast,51.07,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,52.25,,WEB_Session01.RES,52.25,108,Bucket 1,50m Breast,52.25,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,hugo hawkes|worcester,Hugo Hawkes,Male/Open,10,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 1,50m Breast,DNC,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,sammy gifford|worcester,Sammy Gifford,Male/Open,10,Worcester,DQ T,,WEB_Session01.RES,,0,Bucket 1,50m Breast,-,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,40.89,,WEB_Session01.RES,40.89,227,Bucket 1,50m Breast,40.89,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,matthew dadd|worcester,Matthew Dadd,Male/Open,11,Worcester,52.39,,WEB_Session01.RES,52.39,108,Bucket 1,50m Breast,52.39,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,44.13,,WEB_Session01.RES,44.13,180,Bucket 1,50m Breast,44.13,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,lucas chong rui yang|worcester,Lucas Chong Rui Yang,Male/Open,12,Worcester,44.93,,WEB_Session01.RES,44.93,171,Bucket 1,50m Breast,44.93,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,47.20,,WEB_Session01.RES,47.2,147,Bucket 1,50m Breast,47.20,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,47.70,,WEB_Session01.RES,47.7,143,Bucket 1,50m Breast,47.70,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,49.33,,WEB_Session01.RES,49.33,129,Bucket 1,50m Breast,49.33,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,leonardo hassan|worcester,Leonardo Hassan,Male/Open,12,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 1,50m Breast,DNC,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,38.73,,WEB_Session01.RES,38.73,267,Bucket 1,50m Breast,38.73,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,40.11,,WEB_Session01.RES,40.11,240,Bucket 1,50m Breast,40.11,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,james walter|worcester,James Walter,Male/Open,13,Worcester,42.63,,WEB_Session01.RES,42.63,200,Bucket 1,50m Breast,42.63,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,edward alfred evans|worcester,Edward Alfred Evans,Male/Open,13,Worcester,45.03,,WEB_Session01.RES,45.03,170,Bucket 1,50m Breast,45.03,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,lucas foxall|worcester,Lucas Foxall,Male/Open,13,Worcester,49.02,,WEB_Session01.RES,49.02,131,Bucket 1,50m Breast,49.02,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 1,50m Breast,DNC,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,35.09,,WEB_Session01.RES,35.09,359,Bucket 1,50m Breast,35.09,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,38.60,,WEB_Session01.RES,38.6,270,Bucket 1,50m Breast,38.60,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,samuel smith|worcester,Samuel Smith,Male/Open,14,Worcester,47.62,,WEB_Session01.RES,47.62,143,Bucket 1,50m Breast,47.62,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 1,50m Breast,DNC,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,36.05,,WEB_Session01.RES,36.05,331,Bucket 1,50m Breast,36.05,False
+01,9,Open/Male 50m Breaststroke,50,BREAST,kaiden hitchins|worcester,Kaiden Hitchins,Male/Open,16,Worcester,31.19,,WEB_Session01.RES,31.19,511,Bucket 1,50m Breast,31.19,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,34.50,,WEB_Session01.RES,34.5,378,Bucket 1,50m Breast,34.50,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,34.66,,WEB_Session01.RES,34.66,373,Bucket 1,50m Breast,34.66,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,liam lyman|worcester,Liam Lyman,Male/Open,44,Worcester,35.59,,WEB_Session01.RES,35.59,344,Bucket 1,50m Breast,35.59,True
+01,9,Open/Male 50m Breaststroke,50,BREAST,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,36.32,,WEB_Session01.RES,36.32,324,Bucket 1,50m Breast,36.32,False
+01,10,Female 100m Breaststroke,100,BREAST,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,1:55.41,,WEB_Session01.RES,115.41,157,Bucket 2,100m Breast,1:55.41,True
+01,10,Female 100m Breaststroke,100,BREAST,francesca williams|worcester,Francesca Williams,Female,9,Worcester,1:58.71,,WEB_Session01.RES,118.71000000000001,144,Bucket 2,100m Breast,1:58.71,True
+01,10,Female 100m Breaststroke,100,BREAST,flora hoare|worcester,Flora Hoare,Female,9,Worcester,2:25.13,,WEB_Session01.RES,145.13,79,Bucket 2,100m Breast,2:25.13,True
+01,10,Female 100m Breaststroke,100,BREAST,carys smith|worcester,Carys Smith,Female,9,Worcester,DQ T,,WEB_Session01.RES,,0,Bucket 2,100m Breast,-,False
+01,10,Female 100m Breaststroke,100,BREAST,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,1:48.24,,WEB_Session01.RES,108.24000000000001,191,Bucket 2,100m Breast,1:48.24,True
+01,10,Female 100m Breaststroke,100,BREAST,freya murphy|worcester,Freya Murphy,Female,10,Worcester,1:55.30,,WEB_Session01.RES,115.3,158,Bucket 2,100m Breast,1:55.30,True
+01,10,Female 100m Breaststroke,100,BREAST,matilda clay|worcester,Matilda Clay,Female,10,Worcester,1:55.54,,WEB_Session01.RES,115.53999999999999,157,Bucket 2,100m Breast,1:55.54,True
+01,10,Female 100m Breaststroke,100,BREAST,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,1:57.08,,WEB_Session01.RES,117.08,151,Bucket 2,100m Breast,1:57.08,True
+01,10,Female 100m Breaststroke,100,BREAST,tiegan white|worcester,Tiegan White,Female,10,Worcester,2:00.34,,WEB_Session01.RES,120.34,139,Bucket 2,100m Breast,2:00.34,False
+01,10,Female 100m Breaststroke,100,BREAST,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,2:01.20,,WEB_Session01.RES,121.2,136,Bucket 2,100m Breast,2:01.20,False
+01,10,Female 100m Breaststroke,100,BREAST,emily griffin|worcester,Emily Griffin,Female,10,Worcester,2:01.74,,WEB_Session01.RES,121.74,134,Bucket 2,100m Breast,2:01.74,True
+01,10,Female 100m Breaststroke,100,BREAST,fearne broadbent|worcester,Fearne Broadbent,Female,10,Worcester,2:07.15,,WEB_Session01.RES,127.15,117,Bucket 2,100m Breast,2:07.15,True
+01,10,Female 100m Breaststroke,100,BREAST,ffion williams|worcester,Ffion Williams,Female,10,Worcester,2:08.98,,WEB_Session01.RES,128.98,113,Bucket 2,100m Breast,2:08.98,True
+01,10,Female 100m Breaststroke,100,BREAST,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,1:27.52,,WEB_Session01.RES,87.52,361,Bucket 2,100m Breast,1:27.52,True
+01,10,Female 100m Breaststroke,100,BREAST,amelia wood|worcester,Amelia Wood,Female,11,Worcester,1:31.89,,WEB_Session01.RES,91.89,312,Bucket 2,100m Breast,1:31.89,True
+01,10,Female 100m Breaststroke,100,BREAST,ruby lavictoire|worcester,Ruby Lavictoire,Female,11,Worcester,1:42.71,,WEB_Session01.RES,102.71000000000001,223,Bucket 2,100m Breast,1:42.71,True
+01,10,Female 100m Breaststroke,100,BREAST,emma graham|worcester,Emma Graham,Female,11,Worcester,1:43.61,,WEB_Session01.RES,103.61,218,Bucket 2,100m Breast,1:43.61,True
+01,10,Female 100m Breaststroke,100,BREAST,blakely joiner|worcester,Blakely Joiner,Female,11,Worcester,1:43.80,,WEB_Session01.RES,103.8,216,Bucket 2,100m Breast,1:43.80,True
+01,10,Female 100m Breaststroke,100,BREAST,daisy wise|worcester,Daisy Wise,Female,11,Worcester,1:47.15,,WEB_Session01.RES,107.15,197,Bucket 2,100m Breast,1:47.15,True
+01,10,Female 100m Breaststroke,100,BREAST,heidi cotterill|worcester,Heidi Cotterill,Female,11,Worcester,1:48.35,,WEB_Session01.RES,108.35,190,Bucket 2,100m Breast,1:48.35,True
+01,10,Female 100m Breaststroke,100,BREAST,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,1:50.20,,WEB_Session01.RES,110.2,181,Bucket 2,100m Breast,1:50.20,False
+01,10,Female 100m Breaststroke,100,BREAST,freya flint|worcester,Freya Flint,Female,11,Worcester,1:58.17,,WEB_Session01.RES,118.17,146,Bucket 2,100m Breast,1:58.17,True
+01,10,Female 100m Breaststroke,100,BREAST,elley price|worcester,Elley Price,Female,11,Worcester,1:59.19,,WEB_Session01.RES,119.19,143,Bucket 2,100m Breast,1:59.19,True
+01,10,Female 100m Breaststroke,100,BREAST,savannah wright|worcester,Savannah Wright,Female,12,Worcester,1:29.91,,WEB_Session01.RES,89.91,333,Bucket 2,100m Breast,1:29.91,True
+01,10,Female 100m Breaststroke,100,BREAST,lucy hill|worcester,Lucy Hill,Female,12,Worcester,1:34.00,,WEB_Session01.RES,94.0,291,Bucket 2,100m Breast,1:34.00,True
+01,10,Female 100m Breaststroke,100,BREAST,amy lynn|worcester,Amy Lynn,Female,12,Worcester,1:39.01,,WEB_Session01.RES,99.00999999999999,249,Bucket 2,100m Breast,1:39.01,True
+01,10,Female 100m Breaststroke,100,BREAST,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,1:43.07,,WEB_Session01.RES,103.07,221,Bucket 2,100m Breast,1:43.07,True
+01,10,Female 100m Breaststroke,100,BREAST,amelia booth|worcester,Amelia Booth,Female,13,Worcester,1:27.02,,WEB_Session01.RES,87.02,368,Bucket 2,100m Breast,1:27.02,True
+01,10,Female 100m Breaststroke,100,BREAST,emily bufi|worcester,Emily Bufi,Female,13,Worcester,1:31.83,,WEB_Session01.RES,91.83,313,Bucket 2,100m Breast,1:31.83,False
+01,10,Female 100m Breaststroke,100,BREAST,isobel white|worcester,Isobel White,Female,13,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Breast,DNC,False
+01,10,Female 100m Breaststroke,100,BREAST,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,1:23.90,,WEB_Session01.RES,83.9,410,Bucket 2,100m Breast,1:23.90,True
+01,10,Female 100m Breaststroke,100,BREAST,lily wood|worcester,Lily Wood,Female,14,Worcester,1:35.19,,WEB_Session01.RES,95.19,281,Bucket 2,100m Breast,1:35.19,True
+01,10,Female 100m Breaststroke,100,BREAST,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Breast,DNC,False
+01,10,Female 100m Breaststroke,100,BREAST,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,,DNC,WEB_Session01.RES,,0,Bucket 2,100m Breast,DNC,False
+01,10,Female 100m Breaststroke,100,BREAST,alice wickett|worcester,Alice Wickett,Female,15,Worcester,1:22.80,,WEB_Session01.RES,82.8,427,Bucket 2,100m Breast,1:22.80,True
+01,10,Female 100m Breaststroke,100,BREAST,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,1:34.22,,WEB_Session01.RES,94.22,289,Bucket 2,100m Breast,1:34.22,True
+01,10,Female 100m Breaststroke,100,BREAST,ffion lea|worcester,Ffion Lea,Female,15,Worcester,1:41.31,,WEB_Session01.RES,101.31,233,Bucket 2,100m Breast,1:41.31,False
+01,10,Female 100m Breaststroke,100,BREAST,sophie earp|worcester,Sophie Earp,Female,17,Worcester,1:22.92,,WEB_Session01.RES,82.92,425,Bucket 2,100m Breast,1:22.92,True
+01,10,Female 100m Breaststroke,100,BREAST,annabel cunningham|worcester,Annabel Cunningham,Female,16,Worcester,1:23.02,,WEB_Session01.RES,83.02,423,Bucket 2,100m Breast,1:23.02,True
+01,10,Female 100m Breaststroke,100,BREAST,evie goodall|worcester,Evie Goodall,Female,17,Worcester,1:23.62,,WEB_Session01.RES,83.62,414,Bucket 2,100m Breast,1:23.62,True
+01,10,Female 100m Breaststroke,100,BREAST,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:27.07,,WEB_Session01.RES,87.07,367,Bucket 2,100m Breast,1:27.07,False
+01,10,Female 100m Breaststroke,100,BREAST,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:27.39,,WEB_Session01.RES,87.39,363,Bucket 2,100m Breast,1:27.39,False
+02,11,Open/Male 100m IM,100,MEDLEY,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,1:32.42,,WEB_Session02.RES,92.42,151,Bucket 4,100m IM,1:32.42,True
+02,11,Open/Male 100m IM,100,MEDLEY,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,1:45.40,,WEB_Session02.RES,105.4,102,Bucket 4,100m IM,1:45.40,True
+02,11,Open/Male 100m IM,100,MEDLEY,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,1:47.04,,WEB_Session02.RES,107.03999999999999,97,Bucket 4,100m IM,1:47.04,True
+02,11,Open/Male 100m IM,100,MEDLEY,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,1:48.77,,WEB_Session02.RES,108.77000000000001,93,Bucket 4,100m IM,1:48.77,True
+02,11,Open/Male 100m IM,100,MEDLEY,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,1:25.42,,WEB_Session02.RES,85.42,192,Bucket 4,100m IM,1:25.42,False
+02,11,Open/Male 100m IM,100,MEDLEY,william ryan|worcester,William Ryan,Male/Open,10,Worcester,1:31.15,,WEB_Session02.RES,91.15,158,Bucket 4,100m IM,1:31.15,True
+02,11,Open/Male 100m IM,100,MEDLEY,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,1:34.39,,WEB_Session02.RES,94.39,142,Bucket 4,100m IM,1:34.39,False
+02,11,Open/Male 100m IM,100,MEDLEY,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,1:39.33,,WEB_Session02.RES,99.33,122,Bucket 4,100m IM,1:39.33,True
+02,11,Open/Male 100m IM,100,MEDLEY,hugo hawkes|worcester,Hugo Hawkes,Male/Open,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,11,Open/Male 100m IM,100,MEDLEY,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,1:20.25,,WEB_Session02.RES,80.25,231,Bucket 4,100m IM,1:20.25,False
+02,11,Open/Male 100m IM,100,MEDLEY,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,1:24.96,,WEB_Session02.RES,84.96000000000001,195,Bucket 4,100m IM,1:24.96,True
+02,11,Open/Male 100m IM,100,MEDLEY,matthew dadd|worcester,Matthew Dadd,Male/Open,11,Worcester,1:53.14,,WEB_Session02.RES,113.14,82,Bucket 4,100m IM,1:53.14,True
+02,11,Open/Male 100m IM,100,MEDLEY,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,1:14.14,,WEB_Session02.RES,74.14,293,Bucket 4,100m IM,1:14.14,False
+02,11,Open/Male 100m IM,100,MEDLEY,isaac may|worcester,Isaac May,Male/Open,12,Worcester,1:16.25,,WEB_Session02.RES,76.25,269,Bucket 4,100m IM,1:16.25,False
+02,11,Open/Male 100m IM,100,MEDLEY,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,1:16.28,,WEB_Session02.RES,76.28,269,Bucket 4,100m IM,1:16.28,False
+02,11,Open/Male 100m IM,100,MEDLEY,lucas chong rui yang|worcester,Lucas Chong Rui Yang,Male/Open,12,Worcester,1:26.24,,WEB_Session02.RES,86.24,186,Bucket 4,100m IM,1:26.24,False
+02,11,Open/Male 100m IM,100,MEDLEY,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,1:27.67,,WEB_Session02.RES,87.67,177,Bucket 4,100m IM,1:27.67,True
+02,11,Open/Male 100m IM,100,MEDLEY,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,1:31.46,,WEB_Session02.RES,91.46000000000001,156,Bucket 4,100m IM,1:31.46,True
+02,11,Open/Male 100m IM,100,MEDLEY,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,1:38.88,,WEB_Session02.RES,98.88,123,Bucket 4,100m IM,1:38.88,False
+02,11,Open/Male 100m IM,100,MEDLEY,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,11,Open/Male 100m IM,100,MEDLEY,jonas harvey|worcester,Jonas Harvey,Male/Open,13,Worcester,1:13.24,,WEB_Session02.RES,73.24,304,Bucket 4,100m IM,1:13.24,True
+02,11,Open/Male 100m IM,100,MEDLEY,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,1:16.93,,WEB_Session02.RES,76.93,262,Bucket 4,100m IM,1:16.93,True
+02,11,Open/Male 100m IM,100,MEDLEY,oscar wheeler|worcester,Oscar Wheeler,Male/Open,13,Worcester,1:19.25,,WEB_Session02.RES,79.25,240,Bucket 4,100m IM,1:19.25,True
+02,11,Open/Male 100m IM,100,MEDLEY,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,1:20.10,,WEB_Session02.RES,80.1,232,Bucket 4,100m IM,1:20.10,True
+02,11,Open/Male 100m IM,100,MEDLEY,james walter|worcester,James Walter,Male/Open,13,Worcester,1:20.94,,WEB_Session02.RES,80.94,225,Bucket 4,100m IM,1:20.94,False
+02,11,Open/Male 100m IM,100,MEDLEY,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,1:21.53,,WEB_Session02.RES,81.53,220,Bucket 4,100m IM,1:21.53,True
+02,11,Open/Male 100m IM,100,MEDLEY,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,1:24.36,,WEB_Session02.RES,84.36,199,Bucket 4,100m IM,1:24.36,True
+02,11,Open/Male 100m IM,100,MEDLEY,lucas foxall|worcester,Lucas Foxall,Male/Open,13,Worcester,1:32.85,,WEB_Session02.RES,92.85,149,Bucket 4,100m IM,1:32.85,True
+02,11,Open/Male 100m IM,100,MEDLEY,ewan windross|worcester,Ewan Windross,Male/Open,13,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,11,Open/Male 100m IM,100,MEDLEY,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,1:02.90,,WEB_Session02.RES,62.9,480,Bucket 4,100m IM,1:02.90,True
+02,11,Open/Male 100m IM,100,MEDLEY,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:11.20,,WEB_Session02.RES,71.2,331,Bucket 4,100m IM,1:11.20,True
+02,11,Open/Male 100m IM,100,MEDLEY,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:14.24,,WEB_Session02.RES,74.24,292,Bucket 4,100m IM,1:14.24,False
+02,11,Open/Male 100m IM,100,MEDLEY,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,1:09.48,,WEB_Session02.RES,69.48,356,Bucket 4,100m IM,1:09.48,True
+02,11,Open/Male 100m IM,100,MEDLEY,oscar norman|worcester,Oscar Norman,Male/Open,15,Worcester,1:36.48,,WEB_Session02.RES,96.47999999999999,133,Bucket 4,100m IM,1:36.48,True
+02,11,Open/Male 100m IM,100,MEDLEY,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,1:01.46,,WEB_Session02.RES,61.46,515,Bucket 4,100m IM,1:01.46,True
+02,11,Open/Male 100m IM,100,MEDLEY,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,1:05.22,,WEB_Session02.RES,65.22,431,Bucket 4,100m IM,1:05.22,True
+02,11,Open/Male 100m IM,100,MEDLEY,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,1:09.74,,WEB_Session02.RES,69.74,352,Bucket 4,100m IM,1:09.74,False
+02,11,Open/Male 100m IM,100,MEDLEY,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,1:11.02,,WEB_Session02.RES,71.02,334,Bucket 4,100m IM,1:11.02,False
+02,11,Open/Male 100m IM,100,MEDLEY,liam lyman|worcester,Liam Lyman,Male/Open,44,Worcester,1:17.51,,WEB_Session02.RES,77.51,257,Bucket 4,100m IM,1:17.51,True
+02,12,Female 100m IM,100,MEDLEY,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,1:47.34,,WEB_Session02.RES,107.34,135,Bucket 4,100m IM,1:47.34,True
+02,12,Female 100m IM,100,MEDLEY,carys smith|worcester,Carys Smith,Female,9,Worcester,1:57.01,,WEB_Session02.RES,117.00999999999999,104,Bucket 4,100m IM,1:57.01,True
+02,12,Female 100m IM,100,MEDLEY,francesca williams|worcester,Francesca Williams,Female,9,Worcester,1:57.75,,WEB_Session02.RES,117.75,102,Bucket 4,100m IM,1:57.75,True
+02,12,Female 100m IM,100,MEDLEY,victoria lemes|worcester,Victoria Lemes,Female,9,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,1:36.30,,WEB_Session02.RES,96.3,187,Bucket 4,100m IM,1:36.30,True
+02,12,Female 100m IM,100,MEDLEY,emily griffin|worcester,Emily Griffin,Female,10,Worcester,1:44.98,,WEB_Session02.RES,104.97999999999999,144,Bucket 4,100m IM,1:44.98,True
+02,12,Female 100m IM,100,MEDLEY,freya murphy|worcester,Freya Murphy,Female,10,Worcester,1:45.66,,WEB_Session02.RES,105.66,141,Bucket 4,100m IM,1:45.66,True
+02,12,Female 100m IM,100,MEDLEY,tiegan white|worcester,Tiegan White,Female,10,Worcester,1:51.11,,WEB_Session02.RES,111.11,122,Bucket 4,100m IM,1:51.11,True
+02,12,Female 100m IM,100,MEDLEY,enna stuart|worcester,Enna Stuart,Female,10,Worcester,1:51.17,,WEB_Session02.RES,111.17,121,Bucket 4,100m IM,1:51.17,True
+02,12,Female 100m IM,100,MEDLEY,miriam browning|worcester,Miriam Browning,Female,10,Worcester,1:54.57,,WEB_Session02.RES,114.57,111,Bucket 4,100m IM,1:54.57,False
+02,12,Female 100m IM,100,MEDLEY,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,1:55.60,,WEB_Session02.RES,115.6,108,Bucket 4,100m IM,1:55.60,True
+02,12,Female 100m IM,100,MEDLEY,ffion williams|worcester,Ffion Williams,Female,10,Worcester,2:09.39,,WEB_Session02.RES,129.39,77,Bucket 4,100m IM,2:09.39,True
+02,12,Female 100m IM,100,MEDLEY,matilda clay|worcester,Matilda Clay,Female,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,fearne broadbent|worcester,Fearne Broadbent,Female,10,Worcester,DQ T,,WEB_Session02.RES,,0,Bucket 4,100m IM,-,False
+02,12,Female 100m IM,100,MEDLEY,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,1:17.98,,WEB_Session02.RES,77.98,352,Bucket 4,100m IM,1:17.98,False
+02,12,Female 100m IM,100,MEDLEY,amelia wood|worcester,Amelia Wood,Female,11,Worcester,1:22.84,,WEB_Session02.RES,82.84,294,Bucket 4,100m IM,1:22.84,False
+02,12,Female 100m IM,100,MEDLEY,penny farnell|worcester,Penny Farnell,Female,11,Worcester,1:23.03,,WEB_Session02.RES,83.03,292,Bucket 4,100m IM,1:23.03,True
+02,12,Female 100m IM,100,MEDLEY,blakely joiner|worcester,Blakely Joiner,Female,11,Worcester,1:30.92,,WEB_Session02.RES,90.92,222,Bucket 4,100m IM,1:30.92,True
+02,12,Female 100m IM,100,MEDLEY,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,1:31.04,,WEB_Session02.RES,91.03999999999999,221,Bucket 4,100m IM,1:31.04,False
+02,12,Female 100m IM,100,MEDLEY,daisy wise|worcester,Daisy Wise,Female,11,Worcester,1:31.39,,WEB_Session02.RES,91.39,219,Bucket 4,100m IM,1:31.39,False
+02,12,Female 100m IM,100,MEDLEY,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,1:34.89,,WEB_Session02.RES,94.89,195,Bucket 4,100m IM,1:34.89,False
+02,12,Female 100m IM,100,MEDLEY,emma graham|worcester,Emma Graham,Female,11,Worcester,1:35.46,,WEB_Session02.RES,95.46000000000001,192,Bucket 4,100m IM,1:35.46,True
+02,12,Female 100m IM,100,MEDLEY,elodie hand|worcester,Elodie Hand,Female,11,Worcester,1:37.61,,WEB_Session02.RES,97.61,179,Bucket 4,100m IM,1:37.61,True
+02,12,Female 100m IM,100,MEDLEY,freya flint|worcester,Freya Flint,Female,11,Worcester,1:38.50,,WEB_Session02.RES,98.5,175,Bucket 4,100m IM,1:38.50,True
+02,12,Female 100m IM,100,MEDLEY,elley price|worcester,Elley Price,Female,11,Worcester,1:42.09,,WEB_Session02.RES,102.09,157,Bucket 4,100m IM,1:42.09,True
+02,12,Female 100m IM,100,MEDLEY,savannah wright|worcester,Savannah Wright,Female,12,Worcester,1:22.57,,WEB_Session02.RES,82.57,297,Bucket 4,100m IM,1:22.57,False
+02,12,Female 100m IM,100,MEDLEY,isabelle rea|worcester,Isabelle Rea,Female,12,Worcester,1:30.19,,WEB_Session02.RES,90.19,228,Bucket 4,100m IM,1:30.19,True
+02,12,Female 100m IM,100,MEDLEY,amy lynn|worcester,Amy Lynn,Female,12,Worcester,1:31.23,,WEB_Session02.RES,91.23,220,Bucket 4,100m IM,1:31.23,True
+02,12,Female 100m IM,100,MEDLEY,ruby kilmartin|worcester,Ruby Kilmartin,Female,12,Worcester,1:35.03,,WEB_Session02.RES,95.03,195,Bucket 4,100m IM,1:35.03,True
+02,12,Female 100m IM,100,MEDLEY,lily benham-willetts|worcester,Lily Benham-Willetts,Female,12,Worcester,1:35.59,,WEB_Session02.RES,95.59,191,Bucket 4,100m IM,1:35.59,True
+02,12,Female 100m IM,100,MEDLEY,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,1:36.09,,WEB_Session02.RES,96.09,188,Bucket 4,100m IM,1:36.09,True
+02,12,Female 100m IM,100,MEDLEY,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,1:39.22,,WEB_Session02.RES,99.22,171,Bucket 4,100m IM,1:39.22,True
+02,12,Female 100m IM,100,MEDLEY,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,1:42.43,,WEB_Session02.RES,102.43,155,Bucket 4,100m IM,1:42.43,True
+02,12,Female 100m IM,100,MEDLEY,phoebe turley|worcester,Phoebe Turley,Female,12,Worcester,1:43.66,,WEB_Session02.RES,103.66,150,Bucket 4,100m IM,1:43.66,True
+02,12,Female 100m IM,100,MEDLEY,lucy piper|worcester,Lucy Piper,Female,13,Worcester,1:15.75,,WEB_Session02.RES,75.75,385,Bucket 4,100m IM,1:15.75,True
+02,12,Female 100m IM,100,MEDLEY,amelia booth|worcester,Amelia Booth,Female,13,Worcester,1:18.60,,WEB_Session02.RES,78.6,344,Bucket 4,100m IM,1:18.60,False
+02,12,Female 100m IM,100,MEDLEY,emily bufi|worcester,Emily Bufi,Female,13,Worcester,1:19.29,,WEB_Session02.RES,79.28999999999999,335,Bucket 4,100m IM,1:19.29,False
+02,12,Female 100m IM,100,MEDLEY,isobel white|worcester,Isobel White,Female,13,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,1:16.85,,WEB_Session02.RES,76.85,368,Bucket 4,100m IM,1:16.85,False
+02,12,Female 100m IM,100,MEDLEY,lily wood|worcester,Lily Wood,Female,14,Worcester,1:22.78,,WEB_Session02.RES,82.78,295,Bucket 4,100m IM,1:22.78,True
+02,12,Female 100m IM,100,MEDLEY,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,1:31.27,,WEB_Session02.RES,91.27,220,Bucket 4,100m IM,1:31.27,True
+02,12,Female 100m IM,100,MEDLEY,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,1:13.75,,WEB_Session02.RES,73.75,417,Bucket 4,100m IM,1:13.75,True
+02,12,Female 100m IM,100,MEDLEY,alice wickett|worcester,Alice Wickett,Female,15,Worcester,1:13.83,,WEB_Session02.RES,73.83,415,Bucket 4,100m IM,1:13.83,True
+02,12,Female 100m IM,100,MEDLEY,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:19.23,,WEB_Session02.RES,79.23,336,Bucket 4,100m IM,1:19.23,True
+02,12,Female 100m IM,100,MEDLEY,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,1:24.24,,WEB_Session02.RES,84.24,279,Bucket 4,100m IM,1:24.24,True
+02,12,Female 100m IM,100,MEDLEY,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 4,100m IM,DNC,False
+02,12,Female 100m IM,100,MEDLEY,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,1:09.00,,WEB_Session02.RES,69.0,509,Bucket 4,100m IM,1:09.00,True
+02,12,Female 100m IM,100,MEDLEY,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:13.11,,WEB_Session02.RES,73.11,428,Bucket 4,100m IM,1:13.11,True
+02,12,Female 100m IM,100,MEDLEY,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:16.64,,WEB_Session02.RES,76.64,371,Bucket 4,100m IM,1:16.64,False
+02,12,Female 100m IM,100,MEDLEY,sophie earp|worcester,Sophie Earp,Female,17,Worcester,1:17.37,,WEB_Session02.RES,77.37,361,Bucket 4,100m IM,1:17.37,True
+02,12,Female 100m IM,100,MEDLEY,evie goodall|worcester,Evie Goodall,Female,17,Worcester,1:17.43,,WEB_Session02.RES,77.43,360,Bucket 4,100m IM,1:17.43,True
+02,12,Female 100m IM,100,MEDLEY,julia wolska-bailey|worcester,Julia Wolska-Bailey,Female,16,Worcester,1:20.58,,WEB_Session02.RES,80.58,319,Bucket 4,100m IM,1:20.58,True
+02,12,Female 100m IM,100,MEDLEY,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,1:20.90,,WEB_Session02.RES,80.9,316,Bucket 4,100m IM,1:20.90,False
+02,12,Female 100m IM,100,MEDLEY,amelia hickman|worcester,Amelia Hickman,Female,17,Worcester,1:24.71,,WEB_Session02.RES,84.71000000000001,275,Bucket 4,100m IM,1:24.71,True
+02,12,Female 100m IM,100,MEDLEY,ava smith|worcester,Ava Smith,Female,16,Worcester,1:27.34,,WEB_Session02.RES,87.34,251,Bucket 4,100m IM,1:27.34,True
+02,13,Open/Male 200m Freestyle,200,FREE,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,3:05.14,,WEB_Session02.RES,185.14,151,Bucket 3,200m Free,3:05.14,True
+02,13,Open/Male 200m Freestyle,200,FREE,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,3:15.67,,WEB_Session02.RES,195.67,127,Bucket 3,200m Free,3:15.67,True
+02,13,Open/Male 200m Freestyle,200,FREE,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,2:41.62,,WEB_Session02.RES,161.62,227,Bucket 3,200m Free,2:41.62,True
+02,13,Open/Male 200m Freestyle,200,FREE,william ryan|worcester,William Ryan,Male/Open,10,Worcester,3:01.82,,WEB_Session02.RES,181.82,159,Bucket 3,200m Free,3:01.82,False
+02,13,Open/Male 200m Freestyle,200,FREE,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,3:12.44,,WEB_Session02.RES,192.44,134,Bucket 3,200m Free,3:12.44,False
+02,13,Open/Male 200m Freestyle,200,FREE,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,3:15.34,,WEB_Session02.RES,195.34,128,Bucket 3,200m Free,3:15.34,True
+02,13,Open/Male 200m Freestyle,200,FREE,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,3:28.05,,WEB_Session02.RES,208.05,106,Bucket 3,200m Free,3:28.05,False
+02,13,Open/Male 200m Freestyle,200,FREE,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,2:34.66,,WEB_Session02.RES,154.66,259,Bucket 3,200m Free,2:34.66,False
+02,13,Open/Male 200m Freestyle,200,FREE,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,2:48.56,,WEB_Session02.RES,168.56,200,Bucket 3,200m Free,2:48.56,False
+02,13,Open/Male 200m Freestyle,200,FREE,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,2:23.70,,WEB_Session02.RES,143.7,323,Bucket 3,200m Free,2:23.70,True
+02,13,Open/Male 200m Freestyle,200,FREE,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,2:25.69,,WEB_Session02.RES,145.69,310,Bucket 3,200m Free,2:25.69,True
+02,13,Open/Male 200m Freestyle,200,FREE,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,2:50.88,,WEB_Session02.RES,170.88,192,Bucket 3,200m Free,2:50.88,True
+02,13,Open/Male 200m Freestyle,200,FREE,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,3:06.97,,WEB_Session02.RES,186.97,146,Bucket 3,200m Free,3:06.97,True
+02,13,Open/Male 200m Freestyle,200,FREE,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,2:14.57,,WEB_Session02.RES,134.57,393,Bucket 3,200m Free,2:14.57,True
+02,13,Open/Male 200m Freestyle,200,FREE,james walter|worcester,James Walter,Male/Open,13,Worcester,2:32.50,,WEB_Session02.RES,152.5,270,Bucket 3,200m Free,2:32.50,True
+02,13,Open/Male 200m Freestyle,200,FREE,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,2:34.20,,WEB_Session02.RES,154.2,261,Bucket 3,200m Free,2:34.20,True
+02,13,Open/Male 200m Freestyle,200,FREE,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,2:45.62,,WEB_Session02.RES,165.62,211,Bucket 3,200m Free,2:45.62,True
+02,13,Open/Male 200m Freestyle,200,FREE,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,2:09.90,,WEB_Session02.RES,129.9,437,Bucket 3,200m Free,2:09.90,False
+02,13,Open/Male 200m Freestyle,200,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,2:15.82,,WEB_Session02.RES,135.82,382,Bucket 3,200m Free,2:15.82,False
+02,13,Open/Male 200m Freestyle,200,FREE,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,2:24.09,,WEB_Session02.RES,144.09,320,Bucket 3,200m Free,2:24.09,True
+02,13,Open/Male 200m Freestyle,200,FREE,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,2:41.06,,WEB_Session02.RES,161.06,229,Bucket 3,200m Free,2:41.06,False
+02,13,Open/Male 200m Freestyle,200,FREE,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,2:09.91,,WEB_Session02.RES,129.91,437,Bucket 3,200m Free,2:09.91,False
+02,13,Open/Male 200m Freestyle,200,FREE,oscar norman|worcester,Oscar Norman,Male/Open,15,Worcester,3:09.51,,WEB_Session02.RES,189.51,140,Bucket 3,200m Free,3:09.51,True
+02,13,Open/Male 200m Freestyle,200,FREE,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,2:02.98,,WEB_Session02.RES,122.98,515,Bucket 3,200m Free,2:02.98,False
+02,13,Open/Male 200m Freestyle,200,FREE,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,2:04.54,,WEB_Session02.RES,124.54,496,Bucket 3,200m Free,2:04.54,True
+02,13,Open/Male 200m Freestyle,200,FREE,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,2:09.31,,WEB_Session02.RES,129.31,443,Bucket 3,200m Free,2:09.31,True
+02,13,Open/Male 200m Freestyle,200,FREE,harry pickup|worcester,Harry Pickup,Male/Open,17,Worcester,2:24.22,,WEB_Session02.RES,144.22,319,Bucket 3,200m Free,2:24.22,True
+02,14,Mixed 25m Breaststroke,25,BREAST,geoffrey wilkinson|worcester,Geoffrey Wilkinson,Male/Open,8,Worcester,24.64,,WEB_Session02.RES,24.64,129,Bucket 2,25m Breast,24.64,True
+02,14,Mixed 25m Breaststroke,25,BREAST,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,21.99,,WEB_Session02.RES,21.99,182,,25m Breast,21.99,False
+02,14,Mixed 25m Breaststroke,25,BREAST,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,32.74,,WEB_Session02.RES,32.74,55,,25m Breast,32.74,False
+02,14,Mixed 25m Breaststroke,25,BREAST,thomas hill|worcester,Thomas Hill,Male/Open,9,Worcester,38.25,,WEB_Session02.RES,38.25,34,,25m Breast,38.25,False
+02,14,Mixed 25m Breaststroke,25,BREAST,orla king|worcester,Orla King,Female,8,Worcester,26.16,,WEB_Session02.RES,26.16,159,Bucket 2,25m Breast,26.16,True
+02,14,Mixed 25m Breaststroke,25,BREAST,jessica troke|worcester,Jessica Troke,Female,8,Worcester,28.94,,WEB_Session02.RES,28.94,117,Bucket 2,25m Breast,28.94,True
+02,14,Mixed 25m Breaststroke,25,BREAST,freya nuttall|worcester,Freya Nuttall,Female,8,Worcester,31.94,,WEB_Session02.RES,31.94,87,Bucket 2,25m Breast,31.94,True
+02,14,Mixed 25m Breaststroke,25,BREAST,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,29.20,,WEB_Session02.RES,29.2,114,,25m Breast,29.20,False
+02,14,Mixed 25m Breaststroke,25,BREAST,flora hoare|worcester,Flora Hoare,Female,9,Worcester,30.75,,WEB_Session02.RES,30.75,98,,25m Breast,30.75,False
+02,14,Mixed 25m Breaststroke,25,BREAST,zara turley|worcester,Zara Turley,Female,9,Worcester,32.40,,WEB_Session02.RES,32.4,84,,25m Breast,32.40,False
+02,14,Mixed 25m Breaststroke,25,BREAST,olivia hill|worcester,Olivia Hill,Female,9,Worcester,33.20,,WEB_Session02.RES,33.2,78,,25m Breast,33.20,False
+02,15,Female 50m Butterfly,50,FLY,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,50.80,,WEB_Session02.RES,50.8,104,Bucket 1,50m Fly,50.80,False
+02,15,Female 50m Butterfly,50,FLY,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,54.50,,WEB_Session02.RES,54.5,84,Bucket 1,50m Fly,54.50,False
+02,15,Female 50m Butterfly,50,FLY,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,42.93,,WEB_Session02.RES,42.93,173,Bucket 1,50m Fly,42.93,False
+02,15,Female 50m Butterfly,50,FLY,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,45.18,,WEB_Session02.RES,45.18,148,Bucket 1,50m Fly,45.18,False
+02,15,Female 50m Butterfly,50,FLY,emily griffin|worcester,Emily Griffin,Female,10,Worcester,51.63,,WEB_Session02.RES,51.63,99,Bucket 1,50m Fly,51.63,False
+02,15,Female 50m Butterfly,50,FLY,miriam browning|worcester,Miriam Browning,Female,10,Worcester,52.63,,WEB_Session02.RES,52.63,94,Bucket 1,50m Fly,52.63,False
+02,15,Female 50m Butterfly,50,FLY,freya murphy|worcester,Freya Murphy,Female,10,Worcester,54.46,,WEB_Session02.RES,54.46,84,Bucket 1,50m Fly,54.46,False
+02,15,Female 50m Butterfly,50,FLY,ffion williams|worcester,Ffion Williams,Female,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,15,Female 50m Butterfly,50,FLY,matilda clay|worcester,Matilda Clay,Female,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,15,Female 50m Butterfly,50,FLY,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,34.99,,WEB_Session02.RES,34.99,320,Bucket 1,50m Fly,34.99,True
+02,15,Female 50m Butterfly,50,FLY,penny farnell|worcester,Penny Farnell,Female,11,Worcester,36.48,,WEB_Session02.RES,36.48,282,Bucket 1,50m Fly,36.48,True
+02,15,Female 50m Butterfly,50,FLY,thea harvey|worcester,Thea Harvey,Female,11,Worcester,41.22,,WEB_Session02.RES,41.22,195,Bucket 1,50m Fly,41.22,True
+02,15,Female 50m Butterfly,50,FLY,blakely joiner|worcester,Blakely Joiner,Female,11,Worcester,41.32,,WEB_Session02.RES,41.32,194,Bucket 1,50m Fly,41.32,True
+02,15,Female 50m Butterfly,50,FLY,daisy wise|worcester,Daisy Wise,Female,11,Worcester,41.38,,WEB_Session02.RES,41.38,193,Bucket 1,50m Fly,41.38,False
+02,15,Female 50m Butterfly,50,FLY,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,42.98,,WEB_Session02.RES,42.98,172,Bucket 1,50m Fly,42.98,False
+02,15,Female 50m Butterfly,50,FLY,elodie hand|worcester,Elodie Hand,Female,11,Worcester,49.26,,WEB_Session02.RES,49.26,114,Bucket 1,50m Fly,49.26,False
+02,15,Female 50m Butterfly,50,FLY,elley price|worcester,Elley Price,Female,11,Worcester,49.52,,WEB_Session02.RES,49.52,112,Bucket 1,50m Fly,49.52,False
+02,15,Female 50m Butterfly,50,FLY,lucy hill|worcester,Lucy Hill,Female,12,Worcester,38.48,,WEB_Session02.RES,38.48,240,Bucket 1,50m Fly,38.48,False
+02,15,Female 50m Butterfly,50,FLY,amy lynn|worcester,Amy Lynn,Female,12,Worcester,41.10,,WEB_Session02.RES,41.1,197,Bucket 1,50m Fly,41.10,False
+02,15,Female 50m Butterfly,50,FLY,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,44.12,,WEB_Session02.RES,44.12,159,Bucket 1,50m Fly,44.12,False
+02,15,Female 50m Butterfly,50,FLY,lily benham-willetts|worcester,Lily Benham-Willetts,Female,12,Worcester,45.50,,WEB_Session02.RES,45.5,145,Bucket 1,50m Fly,45.50,False
+02,15,Female 50m Butterfly,50,FLY,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,47.26,,WEB_Session02.RES,47.26,129,Bucket 1,50m Fly,47.26,True
+02,15,Female 50m Butterfly,50,FLY,savannah wright|worcester,Savannah Wright,Female,12,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,15,Female 50m Butterfly,50,FLY,emily bufi|worcester,Emily Bufi,Female,13,Worcester,33.78,,WEB_Session02.RES,33.78,355,Bucket 1,50m Fly,33.78,False
+02,15,Female 50m Butterfly,50,FLY,alana buckley|worcester,Alana Buckley,Female,13,Worcester,43.47,,WEB_Session02.RES,43.47,167,Bucket 1,50m Fly,43.47,False
+02,15,Female 50m Butterfly,50,FLY,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,33.57,,WEB_Session02.RES,33.57,362,Bucket 1,50m Fly,33.57,False
+02,15,Female 50m Butterfly,50,FLY,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,34.71,,WEB_Session02.RES,34.71,328,Bucket 1,50m Fly,34.71,False
+02,15,Female 50m Butterfly,50,FLY,lily wood|worcester,Lily Wood,Female,14,Worcester,39.15,,WEB_Session02.RES,39.15,228,Bucket 1,50m Fly,39.15,False
+02,15,Female 50m Butterfly,50,FLY,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,41.77,,WEB_Session02.RES,41.77,188,Bucket 1,50m Fly,41.77,False
+02,15,Female 50m Butterfly,50,FLY,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,15,Female 50m Butterfly,50,FLY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,15,Female 50m Butterfly,50,FLY,alice wickett|worcester,Alice Wickett,Female,15,Worcester,32.56,,WEB_Session02.RES,32.56,397,Bucket 1,50m Fly,32.56,False
+02,15,Female 50m Butterfly,50,FLY,eva anderson|worcester,Eva Anderson,Female,15,Worcester,32.77,,WEB_Session02.RES,32.77,389,Bucket 1,50m Fly,32.77,True
+02,15,Female 50m Butterfly,50,FLY,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,34.72,,WEB_Session02.RES,34.72,327,Bucket 1,50m Fly,34.72,False
+02,15,Female 50m Butterfly,50,FLY,ffion lea|worcester,Ffion Lea,Female,15,Worcester,35.03,,WEB_Session02.RES,35.03,319,Bucket 1,50m Fly,35.03,True
+02,15,Female 50m Butterfly,50,FLY,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,38.04,,WEB_Session02.RES,38.04,249,Bucket 1,50m Fly,38.04,False
+02,15,Female 50m Butterfly,50,FLY,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,30.46,,WEB_Session02.RES,30.46,485,Bucket 1,50m Fly,30.46,False
+02,15,Female 50m Butterfly,50,FLY,mia gooch|worcester,Mia Gooch,Female,16,Worcester,30.86,,WEB_Session02.RES,30.86,466,Bucket 1,50m Fly,30.86,True
+02,15,Female 50m Butterfly,50,FLY,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,32.68,,WEB_Session02.RES,32.68,393,Bucket 1,50m Fly,32.68,False
+02,15,Female 50m Butterfly,50,FLY,evie goodall|worcester,Evie Goodall,Female,17,Worcester,33.45,,WEB_Session02.RES,33.45,366,Bucket 1,50m Fly,33.45,True
+02,15,Female 50m Butterfly,50,FLY,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,36.19,,WEB_Session02.RES,36.19,289,Bucket 1,50m Fly,36.19,False
+02,15,Female 50m Butterfly,50,FLY,amelia hickman|worcester,Amelia Hickman,Female,17,Worcester,36.34,,WEB_Session02.RES,36.34,285,Bucket 1,50m Fly,36.34,True
+02,15,Female 50m Butterfly,50,FLY,julia wolska-bailey|worcester,Julia Wolska-Bailey,Female,16,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Fly,DNC,False
+02,16,Open/Male 50m Backstroke,50,BACK,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,42.99,,WEB_Session02.RES,42.99,136,Bucket 1,50m Back,42.99,False
+02,16,Open/Male 50m Backstroke,50,BACK,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,46.89,,WEB_Session02.RES,46.89,104,Bucket 1,50m Back,46.89,True
+02,16,Open/Male 50m Backstroke,50,BACK,theo parker|worcester,Theo Parker,Male/Open,9,Worcester,51.72,,WEB_Session02.RES,51.72,78,Bucket 1,50m Back,51.72,True
+02,16,Open/Male 50m Backstroke,50,BACK,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Back,DNC,False
+02,16,Open/Male 50m Backstroke,50,BACK,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,38.95,,WEB_Session02.RES,38.95,182,Bucket 1,50m Back,38.95,False
+02,16,Open/Male 50m Backstroke,50,BACK,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,43.80,,WEB_Session02.RES,43.8,128,Bucket 1,50m Back,43.80,True
+02,16,Open/Male 50m Backstroke,50,BACK,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,45.57,,WEB_Session02.RES,45.57,114,Bucket 1,50m Back,45.57,False
+02,16,Open/Male 50m Backstroke,50,BACK,sammy gifford|worcester,Sammy Gifford,Male/Open,10,Worcester,1:17.44,,WEB_Session02.RES,77.44,23,Bucket 1,50m Back,1:17.44,False
+02,16,Open/Male 50m Backstroke,50,BACK,matthew dadd|worcester,Matthew Dadd,Male/Open,11,Worcester,51.38,,WEB_Session02.RES,51.38,79,Bucket 1,50m Back,51.38,False
+02,16,Open/Male 50m Backstroke,50,BACK,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,DQ ST,,WEB_Session02.RES,,0,Bucket 1,50m Back,-,False
+02,16,Open/Male 50m Backstroke,50,BACK,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,33.12,,WEB_Session02.RES,33.12,297,Bucket 1,50m Back,33.12,False
+02,16,Open/Male 50m Backstroke,50,BACK,isaac may|worcester,Isaac May,Male/Open,12,Worcester,33.50,,WEB_Session02.RES,33.5,287,Bucket 1,50m Back,33.50,True
+02,16,Open/Male 50m Backstroke,50,BACK,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,38.63,,WEB_Session02.RES,38.63,187,Bucket 1,50m Back,38.63,True
+02,16,Open/Male 50m Backstroke,50,BACK,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,45.88,,WEB_Session02.RES,45.88,111,Bucket 1,50m Back,45.88,False
+02,16,Open/Male 50m Backstroke,50,BACK,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,32.40,,WEB_Session02.RES,32.4,317,Bucket 1,50m Back,32.40,True
+02,16,Open/Male 50m Backstroke,50,BACK,jonas harvey|worcester,Jonas Harvey,Male/Open,13,Worcester,33.38,,WEB_Session02.RES,33.38,290,Bucket 1,50m Back,33.38,False
+02,16,Open/Male 50m Backstroke,50,BACK,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,35.22,,WEB_Session02.RES,35.22,247,Bucket 1,50m Back,35.22,False
+02,16,Open/Male 50m Backstroke,50,BACK,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,36.90,,WEB_Session02.RES,36.9,215,Bucket 1,50m Back,36.90,False
+02,16,Open/Male 50m Backstroke,50,BACK,oscar wheeler|worcester,Oscar Wheeler,Male/Open,13,Worcester,37.28,,WEB_Session02.RES,37.28,208,Bucket 1,50m Back,37.28,False
+02,16,Open/Male 50m Backstroke,50,BACK,joseph jennings|worcester,Joseph Jennings,Male/Open,13,Worcester,40.78,,WEB_Session02.RES,40.78,159,Bucket 1,50m Back,40.78,False
+02,16,Open/Male 50m Backstroke,50,BACK,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,41.07,,WEB_Session02.RES,41.07,156,Bucket 1,50m Back,41.07,True
+02,16,Open/Male 50m Backstroke,50,BACK,lucas foxall|worcester,Lucas Foxall,Male/Open,13,Worcester,43.51,,WEB_Session02.RES,43.51,131,Bucket 1,50m Back,43.51,True
+02,16,Open/Male 50m Backstroke,50,BACK,ewan windross|worcester,Ewan Windross,Male/Open,13,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 1,50m Back,DNC,False
+02,16,Open/Male 50m Backstroke,50,BACK,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,31.92,,WEB_Session02.RES,31.92,332,Bucket 1,50m Back,31.92,False
+02,16,Open/Male 50m Backstroke,50,BACK,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,32.91,,WEB_Session02.RES,32.91,303,Bucket 1,50m Back,32.91,False
+02,16,Open/Male 50m Backstroke,50,BACK,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,37.06,,WEB_Session02.RES,37.06,212,Bucket 1,50m Back,37.06,False
+02,16,Open/Male 50m Backstroke,50,BACK,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,38.67,,WEB_Session02.RES,38.67,186,Bucket 1,50m Back,38.67,False
+02,16,Open/Male 50m Backstroke,50,BACK,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,32.00,,WEB_Session02.RES,32.0,329,Bucket 1,50m Back,32.00,False
+02,16,Open/Male 50m Backstroke,50,BACK,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,29.38,,WEB_Session02.RES,29.38,426,Bucket 1,50m Back,29.38,False
+02,16,Open/Male 50m Backstroke,50,BACK,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,31.24,,WEB_Session02.RES,31.24,354,Bucket 1,50m Back,31.24,False
+02,16,Open/Male 50m Backstroke,50,BACK,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,31.55,,WEB_Session02.RES,31.55,344,Bucket 1,50m Back,31.55,True
+02,16,Open/Male 50m Backstroke,50,BACK,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,34.00,,WEB_Session02.RES,34.0,274,Bucket 1,50m Back,34.00,False
+02,17,Female 200m Backstroke,200,BACK,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,3:25.11,,WEB_Session02.RES,205.11,190,,200m Back,3:25.11,False
+02,17,Female 200m Backstroke,200,BACK,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,3:04.07,,WEB_Session02.RES,184.07,263,,200m Back,3:04.07,False
+02,17,Female 200m Backstroke,200,BACK,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,3:11.25,,WEB_Session02.RES,191.25,235,,200m Back,3:11.25,False
+02,17,Female 200m Backstroke,200,BACK,elodie hand|worcester,Elodie Hand,Female,11,Worcester,3:27.97,,WEB_Session02.RES,207.97,182,,200m Back,3:27.97,False
+02,17,Female 200m Backstroke,200,BACK,lucy hill|worcester,Lucy Hill,Female,12,Worcester,2:54.47,,WEB_Session02.RES,174.47,309,,200m Back,2:54.47,False
+02,17,Female 200m Backstroke,200,BACK,savannah wright|worcester,Savannah Wright,Female,12,Worcester,,DNC,WEB_Session02.RES,,0,,200m Back,DNC,False
+02,17,Female 200m Backstroke,200,BACK,lucy piper|worcester,Lucy Piper,Female,13,Worcester,2:36.47,,WEB_Session02.RES,156.47,429,,200m Back,2:36.47,False
+02,17,Female 200m Backstroke,200,BACK,emily bufi|worcester,Emily Bufi,Female,13,Worcester,2:41.37,,WEB_Session02.RES,161.37,391,,200m Back,2:41.37,False
+02,17,Female 200m Backstroke,200,BACK,alana buckley|worcester,Alana Buckley,Female,13,Worcester,3:22.14,,WEB_Session02.RES,202.14,199,,200m Back,3:22.14,False
+02,17,Female 200m Backstroke,200,BACK,isobel white|worcester,Isobel White,Female,13,Worcester,,DNC,WEB_Session02.RES,,0,,200m Back,DNC,False
+02,17,Female 200m Backstroke,200,BACK,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,2:35.70,,WEB_Session02.RES,155.7,435,,200m Back,2:35.70,False
+02,17,Female 200m Backstroke,200,BACK,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,2:34.45,,WEB_Session02.RES,154.45,446,,200m Back,2:34.45,False
+02,17,Female 200m Backstroke,200,BACK,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,2:34.15,,WEB_Session02.RES,154.15,449,,200m Back,2:34.15,False
+02,17,Female 200m Backstroke,200,BACK,isabella wood|worcester,Isabella Wood,Female,16,Worcester,2:54.17,,WEB_Session02.RES,174.17000000000002,311,,200m Back,2:54.17,False
+02,18,Mixed 25m Freestyle,25,FREE,geoffrey wilkinson|worcester,Geoffrey Wilkinson,Male/Open,8,Worcester,19.00,,WEB_Session02.RES,19.0,143,Bucket 1,25m Free,19.00,True
+02,18,Mixed 25m Freestyle,25,FREE,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,17.81,,WEB_Session02.RES,17.81,174,,25m Free,17.81,False
+02,18,Mixed 25m Freestyle,25,FREE,theo parker|worcester,Theo Parker,Male/Open,9,Worcester,19.91,,WEB_Session02.RES,19.91,124,,25m Free,19.91,False
+02,18,Mixed 25m Freestyle,25,FREE,thomas hill|worcester,Thomas Hill,Male/Open,9,Worcester,26.93,,WEB_Session02.RES,26.93,50,,25m Free,26.93,False
+02,18,Mixed 25m Freestyle,25,FREE,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,,DNC,WEB_Session02.RES,,0,,25m Free,DNC,False
+02,18,Mixed 25m Freestyle,25,FREE,freya nuttall|worcester,Freya Nuttall,Female,8,Worcester,21.09,,WEB_Session02.RES,21.09,158,Bucket 1,25m Free,21.09,True
+02,18,Mixed 25m Freestyle,25,FREE,jessica troke|worcester,Jessica Troke,Female,8,Worcester,21.23,,WEB_Session02.RES,21.23,155,Bucket 1,25m Free,21.23,True
+02,18,Mixed 25m Freestyle,25,FREE,orla king|worcester,Orla King,Female,8,Worcester,22.55,,WEB_Session02.RES,22.55,129,Bucket 1,25m Free,22.55,True
+02,18,Mixed 25m Freestyle,25,FREE,natalia crisan|worcester,Natalia Crisan,Female,8,Worcester,22.69,,WEB_Session02.RES,22.69,127,Bucket 1,25m Free,22.69,True
+02,18,Mixed 25m Freestyle,25,FREE,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,19.57,,WEB_Session02.RES,19.57,198,,25m Free,19.57,False
+02,18,Mixed 25m Freestyle,25,FREE,flora hoare|worcester,Flora Hoare,Female,9,Worcester,21.00,,WEB_Session02.RES,21.0,160,,25m Free,21.00,False
+02,18,Mixed 25m Freestyle,25,FREE,olivia hill|worcester,Olivia Hill,Female,9,Worcester,23.01,,WEB_Session02.RES,23.01,121,,25m Free,23.01,False
+02,18,Mixed 25m Freestyle,25,FREE,elizabeth daniel|worcester,Elizabeth Daniel,Female,9,Worcester,23.79,,WEB_Session02.RES,23.79,110,,25m Free,23.79,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,1:50.01,,WEB_Session02.RES,110.00999999999999,126,Bucket 2,100m Breast,1:50.01,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,1:54.42,,WEB_Session02.RES,114.42,112,Bucket 2,100m Breast,1:54.42,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,2:00.99,,WEB_Session02.RES,120.99,95,Bucket 2,100m Breast,2:00.99,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,2:15.13,,WEB_Session02.RES,135.13,68,Bucket 2,100m Breast,2:15.13,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 2,100m Breast,DNC,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,1:43.36,,WEB_Session02.RES,103.36,152,Bucket 2,100m Breast,1:43.36,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,william ryan|worcester,William Ryan,Male/Open,10,Worcester,1:46.55,,WEB_Session02.RES,106.55,139,Bucket 2,100m Breast,1:46.55,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,1:48.85,,WEB_Session02.RES,108.85,130,Bucket 2,100m Breast,1:48.85,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,1:55.06,,WEB_Session02.RES,115.06,110,Bucket 2,100m Breast,1:55.06,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,hugo hawkes|worcester,Hugo Hawkes,Male/Open,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 2,100m Breast,DNC,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,1:31.75,,WEB_Session02.RES,91.75,218,Bucket 2,100m Breast,1:31.75,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,1:44.91,,WEB_Session02.RES,104.91,146,Bucket 2,100m Breast,1:44.91,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,1:21.95,,WEB_Session02.RES,81.95,306,Bucket 2,100m Breast,1:21.95,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,1:27.40,,WEB_Session02.RES,87.4,253,Bucket 2,100m Breast,1:27.40,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,1:44.04,,WEB_Session02.RES,104.03999999999999,150,Bucket 2,100m Breast,1:44.04,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,sebastian thorn|worcester,Sebastian Thorn,Male/Open,12,Worcester,1:46.85,,WEB_Session02.RES,106.85,138,Bucket 2,100m Breast,1:46.85,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,1:26.89,,WEB_Session02.RES,86.89,257,Bucket 2,100m Breast,1:26.89,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,1:28.83,,WEB_Session02.RES,88.83,241,Bucket 2,100m Breast,1:28.83,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,1:33.92,,WEB_Session02.RES,93.92,203,Bucket 2,100m Breast,1:33.92,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,oscar wheeler|worcester,Oscar Wheeler,Male/Open,13,Worcester,1:34.65,,WEB_Session02.RES,94.65,199,Bucket 2,100m Breast,1:34.65,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,jude farnell|worcester,Jude Farnell,Male/Open,13,Worcester,1:36.59,,WEB_Session02.RES,96.59,187,Bucket 2,100m Breast,1:36.59,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,edward alfred evans|worcester,Edward Alfred Evans,Male/Open,13,Worcester,1:38.41,,WEB_Session02.RES,98.41,177,Bucket 2,100m Breast,1:38.41,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,joseph jennings|worcester,Joseph Jennings,Male/Open,13,Worcester,1:48.38,,WEB_Session02.RES,108.38,132,Bucket 2,100m Breast,1:48.38,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:16.82,,WEB_Session02.RES,76.82,372,Bucket 2,100m Breast,1:16.82,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,1:30.30,,WEB_Session02.RES,90.3,229,Bucket 2,100m Breast,1:30.30,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,oscar norman|worcester,Oscar Norman,Male/Open,15,Worcester,1:40.07,,WEB_Session02.RES,100.07,168,Bucket 2,100m Breast,1:40.07,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,1:16.09,,WEB_Session02.RES,76.09,383,Bucket 2,100m Breast,1:16.09,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,1:17.18,,WEB_Session02.RES,77.18,367,Bucket 2,100m Breast,1:17.18,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,1:19.76,,WEB_Session02.RES,79.76,332,Bucket 2,100m Breast,1:19.76,False
+02,19,Open/Male 100m Breaststroke,100,BREAST,harry pickup|worcester,Harry Pickup,Male/Open,17,Worcester,1:20.56,,WEB_Session02.RES,80.56,323,Bucket 2,100m Breast,1:20.56,True
+02,19,Open/Male 100m Breaststroke,100,BREAST,liam lyman|worcester,Liam Lyman,Male/Open,44,Worcester,1:20.69,,WEB_Session02.RES,80.69,321,Bucket 2,100m Breast,1:20.69,True
+02,20,Female 100m Freestyle,100,FREE,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,1:42.06,,WEB_Session02.RES,102.06,119,Bucket 3,100m Free,1:42.06,True
+02,20,Female 100m Freestyle,100,FREE,francesca williams|worcester,Francesca Williams,Female,9,Worcester,1:45.75,,WEB_Session02.RES,105.75,107,Bucket 3,100m Free,1:45.75,True
+02,20,Female 100m Freestyle,100,FREE,carys smith|worcester,Carys Smith,Female,9,Worcester,1:52.48,,WEB_Session02.RES,112.47999999999999,89,Bucket 3,100m Free,1:52.48,True
+02,20,Female 100m Freestyle,100,FREE,flora hoare|worcester,Flora Hoare,Female,9,Worcester,1:58.78,,WEB_Session02.RES,118.78,75,Bucket 3,100m Free,1:58.78,True
+02,20,Female 100m Freestyle,100,FREE,hallie pinnock|worcester,Hallie Pinnock,Female,9,Worcester,2:00.37,,WEB_Session02.RES,120.37,72,Bucket 3,100m Free,2:00.37,True
+02,20,Female 100m Freestyle,100,FREE,victoria lemes|worcester,Victoria Lemes,Female,9,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,1:21.54,,WEB_Session02.RES,81.53999999999999,234,Bucket 3,100m Free,1:21.54,True
+02,20,Female 100m Freestyle,100,FREE,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,1:28.41,,WEB_Session02.RES,88.41,183,Bucket 3,100m Free,1:28.41,True
+02,20,Female 100m Freestyle,100,FREE,tiegan white|worcester,Tiegan White,Female,10,Worcester,1:34.25,,WEB_Session02.RES,94.25,151,Bucket 3,100m Free,1:34.25,True
+02,20,Female 100m Freestyle,100,FREE,miriam browning|worcester,Miriam Browning,Female,10,Worcester,1:34.81,,WEB_Session02.RES,94.81,148,Bucket 3,100m Free,1:34.81,True
+02,20,Female 100m Freestyle,100,FREE,freya murphy|worcester,Freya Murphy,Female,10,Worcester,1:35.53,,WEB_Session02.RES,95.53,145,Bucket 3,100m Free,1:35.53,False
+02,20,Female 100m Freestyle,100,FREE,emily griffin|worcester,Emily Griffin,Female,10,Worcester,1:36.22,,WEB_Session02.RES,96.22,142,Bucket 3,100m Free,1:36.22,True
+02,20,Female 100m Freestyle,100,FREE,enna stuart|worcester,Enna Stuart,Female,10,Worcester,1:44.54,,WEB_Session02.RES,104.53999999999999,111,Bucket 3,100m Free,1:44.54,True
+02,20,Female 100m Freestyle,100,FREE,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,1:46.82,,WEB_Session02.RES,106.82,104,Bucket 3,100m Free,1:46.82,True
+02,20,Female 100m Freestyle,100,FREE,ffion williams|worcester,Ffion Williams,Female,10,Worcester,1:51.14,,WEB_Session02.RES,111.14,92,Bucket 3,100m Free,1:51.14,True
+02,20,Female 100m Freestyle,100,FREE,matilda clay|worcester,Matilda Clay,Female,10,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,amelia wood|worcester,Amelia Wood,Female,11,Worcester,1:14.09,,WEB_Session02.RES,74.09,311,Bucket 3,100m Free,1:14.09,False
+02,20,Female 100m Freestyle,100,FREE,daisy wise|worcester,Daisy Wise,Female,11,Worcester,1:19.85,,WEB_Session02.RES,79.85,249,Bucket 3,100m Free,1:19.85,False
+02,20,Female 100m Freestyle,100,FREE,blakely joiner|worcester,Blakely Joiner,Female,11,Worcester,1:19.91,,WEB_Session02.RES,79.91,248,Bucket 3,100m Free,1:19.91,True
+02,20,Female 100m Freestyle,100,FREE,emma graham|worcester,Emma Graham,Female,11,Worcester,1:20.05,,WEB_Session02.RES,80.05,247,Bucket 3,100m Free,1:20.05,True
+02,20,Female 100m Freestyle,100,FREE,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,1:20.46,,WEB_Session02.RES,80.46000000000001,243,Bucket 3,100m Free,1:20.46,True
+02,20,Female 100m Freestyle,100,FREE,thea harvey|worcester,Thea Harvey,Female,11,Worcester,1:24.53,,WEB_Session02.RES,84.53,210,Bucket 3,100m Free,1:24.53,True
+02,20,Female 100m Freestyle,100,FREE,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,1:25.27,,WEB_Session02.RES,85.27,204,Bucket 3,100m Free,1:25.27,False
+02,20,Female 100m Freestyle,100,FREE,elodie hand|worcester,Elodie Hand,Female,11,Worcester,1:29.11,,WEB_Session02.RES,89.11,179,Bucket 3,100m Free,1:29.11,True
+02,20,Female 100m Freestyle,100,FREE,elley price|worcester,Elley Price,Female,11,Worcester,1:31.16,,WEB_Session02.RES,91.16,167,Bucket 3,100m Free,1:31.16,True
+02,20,Female 100m Freestyle,100,FREE,freya flint|worcester,Freya Flint,Female,11,Worcester,1:31.38,,WEB_Session02.RES,91.38,166,Bucket 3,100m Free,1:31.38,True
+02,20,Female 100m Freestyle,100,FREE,heidi cotterill|worcester,Heidi Cotterill,Female,11,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,lucy hill|worcester,Lucy Hill,Female,12,Worcester,1:14.45,,WEB_Session02.RES,74.45,307,Bucket 3,100m Free,1:14.45,False
+02,20,Female 100m Freestyle,100,FREE,lily benham-willetts|worcester,Lily Benham-Willetts,Female,12,Worcester,1:21.46,,WEB_Session02.RES,81.46000000000001,234,Bucket 3,100m Free,1:21.46,True
+02,20,Female 100m Freestyle,100,FREE,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,1:24.59,,WEB_Session02.RES,84.59,209,Bucket 3,100m Free,1:24.59,True
+02,20,Female 100m Freestyle,100,FREE,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,1:30.24,,WEB_Session02.RES,90.24,172,Bucket 3,100m Free,1:30.24,True
+02,20,Female 100m Freestyle,100,FREE,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,amy lynn|worcester,Amy Lynn,Female,12,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,savannah wright|worcester,Savannah Wright,Female,12,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,lucy piper|worcester,Lucy Piper,Female,13,Worcester,1:05.92,,WEB_Session02.RES,65.92,442,Bucket 3,100m Free,1:05.92,True
+02,20,Female 100m Freestyle,100,FREE,emily bufi|worcester,Emily Bufi,Female,13,Worcester,1:08.36,,WEB_Session02.RES,68.36,397,Bucket 3,100m Free,1:08.36,False
+02,20,Female 100m Freestyle,100,FREE,amelia booth|worcester,Amelia Booth,Female,13,Worcester,1:09.42,,WEB_Session02.RES,69.42,379,Bucket 3,100m Free,1:09.42,True
+02,20,Female 100m Freestyle,100,FREE,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,1:24.13,,WEB_Session02.RES,84.13,213,Bucket 3,100m Free,1:24.13,True
+02,20,Female 100m Freestyle,100,FREE,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,emilia spence|worcester,Emilia Spence,Female,15,Worcester,1:00.74,,WEB_Session02.RES,60.74,566,Bucket 3,100m Free,1:00.74,True
+02,20,Female 100m Freestyle,100,FREE,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,1:02.74,,WEB_Session02.RES,62.74,513,Bucket 3,100m Free,1:02.74,True
+02,20,Female 100m Freestyle,100,FREE,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,1:06.27,,WEB_Session02.RES,66.27,435,Bucket 3,100m Free,1:06.27,False
+02,20,Female 100m Freestyle,100,FREE,alice wickett|worcester,Alice Wickett,Female,15,Worcester,1:07.06,,WEB_Session02.RES,67.06,420,Bucket 3,100m Free,1:07.06,True
+02,20,Female 100m Freestyle,100,FREE,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:07.32,,WEB_Session02.RES,67.32,415,Bucket 3,100m Free,1:07.32,False
+02,20,Female 100m Freestyle,100,FREE,ffion lea|worcester,Ffion Lea,Female,15,Worcester,1:15.50,,WEB_Session02.RES,75.5,294,Bucket 3,100m Free,1:15.50,True
+02,20,Female 100m Freestyle,100,FREE,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+02,20,Female 100m Freestyle,100,FREE,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,1:07.26,,WEB_Session02.RES,67.26,417,Bucket 3,100m Free,1:07.26,False
+02,20,Female 100m Freestyle,100,FREE,mollie kilgour|worcester,Mollie Kilgour,Female,21,Worcester,1:07.44,,WEB_Session02.RES,67.44,413,Bucket 3,100m Free,1:07.44,True
+02,20,Female 100m Freestyle,100,FREE,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:08.20,,WEB_Session02.RES,68.2,399,Bucket 3,100m Free,1:08.20,False
+02,20,Female 100m Freestyle,100,FREE,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:08.25,,WEB_Session02.RES,68.25,399,Bucket 3,100m Free,1:08.25,True
+02,20,Female 100m Freestyle,100,FREE,amelia hickman|worcester,Amelia Hickman,Female,17,Worcester,1:10.51,,WEB_Session02.RES,70.51,361,Bucket 3,100m Free,1:10.51,False
+02,20,Female 100m Freestyle,100,FREE,evie goodall|worcester,Evie Goodall,Female,17,Worcester,1:11.15,,WEB_Session02.RES,71.15,352,Bucket 3,100m Free,1:11.15,True
+02,20,Female 100m Freestyle,100,FREE,isabella wood|worcester,Isabella Wood,Female,16,Worcester,1:12.46,,WEB_Session02.RES,72.46000000000001,333,Bucket 3,100m Free,1:12.46,True
+02,20,Female 100m Freestyle,100,FREE,ava smith|worcester,Ava Smith,Female,16,Worcester,1:15.34,,WEB_Session02.RES,75.34,296,Bucket 3,100m Free,1:15.34,True
+02,20,Female 100m Freestyle,100,FREE,julia wolska-bailey|worcester,Julia Wolska-Bailey,Female,16,Worcester,,DNC,WEB_Session02.RES,,0,Bucket 3,100m Free,DNC,False
+03,21,Female 200m IM,200,MEDLEY,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,3:26.51,,WEB_Session03.RES,206.51,204,Bucket 4,200m IM,3:26.51,True
+03,21,Female 200m IM,200,MEDLEY,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,3:36.35,,WEB_Session03.RES,216.35,177,Bucket 4,200m IM,3:36.35,False
+03,21,Female 200m IM,200,MEDLEY,miriam browning|worcester,Miriam Browning,Female,10,Worcester,4:07.61,,WEB_Session03.RES,247.61,118,Bucket 4,200m IM,4:07.61,True
+03,21,Female 200m IM,200,MEDLEY,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,2:47.11,,WEB_Session03.RES,167.11,385,Bucket 4,200m IM,2:47.11,True
+03,21,Female 200m IM,200,MEDLEY,amelia wood|worcester,Amelia Wood,Female,11,Worcester,3:01.30,,WEB_Session03.RES,181.3,301,Bucket 4,200m IM,3:01.30,True
+03,21,Female 200m IM,200,MEDLEY,daisy wise|worcester,Daisy Wise,Female,11,Worcester,3:16.99,,WEB_Session03.RES,196.99,235,Bucket 4,200m IM,3:16.99,True
+03,21,Female 200m IM,200,MEDLEY,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,3:18.08,,WEB_Session03.RES,198.07999999999998,231,Bucket 4,200m IM,3:18.08,True
+03,21,Female 200m IM,200,MEDLEY,thea harvey|worcester,Thea Harvey,Female,11,Worcester,3:21.71,,WEB_Session03.RES,201.71,219,Bucket 4,200m IM,3:21.71,True
+03,21,Female 200m IM,200,MEDLEY,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,3:22.58,,WEB_Session03.RES,202.57999999999998,216,Bucket 4,200m IM,3:22.58,True
+03,21,Female 200m IM,200,MEDLEY,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,2:45.02,,WEB_Session03.RES,165.02,400,Bucket 4,200m IM,2:45.02,True
+03,21,Female 200m IM,200,MEDLEY,lucy hill|worcester,Lucy Hill,Female,12,Worcester,2:50.82,,WEB_Session03.RES,170.82,360,Bucket 4,200m IM,2:50.82,True
+03,21,Female 200m IM,200,MEDLEY,thea everitt|worcester,Thea Everitt,Female,12,Worcester,2:54.52,,WEB_Session03.RES,174.52,338,Bucket 4,200m IM,2:54.52,True
+03,21,Female 200m IM,200,MEDLEY,savannah wright|worcester,Savannah Wright,Female,12,Worcester,2:54.65,,WEB_Session03.RES,174.65,337,Bucket 4,200m IM,2:54.65,True
+03,21,Female 200m IM,200,MEDLEY,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,3:54.63,,WEB_Session03.RES,234.63,139,Bucket 4,200m IM,3:54.63,False
+03,21,Female 200m IM,200,MEDLEY,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 4,200m IM,DNC,False
+03,21,Female 200m IM,200,MEDLEY,pippa jenkins|worcester,Pippa Jenkins,Female,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 4,200m IM,DNC,False
+03,21,Female 200m IM,200,MEDLEY,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 4,200m IM,DNC,False
+03,21,Female 200m IM,200,MEDLEY,emily bufi|worcester,Emily Bufi,Female,13,Worcester,2:46.79,,WEB_Session03.RES,166.79,387,Bucket 4,200m IM,2:46.79,True
+03,21,Female 200m IM,200,MEDLEY,amelia booth|worcester,Amelia Booth,Female,13,Worcester,2:46.81,,WEB_Session03.RES,166.81,387,Bucket 4,200m IM,2:46.81,True
+03,21,Female 200m IM,200,MEDLEY,alana buckley|worcester,Alana Buckley,Female,13,Worcester,3:29.68,,WEB_Session03.RES,209.68,195,Bucket 4,200m IM,3:29.68,True
+03,21,Female 200m IM,200,MEDLEY,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,2:41.32,,WEB_Session03.RES,161.32,428,Bucket 4,200m IM,2:41.32,True
+03,21,Female 200m IM,200,MEDLEY,helena cooke|worcester,Helena Cooke,Female,14,Worcester,2:42.61,,WEB_Session03.RES,162.61,418,Bucket 4,200m IM,2:42.61,True
+03,21,Female 200m IM,200,MEDLEY,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,2:47.81,,WEB_Session03.RES,167.81,380,Bucket 4,200m IM,2:47.81,True
+03,21,Female 200m IM,200,MEDLEY,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,2:57.37,,WEB_Session03.RES,177.37,322,Bucket 4,200m IM,2:57.37,True
+03,21,Female 200m IM,200,MEDLEY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 4,200m IM,DNC,False
+03,21,Female 200m IM,200,MEDLEY,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,2:43.36,,WEB_Session03.RES,163.36,412,Bucket 4,200m IM,2:43.36,True
+03,21,Female 200m IM,200,MEDLEY,ffion lea|worcester,Ffion Lea,Female,15,Worcester,3:01.17,,WEB_Session03.RES,181.17,302,Bucket 4,200m IM,3:01.17,True
+03,21,Female 200m IM,200,MEDLEY,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,2:25.19,,WEB_Session03.RES,145.19,587,Bucket 4,200m IM,2:25.19,True
+03,21,Female 200m IM,200,MEDLEY,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,2:44.36,,WEB_Session03.RES,164.36,405,Bucket 4,200m IM,2:44.36,True
+03,21,Female 200m IM,200,MEDLEY,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,2:44.91,,WEB_Session03.RES,164.91,401,Bucket 4,200m IM,2:44.91,True
+03,22,Open/Male 200m IM,200,MEDLEY,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,3:26.73,,WEB_Session03.RES,206.73,146,Bucket 4,200m IM,3:26.73,False
+03,22,Open/Male 200m IM,200,MEDLEY,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,3:51.69,,WEB_Session03.RES,231.69,103,Bucket 4,200m IM,3:51.69,True
+03,22,Open/Male 200m IM,200,MEDLEY,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,3:07.24,,WEB_Session03.RES,187.24,196,Bucket 4,200m IM,3:07.24,True
+03,22,Open/Male 200m IM,200,MEDLEY,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,3:25.50,,WEB_Session03.RES,205.5,148,Bucket 4,200m IM,3:25.50,True
+03,22,Open/Male 200m IM,200,MEDLEY,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,3:28.48,,WEB_Session03.RES,208.48,142,Bucket 4,200m IM,3:28.48,True
+03,22,Open/Male 200m IM,200,MEDLEY,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,DQ SA,,WEB_Session03.RES,,0,Bucket 4,200m IM,-,False
+03,22,Open/Male 200m IM,200,MEDLEY,william ryan|worcester,William Ryan,Male/Open,10,Worcester,DQ T,,WEB_Session03.RES,,0,Bucket 4,200m IM,-,False
+03,22,Open/Male 200m IM,200,MEDLEY,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,2:53.31,,WEB_Session03.RES,173.31,247,Bucket 4,200m IM,2:53.31,True
+03,22,Open/Male 200m IM,200,MEDLEY,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,2:37.24,,WEB_Session03.RES,157.24,332,Bucket 4,200m IM,2:37.24,True
+03,22,Open/Male 200m IM,200,MEDLEY,isaac may|worcester,Isaac May,Male/Open,12,Worcester,2:40.24,,WEB_Session03.RES,160.24,313,Bucket 4,200m IM,2:40.24,True
+03,22,Open/Male 200m IM,200,MEDLEY,logan hadley|worcester,Logan Hadley,Male/Open,12,Worcester,2:44.58,,WEB_Session03.RES,164.57999999999998,289,Bucket 4,200m IM,2:44.58,True
+03,22,Open/Male 200m IM,200,MEDLEY,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,3:23.02,,WEB_Session03.RES,203.02,154,Bucket 4,200m IM,3:23.02,True
+03,22,Open/Male 200m IM,200,MEDLEY,luke picken|worcester,Luke Picken,Male/Open,12,Worcester,DQ T,,WEB_Session03.RES,,0,Bucket 4,200m IM,-,False
+03,22,Open/Male 200m IM,200,MEDLEY,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,2:35.10,,WEB_Session03.RES,155.1,345,Bucket 4,200m IM,2:35.10,False
+03,22,Open/Male 200m IM,200,MEDLEY,james walter|worcester,James Walter,Male/Open,13,Worcester,2:53.65,,WEB_Session03.RES,173.65,246,Bucket 4,200m IM,2:53.65,False
+03,22,Open/Male 200m IM,200,MEDLEY,edward alfred evans|worcester,Edward Alfred Evans,Male/Open,13,Worcester,3:13.26,,WEB_Session03.RES,193.26,178,Bucket 4,200m IM,3:13.26,True
+03,22,Open/Male 200m IM,200,MEDLEY,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,2:26.66,,WEB_Session03.RES,146.66,409,Bucket 4,200m IM,2:26.66,True
+03,22,Open/Male 200m IM,200,MEDLEY,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,2:41.24,,WEB_Session03.RES,161.24,307,Bucket 4,200m IM,2:41.24,True
+03,22,Open/Male 200m IM,200,MEDLEY,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,DQ ST,,WEB_Session03.RES,,0,Bucket 4,200m IM,-,False
+03,22,Open/Male 200m IM,200,MEDLEY,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,2:27.32,,WEB_Session03.RES,147.32,403,Bucket 4,200m IM,2:27.32,True
+03,22,Open/Male 200m IM,200,MEDLEY,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,2:27.72,,WEB_Session03.RES,147.72,400,Bucket 4,200m IM,2:27.72,True
+03,22,Open/Male 200m IM,200,MEDLEY,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,2:35.18,,WEB_Session03.RES,155.18,345,Bucket 4,200m IM,2:35.18,True
+03,22,Open/Male 200m IM,200,MEDLEY,james cooke|worcester,James Cooke,Male/Open,16,Worcester,DQ T,,WEB_Session03.RES,,0,Bucket 4,200m IM,-,False
+03,23,Female 50m Breaststroke,50,BREAST,francesca williams|worcester,Francesca Williams,Female,9,Worcester,54.52,,WEB_Session03.RES,54.52,140,Bucket 1,50m Breast,54.52,True
+03,23,Female 50m Breaststroke,50,BREAST,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,55.56,,WEB_Session03.RES,55.56,133,Bucket 1,50m Breast,55.56,False
+03,23,Female 50m Breaststroke,50,BREAST,carys smith|worcester,Carys Smith,Female,9,Worcester,1:01.50,,WEB_Session03.RES,61.5,98,Bucket 1,50m Breast,1:01.50,True
+03,23,Female 50m Breaststroke,50,BREAST,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,1:03.63,,WEB_Session03.RES,63.63,88,Bucket 1,50m Breast,1:03.63,False
+03,23,Female 50m Breaststroke,50,BREAST,hallie pinnock|worcester,Hallie Pinnock,Female,9,Worcester,1:08.10,,WEB_Session03.RES,68.1,72,Bucket 1,50m Breast,1:08.10,False
+03,23,Female 50m Breaststroke,50,BREAST,zara turley|worcester,Zara Turley,Female,9,Worcester,DQ SL,,WEB_Session03.RES,,0,Bucket 1,50m Breast,-,False
+03,23,Female 50m Breaststroke,50,BREAST,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,50.58,,WEB_Session03.RES,50.58,176,Bucket 1,50m Breast,50.58,False
+03,23,Female 50m Breaststroke,50,BREAST,matilda clay|worcester,Matilda Clay,Female,10,Worcester,51.45,,WEB_Session03.RES,51.45,167,Bucket 1,50m Breast,51.45,False
+03,23,Female 50m Breaststroke,50,BREAST,annie harte|worcester,Annie Harte,Female,10,Worcester,52.76,,WEB_Session03.RES,52.76,155,Bucket 1,50m Breast,52.76,True
+03,23,Female 50m Breaststroke,50,BREAST,freya murphy|worcester,Freya Murphy,Female,10,Worcester,53.67,,WEB_Session03.RES,53.67,147,Bucket 1,50m Breast,53.67,False
+03,23,Female 50m Breaststroke,50,BREAST,tiegan white|worcester,Tiegan White,Female,10,Worcester,53.94,,WEB_Session03.RES,53.94,145,Bucket 1,50m Breast,53.94,False
+03,23,Female 50m Breaststroke,50,BREAST,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,54.96,,WEB_Session03.RES,54.96,137,Bucket 1,50m Breast,54.96,False
+03,23,Female 50m Breaststroke,50,BREAST,emily griffin|worcester,Emily Griffin,Female,10,Worcester,55.16,,WEB_Session03.RES,55.16,136,Bucket 1,50m Breast,55.16,False
+03,23,Female 50m Breaststroke,50,BREAST,jessica hadley|worcester,Jessica Hadley,Female,10,Worcester,56.07,,WEB_Session03.RES,56.07,129,Bucket 1,50m Breast,56.07,True
+03,23,Female 50m Breaststroke,50,BREAST,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,56.15,,WEB_Session03.RES,56.15,128,Bucket 1,50m Breast,56.15,False
+03,23,Female 50m Breaststroke,50,BREAST,ffion williams|worcester,Ffion Williams,Female,10,Worcester,59.81,,WEB_Session03.RES,59.81,106,Bucket 1,50m Breast,59.81,False
+03,23,Female 50m Breaststroke,50,BREAST,florence cooper|worcester,Florence Cooper,Female,10,Worcester,1:01.75,,WEB_Session03.RES,61.75,96,Bucket 1,50m Breast,1:01.75,False
+03,23,Female 50m Breaststroke,50,BREAST,millie beaumont|worcester,Millie Beaumont,Female,11,Worcester,42.22,,WEB_Session03.RES,42.22,303,Bucket 1,50m Breast,42.22,False
+03,23,Female 50m Breaststroke,50,BREAST,amelia wood|worcester,Amelia Wood,Female,11,Worcester,43.72,,WEB_Session03.RES,43.72,273,Bucket 1,50m Breast,43.72,False
+03,23,Female 50m Breaststroke,50,BREAST,emma graham|worcester,Emma Graham,Female,11,Worcester,45.71,,WEB_Session03.RES,45.71,239,Bucket 1,50m Breast,45.71,False
+03,23,Female 50m Breaststroke,50,BREAST,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,49.62,,WEB_Session03.RES,49.62,186,Bucket 1,50m Breast,49.62,False
+03,23,Female 50m Breaststroke,50,BREAST,heidi cotterill|worcester,Heidi Cotterill,Female,11,Worcester,49.81,,WEB_Session03.RES,49.81,184,Bucket 1,50m Breast,49.81,False
+03,23,Female 50m Breaststroke,50,BREAST,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,49.88,,WEB_Session03.RES,49.88,183,Bucket 1,50m Breast,49.88,False
+03,23,Female 50m Breaststroke,50,BREAST,freya flint|worcester,Freya Flint,Female,11,Worcester,51.47,,WEB_Session03.RES,51.47,167,Bucket 1,50m Breast,51.47,False
+03,23,Female 50m Breaststroke,50,BREAST,hui yau chow|worcester,Hui Yau Chow,Female,11,Worcester,51.56,,WEB_Session03.RES,51.56,166,Bucket 1,50m Breast,51.56,True
+03,23,Female 50m Breaststroke,50,BREAST,elodie hand|worcester,Elodie Hand,Female,11,Worcester,52.12,,WEB_Session03.RES,52.12,161,Bucket 1,50m Breast,52.12,True
+03,23,Female 50m Breaststroke,50,BREAST,thea everitt|worcester,Thea Everitt,Female,12,Worcester,38.90,,WEB_Session03.RES,38.9,387,Bucket 1,50m Breast,38.90,False
+03,23,Female 50m Breaststroke,50,BREAST,savannah wright|worcester,Savannah Wright,Female,12,Worcester,39.57,,WEB_Session03.RES,39.57,368,Bucket 1,50m Breast,39.57,False
+03,23,Female 50m Breaststroke,50,BREAST,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,43.26,,WEB_Session03.RES,43.26,282,Bucket 1,50m Breast,43.26,False
+03,23,Female 50m Breaststroke,50,BREAST,lucy hill|worcester,Lucy Hill,Female,12,Worcester,43.74,,WEB_Session03.RES,43.74,272,Bucket 1,50m Breast,43.74,False
+03,23,Female 50m Breaststroke,50,BREAST,pippa jenkins|worcester,Pippa Jenkins,Female,12,Worcester,43.77,,WEB_Session03.RES,43.77,272,Bucket 1,50m Breast,43.77,False
+03,23,Female 50m Breaststroke,50,BREAST,ruby kilmartin|worcester,Ruby Kilmartin,Female,12,Worcester,45.55,,WEB_Session03.RES,45.55,241,Bucket 1,50m Breast,45.55,True
+03,23,Female 50m Breaststroke,50,BREAST,amy lynn|worcester,Amy Lynn,Female,12,Worcester,45.57,,WEB_Session03.RES,45.57,241,Bucket 1,50m Breast,45.57,True
+03,23,Female 50m Breaststroke,50,BREAST,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,45.64,,WEB_Session03.RES,45.64,240,Bucket 1,50m Breast,45.64,True
+03,23,Female 50m Breaststroke,50,BREAST,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,47.85,,WEB_Session03.RES,47.85,208,Bucket 1,50m Breast,47.85,False
+03,23,Female 50m Breaststroke,50,BREAST,phoebe turley|worcester,Phoebe Turley,Female,12,Worcester,50.76,,WEB_Session03.RES,50.76,174,Bucket 1,50m Breast,50.76,True
+03,23,Female 50m Breaststroke,50,BREAST,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,56.60,,WEB_Session03.RES,56.6,125,Bucket 1,50m Breast,56.60,False
+03,23,Female 50m Breaststroke,50,BREAST,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 1,50m Breast,DNC,False
+03,23,Female 50m Breaststroke,50,BREAST,amelia booth|worcester,Amelia Booth,Female,13,Worcester,40.44,,WEB_Session03.RES,40.44,345,Bucket 1,50m Breast,40.44,False
+03,23,Female 50m Breaststroke,50,BREAST,emily bufi|worcester,Emily Bufi,Female,13,Worcester,43.16,,WEB_Session03.RES,43.16,284,Bucket 1,50m Breast,43.16,False
+03,23,Female 50m Breaststroke,50,BREAST,katie harte|worcester,Katie Harte,Female,13,Worcester,46.03,,WEB_Session03.RES,46.03,234,Bucket 1,50m Breast,46.03,False
+03,23,Female 50m Breaststroke,50,BREAST,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,38.64,,WEB_Session03.RES,38.64,395,Bucket 1,50m Breast,38.64,True
+03,23,Female 50m Breaststroke,50,BREAST,ava aspinall|worcester,Ava Aspinall,Female,14,Worcester,38.74,,WEB_Session03.RES,38.74,392,Bucket 1,50m Breast,38.74,False
+03,23,Female 50m Breaststroke,50,BREAST,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,39.07,,WEB_Session03.RES,39.07,382,Bucket 1,50m Breast,39.07,False
+03,23,Female 50m Breaststroke,50,BREAST,alice wickett|worcester,Alice Wickett,Female,15,Worcester,38.03,,WEB_Session03.RES,38.03,415,Bucket 1,50m Breast,38.03,True
+03,23,Female 50m Breaststroke,50,BREAST,eva anderson|worcester,Eva Anderson,Female,15,Worcester,40.94,,WEB_Session03.RES,40.94,332,Bucket 1,50m Breast,40.94,False
+03,23,Female 50m Breaststroke,50,BREAST,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,34.86,,WEB_Session03.RES,34.86,539,Bucket 1,50m Breast,34.86,False
+03,23,Female 50m Breaststroke,50,BREAST,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,35.36,,WEB_Session03.RES,35.36,516,Bucket 1,50m Breast,35.36,True
+03,23,Female 50m Breaststroke,50,BREAST,rebecca redfern|worcester,Rebecca Redfern,Female,27,Worcester,36.03,,WEB_Session03.RES,36.03,488,Bucket 1,50m Breast,36.03,True
+03,23,Female 50m Breaststroke,50,BREAST,sophie earp|worcester,Sophie Earp,Female,17,Worcester,37.66,,WEB_Session03.RES,37.66,427,Bucket 1,50m Breast,37.66,True
+03,23,Female 50m Breaststroke,50,BREAST,annabel cunningham|worcester,Annabel Cunningham,Female,16,Worcester,38.02,,WEB_Session03.RES,38.02,415,Bucket 1,50m Breast,38.02,True
+03,23,Female 50m Breaststroke,50,BREAST,mia gooch|worcester,Mia Gooch,Female,16,Worcester,40.09,,WEB_Session03.RES,40.09,354,Bucket 1,50m Breast,40.09,False
+03,23,Female 50m Breaststroke,50,BREAST,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,40.17,,WEB_Session03.RES,40.17,352,Bucket 1,50m Breast,40.17,False
+03,23,Female 50m Breaststroke,50,BREAST,isabella wood|worcester,Isabella Wood,Female,16,Worcester,45.80,,WEB_Session03.RES,45.8,237,Bucket 1,50m Breast,45.80,False
+03,23,Female 50m Breaststroke,50,BREAST,julia wolska-bailey|worcester,Julia Wolska-Bailey,Female,16,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 1,50m Breast,DNC,False
+03,24,Open/Male 100m Freestyle,100,FREE,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,1:27.72,,WEB_Session03.RES,87.72,133,Bucket 3,100m Free,1:27.72,False
+03,24,Open/Male 100m Freestyle,100,FREE,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,1:28.57,,WEB_Session03.RES,88.57,129,Bucket 3,100m Free,1:28.57,True
+03,24,Open/Male 100m Freestyle,100,FREE,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,1:30.89,,WEB_Session03.RES,90.89,120,Bucket 3,100m Free,1:30.89,False
+03,24,Open/Male 100m Freestyle,100,FREE,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,1:32.56,,WEB_Session03.RES,92.56,113,Bucket 3,100m Free,1:32.56,True
+03,24,Open/Male 100m Freestyle,100,FREE,logan bowers-scone|worcester,Logan Bowers-Scone,Male/Open,9,Worcester,1:38.59,,WEB_Session03.RES,98.59,94,Bucket 3,100m Free,1:38.59,True
+03,24,Open/Male 100m Freestyle,100,FREE,gabriel hojnacki|worcester,Gabriel Hojnacki,Male/Open,9,Worcester,1:57.75,,WEB_Session03.RES,117.75,55,Bucket 3,100m Free,1:57.75,True
+03,24,Open/Male 100m Freestyle,100,FREE,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,2:02.32,,WEB_Session03.RES,122.32,49,Bucket 3,100m Free,2:02.32,True
+03,24,Open/Male 100m Freestyle,100,FREE,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,1:14.40,,WEB_Session03.RES,74.4,218,Bucket 3,100m Free,1:14.40,False
+03,24,Open/Male 100m Freestyle,100,FREE,william ryan|worcester,William Ryan,Male/Open,10,Worcester,1:20.43,,WEB_Session03.RES,80.43,173,Bucket 3,100m Free,1:20.43,True
+03,24,Open/Male 100m Freestyle,100,FREE,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,1:26.45,,WEB_Session03.RES,86.45,139,Bucket 3,100m Free,1:26.45,True
+03,24,Open/Male 100m Freestyle,100,FREE,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,1:30.80,,WEB_Session03.RES,90.8,120,Bucket 3,100m Free,1:30.80,True
+03,24,Open/Male 100m Freestyle,100,FREE,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,1:08.45,,WEB_Session03.RES,68.45,281,Bucket 3,100m Free,1:08.45,True
+03,24,Open/Male 100m Freestyle,100,FREE,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,1:15.03,,WEB_Session03.RES,75.03,213,Bucket 3,100m Free,1:15.03,True
+03,24,Open/Male 100m Freestyle,100,FREE,laith sabagh|worcester,Laith Sabagh,Male/Open,11,Worcester,1:26.26,,WEB_Session03.RES,86.26,140,Bucket 3,100m Free,1:26.26,True
+03,24,Open/Male 100m Freestyle,100,FREE,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,1:06.00,,WEB_Session03.RES,66.0,313,Bucket 3,100m Free,1:06.00,False
+03,24,Open/Male 100m Freestyle,100,FREE,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,1:06.45,,WEB_Session03.RES,66.45,307,Bucket 3,100m Free,1:06.45,False
+03,24,Open/Male 100m Freestyle,100,FREE,isaac may|worcester,Isaac May,Male/Open,12,Worcester,1:06.65,,WEB_Session03.RES,66.65,304,Bucket 3,100m Free,1:06.65,True
+03,24,Open/Male 100m Freestyle,100,FREE,logan hadley|worcester,Logan Hadley,Male/Open,12,Worcester,1:09.17,,WEB_Session03.RES,69.17,272,Bucket 3,100m Free,1:09.17,True
+03,24,Open/Male 100m Freestyle,100,FREE,luke picken|worcester,Luke Picken,Male/Open,12,Worcester,1:10.89,,WEB_Session03.RES,70.89,253,Bucket 3,100m Free,1:10.89,True
+03,24,Open/Male 100m Freestyle,100,FREE,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,1:19.37,,WEB_Session03.RES,79.37,180,Bucket 3,100m Free,1:19.37,True
+03,24,Open/Male 100m Freestyle,100,FREE,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,1:25.65,,WEB_Session03.RES,85.65,143,Bucket 3,100m Free,1:25.65,False
+03,24,Open/Male 100m Freestyle,100,FREE,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 3,100m Free,DNC,False
+03,24,Open/Male 100m Freestyle,100,FREE,jonas harvey|worcester,Jonas Harvey,Male/Open,13,Worcester,1:03.95,,WEB_Session03.RES,63.95,344,Bucket 3,100m Free,1:03.95,True
+03,24,Open/Male 100m Freestyle,100,FREE,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,1:05.38,,WEB_Session03.RES,65.38,322,Bucket 3,100m Free,1:05.38,True
+03,24,Open/Male 100m Freestyle,100,FREE,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,1:06.73,,WEB_Session03.RES,66.73,303,Bucket 3,100m Free,1:06.73,True
+03,24,Open/Male 100m Freestyle,100,FREE,oscar wheeler|worcester,Oscar Wheeler,Male/Open,13,Worcester,1:06.90,,WEB_Session03.RES,66.9,301,Bucket 3,100m Free,1:06.90,True
+03,24,Open/Male 100m Freestyle,100,FREE,james walter|worcester,James Walter,Male/Open,13,Worcester,1:09.40,,WEB_Session03.RES,69.4,269,Bucket 3,100m Free,1:09.40,False
+03,24,Open/Male 100m Freestyle,100,FREE,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,1:10.42,,WEB_Session03.RES,70.42,258,Bucket 3,100m Free,1:10.42,False
+03,24,Open/Male 100m Freestyle,100,FREE,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,1:13.56,,WEB_Session03.RES,73.56,226,Bucket 3,100m Free,1:13.56,True
+03,24,Open/Male 100m Freestyle,100,FREE,edward alfred evans|worcester,Edward Alfred Evans,Male/Open,13,Worcester,1:16.84,,WEB_Session03.RES,76.84,198,Bucket 3,100m Free,1:16.84,True
+03,24,Open/Male 100m Freestyle,100,FREE,lucas foxall|worcester,Lucas Foxall,Male/Open,13,Worcester,1:21.00,,WEB_Session03.RES,81.0,169,Bucket 3,100m Free,1:21.00,True
+03,24,Open/Male 100m Freestyle,100,FREE,ewan windross|worcester,Ewan Windross,Male/Open,13,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 3,100m Free,DNC,False
+03,24,Open/Male 100m Freestyle,100,FREE,joseph jennings|worcester,Joseph Jennings,Male/Open,13,Worcester,DQ ST,,WEB_Session03.RES,,0,Bucket 3,100m Free,-,False
+03,24,Open/Male 100m Freestyle,100,FREE,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,56.65,,WEB_Session03.RES,56.65,495,Bucket 3,100m Free,56.65,True
+03,24,Open/Male 100m Freestyle,100,FREE,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,56.82,,WEB_Session03.RES,56.82,491,Bucket 3,100m Free,56.82,True
+03,24,Open/Male 100m Freestyle,100,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:01.75,,WEB_Session03.RES,61.75,382,Bucket 3,100m Free,1:01.75,True
+03,24,Open/Male 100m Freestyle,100,FREE,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:06.65,,WEB_Session03.RES,66.65,304,Bucket 3,100m Free,1:06.65,False
+03,24,Open/Male 100m Freestyle,100,FREE,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,1:12.42,,WEB_Session03.RES,72.42,237,Bucket 3,100m Free,1:12.42,True
+03,24,Open/Male 100m Freestyle,100,FREE,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,57.31,,WEB_Session03.RES,57.31,478,Bucket 3,100m Free,57.31,True
+03,24,Open/Male 100m Freestyle,100,FREE,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,54.95,,WEB_Session03.RES,54.95,543,Bucket 3,100m Free,54.95,True
+03,24,Open/Male 100m Freestyle,100,FREE,matthew redfern|worcester,Matthew Redfern,Male/Open,28,Worcester,56.67,,WEB_Session03.RES,56.67,495,Bucket 3,100m Free,56.67,True
+03,24,Open/Male 100m Freestyle,100,FREE,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,56.68,,WEB_Session03.RES,56.68,495,Bucket 3,100m Free,56.68,False
+03,24,Open/Male 100m Freestyle,100,FREE,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,1:00.55,,WEB_Session03.RES,60.55,406,Bucket 3,100m Free,1:00.55,False
+03,24,Open/Male 100m Freestyle,100,FREE,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,1:01.14,,WEB_Session03.RES,61.14,394,Bucket 3,100m Free,1:01.14,True
+03,24,Open/Male 100m Freestyle,100,FREE,james cooke|worcester,James Cooke,Male/Open,16,Worcester,1:02.25,,WEB_Session03.RES,62.25,373,Bucket 3,100m Free,1:02.25,True
+03,24,Open/Male 100m Freestyle,100,FREE,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,1:02.92,,WEB_Session03.RES,62.92,361,Bucket 3,100m Free,1:02.92,True
+03,24,Open/Male 100m Freestyle,100,FREE,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,1:03.79,,WEB_Session03.RES,63.79,347,Bucket 3,100m Free,1:03.79,True
+03,24,Open/Male 100m Freestyle,100,FREE,liam lyman|worcester,Liam Lyman,Male/Open,44,Worcester,1:07.81,,WEB_Session03.RES,67.81,289,Bucket 3,100m Free,1:07.81,True
+03,25,Female 100m Backstroke,100,BACK,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,1:42.81,,WEB_Session03.RES,102.81,145,Bucket 2,100m Back,1:42.81,False
+03,25,Female 100m Backstroke,100,BACK,victoria lemes|worcester,Victoria Lemes,Female,9,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
+03,25,Female 100m Backstroke,100,BACK,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,1:35.97,,WEB_Session03.RES,95.97,178,Bucket 2,100m Back,1:35.97,False
+03,25,Female 100m Backstroke,100,BACK,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,1:36.11,,WEB_Session03.RES,96.11,177,Bucket 2,100m Back,1:36.11,True
+03,25,Female 100m Backstroke,100,BACK,tiegan white|worcester,Tiegan White,Female,10,Worcester,1:40.36,,WEB_Session03.RES,100.36,155,Bucket 2,100m Back,1:40.36,True
+03,25,Female 100m Backstroke,100,BACK,freya murphy|worcester,Freya Murphy,Female,10,Worcester,1:45.98,,WEB_Session03.RES,105.97999999999999,132,Bucket 2,100m Back,1:45.98,False
+03,25,Female 100m Backstroke,100,BACK,miriam browning|worcester,Miriam Browning,Female,10,Worcester,1:51.36,,WEB_Session03.RES,111.36,114,Bucket 2,100m Back,1:51.36,True
+03,25,Female 100m Backstroke,100,BACK,annie harte|worcester,Annie Harte,Female,10,Worcester,1:56.95,,WEB_Session03.RES,116.95,98,Bucket 2,100m Back,1:56.95,True
+03,25,Female 100m Backstroke,100,BACK,ffion williams|worcester,Ffion Williams,Female,10,Worcester,1:59.49,,WEB_Session03.RES,119.49000000000001,92,Bucket 2,100m Back,1:59.49,False
+03,25,Female 100m Backstroke,100,BACK,jessica hadley|worcester,Jessica Hadley,Female,10,Worcester,DQ SA,,WEB_Session03.RES,,0,Bucket 2,100m Back,-,False
+03,25,Female 100m Backstroke,100,BACK,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,1:30.00,,WEB_Session03.RES,90.0,216,Bucket 2,100m Back,1:30.00,True
+03,25,Female 100m Backstroke,100,BACK,thea harvey|worcester,Thea Harvey,Female,11,Worcester,1:32.29,,WEB_Session03.RES,92.28999999999999,200,Bucket 2,100m Back,1:32.29,True
+03,25,Female 100m Backstroke,100,BACK,daisy wise|worcester,Daisy Wise,Female,11,Worcester,1:34.78,,WEB_Session03.RES,94.78,185,Bucket 2,100m Back,1:34.78,False
+03,25,Female 100m Backstroke,100,BACK,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,1:35.31,,WEB_Session03.RES,95.31,182,Bucket 2,100m Back,1:35.31,True
+03,25,Female 100m Backstroke,100,BACK,elodie hand|worcester,Elodie Hand,Female,11,Worcester,1:38.27,,WEB_Session03.RES,98.27000000000001,166,Bucket 2,100m Back,1:38.27,True
+03,25,Female 100m Backstroke,100,BACK,freya flint|worcester,Freya Flint,Female,11,Worcester,1:45.08,,WEB_Session03.RES,105.08,135,Bucket 2,100m Back,1:45.08,False
+03,25,Female 100m Backstroke,100,BACK,thea everitt|worcester,Thea Everitt,Female,12,Worcester,1:17.29,,WEB_Session03.RES,77.28999999999999,341,Bucket 2,100m Back,1:17.29,True
+03,25,Female 100m Backstroke,100,BACK,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,1:17.96,,WEB_Session03.RES,77.96000000000001,332,Bucket 2,100m Back,1:17.96,True
+03,25,Female 100m Backstroke,100,BACK,savannah wright|worcester,Savannah Wright,Female,12,Worcester,1:20.66,,WEB_Session03.RES,80.66,300,Bucket 2,100m Back,1:20.66,False
+03,25,Female 100m Backstroke,100,BACK,isabelle rea|worcester,Isabelle Rea,Female,12,Worcester,1:29.82,,WEB_Session03.RES,89.82,217,Bucket 2,100m Back,1:29.82,True
+03,25,Female 100m Backstroke,100,BACK,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,1:34.62,,WEB_Session03.RES,94.62,186,Bucket 2,100m Back,1:34.62,True
+03,25,Female 100m Backstroke,100,BACK,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
+03,25,Female 100m Backstroke,100,BACK,lucy hill|worcester,Lucy Hill,Female,12,Worcester,DQ T,,WEB_Session03.RES,,0,Bucket 2,100m Back,-,False
+03,25,Female 100m Backstroke,100,BACK,lucy piper|worcester,Lucy Piper,Female,13,Worcester,1:12.88,,WEB_Session03.RES,72.88,407,Bucket 2,100m Back,1:12.88,True
+03,25,Female 100m Backstroke,100,BACK,emily bufi|worcester,Emily Bufi,Female,13,Worcester,1:16.44,,WEB_Session03.RES,76.44,352,Bucket 2,100m Back,1:16.44,True
+03,25,Female 100m Backstroke,100,BACK,katie harte|worcester,Katie Harte,Female,13,Worcester,1:27.61,,WEB_Session03.RES,87.61,234,Bucket 2,100m Back,1:27.61,True
+03,25,Female 100m Backstroke,100,BACK,alana buckley|worcester,Alana Buckley,Female,13,Worcester,1:34.10,,WEB_Session03.RES,94.1,189,Bucket 2,100m Back,1:34.10,True
+03,25,Female 100m Backstroke,100,BACK,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,1:13.22,,WEB_Session03.RES,73.22,401,Bucket 2,100m Back,1:13.22,True
+03,25,Female 100m Backstroke,100,BACK,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,1:14.60,,WEB_Session03.RES,74.6,379,Bucket 2,100m Back,1:14.60,False
+03,25,Female 100m Backstroke,100,BACK,ava aspinall|worcester,Ava Aspinall,Female,14,Worcester,1:15.22,,WEB_Session03.RES,75.22,370,Bucket 2,100m Back,1:15.22,True
+03,25,Female 100m Backstroke,100,BACK,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,1:16.63,,WEB_Session03.RES,76.63,350,Bucket 2,100m Back,1:16.63,True
+03,25,Female 100m Backstroke,100,BACK,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,1:25.60,,WEB_Session03.RES,85.6,251,Bucket 2,100m Back,1:25.60,True
+03,25,Female 100m Backstroke,100,BACK,helena cooke|worcester,Helena Cooke,Female,14,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
+03,25,Female 100m Backstroke,100,BACK,emilia spence|worcester,Emilia Spence,Female,15,Worcester,1:09.28,,WEB_Session03.RES,69.28,474,Bucket 2,100m Back,1:09.28,True
+03,25,Female 100m Backstroke,100,BACK,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,1:13.69,,WEB_Session03.RES,73.69,393,Bucket 2,100m Back,1:13.69,True
+03,25,Female 100m Backstroke,100,BACK,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:21.10,,WEB_Session03.RES,81.1,295,Bucket 2,100m Back,1:21.10,False
+03,25,Female 100m Backstroke,100,BACK,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
+03,25,Female 100m Backstroke,100,BACK,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,1:05.25,,WEB_Session03.RES,65.25,567,Bucket 2,100m Back,1:05.25,True
+03,25,Female 100m Backstroke,100,BACK,elizabeth wetherall|worcester,Elizabeth Wetherall,Female,16,Worcester,1:08.83,,WEB_Session03.RES,68.83,483,Bucket 2,100m Back,1:08.83,True
+03,25,Female 100m Backstroke,100,BACK,isabelle thorn|worcester,Isabelle Thorn,Female,17,Worcester,1:13.58,,WEB_Session03.RES,73.58,395,Bucket 2,100m Back,1:13.58,True
+03,25,Female 100m Backstroke,100,BACK,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:13.94,,WEB_Session03.RES,73.94,389,Bucket 2,100m Back,1:13.94,True
+03,25,Female 100m Backstroke,100,BACK,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,1:16.68,,WEB_Session03.RES,76.68,349,Bucket 2,100m Back,1:16.68,True
+03,25,Female 100m Backstroke,100,BACK,isabella wood|worcester,Isabella Wood,Female,16,Worcester,1:22.93,,WEB_Session03.RES,82.93,276,Bucket 2,100m Back,1:22.93,True
+03,25,Female 100m Backstroke,100,BACK,ava smith|worcester,Ava Smith,Female,16,Worcester,1:26.41,,WEB_Session03.RES,86.41,244,Bucket 2,100m Back,1:26.41,True
+03,25,Female 100m Backstroke,100,BACK,julia wolska-bailey|worcester,Julia Wolska-Bailey,Female,16,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 2,100m Back,DNC,False
+03,26,Open/Male 200m Backstroke,200,BACK,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,3:23.21,,WEB_Session03.RES,203.21,140,,200m Back,3:23.21,False
+03,26,Open/Male 200m Backstroke,200,BACK,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,3:26.73,,WEB_Session03.RES,206.73,133,,200m Back,3:26.73,False
+03,26,Open/Male 200m Backstroke,200,BACK,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,3:28.71,,WEB_Session03.RES,208.71,129,,200m Back,3:28.71,False
+03,26,Open/Male 200m Backstroke,200,BACK,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,2:54.64,,WEB_Session03.RES,174.64,221,,200m Back,2:54.64,False
+03,26,Open/Male 200m Backstroke,200,BACK,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,3:17.28,,WEB_Session03.RES,197.28,153,,200m Back,3:17.28,False
+03,26,Open/Male 200m Backstroke,200,BACK,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,3:28.05,,WEB_Session03.RES,208.05,130,,200m Back,3:28.05,False
+03,26,Open/Male 200m Backstroke,200,BACK,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,2:58.19,,WEB_Session03.RES,178.19,208,,200m Back,2:58.19,False
+03,26,Open/Male 200m Backstroke,200,BACK,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,2:39.44,,WEB_Session03.RES,159.44,290,,200m Back,2:39.44,False
+03,26,Open/Male 200m Backstroke,200,BACK,james walter|worcester,James Walter,Male/Open,13,Worcester,2:48.62,,WEB_Session03.RES,168.62,245,,200m Back,2:48.62,False
+03,26,Open/Male 200m Backstroke,200,BACK,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,2:54.16,,WEB_Session03.RES,174.16,223,,200m Back,2:54.16,False
+03,26,Open/Male 200m Backstroke,200,BACK,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,2:35.71,,WEB_Session03.RES,155.71,312,,200m Back,2:35.71,False
+03,26,Open/Male 200m Backstroke,200,BACK,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,,DNC,WEB_Session03.RES,,0,,200m Back,DNC,False
+03,26,Open/Male 200m Backstroke,200,BACK,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,2:29.68,,WEB_Session03.RES,149.68,351,,200m Back,2:29.68,False
+03,26,Open/Male 200m Backstroke,200,BACK,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,,DNC,WEB_Session03.RES,,0,,200m Back,DNC,False
+03,27,Female 200m Butterfly,200,FLY,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,3:00.00,,WEB_Session03.RES,180.0,291,,200m Fly,3:00.00,False
+03,27,Female 200m Butterfly,200,FLY,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,,DNC,WEB_Session03.RES,,0,,200m Fly,DNC,False
+03,27,Female 200m Butterfly,200,FLY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session03.RES,,0,,200m Fly,DNC,False
+03,27,Female 200m Butterfly,200,FLY,eva anderson|worcester,Eva Anderson,Female,15,Worcester,2:51.24,,WEB_Session03.RES,171.24,338,,200m Fly,2:51.24,False
+03,28,Open/Male 50m Butterfly,50,FLY,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,42.26,,WEB_Session03.RES,42.26,128,Bucket 1,50m Fly,42.26,False
+03,28,Open/Male 50m Butterfly,50,FLY,logan bowers-scone|worcester,Logan Bowers-Scone,Male/Open,9,Worcester,51.68,,WEB_Session03.RES,51.68,70,Bucket 1,50m Fly,51.68,False
+03,28,Open/Male 50m Butterfly,50,FLY,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,57.36,,WEB_Session03.RES,57.36,51,Bucket 1,50m Fly,57.36,False
+03,28,Open/Male 50m Butterfly,50,FLY,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,59.56,,WEB_Session03.RES,59.56,45,Bucket 1,50m Fly,59.56,False
+03,28,Open/Male 50m Butterfly,50,FLY,theo parker|worcester,Theo Parker,Male/Open,9,Worcester,1:03.90,,WEB_Session03.RES,63.9,37,Bucket 1,50m Fly,1:03.90,False
+03,28,Open/Male 50m Butterfly,50,FLY,gabriel hojnacki|worcester,Gabriel Hojnacki,Male/Open,9,Worcester,1:10.08,,WEB_Session03.RES,70.08,28,Bucket 1,50m Fly,1:10.08,True
+03,28,Open/Male 50m Butterfly,50,FLY,william ryan|worcester,William Ryan,Male/Open,10,Worcester,37.75,,WEB_Session03.RES,37.75,180,Bucket 1,50m Fly,37.75,True
+03,28,Open/Male 50m Butterfly,50,FLY,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,38.93,,WEB_Session03.RES,38.93,164,Bucket 1,50m Fly,38.93,False
+03,28,Open/Male 50m Butterfly,50,FLY,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,43.62,,WEB_Session03.RES,43.62,116,Bucket 1,50m Fly,43.62,False
+03,28,Open/Male 50m Butterfly,50,FLY,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,46.37,,WEB_Session03.RES,46.37,97,Bucket 1,50m Fly,46.37,False
+03,28,Open/Male 50m Butterfly,50,FLY,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,51.83,,WEB_Session03.RES,51.83,69,Bucket 1,50m Fly,51.83,False
+03,28,Open/Male 50m Butterfly,50,FLY,hugo hawkes|worcester,Hugo Hawkes,Male/Open,10,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 1,50m Fly,DNC,False
+03,28,Open/Male 50m Butterfly,50,FLY,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,36.12,,WEB_Session03.RES,36.12,205,Bucket 1,50m Fly,36.12,False
+03,28,Open/Male 50m Butterfly,50,FLY,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,38.51,,WEB_Session03.RES,38.51,169,Bucket 1,50m Fly,38.51,False
+03,28,Open/Male 50m Butterfly,50,FLY,laith sabagh|worcester,Laith Sabagh,Male/Open,11,Worcester,43.07,,WEB_Session03.RES,43.07,121,Bucket 1,50m Fly,43.07,True
+03,28,Open/Male 50m Butterfly,50,FLY,matthew dadd|worcester,Matthew Dadd,Male/Open,11,Worcester,53.65,,WEB_Session03.RES,53.65,62,Bucket 1,50m Fly,53.65,False
+03,28,Open/Male 50m Butterfly,50,FLY,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,31.53,,WEB_Session03.RES,31.53,309,Bucket 1,50m Fly,31.53,True
+03,28,Open/Male 50m Butterfly,50,FLY,isaac may|worcester,Isaac May,Male/Open,12,Worcester,33.56,,WEB_Session03.RES,33.56,256,Bucket 1,50m Fly,33.56,False
+03,28,Open/Male 50m Butterfly,50,FLY,logan hadley|worcester,Logan Hadley,Male/Open,12,Worcester,33.75,,WEB_Session03.RES,33.75,252,Bucket 1,50m Fly,33.75,True
+03,28,Open/Male 50m Butterfly,50,FLY,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,34.31,,WEB_Session03.RES,34.31,239,Bucket 1,50m Fly,34.31,False
+03,28,Open/Male 50m Butterfly,50,FLY,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,47.56,,WEB_Session03.RES,47.56,90,Bucket 1,50m Fly,47.56,False
+03,28,Open/Male 50m Butterfly,50,FLY,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 1,50m Fly,DNC,False
+03,28,Open/Male 50m Butterfly,50,FLY,ted carpenter|worcester,Ted Carpenter,Male/Open,13,Worcester,31.56,,WEB_Session03.RES,31.56,308,Bucket 1,50m Fly,31.56,False
+03,28,Open/Male 50m Butterfly,50,FLY,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,32.96,,WEB_Session03.RES,32.96,270,Bucket 1,50m Fly,32.96,False
+03,28,Open/Male 50m Butterfly,50,FLY,james walter|worcester,James Walter,Male/Open,13,Worcester,34.52,,WEB_Session03.RES,34.52,235,Bucket 1,50m Fly,34.52,True
+03,28,Open/Male 50m Butterfly,50,FLY,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,35.42,,WEB_Session03.RES,35.42,218,Bucket 1,50m Fly,35.42,False
+03,28,Open/Male 50m Butterfly,50,FLY,oscar wheeler|worcester,Oscar Wheeler,Male/Open,13,Worcester,35.57,,WEB_Session03.RES,35.57,215,Bucket 1,50m Fly,35.57,True
+03,28,Open/Male 50m Butterfly,50,FLY,joseph reay|worcester,Joseph Reay,Male/Open,13,Worcester,38.42,,WEB_Session03.RES,38.42,170,Bucket 1,50m Fly,38.42,True
+03,28,Open/Male 50m Butterfly,50,FLY,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,40.77,,WEB_Session03.RES,40.77,143,Bucket 1,50m Fly,40.77,False
+03,28,Open/Male 50m Butterfly,50,FLY,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,42.48,,WEB_Session03.RES,42.48,126,Bucket 1,50m Fly,42.48,True
+03,28,Open/Male 50m Butterfly,50,FLY,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,28.78,,WEB_Session03.RES,28.78,406,Bucket 1,50m Fly,28.78,False
+03,28,Open/Male 50m Butterfly,50,FLY,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,30.28,,WEB_Session03.RES,30.28,349,Bucket 1,50m Fly,30.28,False
+03,28,Open/Male 50m Butterfly,50,FLY,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,30.62,,WEB_Session03.RES,30.62,337,Bucket 1,50m Fly,30.62,False
+03,28,Open/Male 50m Butterfly,50,FLY,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,32.15,,WEB_Session03.RES,32.15,291,Bucket 1,50m Fly,32.15,False
+03,28,Open/Male 50m Butterfly,50,FLY,samuel smith|worcester,Samuel Smith,Male/Open,14,Worcester,DQ T,,WEB_Session03.RES,,0,Bucket 1,50m Fly,-,False
+03,28,Open/Male 50m Butterfly,50,FLY,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,26.96,,WEB_Session03.RES,26.96,494,Bucket 1,50m Fly,26.96,True
+03,28,Open/Male 50m Butterfly,50,FLY,matthew redfern|worcester,Matthew Redfern,Male/Open,28,Worcester,26.98,,WEB_Session03.RES,26.98,493,Bucket 1,50m Fly,26.98,True
+03,28,Open/Male 50m Butterfly,50,FLY,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,28.76,,WEB_Session03.RES,28.76,407,Bucket 1,50m Fly,28.76,False
+03,28,Open/Male 50m Butterfly,50,FLY,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,28.99,,WEB_Session03.RES,28.99,397,Bucket 1,50m Fly,28.99,True
+03,28,Open/Male 50m Butterfly,50,FLY,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,31.32,,WEB_Session03.RES,31.32,315,Bucket 1,50m Fly,31.32,False
+03,28,Open/Male 50m Butterfly,50,FLY,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,33.00,,WEB_Session03.RES,33.0,269,Bucket 1,50m Fly,33.00,False
+03,28,Open/Male 50m Butterfly,50,FLY,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,,DNC,WEB_Session03.RES,,0,Bucket 1,50m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,penny farnell|worcester,Penny Farnell,Female,11,Worcester,1:26.10,,WEB_Session04.RES,86.1,229,Bucket 2,100m Fly,1:26.10,True
+04,31,Female 100m Butterfly,100,FLY,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,1:37.47,,WEB_Session04.RES,97.47,158,Bucket 2,100m Fly,1:37.47,False
+04,31,Female 100m Butterfly,100,FLY,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,1:20.21,,WEB_Session04.RES,80.21000000000001,283,Bucket 2,100m Fly,1:20.21,False
+04,31,Female 100m Butterfly,100,FLY,lily benham-willetts|worcester,Lily Benham-Willetts,Female,12,Worcester,1:48.37,,WEB_Session04.RES,108.37,115,Bucket 2,100m Fly,1:48.37,True
+04,31,Female 100m Butterfly,100,FLY,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,savannah wright|worcester,Savannah Wright,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,pippa jenkins|worcester,Pippa Jenkins,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,emily bufi|worcester,Emily Bufi,Female,13,Worcester,1:20.04,,WEB_Session04.RES,80.03999999999999,285,Bucket 2,100m Fly,1:20.04,False
+04,31,Female 100m Butterfly,100,FLY,alana buckley|worcester,Alana Buckley,Female,13,Worcester,1:41.67,,WEB_Session04.RES,101.67,139,Bucket 2,100m Fly,1:41.67,False
+04,31,Female 100m Butterfly,100,FLY,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,1:21.03,,WEB_Session04.RES,81.03,275,Bucket 2,100m Fly,1:21.03,False
+04,31,Female 100m Butterfly,100,FLY,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,1:27.70,,WEB_Session04.RES,87.7,217,Bucket 2,100m Fly,1:27.70,True
+04,31,Female 100m Butterfly,100,FLY,lily wood|worcester,Lily Wood,Female,14,Worcester,1:29.17,,WEB_Session04.RES,89.17,206,Bucket 2,100m Fly,1:29.17,False
+04,31,Female 100m Butterfly,100,FLY,shreya vickram|worcester,Shreya Vickram,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,helena cooke|worcester,Helena Cooke,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,eva anderson|worcester,Eva Anderson,Female,15,Worcester,1:13.12,,WEB_Session04.RES,73.12,374,Bucket 2,100m Fly,1:13.12,True
+04,31,Female 100m Butterfly,100,FLY,ffion lea|worcester,Ffion Lea,Female,15,Worcester,1:24.16,,WEB_Session04.RES,84.16,245,Bucket 2,100m Fly,1:24.16,True
+04,31,Female 100m Butterfly,100,FLY,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,1:26.22,,WEB_Session04.RES,86.22,228,Bucket 2,100m Fly,1:26.22,True
+04,31,Female 100m Butterfly,100,FLY,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,31,Female 100m Butterfly,100,FLY,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,1:08.74,,WEB_Session04.RES,68.74,450,Bucket 2,100m Fly,1:08.74,True
+04,31,Female 100m Butterfly,100,FLY,elizabeth wetherall|worcester,Elizabeth Wetherall,Female,16,Worcester,1:11.72,,WEB_Session04.RES,71.72,396,Bucket 2,100m Fly,1:11.72,False
+04,31,Female 100m Butterfly,100,FLY,mia gooch|worcester,Mia Gooch,Female,16,Worcester,1:13.32,,WEB_Session04.RES,73.32,371,Bucket 2,100m Fly,1:13.32,False
+04,32,Open/Male 100m Butterfly,100,FLY,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,1:53.98,,WEB_Session04.RES,113.97999999999999,73,Bucket 2,100m Fly,1:53.98,False
+04,32,Open/Male 100m Butterfly,100,FLY,hugo mobberley|worcester,Hugo Mobberley,Male/Open,9,Worcester,2:34.77,,WEB_Session04.RES,154.77,29,Bucket 2,100m Fly,2:34.77,True
+04,32,Open/Male 100m Butterfly,100,FLY,william ryan|worcester,William Ryan,Male/Open,10,Worcester,1:30.72,,WEB_Session04.RES,90.72,145,Bucket 2,100m Fly,1:30.72,True
+04,32,Open/Male 100m Butterfly,100,FLY,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,1:41.35,,WEB_Session04.RES,101.35,104,Bucket 2,100m Fly,1:41.35,False
+04,32,Open/Male 100m Butterfly,100,FLY,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,32,Open/Male 100m Butterfly,100,FLY,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,32,Open/Male 100m Butterfly,100,FLY,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,1:14.19,,WEB_Session04.RES,74.19,265,Bucket 2,100m Fly,1:14.19,False
+04,32,Open/Male 100m Butterfly,100,FLY,logan hadley|worcester,Logan Hadley,Male/Open,12,Worcester,1:15.69,,WEB_Session04.RES,75.69,250,Bucket 2,100m Fly,1:15.69,True
+04,32,Open/Male 100m Butterfly,100,FLY,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,1:20.10,,WEB_Session04.RES,80.1,211,Bucket 2,100m Fly,1:20.10,False
+04,32,Open/Male 100m Butterfly,100,FLY,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,1:13.32,,WEB_Session04.RES,73.32,275,Bucket 2,100m Fly,1:13.32,True
+04,32,Open/Male 100m Butterfly,100,FLY,joseph reay|worcester,Joseph Reay,Male/Open,13,Worcester,1:27.28,,WEB_Session04.RES,87.28,163,Bucket 2,100m Fly,1:27.28,True
+04,32,Open/Male 100m Butterfly,100,FLY,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,1:07.77,,WEB_Session04.RES,67.77,348,Bucket 2,100m Fly,1:07.77,True
+04,32,Open/Male 100m Butterfly,100,FLY,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,1:14.87,,WEB_Session04.RES,74.87,258,Bucket 2,100m Fly,1:14.87,False
+04,32,Open/Male 100m Butterfly,100,FLY,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,1:16.25,,WEB_Session04.RES,76.25,244,Bucket 2,100m Fly,1:16.25,False
+04,32,Open/Male 100m Butterfly,100,FLY,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,1:08.60,,WEB_Session04.RES,68.6,336,Bucket 2,100m Fly,1:08.60,False
+04,32,Open/Male 100m Butterfly,100,FLY,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,1:09.54,,WEB_Session04.RES,69.53999999999999,322,Bucket 2,100m Fly,1:09.54,False
+04,32,Open/Male 100m Butterfly,100,FLY,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,1:10.67,,WEB_Session04.RES,70.67,307,Bucket 2,100m Fly,1:10.67,False
+04,32,Open/Male 100m Butterfly,100,FLY,james cooke|worcester,James Cooke,Male/Open,16,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,32,Open/Male 100m Butterfly,100,FLY,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 2,100m Fly,DNC,False
+04,33,Female 200m Breaststroke,200,BREAST,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,4:01.65,,WEB_Session04.RES,241.65,164,,200m Breast,4:01.65,False
+04,33,Female 200m Breaststroke,200,BREAST,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,3:50.58,,WEB_Session04.RES,230.57999999999998,189,,200m Breast,3:50.58,False
+04,33,Female 200m Breaststroke,200,BREAST,matilda clay|worcester,Matilda Clay,Female,10,Worcester,3:56.27,,WEB_Session04.RES,236.27,176,,200m Breast,3:56.27,False
+04,33,Female 200m Breaststroke,200,BREAST,annie harte|worcester,Annie Harte,Female,10,Worcester,4:05.78,,WEB_Session04.RES,245.78,156,,200m Breast,4:05.78,False
+04,33,Female 200m Breaststroke,200,BREAST,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,4:14.57,,WEB_Session04.RES,254.57,141,,200m Breast,4:14.57,False
+04,33,Female 200m Breaststroke,200,BREAST,amelia wood|worcester,Amelia Wood,Female,11,Worcester,3:16.09,,WEB_Session04.RES,196.09,308,,200m Breast,3:16.09,False
+04,33,Female 200m Breaststroke,200,BREAST,daisy wise|worcester,Daisy Wise,Female,11,Worcester,3:48.63,,WEB_Session04.RES,228.63,194,,200m Breast,3:48.63,False
+04,33,Female 200m Breaststroke,200,BREAST,freya flint|worcester,Freya Flint,Female,11,Worcester,4:06.39,,WEB_Session04.RES,246.39,155,,200m Breast,4:06.39,False
+04,33,Female 200m Breaststroke,200,BREAST,savannah wright|worcester,Savannah Wright,Female,12,Worcester,3:05.41,,WEB_Session04.RES,185.41,364,,200m Breast,3:05.41,False
+04,33,Female 200m Breaststroke,200,BREAST,thea everitt|worcester,Thea Everitt,Female,12,Worcester,3:07.48,,WEB_Session04.RES,187.48,353,,200m Breast,3:07.48,False
+04,33,Female 200m Breaststroke,200,BREAST,lucy hill|worcester,Lucy Hill,Female,12,Worcester,3:16.86,,WEB_Session04.RES,196.86,304,,200m Breast,3:16.86,False
+04,33,Female 200m Breaststroke,200,BREAST,pippa jenkins|worcester,Pippa Jenkins,Female,12,Worcester,3:26.30,,WEB_Session04.RES,206.3,264,,200m Breast,3:26.30,False
+04,33,Female 200m Breaststroke,200,BREAST,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,3:26.94,,WEB_Session04.RES,206.94,262,,200m Breast,3:26.94,False
+04,33,Female 200m Breaststroke,200,BREAST,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,3:38.01,,WEB_Session04.RES,218.01,224,,200m Breast,3:38.01,False
+04,33,Female 200m Breaststroke,200,BREAST,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,,200m Breast,DNC,False
+04,33,Female 200m Breaststroke,200,BREAST,amelia booth|worcester,Amelia Booth,Female,13,Worcester,3:00.88,,WEB_Session04.RES,180.88,393,,200m Breast,3:00.88,False
+04,33,Female 200m Breaststroke,200,BREAST,katie harte|worcester,Katie Harte,Female,13,Worcester,3:33.08,,WEB_Session04.RES,213.07999999999998,240,,200m Breast,3:33.08,False
+04,33,Female 200m Breaststroke,200,BREAST,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,2:59.88,,WEB_Session04.RES,179.88,399,,200m Breast,2:59.88,False
+04,33,Female 200m Breaststroke,200,BREAST,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,,200m Breast,DNC,False
+04,33,Female 200m Breaststroke,200,BREAST,alice wickett|worcester,Alice Wickett,Female,15,Worcester,3:00.94,,WEB_Session04.RES,180.94,392,,200m Breast,3:00.94,False
+04,33,Female 200m Breaststroke,200,BREAST,annabel cunningham|worcester,Annabel Cunningham,Female,16,Worcester,2:55.02,,WEB_Session04.RES,175.02,433,,200m Breast,2:55.02,False
+04,33,Female 200m Breaststroke,200,BREAST,evie goodall|worcester,Evie Goodall,Female,17,Worcester,3:03.11,,WEB_Session04.RES,183.11,378,,200m Breast,3:03.11,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,4:01.67,,WEB_Session04.RES,241.67,122,,200m Breast,4:01.67,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,4:02.12,,WEB_Session04.RES,242.12,122,,200m Breast,4:02.12,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,4:08.21,,WEB_Session04.RES,248.21,113,,200m Breast,4:08.21,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,3:37.23,,WEB_Session04.RES,217.23,169,,200m Breast,3:37.23,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,3:56.99,,WEB_Session04.RES,236.99,130,,200m Breast,3:56.99,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,theodore lyman|worcester,Theodore Lyman,Male/Open,10,Worcester,3:59.62,,WEB_Session04.RES,239.62,126,,200m Breast,3:59.62,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,3:37.78,,WEB_Session04.RES,217.78,167,,200m Breast,3:37.78,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,logan hadley|worcester,Logan Hadley,Male/Open,12,Worcester,3:03.99,,WEB_Session04.RES,183.99,278,,200m Breast,3:03.99,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,luke picken|worcester,Luke Picken,Male/Open,12,Worcester,3:10.32,,WEB_Session04.RES,190.32,251,,200m Breast,3:10.32,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,lucas chong rui yang|worcester,Lucas Chong Rui Yang,Male/Open,12,Worcester,3:32.21,,WEB_Session04.RES,212.21,181,,200m Breast,3:32.21,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,3:37.37,,WEB_Session04.RES,217.37,168,,200m Breast,3:37.37,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,3:45.12,,WEB_Session04.RES,225.12,152,,200m Breast,3:45.12,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,3:05.51,,WEB_Session04.RES,185.51,271,,200m Breast,3:05.51,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,nikodem jozwiak|worcester,Nikodem Jozwiak,Male/Open,13,Worcester,3:32.22,,WEB_Session04.RES,212.22,181,,200m Breast,3:32.22,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,2:51.46,,WEB_Session04.RES,171.46,344,,200m Breast,2:51.46,False
+04,34,Open/Male 200m Breaststroke,200,BREAST,harry pickup|worcester,Harry Pickup,Male/Open,17,Worcester,2:52.84,,WEB_Session04.RES,172.84,336,,200m Breast,2:52.84,False
+04,35,Female 50m Freestyle,50,FREE,victoria lemes|worcester,Victoria Lemes,Female,9,Worcester,39.26,,WEB_Session04.RES,39.26,196,Bucket 1,50m Free,39.26,True
+04,35,Female 50m Freestyle,50,FREE,georgia grace moverley|worcester,Georgia Grace Moverley,Female,9,Worcester,44.01,,WEB_Session04.RES,44.01,139,Bucket 1,50m Free,44.01,True
+04,35,Female 50m Freestyle,50,FREE,jessica o'grady|worcester,Jessica O'Grady,Female,9,Worcester,45.07,,WEB_Session04.RES,45.07,129,Bucket 1,50m Free,45.07,True
+04,35,Female 50m Freestyle,50,FREE,flora hoare|worcester,Flora Hoare,Female,9,Worcester,46.56,,WEB_Session04.RES,46.56,117,Bucket 1,50m Free,46.56,True
+04,35,Female 50m Freestyle,50,FREE,phoebe flint|worcester,Phoebe Flint,Female,9,Worcester,46.60,,WEB_Session04.RES,46.6,117,Bucket 1,50m Free,46.60,False
+04,35,Female 50m Freestyle,50,FREE,hallie pinnock|worcester,Hallie Pinnock,Female,9,Worcester,49.30,,WEB_Session04.RES,49.3,99,Bucket 1,50m Free,49.30,True
+04,35,Female 50m Freestyle,50,FREE,sophia kapisikis|worcester,Sophia Kapisikis,Female,10,Worcester,37.45,,WEB_Session04.RES,37.45,226,Bucket 1,50m Free,37.45,True
+04,35,Female 50m Freestyle,50,FREE,esther steelefox|worcester,Esther Steelefox,Female,10,Worcester,38.75,,WEB_Session04.RES,38.75,204,Bucket 1,50m Free,38.75,True
+04,35,Female 50m Freestyle,50,FREE,emily griffin|worcester,Emily Griffin,Female,10,Worcester,39.56,,WEB_Session04.RES,39.56,192,Bucket 1,50m Free,39.56,True
+04,35,Female 50m Freestyle,50,FREE,tiegan white|worcester,Tiegan White,Female,10,Worcester,40.07,,WEB_Session04.RES,40.07,184,Bucket 1,50m Free,40.07,True
+04,35,Female 50m Freestyle,50,FREE,matilda clay|worcester,Matilda Clay,Female,10,Worcester,41.07,,WEB_Session04.RES,41.07,171,Bucket 1,50m Free,41.07,True
+04,35,Female 50m Freestyle,50,FREE,miriam browning|worcester,Miriam Browning,Female,10,Worcester,41.44,,WEB_Session04.RES,41.44,167,Bucket 1,50m Free,41.44,True
+04,35,Female 50m Freestyle,50,FREE,florence cooper|worcester,Florence Cooper,Female,10,Worcester,42.47,,WEB_Session04.RES,42.47,155,Bucket 1,50m Free,42.47,True
+04,35,Female 50m Freestyle,50,FREE,freya murphy|worcester,Freya Murphy,Female,10,Worcester,42.95,,WEB_Session04.RES,42.95,150,Bucket 1,50m Free,42.95,True
+04,35,Female 50m Freestyle,50,FREE,imogen kinbrum|worcester,Imogen Kinbrum,Female,10,Worcester,43.67,,WEB_Session04.RES,43.67,142,Bucket 1,50m Free,43.67,True
+04,35,Female 50m Freestyle,50,FREE,annie harte|worcester,Annie Harte,Female,10,Worcester,45.74,,WEB_Session04.RES,45.74,124,Bucket 1,50m Free,45.74,False
+04,35,Female 50m Freestyle,50,FREE,emma graham|worcester,Emma Graham,Female,11,Worcester,33.76,,WEB_Session04.RES,33.76,309,Bucket 1,50m Free,33.76,True
+04,35,Female 50m Freestyle,50,FREE,amelia wood|worcester,Amelia Wood,Female,11,Worcester,34.30,,WEB_Session04.RES,34.3,294,Bucket 1,50m Free,34.30,True
+04,35,Female 50m Freestyle,50,FREE,lily etheridge|worcester,Lily Etheridge,Female,11,Worcester,36.26,,WEB_Session04.RES,36.26,249,Bucket 1,50m Free,36.26,True
+04,35,Female 50m Freestyle,50,FREE,daisy wise|worcester,Daisy Wise,Female,11,Worcester,36.58,,WEB_Session04.RES,36.58,243,Bucket 1,50m Free,36.58,True
+04,35,Female 50m Freestyle,50,FREE,hannah gilday|worcester,Hannah Gilday,Female,11,Worcester,37.65,,WEB_Session04.RES,37.65,222,Bucket 1,50m Free,37.65,True
+04,35,Female 50m Freestyle,50,FREE,heidi cotterill|worcester,Heidi Cotterill,Female,11,Worcester,37.66,,WEB_Session04.RES,37.66,222,Bucket 1,50m Free,37.66,True
+04,35,Female 50m Freestyle,50,FREE,freya flint|worcester,Freya Flint,Female,11,Worcester,39.21,,WEB_Session04.RES,39.21,197,Bucket 1,50m Free,39.21,True
+04,35,Female 50m Freestyle,50,FREE,penny farnell|worcester,Penny Farnell,Female,11,Worcester,DQ ST,,WEB_Session04.RES,,0,Bucket 1,50m Free,-,False
+04,35,Female 50m Freestyle,50,FREE,thea everitt|worcester,Thea Everitt,Female,12,Worcester,30.38,,WEB_Session04.RES,30.38,424,Bucket 1,50m Free,30.38,True
+04,35,Female 50m Freestyle,50,FREE,savannah wright|worcester,Savannah Wright,Female,12,Worcester,30.84,,WEB_Session04.RES,30.84,405,Bucket 1,50m Free,30.84,True
+04,35,Female 50m Freestyle,50,FREE,angela o'connor|worcester,Angela O'Connor,Female,12,Worcester,31.81,,WEB_Session04.RES,31.81,369,Bucket 1,50m Free,31.81,True
+04,35,Female 50m Freestyle,50,FREE,pippa jenkins|worcester,Pippa Jenkins,Female,12,Worcester,32.56,,WEB_Session04.RES,32.56,344,Bucket 1,50m Free,32.56,True
+04,35,Female 50m Freestyle,50,FREE,lucy hill|worcester,Lucy Hill,Female,12,Worcester,33.65,,WEB_Session04.RES,33.65,312,Bucket 1,50m Free,33.65,True
+04,35,Female 50m Freestyle,50,FREE,lily benham-willetts|worcester,Lily Benham-Willetts,Female,12,Worcester,34.32,,WEB_Session04.RES,34.32,294,Bucket 1,50m Free,34.32,True
+04,35,Female 50m Freestyle,50,FREE,amy lynn|worcester,Amy Lynn,Female,12,Worcester,36.78,,WEB_Session04.RES,36.78,239,Bucket 1,50m Free,36.78,False
+04,35,Female 50m Freestyle,50,FREE,scarlett childs|worcester,Scarlett Childs,Female,12,Worcester,37.71,,WEB_Session04.RES,37.71,221,Bucket 1,50m Free,37.71,False
+04,35,Female 50m Freestyle,50,FREE,eliza hannan|worcester,Eliza Hannan,Female,12,Worcester,38.05,,WEB_Session04.RES,38.05,215,Bucket 1,50m Free,38.05,True
+04,35,Female 50m Freestyle,50,FREE,daisy elliston|worcester,Daisy Elliston,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,pippa preston|worcester,Pippa Preston,Female,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,lucy piper|worcester,Lucy Piper,Female,13,Worcester,29.92,,WEB_Session04.RES,29.92,444,Bucket 1,50m Free,29.92,True
+04,35,Female 50m Freestyle,50,FREE,emily bufi|worcester,Emily Bufi,Female,13,Worcester,30.98,,WEB_Session04.RES,30.98,400,Bucket 1,50m Free,30.98,True
+04,35,Female 50m Freestyle,50,FREE,amelia booth|worcester,Amelia Booth,Female,13,Worcester,32.24,,WEB_Session04.RES,32.24,355,Bucket 1,50m Free,32.24,True
+04,35,Female 50m Freestyle,50,FREE,katie harte|worcester,Katie Harte,Female,13,Worcester,34.94,,WEB_Session04.RES,34.94,278,Bucket 1,50m Free,34.94,True
+04,35,Female 50m Freestyle,50,FREE,ava aspinall|worcester,Ava Aspinall,Female,14,Worcester,30.21,,WEB_Session04.RES,30.21,431,Bucket 1,50m Free,30.21,True
+04,35,Female 50m Freestyle,50,FREE,thea pickstock|worcester,Thea Pickstock,Female,14,Worcester,30.33,,WEB_Session04.RES,30.33,426,Bucket 1,50m Free,30.33,True
+04,35,Female 50m Freestyle,50,FREE,hazel strauss|worcester,Hazel Strauss,Female,14,Worcester,30.55,,WEB_Session04.RES,30.55,417,Bucket 1,50m Free,30.55,True
+04,35,Female 50m Freestyle,50,FREE,zoe walsh|worcester,Zoe Walsh,Female,14,Worcester,32.37,,WEB_Session04.RES,32.37,350,Bucket 1,50m Free,32.37,False
+04,35,Female 50m Freestyle,50,FREE,laurie surtees|worcester,Laurie Surtees,Female,14,Worcester,32.73,,WEB_Session04.RES,32.73,339,Bucket 1,50m Free,32.73,True
+04,35,Female 50m Freestyle,50,FREE,lily wood|worcester,Lily Wood,Female,14,Worcester,33.36,,WEB_Session04.RES,33.36,320,Bucket 1,50m Free,33.36,True
+04,35,Female 50m Freestyle,50,FREE,lilliella page|worcester,Lilliella Page,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,helena cooke|worcester,Helena Cooke,Female,14,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,emilia spence|worcester,Emilia Spence,Female,15,Worcester,29.10,,WEB_Session04.RES,29.1,482,Bucket 1,50m Free,29.10,False
+04,35,Female 50m Freestyle,50,FREE,alice wickett|worcester,Alice Wickett,Female,15,Worcester,30.78,,WEB_Session04.RES,30.78,408,Bucket 1,50m Free,30.78,False
+04,35,Female 50m Freestyle,50,FREE,gabriella gilday|worcester,Gabriella Gilday,Female,15,Worcester,30.89,,WEB_Session04.RES,30.89,403,Bucket 1,50m Free,30.89,True
+04,35,Female 50m Freestyle,50,FREE,eva anderson|worcester,Eva Anderson,Female,15,Worcester,31.57,,WEB_Session04.RES,31.57,378,Bucket 1,50m Free,31.57,False
+04,35,Female 50m Freestyle,50,FREE,sophie kilgour|worcester,Sophie Kilgour,Female,15,Worcester,32.63,,WEB_Session04.RES,32.63,342,Bucket 1,50m Free,32.63,True
+04,35,Female 50m Freestyle,50,FREE,ffion lea|worcester,Ffion Lea,Female,15,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,amelia fowkes|worcester,Amelia Fowkes,Female,15,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,35,Female 50m Freestyle,50,FREE,chloe gilbert-bevan|worcester,Chloe Gilbert-Bevan,Female,18,Worcester,27.90,,WEB_Session04.RES,27.9,547,Bucket 1,50m Free,27.90,True
+04,35,Female 50m Freestyle,50,FREE,elizabeth wetherall|worcester,Elizabeth Wetherall,Female,16,Worcester,28.79,,WEB_Session04.RES,28.79,498,Bucket 1,50m Free,28.79,True
+04,35,Female 50m Freestyle,50,FREE,alexia agoston|worcester,Alexia Agoston,Female,16,Worcester,28.93,,WEB_Session04.RES,28.93,491,Bucket 1,50m Free,28.93,False
+04,35,Female 50m Freestyle,50,FREE,mia gooch|worcester,Mia Gooch,Female,16,Worcester,30.42,,WEB_Session04.RES,30.42,422,Bucket 1,50m Free,30.42,False
+04,35,Female 50m Freestyle,50,FREE,caitlin pridden|worcester,Caitlin Pridden,Female,16,Worcester,30.61,,WEB_Session04.RES,30.61,414,Bucket 1,50m Free,30.61,True
+04,35,Female 50m Freestyle,50,FREE,mollie kilgour|worcester,Mollie Kilgour,Female,21,Worcester,30.94,,WEB_Session04.RES,30.94,401,Bucket 1,50m Free,30.94,True
+04,35,Female 50m Freestyle,50,FREE,isabella wood|worcester,Isabella Wood,Female,16,Worcester,32.42,,WEB_Session04.RES,32.42,349,Bucket 1,50m Free,32.42,True
+04,35,Female 50m Freestyle,50,FREE,evie goodall|worcester,Evie Goodall,Female,17,Worcester,32.52,,WEB_Session04.RES,32.52,345,Bucket 1,50m Free,32.52,False
+04,35,Female 50m Freestyle,50,FREE,ava smith|worcester,Ava Smith,Female,16,Worcester,34.26,,WEB_Session04.RES,34.26,295,Bucket 1,50m Free,34.26,True
+04,36,Open/Male 50m Freestyle,50,FREE,joshua cherry|worcester,Joshua Cherry,Male/Open,9,Worcester,37.94,,WEB_Session04.RES,37.94,144,Bucket 1,50m Free,37.94,True
+04,36,Open/Male 50m Freestyle,50,FREE,ralph chandler|worcester,Ralph Chandler,Male/Open,9,Worcester,38.43,,WEB_Session04.RES,38.43,138,Bucket 1,50m Free,38.43,True
+04,36,Open/Male 50m Freestyle,50,FREE,jacob kelly|worcester,Jacob Kelly,Male/Open,9,Worcester,39.09,,WEB_Session04.RES,39.09,131,Bucket 1,50m Free,39.09,True
+04,36,Open/Male 50m Freestyle,50,FREE,joseph jenkinson|worcester,Joseph Jenkinson,Male/Open,9,Worcester,41.55,,WEB_Session04.RES,41.55,109,Bucket 1,50m Free,41.55,False
+04,36,Open/Male 50m Freestyle,50,FREE,logan bowers-scone|worcester,Logan Bowers-Scone,Male/Open,9,Worcester,42.85,,WEB_Session04.RES,42.85,100,Bucket 1,50m Free,42.85,True
+04,36,Open/Male 50m Freestyle,50,FREE,hugh kirkby|worcester,Hugh Kirkby,Male/Open,9,Worcester,44.84,,WEB_Session04.RES,44.84,87,Bucket 1,50m Free,44.84,True
+04,36,Open/Male 50m Freestyle,50,FREE,hugo mobberley|worcester,Hugo Mobberley,Male/Open,9,Worcester,45.00,,WEB_Session04.RES,45.0,86,Bucket 1,50m Free,45.00,True
+04,36,Open/Male 50m Freestyle,50,FREE,julian hillman|worcester,Julian Hillman,Male/Open,9,Worcester,46.39,,WEB_Session04.RES,46.39,78,Bucket 1,50m Free,46.39,False
+04,36,Open/Male 50m Freestyle,50,FREE,theo parker|worcester,Theo Parker,Male/Open,9,Worcester,46.58,,WEB_Session04.RES,46.58,77,Bucket 1,50m Free,46.58,False
+04,36,Open/Male 50m Freestyle,50,FREE,heath white|worcester,Heath White,Male/Open,9,Worcester,50.57,,WEB_Session04.RES,50.57,60,Bucket 1,50m Free,50.57,True
+04,36,Open/Male 50m Freestyle,50,FREE,akshay vickram|worcester,Akshay Vickram,Male/Open,9,Worcester,56.32,,WEB_Session04.RES,56.32,44,Bucket 1,50m Free,56.32,True
+04,36,Open/Male 50m Freestyle,50,FREE,albert wilkinson|worcester,Albert Wilkinson,Male/Open,10,Worcester,33.37,,WEB_Session04.RES,33.37,212,Bucket 1,50m Free,33.37,True
+04,36,Open/Male 50m Freestyle,50,FREE,william ryan|worcester,William Ryan,Male/Open,10,Worcester,35.92,,WEB_Session04.RES,35.92,170,Bucket 1,50m Free,35.92,False
+04,36,Open/Male 50m Freestyle,50,FREE,harvey mattick|worcester,Harvey Mattick,Male/Open,10,Worcester,39.16,,WEB_Session04.RES,39.16,131,Bucket 1,50m Free,39.16,False
+04,36,Open/Male 50m Freestyle,50,FREE,jack troke|worcester,Jack Troke,Male/Open,10,Worcester,39.92,,WEB_Session04.RES,39.92,123,Bucket 1,50m Free,39.92,True
+04,36,Open/Male 50m Freestyle,50,FREE,o kvetkas-piskovas|worcester,O Kvetkas-Piskovas,Male/Open,10,Worcester,40.94,,WEB_Session04.RES,40.94,114,Bucket 1,50m Free,40.94,True
+04,36,Open/Male 50m Freestyle,50,FREE,sammy gifford|worcester,Sammy Gifford,Male/Open,10,Worcester,1:02.43,,WEB_Session04.RES,62.43,32,Bucket 1,50m Free,1:02.43,True
+04,36,Open/Male 50m Freestyle,50,FREE,hugo hawkes|worcester,Hugo Hawkes,Male/Open,10,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,36,Open/Male 50m Freestyle,50,FREE,danil fadejev|worcester,Danil Fadejev,Male/Open,11,Worcester,30.83,,WEB_Session04.RES,30.83,268,Bucket 1,50m Free,30.83,True
+04,36,Open/Male 50m Freestyle,50,FREE,rocco knott|worcester,Rocco Knott,Male/Open,11,Worcester,33.78,,WEB_Session04.RES,33.78,204,Bucket 1,50m Free,33.78,True
+04,36,Open/Male 50m Freestyle,50,FREE,laith sabagh|worcester,Laith Sabagh,Male/Open,11,Worcester,40.97,,WEB_Session04.RES,40.97,114,Bucket 1,50m Free,40.97,False
+04,36,Open/Male 50m Freestyle,50,FREE,matthew dadd|worcester,Matthew Dadd,Male/Open,11,Worcester,44.04,,WEB_Session04.RES,44.04,92,Bucket 1,50m Free,44.04,False
+04,36,Open/Male 50m Freestyle,50,FREE,leonardo genovesi|worcester,Leonardo Genovesi,Male/Open,12,Worcester,29.70,,WEB_Session04.RES,29.7,300,Bucket 1,50m Free,29.70,True
+04,36,Open/Male 50m Freestyle,50,FREE,zach cherry|worcester,Zach Cherry,Male/Open,12,Worcester,30.11,,WEB_Session04.RES,30.11,288,Bucket 1,50m Free,30.11,False
+04,36,Open/Male 50m Freestyle,50,FREE,luke picken|worcester,Luke Picken,Male/Open,12,Worcester,33.16,,WEB_Session04.RES,33.16,216,Bucket 1,50m Free,33.16,True
+04,36,Open/Male 50m Freestyle,50,FREE,benedict kinbrum|worcester,Benedict Kinbrum,Male/Open,12,Worcester,36.05,,WEB_Session04.RES,36.05,168,Bucket 1,50m Free,36.05,True
+04,36,Open/Male 50m Freestyle,50,FREE,arthur gore|worcester,Arthur Gore,Male/Open,12,Worcester,39.09,,WEB_Session04.RES,39.09,131,Bucket 1,50m Free,39.09,False
+04,36,Open/Male 50m Freestyle,50,FREE,thomas jenkinson|worcester,Thomas Jenkinson,Male/Open,12,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,36,Open/Male 50m Freestyle,50,FREE,jonas harvey|worcester,Jonas Harvey,Male/Open,13,Worcester,28.88,,WEB_Session04.RES,28.88,327,Bucket 1,50m Free,28.88,True
+04,36,Open/Male 50m Freestyle,50,FREE,harry state-davey|worcester,Harry State-Davey,Male/Open,13,Worcester,29.42,,WEB_Session04.RES,29.42,309,Bucket 1,50m Free,29.42,True
+04,36,Open/Male 50m Freestyle,50,FREE,edward hickman|worcester,Edward Hickman,Male/Open,13,Worcester,29.69,,WEB_Session04.RES,29.69,301,Bucket 1,50m Free,29.69,True
+04,36,Open/Male 50m Freestyle,50,FREE,filip roleski|worcester,Filip Roleski,Male/Open,13,Worcester,32.55,,WEB_Session04.RES,32.55,228,Bucket 1,50m Free,32.55,False
+04,36,Open/Male 50m Freestyle,50,FREE,edward alfred evans|worcester,Edward Alfred Evans,Male/Open,13,Worcester,34.14,,WEB_Session04.RES,34.14,198,Bucket 1,50m Free,34.14,True
+04,36,Open/Male 50m Freestyle,50,FREE,joseph jennings|worcester,Joseph Jennings,Male/Open,13,Worcester,36.06,,WEB_Session04.RES,36.06,168,Bucket 1,50m Free,36.06,True
+04,36,Open/Male 50m Freestyle,50,FREE,ewan windross|worcester,Ewan Windross,Male/Open,13,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,36,Open/Male 50m Freestyle,50,FREE,harry clay|worcester,Harry Clay,Male/Open,14,Worcester,25.26,,WEB_Session04.RES,25.26,488,Bucket 1,50m Free,25.26,True
+04,36,Open/Male 50m Freestyle,50,FREE,harry connor|worcester,Harry Connor,Male/Open,14,Worcester,26.13,,WEB_Session04.RES,26.13,441,Bucket 1,50m Free,26.13,True
+04,36,Open/Male 50m Freestyle,50,FREE,olivier konczuk|worcester,Olivier Konczuk,Male/Open,14,Worcester,27.57,,WEB_Session04.RES,27.57,376,Bucket 1,50m Free,27.57,True
+04,36,Open/Male 50m Freestyle,50,FREE,samuel mellor|worcester,Samuel Mellor,Male/Open,14,Worcester,29.87,,WEB_Session04.RES,29.87,295,Bucket 1,50m Free,29.87,False
+04,36,Open/Male 50m Freestyle,50,FREE,julian kocur|worcester,Julian Kocur,Male/Open,14,Worcester,33.13,,WEB_Session04.RES,33.13,216,Bucket 1,50m Free,33.13,True
+04,36,Open/Male 50m Freestyle,50,FREE,samuel smith|worcester,Samuel Smith,Male/Open,14,Worcester,34.33,,WEB_Session04.RES,34.33,194,Bucket 1,50m Free,34.33,True
+04,36,Open/Male 50m Freestyle,50,FREE,riley brain|worcester,Riley Brain,Male/Open,15,Worcester,26.44,,WEB_Session04.RES,26.44,426,Bucket 1,50m Free,26.44,True
+04,36,Open/Male 50m Freestyle,50,FREE,lucas pedley|worcester,Lucas Pedley,Male/Open,17,Worcester,24.81,,WEB_Session04.RES,24.81,516,Bucket 1,50m Free,24.81,True
+04,36,Open/Male 50m Freestyle,50,FREE,jack preston|worcester,Jack Preston,Male/Open,17,Worcester,27.11,,WEB_Session04.RES,27.11,395,Bucket 1,50m Free,27.11,False
+04,36,Open/Male 50m Freestyle,50,FREE,samuel jennings|worcester,Samuel Jennings,Male/Open,16,Worcester,27.53,,WEB_Session04.RES,27.53,377,Bucket 1,50m Free,27.53,False
+04,36,Open/Male 50m Freestyle,50,FREE,joseph o'leary|worcester,Joseph O'Leary,Male/Open,16,Worcester,28.80,,WEB_Session04.RES,28.8,329,Bucket 1,50m Free,28.80,False
+04,36,Open/Male 50m Freestyle,50,FREE,robert gearey|worcester,Robert Gearey,Male/Open,16,Worcester,29.18,,WEB_Session04.RES,29.18,317,Bucket 1,50m Free,29.18,False
+04,36,Open/Male 50m Freestyle,50,FREE,james cooke|worcester,James Cooke,Male/Open,16,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
+04,36,Open/Male 50m Freestyle,50,FREE,joseph agoston|worcester,Joseph Agoston,Male/Open,16,Worcester,,DNC,WEB_Session04.RES,,0,Bucket 1,50m Free,DNC,False
